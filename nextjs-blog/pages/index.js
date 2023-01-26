@@ -7,7 +7,8 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        {/* Adding a "?" at the end of the favicon is the internet blackbox suggestion for getting it to show up on github pages */}
+        <link rel="icon" href="/favicon.ico?" />
       </Head>
 
       <main>
