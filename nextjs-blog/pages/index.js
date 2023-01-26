@@ -6,14 +6,15 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>RPG Generate & Track</title>
         {/* Adding a "?" at the end of the favicon is the internet blackbox suggestion for getting it to show up on github pages */}
         <link rel="icon" href="/favicon.ico?" />
       </Head>
 
       <main>
         <h1 className={styles.title}>
-          Learn <a href="https://nextjs.org">Next.js!</a>
+          {/* Learn <a href="https://nextjs.org">Next.js!</a> */}
+          Generate and Track RPG Information (Work in Progress)
         </h1>
 
         <h2 className="title">Read <Link href="/first-post">this page!</Link></h2>
