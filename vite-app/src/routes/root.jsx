@@ -1,33 +1,18 @@
-import { Outlet, Link} from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 
 export default function Root() {
+    let title_style = {
+        textDecoration: 'none',
+        color: '#121212',
+    }
+
     return (
         <>
             <div id="sidebar">
-                <h1>React Router Contacts</h1>
                 <div>
-                    <h2>RPG Generator</h2>
-                    {/* <form id="search-form" role="search">
-                    <input
-                    id="q"
-                    aria-label="Search contacts"
-                    placeholder="Search"
-                    type="search"
-                    name="q"
-                    />
-                    <div
-                    id="search-spinner"
-                    aria-hidden
-                    hidden={true}
-                    />
-                    <div
-                    className="sr-only"
-                    aria-live="polite"
-                    ></div>
-                    </form>
-                    <form method="post">
-                    <button type="submit">New</button>
-                    </form> */}
+                    <Link style={title_style} to={"/"}>
+                        <h1>RPG Generator</h1>
+                    </Link>
                 </div>
                 <div>(Work in Progress)</div>
                 <nav>
@@ -41,12 +26,21 @@ export default function Root() {
                         <li>
                             <Link to={'character_tracker'}>Character Tracker</Link>
                         </li>
+                        <li>
+                            <Link to={'account_info'}>Account Info</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
             <div id="detail">
-                <Outlet />
+                {useLocation().pathname == "/" ? <LandingContent /> : <Outlet />}
             </div>
         </>
     );
+}
+
+function LandingContent() {
+    return (
+        <div>Landing page</div>
+    )
 }

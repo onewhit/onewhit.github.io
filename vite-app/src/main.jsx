@@ -12,6 +12,7 @@ import ErrorPage from "./error_page";
 import ItemGenerator from "./routes/item_generator";
 import NpcGenerator from "./routes/npc_generator";
 import CharacterTracker from "./routes/character_tracker";
+import AccountInfo from "./routes/account_info";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "character_tracker",
                 element: <CharacterTracker />
+            },
+            {
+                path: "account_info",
+                element: <AccountInfo />
             },
         ],
     },
