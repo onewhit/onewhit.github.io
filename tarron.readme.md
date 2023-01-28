@@ -32,3 +32,27 @@ npm build
 ```
 
 The above command will create a "build" folder in the "my-app" folder
+
+Copy the contents of the "build" folder to the "docs" top-level folder, then commit/push
+
+Go to this website to see if it publishes
+
+https://github.com/onewhit/onewhit.github.io/deployments
+
+You'll also probably want react router
+
+```bash
+npm install react-router-dom
+```
+
+---
+
+My old react router setup was way outdated, so I switched to follow the react router tutorial which used "vite" to server the app instead of create-react-app
+
+```bash
+npm create vite@latest vite-app -- --template react
+cd vite-app
+# npm install react-router-dom localforage match-sorter sort-by
+npm install react-router-dom
+npm run dev
+```
