@@ -47,7 +47,9 @@ npm install react-router-dom
 
 ---
 
-My old react router setup was way outdated, so I switched to follow the react router tutorial which used "vite" to server the app instead of create-react-app
+My old react router setup was way outdated, so I switched to follow the react router tutorial which used "vite" to server the app instead of create-react-app, using this tutorial page
+
+  - https://reactrouter.com/en/main/start/tutorial
 
 ```bash
 npm create vite@latest vite-app -- --template react
