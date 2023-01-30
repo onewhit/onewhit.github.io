@@ -57,4 +57,8 @@ cd vite-app
 # npm install react-router-dom localforage match-sorter sort-by
 npm install react-router-dom
 npm run dev
+npm run build
 ```
+
+Copy out the "dist" folder to the "docs" top-level folder, then push to github
+

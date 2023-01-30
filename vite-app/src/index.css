@@ -1,6 +1,6 @@
 /* NOTE: This is a page provided by the react router trial project */
 
-html {
+/* html {
   box-sizing: border-box;
 }
 *,
@@ -28,8 +28,9 @@ body {
   margin: 0;
   line-height: 1.5;
   color: #121212;
-}
-textarea,
+} */
+
+/* textarea,
 input,
 button {
   font-size: 1rem;
@@ -41,24 +42,24 @@ button {
   background-color: white;
   line-height: 1.5;
   margin: 0;
-}
-button {
+} */
+/* button {
   color: #3992ff;
   font-weight: 500;
-}
+} */
 
-textarea:hover,
+/* textarea:hover,
 input:hover,
 button:hover {
   box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-}
+} */
 
-button:active {
+/* button:active {
   box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.4);
   transform: translateY(1px);
-}
+} */
 
-#contact h1 {
+/* #contact h1 {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -84,9 +85,9 @@ button:active {
 
 form[action$="destroy"] button {
   color: #f44250;
-}
+} */
 
-.sr-only {
+/* .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -96,9 +97,9 @@ form[action$="destroy"] button {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
+} */
 
-#root {
+/* #root {
   display: flex;
   height: 100%;
   width: 100%;
@@ -381,4 +382,4 @@ i {
   align-items: center;
   justify-content: center;
   width: 100%;
-}
+} */

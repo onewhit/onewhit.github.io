@@ -1,4 +1,5 @@
-import { Outlet, Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Outlet, Link, useLocation, Form } from "react-router-dom";
 
 export default function Root() {
     let title_style = {
@@ -7,7 +8,7 @@ export default function Root() {
     }
 
     return (
-        <>
+        <React.Fragment>
             <div id="sidebar">
                 <div>
                     <Link style={title_style} to={"/"}>
@@ -15,6 +16,29 @@ export default function Root() {
                     </Link>
                 </div>
                 <div>(Work in Progress)</div>
+                {/* <div>
+                    <form id="search-form" role="search">
+                        <input
+                            id="q"
+                            aria-label="Search contacts"
+                            placeholder="Search"
+                            type="search"
+                            name="q"
+                        />
+                        <div
+                            id="search-spinner"
+                            aria-hidden
+                            hidden={true}
+                        />
+                        <div
+                            className="sr-only"
+                            aria-live="polite"
+                        ></div>
+                    </form>
+                    <form method="post">
+                        <button type="submit">New</button>
+                    </form>
+                </div> */}
                 <nav>
                     <ul>
                         <li>
@@ -35,12 +59,14 @@ export default function Root() {
             <div id="detail">
                 {useLocation().pathname == "/" ? <LandingContent /> : <Outlet />}
             </div>
-        </>
+        </React.Fragment>
     );
 }
 
 function LandingContent() {
     return (
-        <div>Landing page</div>
+        <React.Fragment>
+            <div>Landing page</div>
+        </React.Fragment>
     )
 }
