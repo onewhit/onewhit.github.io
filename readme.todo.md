@@ -1,0 +1,5 @@
+- [ ] Make sure the page goes to the right page on reload, preserves state
+- [ ] Get Firebase authentication working for a single user
+  - [ ] Login
+  - [ ] Logout
+  - [ ] Firebase cloudstore rules
