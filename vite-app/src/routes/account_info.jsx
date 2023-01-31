@@ -70,7 +70,10 @@ export default function AccountInfo() {
 
 // Form to handle logging in and logging out
 function LoginForm({set_action_message}) {
-    const is_logged_in = (useContext(GlobalContext).user != null ? true : false);
+    const global_context = useContext(GlobalContext);
+    const user = global_context.user;
+    const is_auth_checked = global_context.is_auth_checked;
+    const is_logged_in = (user != null && user.email != null) ? true : false;
 
     const [field_username, set_field_username] = useState("");
     const [field_password, set_field_password] = useState("");
@@ -78,8 +81,6 @@ function LoginForm({set_action_message}) {
     function handle_login(e) {
         e.preventDefault();
         set_action_message("Logging in...");
-        // console.log("field_username: " + field_username)
-        // console.log("field_password: " + field_password)
         login_firebase_user(field_username, field_password, set_action_message);
     }
 
@@ -92,13 +93,12 @@ function LoginForm({set_action_message}) {
     return (
         // Show the login fields if not logged in, otherwise just who the logout button
         is_logged_in
-            ? <button onClick={handle_logout}>Log out</button>
-            : <form onSubmit={handle_login}>
-                <input label="Username" type="text" name="username" onChange={(event) => set_field_username(event.target.value)} />
-                <input label="Password" type="password" name="password" onChange={(event) => set_field_password(event.target.value)} />
-                <button type="submit">Log in</button>
-            </form>
-
+        ? <button onClick={handle_logout}>Log out</button>
+        : <form onSubmit={handle_login}>
+            <input label="Username" type="text" name="username" onChange={(event) => set_field_username(event.target.value)} />
+            <input label="Password" type="password" name="password" onChange={(event) => set_field_password(event.target.value)} />
+            <button type="submit">Log in</button>
+        </form>
     );
 }
 

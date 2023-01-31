@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import { Outlet, Link, useLocation, Form } from "react-router-dom";
 import { GlobalContext } from "../global_context";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
+import ajax_loader from "../public/ajax_loader.gif";
 
 export default function Root() {
     let title_style = {
@@ -18,15 +19,13 @@ export default function Root() {
     const [user, set_user] = useState(null)
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
-            console.log(user?.email)
+        return onAuthStateChanged(getAuth(), (user) => {
             set_global_context({
                 ...global_context,
-                user: user
+                user: user,
+                is_auth_checked: true
             });
         });
-
-        return unsubscribe;
     },[]);
 
     return (
@@ -39,28 +38,46 @@ export default function Root() {
                         </Link>
                     </div>
                     <div>(Work in Progress)</div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to={'item_generator'}>Item Generator</Link>
-                            </li>
-                            <li>
-                                <Link to={'npc_generator'}>NPC Generator</Link>
-                            </li>
-                            <li>
-                                <Link to={'character_tracker'}>Character Tracker</Link>
-                            </li>
-                            <li>
-                                <Link to={'account_info'}>Account Info</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div id="detail">
-                    {useLocation().pathname == "/" ? <LandingContent /> : <Outlet />}
+
+                    { global_context.is_auth_checked ? <><MainNavigation /><Details /></> : <LoadingScreen />}
                 </div>
             </React.Fragment>
         </GlobalContext.Provider>
+    );
+}
+
+function LoadingScreen() {
+    return (
+        <img src={ajax_loader} />
+    );
+}
+
+function Details() {
+    return (
+        <div id="detail">
+            {useLocation().pathname == "/" ? <LandingContent /> : <Outlet />}
+        </div>
+    );
+}
+
+function MainNavigation() {
+    return (
+        <nav>
+            <ul>
+                <li>
+                    <Link to={'item_generator'}>Item Generator</Link>
+                </li>
+                <li>
+                    <Link to={'npc_generator'}>NPC Generator</Link>
+                </li>
+                <li>
+                    <Link to={'character_tracker'}>Character Tracker</Link>
+                </li>
+                <li>
+                    <Link to={'account_info'}>Account Info</Link>
+                </li>
+            </ul>
+        </nav>
     );
 }
 
