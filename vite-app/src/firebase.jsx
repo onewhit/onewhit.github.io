@@ -3,7 +3,7 @@
 */
 
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebase_config = {
@@ -21,7 +21,7 @@ const firebase_db = getFirestore(firebase_app);
 
 
 function create_new_firebase_user() {
-        
+
     createUserWithEmailAndPassword(firebase_auth, 'tarronlane@gmail.com', 'cannonballs2')
     .then((user_credential) => {
         const user = user_credential.user;
@@ -41,14 +41,26 @@ function delete_firebase_user(set_action_message) {
     console.log(action_message);
 }
 
-// function sign_in_user() {
-//     sign
-// }
+async function login_firebase_user(username, password) {
+    await (signInWithEmailAndPassword(firebase_auth, username, password)
+    .catch((error) => {
+        console.log("Error message found");
+        console.log(error.code);
+        console.log(error.message);
+    }));
+    return true;
+}
 
-export { 
-    firebase_app, 
-    firebase_auth, 
-    firebase_db, 
-    create_new_firebase_user, 
+async function logout_firebase_user() {
+    return signOut(firebase_auth);
+}
+
+export {
+    firebase_app,
+    firebase_auth,
+    firebase_db,
+    create_new_firebase_user,
     delete_firebase_user,
+    login_firebase_user,
+    logout_firebase_user,
 };

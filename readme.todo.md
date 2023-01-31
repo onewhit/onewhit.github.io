@@ -1,5 +1,6 @@
-- [ ] Make sure the page goes to the right page on reload, preserves state
+- [x] 2023-01-30 Make sure the page goes to the right page on reload, preserves state
+- [ ] Look into react rules for Forms
 - [ ] Get Firebase authentication working for a single user
-  - [ ] Login
-  - [ ] Logout
+  - [x] Login
+  - [x] Logout
   - [ ] Firebase cloudstore rules

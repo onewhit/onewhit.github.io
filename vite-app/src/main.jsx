@@ -13,6 +13,7 @@ import ItemGenerator from "./routes/item_generator";
 import NpcGenerator from "./routes/npc_generator";
 import CharacterTracker from "./routes/character_tracker";
 import AccountInfo from "./routes/account_info";
+import { handle_login_form } from "./routes/account_info";
 
 const router = createBrowserRouter([
     {
@@ -31,15 +32,16 @@ const router = createBrowserRouter([
             },
             {
                 path: "character_tracker",
-                element: <CharacterTracker />
+                element: <CharacterTracker />,
             },
             {
                 path: "account_info",
-                element: <AccountInfo />
+                element: <AccountInfo />,
+                action: handle_login_form,
             },
         ],
     },
-    
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
