@@ -13,7 +13,7 @@ import ItemGenerator from "./routes/item_generator";
 import NpcGenerator from "./routes/npc_generator";
 import CharacterTracker from "./routes/character_tracker";
 import AccountInfo from "./routes/account_info";
-import { handle_login_form } from "./routes/account_info";
+// import { handle_login_form } from "./routes/account_info";
 
 const router = createBrowserRouter([
     {
@@ -24,11 +24,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "item_generator",
-                element: <ItemGenerator />
+                element: <ItemGenerator />,
             },
             {
                 path: "npc_generator",
-                element: <NpcGenerator />
+                element: <NpcGenerator />,
             },
             {
                 path: "character_tracker",
@@ -37,7 +37,6 @@ const router = createBrowserRouter([
             {
                 path: "account_info",
                 element: <AccountInfo />,
-                action: handle_login_form,
             },
         ],
     },

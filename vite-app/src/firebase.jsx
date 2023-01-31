@@ -41,18 +41,27 @@ function delete_firebase_user(set_action_message) {
     console.log(action_message);
 }
 
-async function login_firebase_user(username, password) {
-    await (signInWithEmailAndPassword(firebase_auth, username, password)
-    .catch((error) => {
-        console.log("Error message found");
-        console.log(error.code);
-        console.log(error.message);
-    }));
-    return true;
+function login_firebase_user(username, password, set_action_message) {
+    return (
+        signInWithEmailAndPassword(firebase_auth, username, password)
+            .then(
+                (value) => {
+                    set_action_message((current_message) => current_message + " Success!")
+
+                }
+            )
+            .catch(
+                (error) => {
+                    set_action_message((current_message) => current_message + " Failed. Error Code [" + error.code + "]. Error Message [" + error.message + "]")
+                }
+            )
+    );
 }
 
-async function logout_firebase_user() {
-    return signOut(firebase_auth);
+async function logout_firebase_user(set_action_message) {
+    return signOut(firebase_auth).then(
+        (value) => set_action_message((current_message) => current_message + " Success!")
+    );
 }
 
 export {
