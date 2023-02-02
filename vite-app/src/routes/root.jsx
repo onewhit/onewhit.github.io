@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import { Outlet, Link, useLocation, Form, NavLink } from "react-router-dom";
 import { GlobalContext } from "../global_context";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
-import ajax_loader from "../public/ajax_loader.gif";
+import ajax_loader from "../../assets/ajax_loader.gif";
 import DetailsLayout from "../utility/details_layout.jsx";
 import colors from "../utility/colors.jsx";
 import configs from "../utility/configs.jsx";
