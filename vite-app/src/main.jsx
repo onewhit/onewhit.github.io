@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import DetailsLayout from "./utility/details_layout.jsx";
 
 import {
     createBrowserRouter,
@@ -13,7 +14,6 @@ import ItemGenerator from "./routes/item_generator";
 import NpcGenerator from "./routes/npc_generator";
 import CharacterTracker from "./routes/character_tracker";
 import AccountInfo from "./routes/account_info";
-// import { handle_login_form } from "./routes/account_info";
 
 const router = createBrowserRouter([
     {
@@ -24,19 +24,19 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "item_generator",
-                element: <ItemGenerator />,
+                element: <DetailsLayout page_title="Item Generator" children={<ItemGenerator />} />
             },
             {
                 path: "npc_generator",
-                element: <NpcGenerator />,
+                element: <DetailsLayout page_title="NPC Generator" children={<NpcGenerator />} />
             },
             {
                 path: "character_tracker",
-                element: <CharacterTracker />,
+                element: <DetailsLayout page_title="Character Tracker" children={<CharacterTracker />} />
             },
             {
                 path: "account_info",
-                element: <AccountInfo />,
+                element: <DetailsLayout page_title="Account Info" children={<AccountInfo />} />
             },
         ],
     },

@@ -4,7 +4,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { getFirestore, doc, getDoc, collection, query, where, getDocs } from "firebase/firestore";
+import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc } from "firebase/firestore";
 
 const firebase_config = {
     apiKey: "AIzaSyB7KcGLNztLk0KmjJ7CCyIQmwvchLaRbCw",
@@ -90,6 +90,25 @@ async function get_attributes_by_tag(tag_name) {
     });
 }
 
+async function create_document(collection_name, document_name, new_document_data) {
+    // Make sure the document doesn't already exist
+
+    console.log(collection_name, document_name, new_document_data);
+
+    const existing_doc = await getDoc(doc(firebase_db, collection_name, document_name))
+
+    if (existing_doc.exists()) {
+        console.log("document already exists");
+    }
+    else {
+        console.log("document is new")
+    }
+
+    // return await setDoc(doc(firebase_db, collection_name, document_name), {
+
+    // })
+}
+
 export {
     firebase_app,
     firebase_auth,
@@ -100,4 +119,5 @@ export {
     logout_firebase_user,
     get_attribute,
     get_attributes_by_tag,
+    create_document,
 };

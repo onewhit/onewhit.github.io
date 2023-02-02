@@ -1,12 +1,14 @@
 - [x] 2023-01-30 Make sure the page goes to the right page on reload, preserves state
-- [ ] Look into react rules for Forms
-- [ ] Hide login form when logged in, replace with logout button
+- [x] Look into react rules for Forms
+- [x] Hide login form when logged in, replace with logout button
 - [x] Get Firebase authentication working for a single user
   - [x] Login
   - [x] Logout
-- [ ] Figure out data CRUD operations
-  - [ ] Loading data
-  - [ ] Adding data
-  - [ ] Deleting data
-  - [ ] editing data
-  - [ ] Firebase cloudstore rules
+- [x] Figure out data CRUD operations
+  - [x] Loading data
+  - [x] Adding data
+  - [x] Deleting data
+  - [x] editing data
+  - [x] Firebase cloudstore rules
+- [ ] Hide most of menu and details pages when not logged in
+- [ ] Get basic character list showing
