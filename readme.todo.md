@@ -11,4 +11,11 @@
   - [x] editing data
   - [x] Firebase cloudstore rules
 - [ ] Hide most of menu and details pages when not logged in
+- [ ] Get mobile layout view working
 - [ ] Get basic character list showing
+
+# Features
+- [ ] Realtime combat updates, HP, items, AP
+
+# Item Ideas
+- [ ] Item that grants AP if used in certain way

@@ -1,3 +1,24 @@
+/* Adding some hover, visitied, etc styles that aren't handled well in react inline styles */
+
+.main_nav_link:visited {
+    color: inherit
+}
+
+.main_nav_link:hover {
+    background-color: #e3e3e3
+}
+
+.main_nav_link.active {
+    /* background: hsl(224, 98%, 58%); */
+    background: white;
+    /* color: white */
+}
+
+.main_nav_link {
+    color: #eeb004
+}
+
+
 /* NOTE: This is a page provided by the react router trial project */
 
 /* html {
