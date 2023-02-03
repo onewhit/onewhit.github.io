@@ -10,12 +10,13 @@
   - [x] Deleting data
   - [x] editing data
   - [x] Firebase cloudstore rules
-- [ ] Hide most of menu and details pages when not logged in
-- [ ] Make the border move to the bottom on movbile screens
-- [ ] Get mobile layout view working
-- [ ] Get basic character list showing
+- [x] Hide most of menu and details pages when not logged in
+- [x] Get mobile layout view working
 - [x] Fix the orange links
-- [ ] Set up the banner
+- [x] Set up the banner
+- [ ] Make the border move to the bottom on mobile screens
+- [ ] Get mobile menu to hide and re-show with button
+- [ ] Get basic character list showing
 
 # Features
 - [ ] Item generator and tracker
