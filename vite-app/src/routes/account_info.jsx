@@ -6,70 +6,26 @@ import { create_new_firebase_user, login_firebase_user, logout_firebase_user } f
 
 export default function AccountInfo() {
 
-    const [action_message, set_action_message] = useState(null);
-
-    // function append_action_message(next_message) {
-    //     set_action_message((current_message) => current_message + " " + next_message);
-    // }
-
     function doAction(e) {
         e.preventDefault();
         create_new_firebase_user();
     }
 
-    // function handle_delete_user_form(e) {
-    //     e.preventDefault();
-    //     delete_firebase_user(set_action_message);
-    // }
-
-    // function handle_login_button(e) {
-    //     e.preventDefault();
-    //     console.log("Login button clicked")
-    //     // delete_firebase_user(set_action_message);
-    // }
-
-    // async function login_firebase_user({request, params}) {
-
-    //     // console.log("Login?");
-    //     // console.log(request);
-
-    //     let formData = await request.formData();
-    //     console.log(formData.get("username"));
-    //     return true;
-    // }
-
     const global_context = useContext(GlobalContext);
-
-    // console.log(global_context);
 
     return (
         <React.Fragment>
-            <div>Here is the account info</div>
-            <div>Current User: {global_context.user != null ? global_context.user.email : "Not logged in"}</div>
+            {global_context.user == null ? <p>Log in to see the full menu and options</p> : <p>Here is the account info</p>}
+            <p>Current User: {global_context.user != null ? global_context.user.email : "Not logged in"}</p>
             <div>
-                {/* <button onClick={doAction}>Do Action</button> */}
-                {/* <Form method="post">
-                    <input label="Username" type="text" name="username" defaultValue="tarronlane@gmail.com" />
-                    <input label="Password" type="password" name="password" defaultValue="cannonballs" />
-                    <button type="submit" name="intent" value="login">Log in</button>
-                    <button type="submit" name="intent" value="logout">Log out</button>
-                </Form> */}
-                <LoginForm set_action_message={set_action_message}/>
-                {/* <form onSubmit={doAction}>
-                    <button type="submit">Create New User</button>
-                </form> */}
-                {/* <form onSubmit={doAnotherAction}>
-                    <button type="submit">Delete User</button>
-                </form> */}
-                <div>Action Message Below:</div>
-                <div>{action_message}</div>
+                <LoginForm />
             </div>
         </React.Fragment>
     )
 }
 
 // Form to handle logging in and logging out
-function LoginForm({set_action_message}) {
+function LoginForm() {
     const global_context = useContext(GlobalContext);
     const user = global_context.user;
     const is_auth_checked = global_context.is_auth_checked;
@@ -80,14 +36,14 @@ function LoginForm({set_action_message}) {
 
     function handle_login(e) {
         e.preventDefault();
-        set_action_message("Logging in...");
-        login_firebase_user(field_username, field_password, set_action_message);
+        global_context.set_banner("Logging in...");
+        login_firebase_user(field_username, field_password, global_context.set_banner);
     }
 
     function handle_logout(e) {
         e.preventDefault();
-        set_action_message("Logging out...");
-        logout_firebase_user(set_action_message);
+        global_context.set_banner("Logging out...");
+        logout_firebase_user(global_context.set_banner);
     }
 
     return (
@@ -95,8 +51,12 @@ function LoginForm({set_action_message}) {
         is_logged_in
         ? <button onClick={handle_logout}>Log out</button>
         : <form onSubmit={handle_login}>
-            <input label="Username" type="text" name="username" onChange={(event) => set_field_username(event.target.value)} />
-            <input label="Password" type="password" name="password" onChange={(event) => set_field_password(event.target.value)} />
+            <label htmlFor="username_field">Username: </label>
+            <input label="Username" type="text" id="username_field" name="username" onChange={(event) => set_field_username(event.target.value)} />
+            <br />
+            <label htmlFor="password_field">Password: </label>
+            <input label="Password" type="password" id="password_field" name="password" onChange={(event) => set_field_password(event.target.value)} />
+            <br />
             <button type="submit">Log in</button>
         </form>
     );

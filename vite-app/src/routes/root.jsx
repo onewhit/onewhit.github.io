@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import { Outlet, Link, useLocation, Form, NavLink } from "react-router-dom";
 import { GlobalContext } from "../global_context";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
@@ -9,16 +9,13 @@ import colors from "../utility/colors.jsx";
 import configs from "../utility/configs.jsx";
 
 export default function Root() {
-    let title_style = {
-    }
-
     // const global_context = useContext(GlobalContext);
 
     // Top Level State Values
     const [global_context, set_global_context] = useState(useContext(GlobalContext));
+
     // const [modified_global_context, set_modified_global_context] = useState(global_context);
     const [user, set_user] = useState(null);
-    const [banner, set_banner] = useState(null);
     const [window_width, set_window_width] = useState(window.innerWidth);
     const [window_height, set_window_height] = useState(window.innerHeight);
     const [is_mobile_view, set_is_mobile_view] = useState(window.innerWidth < configs.mobile_collapse_point ? true : false);
@@ -36,6 +33,18 @@ export default function Root() {
         }));
     }
 
+    // Allow anything with access to the context to also edit the context
+    useEffect(() => {
+        // console.log("setting global context banner functions");
+        // // Add the banner state and function
+        set_global_context((old_context) => ({
+            ...old_context,
+            // banner: banner_message,
+            // set_banner: set_banner_message,
+            set_global_context: set_global_context,
+        }));
+    },[]);
+
     // Set up window sizing listeners
     useEffect(() => {
         update_window_dimensions();
@@ -43,15 +52,6 @@ export default function Root() {
         // The returned value executes on unmount
         return (() => window.removeEventListener("resize", update_window_dimensions))
     }, []);
-
-    useEffect(() => {
-        // Add the banner state and function
-        set_global_context((old_context) => ({
-            ...old_context,
-            banner: banner,
-            set_banner: set_banner,
-        }));
-    },[]);
 
     useEffect(() => {
         // Queue up the auth state changes
@@ -120,6 +120,7 @@ function LoadingScreen() {
 
 function Details() {
     const global_context = useContext(GlobalContext);
+
     return (
         <div id="detail">
             {useLocation().pathname == "/" ? <LandingContent /> : <Outlet />}
@@ -128,6 +129,8 @@ function Details() {
 }
 
 function MainNavigation() {
+
+    const global_context = useContext(GlobalContext);
 
     const link_style = {
         textDecoration: "none",
@@ -140,16 +143,30 @@ function MainNavigation() {
         padding: "1rem",
     }
 
+    const list_items = [];
+
+    if (global_context.user != null && global_context.user.uid != null) {
+        list_items.push(<NavLink key="menu_item_1" className="main_nav_link" style={link_style} onClick={(event) => global_context.set_banner("")} to={'item_generator'}>Item Generator</NavLink>);
+        list_items.push(<NavLink key="menu_item_2" className="main_nav_link" style={link_style} onClick={(event) => global_context.set_banner("")} to={'npc_generator'}>NPC Generator</NavLink>);
+        list_items.push(<NavLink key="menu_item_3" className="main_nav_link" style={link_style} onClick={(event) => global_context.set_banner("")} to={'character_tracker'}>Character Tracker</NavLink>);
+    }
+        
+    list_items.push(<NavLink key="menu_item_4" className="main_nav_link" style={link_style} to={'account_info'}>Account Info</NavLink>);
+
     return (
         <>
             {/* <Link style={link_style} to={'item_generator'}><div>Item Generator</div></Link>
             <Link style={link_style} to={'npc_generator'}><div>NPC Generator</div></Link>
             <Link style={link_style} to={'character_tracker'}><div>Character Tracker</div></Link>
             <Link style={link_style} to={'account_info'}><div>Account Info</div></Link> */}
-            <NavLink className="main_nav_link" style={link_style} to={'item_generator'}>Item Generator</NavLink>
-            <NavLink className="main_nav_link" style={link_style} to={'npc_generator'}>NPC Generator</NavLink>
-            <NavLink className="main_nav_link" style={link_style} to={'character_tracker'}>Character Tracker</NavLink>
-            <NavLink className="main_nav_link" style={link_style} to={'account_info'}>Account Info</NavLink>
+            {/* {
+                global_context.user != null && global_context.user.uid != null 
+                ?  (
+
+                )
+                : 
+            } */}
+            {list_items}
         </>
     );
 }
