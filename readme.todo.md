@@ -17,6 +17,7 @@
 - [ ] Make the border move to the bottom on mobile screens
 - [ ] Get mobile menu to hide and re-show with button
 - [ ] Get basic character list showing
+- [ ] Add a "Logged in" message after successful login, and update to use the new banner settings
 
 # Features
 - [ ] Item generator and tracker
