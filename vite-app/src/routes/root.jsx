@@ -35,12 +35,9 @@ export default function Root() {
 
     // Allow anything with access to the context to also edit the context
     useEffect(() => {
-        // console.log("setting global context banner functions");
         // // Add the banner state and function
         set_global_context((old_context) => ({
             ...old_context,
-            // banner: banner_message,
-            // set_banner: set_banner_message,
             set_global_context: set_global_context,
         }));
     },[]);
@@ -146,11 +143,11 @@ function MainNavigation() {
     const list_items = [];
 
     if (global_context.user != null && global_context.user.uid != null) {
-        list_items.push(<NavLink key="menu_item_1" className="main_nav_link" style={link_style} onClick={(event) => global_context.set_banner("")} to={'item_generator'}>Item Generator</NavLink>);
-        list_items.push(<NavLink key="menu_item_2" className="main_nav_link" style={link_style} onClick={(event) => global_context.set_banner("")} to={'npc_generator'}>NPC Generator</NavLink>);
-        list_items.push(<NavLink key="menu_item_3" className="main_nav_link" style={link_style} onClick={(event) => global_context.set_banner("")} to={'character_tracker'}>Character Tracker</NavLink>);
+        list_items.push(<NavLink key="menu_item_1" className="main_nav_link" style={link_style} onClick={(event) => global_context.clear_banner()} to={'item_generator'}>Item Generator</NavLink>);
+        list_items.push(<NavLink key="menu_item_2" className="main_nav_link" style={link_style} onClick={(event) => global_context.clear_banner()} to={'npc_generator'}>NPC Generator</NavLink>);
+        list_items.push(<NavLink key="menu_item_3" className="main_nav_link" style={link_style} onClick={(event) => global_context.clear_banner()} to={'character_tracker'}>Character Tracker</NavLink>);
     }
-        
+
     list_items.push(<NavLink key="menu_item_4" className="main_nav_link" style={link_style} to={'account_info'}>Account Info</NavLink>);
 
     return (
@@ -160,11 +157,11 @@ function MainNavigation() {
             <Link style={link_style} to={'character_tracker'}><div>Character Tracker</div></Link>
             <Link style={link_style} to={'account_info'}><div>Account Info</div></Link> */}
             {/* {
-                global_context.user != null && global_context.user.uid != null 
+                global_context.user != null && global_context.user.uid != null
                 ?  (
 
                 )
-                : 
+                :
             } */}
             {list_items}
         </>

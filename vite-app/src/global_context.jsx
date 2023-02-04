@@ -6,7 +6,7 @@ const context_obj = {
     window_width: null,
     window_height: null,
     is_mobile_view: null,
-    banner: null,
+    banner: [],
     set_global_context: null,
 }
 

@@ -36,14 +36,14 @@ function LoginForm() {
 
     function handle_login(e) {
         e.preventDefault();
-        global_context.set_banner("Logging in...");
-        login_firebase_user(field_username, field_password, global_context.set_banner);
+        global_context.replace_banner("Logging in...");
+        login_firebase_user(field_username, field_password, global_context.append_banner);
     }
 
     function handle_logout(e) {
         e.preventDefault();
-        global_context.set_banner("Logging out...");
-        logout_firebase_user(global_context.set_banner);
+        global_context.replace_banner("Logging out...");
+        logout_firebase_user(global_context.append_banner);
     }
 
     return (

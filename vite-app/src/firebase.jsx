@@ -4,7 +4,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc } from "firebase/firestore";
 
 const firebase_config = {
     apiKey: "AIzaSyB7KcGLNztLk0KmjJ7CCyIQmwvchLaRbCw",
@@ -35,10 +35,8 @@ function create_new_firebase_user() {
     })
 }
 
-function delete_firebase_user(set_action_message) {
-    const action_message = "No code written yet to delete a user";
-    set_action_message(action_message);
-    console.log(action_message);
+function delete_firebase_user(append_banner) {
+    return append_banner("No code written yet to delete a user");
 }
 
 function login_firebase_user(username, password, set_action_message) {
@@ -58,9 +56,9 @@ function login_firebase_user(username, password, set_action_message) {
     );
 }
 
-async function logout_firebase_user(set_action_message) {
+async function logout_firebase_user(append_banner) {
     return signOut(firebase_auth).then(
-        (value) => set_action_message((current_message) => current_message + " Success!")
+        (value) => append_banner("Success!")
     );
 }
 
@@ -90,23 +88,47 @@ async function get_attributes_by_tag(tag_name) {
     });
 }
 
-async function create_document(collection_name, document_name, new_document_data) {
+async function create_document(collection_name, document_name, new_document_data, is_merge=true) {
     // Make sure the document doesn't already exist
 
-    console.log(collection_name, document_name, new_document_data);
+    // console.log(collection_name, document_name, new_document_data);
 
-    const existing_doc = await getDoc(doc(firebase_db, collection_name, document_name))
+    // const existing_doc = await getDoc(doc(firebase_db, collection_name, document_name))
 
-    if (existing_doc.exists()) {
-        console.log("document already exists");
-    }
-    else {
-        console.log("document is new")
-    }
+    // if (existing_doc.exists()) {
+    //     console.log("document already exists");
+    // }
+    // else {
+    //     console.log("document is new")
+    // }
 
     // return await setDoc(doc(firebase_db, collection_name, document_name), {
 
     // })
+    const doc_ref = doc(firebase_db, collection_name, document_name);
+    await setDoc(doc_ref, new_document_data, {merge: is_merge});
+}
+
+async function clear_collection (collection_name, append_indent_banner) {
+    const query_snapshot = await getDocs(collection(firebase_db, collection_name));
+
+    if (query_snapshot.docs.length == 0) {
+        append_indent_banner("No existing items to delete.");
+        return;
+    }
+
+    query_snapshot.forEach((doc_snapshot) => {
+        // console.log(doc_snapshot.id);
+        append_indent_banner("Deleting item with key\"" + doc_snapshot.id + "\"...");
+        deleteDoc(doc(firebase_db, collection_name, doc_snapshot.id));
+    });
+}
+
+async function get_is_collection_exists(collection_name) {
+    const the_collection = collection(firebase_db, collection_name);
+    const query_snapshot = await getDocs(the_collection);
+    return query_snapshot.docs.length > 0 ? true : false;
+
 }
 
 export {
@@ -120,4 +142,6 @@ export {
     get_attribute,
     get_attributes_by_tag,
     create_document,
+    clear_collection,
+    get_is_collection_exists,
 };
