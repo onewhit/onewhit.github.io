@@ -14,8 +14,12 @@
 - [x] Get mobile layout view working
 - [x] Fix the orange links
 - [x] Set up the banner
-- [ ] Make the border move to the bottom on mobile screens
-- [ ] Get mobile menu to hide and re-show with button
+- [x] Make the border move to the bottom on mobile screens
+- [x] Get mobile menu to hide and re-show with button
+- [ ] Fix the Accountinfo page on login not maintaining the banner, and it should redirect to the main landing page after login
+- [ ] Add die roller option to select D setting
+- [ ] Upload characteristics list
+- [ ] Add item generator to the gen page
 - [ ] Get basic character list showing
 - [ ] Add a "Logged in" message after successful login, and update to use the new banner settings
 

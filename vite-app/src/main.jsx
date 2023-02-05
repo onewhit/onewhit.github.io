@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
 import DetailsLayout from "./utility/details_layout.jsx";
 
@@ -15,11 +15,11 @@ import NpcGenerator from "./routes/npc_generator";
 import CharacterTracker from "./routes/character_tracker";
 import AccountInfo from "./routes/account_info";
 import Generator from "./routes/generator.jsx";
+import GlobalContext from "./global_context.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        // element: <div>Hello world!</div>,
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [

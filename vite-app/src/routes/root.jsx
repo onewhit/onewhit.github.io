@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useContext, useEffect, useCallback } from "react";
-import { Outlet, Link, useLocation, Form, NavLink } from "react-router-dom";
+import { Outlet, Link, useLocation, Form, NavLink, useNavigate } from "react-router-dom";
 import GlobalContext from "../global_context";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import ajax_loader from "../../assets/ajax_loader.gif";
@@ -10,9 +10,9 @@ import configs from "../utility/configs.jsx";
 import ham_menu_black from "../../assets/ham_menu_black.svg";
 import back_arrow from "../../assets/back_arrow.svg";
 import MainNavigation from "../components/main_navigation.jsx";
+import AccountInfo from "./account_info";
 
 export default function Root() {
-    // const global_context = useContext(GlobalContext);
 
     // Top Level State Values
     const [global_context, set_global_context] = useState(useContext(GlobalContext));
@@ -201,16 +201,7 @@ function Details() {
     return (
         <div id="detail" style={detail_style}>
             {global_context.is_mobile_view && <TitleBar /> }
-            <Outlet />
+            {global_context.user == null ? <DetailsLayout page_title="Log in to Access Tool" children={<AccountInfo />} /> : <Outlet />}
         </div>
     );
-}
-
-function LandingContent() {
-    return (
-        // <React.Fragment>
-        //     <div>Landing page</div>
-        // </React.Fragment>
-        <DetailsLayout page_title="Landing Screen" children={<p>Click on a menu item to see actual content</p>}/>
-    )
 }
