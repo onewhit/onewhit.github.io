@@ -23,6 +23,7 @@
 - [ ] Add item generator to the gen page
 - [ ] Get basic character list showing
 - [ ] Add a "Logged in" message after successful login, and update to use the new banner settings
+- [ ] Add a "clear" button to the banner to get rid of it without having to change pages
 
 # Features
 - [ ] Item generator and tracker

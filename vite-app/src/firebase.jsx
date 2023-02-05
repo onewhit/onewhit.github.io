@@ -44,13 +44,13 @@ function login_firebase_user(username, password, set_action_message) {
         signInWithEmailAndPassword(firebase_auth, username, password)
             .then(
                 (value) => {
-                    set_action_message((current_message) => current_message + " Success!")
+                    return set_action_message(" Login Successful!")
 
                 }
             )
             .catch(
                 (error) => {
-                    set_action_message((current_message) => current_message + " Failed. Error Code [" + error.code + "]. Error Message [" + error.message + "]")
+                    return set_action_message(" Failed. Error Code [" + error.code + "]. Error Message [" + error.message + "]")
                 }
             )
     );

@@ -42,6 +42,18 @@ function Banner () {
         return append_banner(indent_string.repeat(indent_level) + "> " + message);
     }
 
+    function append_inline_banner(message) {
+        console.log("adding " + message + " to banner");
+        return set_banner((old_banner) => {
+            console.log("calling set banner");
+            const new_banner = [...old_banner];
+            const last_index = new_banner.length-1;
+            new_banner[last_index] = new_banner[last_index] + message;
+            return [...new_banner];
+
+        })
+    }
+
     // Empty out the banner array
     function clear_banner() {
         return set_banner([]);
@@ -55,6 +67,7 @@ function Banner () {
             append_banner: append_banner,
             clear_banner: clear_banner,
             append_indent_banner: append_indent_banner,
+            append_inline_banner: append_inline_banner,
         }));
     },[]);
 

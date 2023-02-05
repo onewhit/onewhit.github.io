@@ -37,13 +37,13 @@ function LoginForm() {
     function handle_login(event) {
         event.preventDefault();
         global_context.replace_banner("Logging in...");
-        login_firebase_user(field_username, field_password, global_context.append_banner);
+        return login_firebase_user(field_username, field_password, global_context.append_inline_banner);
     }
 
     function handle_logout(e) {
         e.preventDefault();
         global_context.replace_banner("Logging out...");
-        logout_firebase_user(global_context.append_banner);
+        return logout_firebase_user(global_context.append_banner);
     }
 
     return (
@@ -62,21 +62,4 @@ function LoginForm() {
     );
 }
 
-// async function handle_login_form({request}) {
-//     let form_data = await request.formData();
-//     let username = form_data.get("username");
-//     let password = form_data.get("password");
-//     let intent = form_data.get("intent");
-
-//     if (intent == "login") {
-//         await login_firebase_user(username, password);
-//     }
-
-//     if (intent == "logout") {
-//         await logout_firebase_user();
-//     }
-
-//     return true;
-// }
-
-// export { handle_login_form };
+export { LoginForm };

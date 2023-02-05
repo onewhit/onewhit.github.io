@@ -4,7 +4,7 @@ import { Outlet, Link, useLocation, Form, NavLink, useNavigate } from "react-rou
 import GlobalContext from "../global_context";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import ajax_loader from "../../assets/ajax_loader.gif";
-import DetailsLayout from "../utility/details_layout.jsx";
+import DetailsLayout from "../components/details_layout.jsx";
 import colors from "../utility/colors.jsx";
 import configs from "../utility/configs.jsx";
 import ham_menu_black from "../../assets/ham_menu_black.svg";
@@ -201,7 +201,8 @@ function Details() {
     return (
         <div id="detail" style={detail_style}>
             {global_context.is_mobile_view && <TitleBar /> }
-            {global_context.user == null ? <DetailsLayout page_title="Log in to Access Tool" children={<AccountInfo />} /> : <Outlet />}
+            {/* {global_context.user == null ? <DetailsLayout page_title="Log in to Access Tool" children={<AccountInfo />} /> : <Outlet />} */}
+            <Outlet />
         </div>
     );
 }

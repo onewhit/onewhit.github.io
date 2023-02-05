@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ReactDOM from "react-dom/client";
-import DetailsLayout from "./utility/details_layout.jsx";
+import DetailsLayout from "./components/details_layout.jsx";
 
 import {
     createBrowserRouter,

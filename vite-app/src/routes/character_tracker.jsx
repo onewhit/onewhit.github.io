@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { create_document } from "../firebase.jsx";
+import GlobalContext from "../global_context.jsx";
+import { LoginForm } from "./account_info.jsx";
 
 export default function CharacterTracker() {
 
+    const global_context = useContext(GlobalContext);
+
     return (
     <>
-        <div>Here is the character tracker content</div>
-        <div></div>
-        <FormCreateCharacter />
+        {/* <div></div> */}
+        {global_context.user != null ? <FormCreateCharacter /> : <><p>Log in to view this page</p><LoginForm /></>}
     </>
     )
 }

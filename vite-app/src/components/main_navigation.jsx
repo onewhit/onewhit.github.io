@@ -24,11 +24,11 @@ export default function MainNavigation () {
     }
 
 
-    if (global_context.user != null && global_context.user.uid != null) {
-        list_items.push(<NavLink key="menu_item_1" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'item_generator'}>Item Generator</NavLink>);
-        list_items.push(<NavLink key="menu_item_2" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'npc_generator'}>NPC Generator</NavLink>);
-        list_items.push(<NavLink key="menu_item_3" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'character_tracker'}>Character Tracker</NavLink>);
-    }
+    // if (global_context.user != null && global_context.user.uid != null) {
+    list_items.push(<NavLink key="menu_item_1" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'item_generator'}>Item Generator</NavLink>);
+    list_items.push(<NavLink key="menu_item_2" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'npc_generator'}>NPC Generator</NavLink>);
+    list_items.push(<NavLink key="menu_item_3" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'character_tracker'}>Character Tracker</NavLink>);
+    // }
 
     list_items.push(<NavLink key="menu_item_4" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'account_info'}>Account Info</NavLink>);
 
