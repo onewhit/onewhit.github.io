@@ -1,12 +1,15 @@
 import React from "react";
 import { useState, useContext, useEffect, useCallback } from "react";
 import { Outlet, Link, useLocation, Form, NavLink } from "react-router-dom";
-import { GlobalContext } from "../global_context";
+import GlobalContext from "../global_context";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import ajax_loader from "../../assets/ajax_loader.gif";
 import DetailsLayout from "../utility/details_layout.jsx";
 import colors from "../utility/colors.jsx";
 import configs from "../utility/configs.jsx";
+import ham_menu_black from "../../assets/ham_menu_black.svg";
+import back_arrow from "../../assets/back_arrow.svg";
+import MainNavigation from "../components/main_navigation.jsx";
 
 export default function Root() {
     // const global_context = useContext(GlobalContext);
@@ -19,6 +22,14 @@ export default function Root() {
     const [window_width, set_window_width] = useState(window.innerWidth);
     const [window_height, set_window_height] = useState(window.innerHeight);
     const [is_mobile_view, set_is_mobile_view] = useState(window.innerWidth < configs.mobile_collapse_point ? true : false);
+    // const [is_show_sidebar, toggle_is_show_sidebar] = useState(global_context.is_show_sidebar);
+
+    function toggle_is_show_sidebar() {
+        return set_global_context((old_context) => ({
+            ...old_context,
+            is_show_sidebar: !old_context.is_show_sidebar
+        }));
+    }
 
     function update_window_dimensions() {
         const new_is_mobile_view = (window.innerWidth < configs.mobile_collapse_point ? true : false)
@@ -39,6 +50,7 @@ export default function Root() {
         set_global_context((old_context) => ({
             ...old_context,
             set_global_context: set_global_context,
+            toggle_is_show_sidebar: toggle_is_show_sidebar,
         }));
     },[]);
 
@@ -64,48 +76,108 @@ export default function Root() {
     const root_style = {
         display: "flex",
         flexGrow: "1",
+        fontFamily: "sans-serif",
     }
 
     if (global_context.is_mobile_view) {
-        root_style.flexDirection = "column"
+        // root_style.flexDirection = "column"
     }
 
     return (
         <GlobalContext.Provider value={global_context}>
-            <React.Fragment>
-                <div style={root_style}>
-                    <div style={{
-                        backgroundColor: colors.sidebar_grey,
-                        // padding: "1rem",
-                        borderRight: "solid 1px #e3e3e3",
-                        display: "flex",
-                        flexDirection: "column",
-                        // justifyContent: "center",
-                        alignItems: "stretch",
-                        textAlign: "center",
-                    }}>
-                        <Link style={{
-                            textDecoration: 'none',
-                            color: '#121212',
-                            padding: "1rem",
-                        }} to={"/"}>
-                            <h1>RPG Generator</h1>
-                        </Link>
-                        <div style={{textAlign: "center", padding: "1rem"}}>(Work in Progress)</div>
-                        <div style={{paddingTop: "1rem"}}></div>
-                        { global_context.is_auth_checked ? <MainNavigation /> : <LoadingScreen />}
-                        {/* <LoadingScreen /> */}
-                    </div>
-                    <div style={{
-                        // backgroundColor: colors.sidebar_grey,
-                        padding: "1rem",
-                    }}>
-                        { global_context.is_auth_checked ? <Details /> : <LoadingScreen />}
-                        {/* <LoadingScreen /> */}
-                    </div>
-                </div>
-            </React.Fragment>
+            <div style={root_style}>
+                {(global_context.is_show_sidebar || !global_context.is_mobile_view) && <Sidebar />}
+                { global_context.is_auth_checked ? <Details /> : <LoadingScreen />}
+            </div>
         </GlobalContext.Provider>
+    );
+}
+
+// =============================================================================
+// Title Bar
+// =============================================================================
+
+function TitleBar () {
+
+    const global_context = useContext(GlobalContext);
+    
+    function handle_title_icon_click(event) {
+        event.preventDefault();
+        global_context.toggle_is_show_sidebar();
+    }
+
+    const title_bar_style = {
+        display: "flex",
+        justifyContent: "center",
+        position: "relative",
+        marginBottom: "1em"
+    }
+
+    const title_link_style = {
+        textDecoration: 'none',
+        color: '#121212',
+        display: "inline",
+        paddingLeft: "1.5em",
+        paddingRight: "1.5em",
+        fontSize: "1.5em",
+        fontWeight: "bold",
+        // flexGrow: "1",
+    }
+
+    const title_icon_style = {
+        height: "1em",
+        width: "auto",
+        marginRight: "1em",
+        position: "absolute",
+        left: "0"
+    }
+
+    const title_icon = (global_context.is_show_sidebar ? back_arrow : ham_menu_black)
+
+    return (
+        <div style={title_bar_style}>
+            {global_context.is_mobile_view && <img className="hover-element" src={title_icon} style={title_icon_style} onClick={handle_title_icon_click}/>}
+            <Link style={title_link_style} to={"/"}>{global_context.site_title}</Link>
+        </div>
+    );
+}
+
+// =============================================================================
+// Sidebar
+// =============================================================================
+
+function Sidebar () {
+    const global_context = useContext(GlobalContext);
+
+    let sidebar_style = {
+        backgroundColor: colors.sidebar_grey,
+        // padding: "1rem",
+        borderRight: "solid 1px #e3e3e3",
+        display: "flex",
+        flexDirection: "column",
+        // justifyContent: "center",
+        alignItems: "stretch",
+        textAlign: "center",
+        padding: "1rem"
+    }
+
+    if (global_context.is_mobile_view) {
+        sidebar_style = {
+            ...sidebar_style,
+            position: "fixed",
+            top: "0",
+            left: "0",
+            bottom: "0",
+            right: "15%",
+            zIndex: "10",
+        }
+    }
+
+    return (
+        <div style={sidebar_style}>
+            <TitleBar />
+            { global_context.is_auth_checked ? <MainNavigation /> : <LoadingScreen />}
+        </div>
     );
 }
 
@@ -118,53 +190,19 @@ function LoadingScreen() {
 function Details() {
     const global_context = useContext(GlobalContext);
 
-    return (
-        <div id="detail">
-            {useLocation().pathname == "/" ? <LandingContent /> : <Outlet />}
-        </div>
-    );
-}
-
-function MainNavigation() {
-
-    const global_context = useContext(GlobalContext);
-
-    const link_style = {
-        textDecoration: "none",
-        paddingTop: "1rem",
-        paddingBottom: "1rem",
-        display: "block",
-        textAlign: "center",
-        // justifyContent: "center"
-        borderTop: "solid 1px #e3e3e3",
+    const detail_style = {
         padding: "1rem",
+        flexGrow: "1",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "stretch",
     }
-
-    const list_items = [];
-
-    if (global_context.user != null && global_context.user.uid != null) {
-        list_items.push(<NavLink key="menu_item_1" className="main_nav_link" style={link_style} onClick={(event) => global_context.clear_banner()} to={'item_generator'}>Item Generator</NavLink>);
-        list_items.push(<NavLink key="menu_item_2" className="main_nav_link" style={link_style} onClick={(event) => global_context.clear_banner()} to={'npc_generator'}>NPC Generator</NavLink>);
-        list_items.push(<NavLink key="menu_item_3" className="main_nav_link" style={link_style} onClick={(event) => global_context.clear_banner()} to={'character_tracker'}>Character Tracker</NavLink>);
-    }
-
-    list_items.push(<NavLink key="menu_item_4" className="main_nav_link" style={link_style} to={'account_info'}>Account Info</NavLink>);
 
     return (
-        <>
-            {/* <Link style={link_style} to={'item_generator'}><div>Item Generator</div></Link>
-            <Link style={link_style} to={'npc_generator'}><div>NPC Generator</div></Link>
-            <Link style={link_style} to={'character_tracker'}><div>Character Tracker</div></Link>
-            <Link style={link_style} to={'account_info'}><div>Account Info</div></Link> */}
-            {/* {
-                global_context.user != null && global_context.user.uid != null
-                ?  (
-
-                )
-                :
-            } */}
-            {list_items}
-        </>
+        <div id="detail" style={detail_style}>
+            {global_context.is_mobile_view && <TitleBar /> }
+            <Outlet />
+        </div>
     );
 }
 

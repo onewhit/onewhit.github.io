@@ -14,6 +14,7 @@ import ItemGenerator from "./routes/item_generator";
 import NpcGenerator from "./routes/npc_generator";
 import CharacterTracker from "./routes/character_tracker";
 import AccountInfo from "./routes/account_info";
+import Generator from "./routes/generator.jsx";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
+            {
+                path: "/",
+                element: <DetailsLayout page_title="Generator" children={<Generator />} />
+            },
             {
                 path: "item_generator",
                 element: <DetailsLayout page_title="Item Generator" children={<ItemGenerator />} />

@@ -8,6 +8,10 @@ const context_obj = {
     is_mobile_view: null,
     banner: [],
     set_global_context: null,
+    site_title: "RPG Assistant",
+    is_show_sidebar: false,
 }
 
-export const GlobalContext = createContext(context_obj);
+const GlobalContext = createContext(context_obj);
+
+export default GlobalContext;

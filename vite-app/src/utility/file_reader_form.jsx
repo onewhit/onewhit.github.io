@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { clear_collection, create_document, get_is_collection_exists } from "../firebase.jsx";
-import { GlobalContext } from "../global_context";
+import GlobalContext from "../global_context";
 import capitalize_each_word from "./capitalize_each_word.js";
 
 const FileReaderForm = () => {

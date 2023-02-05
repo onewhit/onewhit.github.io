@@ -30,8 +30,6 @@ class MainMenu extends React.Component {
             menu_style.transform = (this.props.hidden ? 'translateY(-100%)' : 'translateY(0)');
         }
 
-        console.log(menu_style);
-
         return (
             <div style={menu_style}>
                 {/* <ExternalLinkItem text='Christmas Lists' page="../christmaslists/" is_server_link={true} /> */}

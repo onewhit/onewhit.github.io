@@ -1,13 +1,30 @@
 
-import { GlobalContext } from "../global_context";
+import GlobalContext from "../global_context";
 import { useContext, useState, useEffect } from "react";
 
 export default function DetailsLayout({page_title, children}) {
 
-    const global_context = useContext(GlobalContext);
+    const detail_title_style = {
+        fontSize: "1.5em",
+        marginBottom: "1em"
+    }
 
+    return (<>
+        <div style={detail_title_style}>{page_title}</div>
+        <Banner />
+        {children}
+    </>)
+}
+
+
+// =============================================================================
+// Banner
+// =============================================================================
+function Banner () {
+    const global_context = useContext(GlobalContext);
+    
     // Make the banner part of the state so it will trigger re-render of the layout banner elements
-    const [banner, set_banner] = useState(global_context.banner);
+    const [banner, set_banner] = useState([]);
 
     // Clear out the banner array and start it over with a new message
     function replace_banner(message) {
@@ -42,9 +59,6 @@ export default function DetailsLayout({page_title, children}) {
     },[]);
 
     return (<>
-        <h2>{page_title}</h2>
-        <hr />
-        {children}
         {banner.map((message) => <p key={message}>{message}</p>)}
     </>)
 }

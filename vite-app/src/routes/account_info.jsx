@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useContext } from "react";
-import { GlobalContext } from "../global_context";
+import GlobalContext from "../global_context";
 import { create_new_firebase_user, login_firebase_user, logout_firebase_user } from "../firebase";
 // import { Form } from "react-router-dom";
 

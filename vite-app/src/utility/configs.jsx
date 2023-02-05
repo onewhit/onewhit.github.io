@@ -1,5 +1,5 @@
 const configs = {
-    mobile_collapse_point: 1000
+    mobile_collapse_point: 650
 };
 
 export default configs;
