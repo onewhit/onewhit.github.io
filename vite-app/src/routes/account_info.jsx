@@ -31,8 +31,8 @@ function LoginForm() {
     const is_auth_checked = global_context.is_auth_checked;
     const is_logged_in = (user != null && user.email != null) ? true : false;
 
-    const [field_username, set_field_username] = useState("tarronlane@gmail.com");
-    const [field_password, set_field_password] = useState("cannonballs");
+    const [field_username, set_field_username] = useState("");
+    const [field_password, set_field_password] = useState("");
 
     function handle_login(event) {
         event.preventDefault();
