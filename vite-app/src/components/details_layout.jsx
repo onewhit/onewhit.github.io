@@ -43,9 +43,7 @@ function Banner () {
     }
 
     function append_inline_banner(message) {
-        console.log("adding " + message + " to banner");
         return set_banner((old_banner) => {
-            console.log("calling set banner");
             const new_banner = [...old_banner];
             const last_index = new_banner.length-1;
             new_banner[last_index] = new_banner[last_index] + message;

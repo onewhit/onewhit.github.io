@@ -1,0 +1,18 @@
+{
+    "greed": {
+        "tags": [
+            "item",
+            "npc"
+        ]
+    },
+    "malice": {
+        "tags": [
+            "npc"
+        ]
+    },
+    "wise": {
+        "tags": [
+            "item"
+        ]
+    }
+}

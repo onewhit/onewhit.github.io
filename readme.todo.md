@@ -24,6 +24,7 @@
 - [ ] Get basic character list showing
 - [ ] Add a "Logged in" message after successful login, and update to use the new banner settings
 - [ ] Add a "clear" button to the banner to get rid of it without having to change pages
+- [ ] Add a background to the banner message so it shows up more clearly
 
 # Features
 - [ ] Item generator and tracker

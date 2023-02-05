@@ -1,0 +1,575 @@
+{
+    "alarm_bell": {
+        "display_name": "Alarm Bell"
+    },
+    "amulet": {
+        "display_name": "Amulet"
+    },
+    "animal_lead": {
+        "display_name": "Animal Lead"
+    },
+    "arrow": {
+        "display_name": "Arrow"
+    },
+    "atlas": {
+        "display_name": "Atlas"
+    },
+    "backpack": {
+        "display_name": "Backpack"
+    },
+    "badge": {
+        "display_name": "Badge"
+    },
+    "bagpipe": {
+        "display_name": "Bagpipe"
+    },
+    "ballista": {
+        "display_name": "Ballista"
+    },
+    "band": {
+        "display_name": "Band"
+    },
+    "bandage": {
+        "display_name": "Bandage"
+    },
+    "belt": {
+        "display_name": "Belt"
+    },
+    "bit": {
+        "display_name": "Bit"
+    },
+    "bolo_gun": {
+        "display_name": "Bolo Gun"
+    },
+    "bolt": {
+        "display_name": "Bolt"
+    },
+    "booby_trap": {
+        "display_name": "Booby Trap"
+    },
+    "book": {
+        "display_name": "Book"
+    },
+    "boots": {
+        "display_name": "Boots"
+    },
+    "bowl": {
+        "display_name": "Bowl"
+    },
+    "box": {
+        "display_name": "Box"
+    },
+    "bracelet": {
+        "display_name": "Bracelet"
+    },
+    "bracers": {
+        "display_name": "Bracers"
+    },
+    "brand": {
+        "display_name": "Brand"
+    },
+    "breastplate": {
+        "display_name": "Breastplate"
+    },
+    "brick": {
+        "display_name": "Brick"
+    },
+    "brooch": {
+        "display_name": "Brooch"
+    },
+    "broom": {
+        "display_name": "Broom"
+    },
+    "bucket": {
+        "display_name": "Bucket"
+    },
+    "buckler": {
+        "display_name": "Buckler"
+    },
+    "candle": {
+        "display_name": "Candle"
+    },
+    "cane": {
+        "display_name": "Cane"
+    },
+    "canteen": {
+        "display_name": "Canteen"
+    },
+    "canvas": {
+        "display_name": "Canvas"
+    },
+    "cape": {
+        "display_name": "Cape"
+    },
+    "carpet": {
+        "display_name": "Carpet"
+    },
+    "chain": {
+        "display_name": "Chain"
+    },
+    "chalice": {
+        "display_name": "Chalice"
+    },
+    "chalk": {
+        "display_name": "Chalk"
+    },
+    "charm": {
+        "display_name": "Charm"
+    },
+    "chest": {
+        "display_name": "Chest"
+    },
+    "chimes": {
+        "display_name": "Chimes"
+    },
+    "cloak": {
+        "display_name": "Cloak"
+    },
+    "cloth": {
+        "display_name": "Cloth"
+    },
+    "club": {
+        "display_name": "Club"
+    },
+    "coin": {
+        "display_name": "Coin"
+    },
+    "collar": {
+        "display_name": "Collar"
+    },
+    "comb": {
+        "display_name": "Comb"
+    },
+    "compass": {
+        "display_name": "Compass"
+    },
+    "crossbow": {
+        "display_name": "Crossbow"
+    },
+    "crown": {
+        "display_name": "Crown"
+    },
+    "crutch": {
+        "display_name": "Crutch"
+    },
+    "crystal": {
+        "display_name": "Crystal"
+    },
+    "cube": {
+        "display_name": "Cube"
+    },
+    "cudgel": {
+        "display_name": "Cudgel"
+    },
+    "dagger": {
+        "display_name": "Dagger"
+    },
+    "dart": {
+        "display_name": "Dart"
+    },
+    "diary": {
+        "display_name": "Diary"
+    },
+    "doll": {
+        "display_name": "Doll"
+    },
+    "drums": {
+        "display_name": "Drums"
+    },
+    "dulcimer": {
+        "display_name": "Dulcimer"
+    },
+    "dust": {
+        "display_name": "Dust"
+    },
+    "dye": {
+        "display_name": "Dye"
+    },
+    "figurine": {
+        "display_name": "Figurine"
+    },
+    "fishing_pole": {
+        "display_name": "Fishing Pole"
+    },
+    "flail": {
+        "display_name": "Flail"
+    },
+    "flask": {
+        "display_name": "Flask"
+    },
+    "flute": {
+        "display_name": "Flute"
+    },
+    "gauntlet": {
+        "display_name": "Gauntlet"
+    },
+    "gauze": {
+        "display_name": "Gauze"
+    },
+    "gem": {
+        "display_name": "Gem"
+    },
+    "ghost": {
+        "display_name": "Ghost"
+    },
+    "glaive": {
+        "display_name": "Glaive"
+    },
+    "gloves": {
+        "display_name": "Gloves"
+    },
+    "goggles": {
+        "display_name": "Goggles"
+    },
+    "gong": {
+        "display_name": "Gong"
+    },
+    "greatsword": {
+        "display_name": "Greatsword"
+    },
+    "halberg": {
+        "display_name": "Halberg"
+    },
+    "hammer": {
+        "display_name": "Hammer"
+    },
+    "hand_axe": {
+        "display_name": "Hand Axe"
+    },
+    "handle": {
+        "display_name": "Handle"
+    },
+    "harness": {
+        "display_name": "Harness"
+    },
+    "harp": {
+        "display_name": "Harp"
+    },
+    "helmet": {
+        "display_name": "Helmet"
+    },
+    "herbal_tea_pouch": {
+        "display_name": "Herbal Tea Pouch"
+    },
+    "hook": {
+        "display_name": "Hook"
+    },
+    "horn": {
+        "display_name": "Horn"
+    },
+    "instruments": {
+        "display_name": "Instruments"
+    },
+    "jar": {
+        "display_name": "Jar"
+    },
+    "javelin": {
+        "display_name": "Javelin"
+    },
+    "journal": {
+        "display_name": "Journal"
+    },
+    "key": {
+        "display_name": "Key"
+    },
+    "lamp": {
+        "display_name": "Lamp"
+    },
+    "leash": {
+        "display_name": "Leash"
+    },
+    "ledger": {
+        "display_name": "Ledger"
+    },
+    "leggings": {
+        "display_name": "Leggings"
+    },
+    "letter": {
+        "display_name": "Letter"
+    },
+    "lever": {
+        "display_name": "Lever"
+    },
+    "lock": {
+        "display_name": "Lock"
+    },
+    "long_bow": {
+        "display_name": "Long Bow"
+    },
+    "lure": {
+        "display_name": "Lure"
+    },
+    "lute": {
+        "display_name": "Lute"
+    },
+    "lyre": {
+        "display_name": "Lyre"
+    },
+    "mace": {
+        "display_name": "Mace"
+    },
+    "mandolin": {
+        "display_name": "Mandolin"
+    },
+    "mantle": {
+        "display_name": "Mantle"
+    },
+    "map": {
+        "display_name": "Map"
+    },
+    "marble": {
+        "display_name": "Marble"
+    },
+    "mask": {
+        "display_name": "Mask"
+    },
+    "maul": {
+        "display_name": "Maul"
+    },
+    "mining_charge": {
+        "display_name": "Mining Charge"
+    },
+    "mirror": {
+        "display_name": "Mirror"
+    },
+    "monster_part": {
+        "display_name": "Monster Part"
+    },
+    "morning_star": {
+        "display_name": "Morning Star"
+    },
+    "music_box": {
+        "display_name": "Music Box"
+    },
+    "necklace": {
+        "display_name": "Necklace"
+    },
+    "needle": {
+        "display_name": "Needle"
+    },
+    "net": {
+        "display_name": "Net"
+    },
+    "orb": {
+        "display_name": "Orb"
+    },
+    "panting": {
+        "display_name": "Panting"
+    },
+    "pearl": {
+        "display_name": "Pearl"
+    },
+    "pelt": {
+        "display_name": "Pelt"
+    },
+    "pendant": {
+        "display_name": "Pendant"
+    },
+    "pet": {
+        "display_name": "Pet"
+    },
+    "pick": {
+        "display_name": "Pick"
+    },
+    "pike": {
+        "display_name": "Pike"
+    },
+    "pin": {
+        "display_name": "Pin"
+    },
+    "plant": {
+        "display_name": "Plant"
+    },
+    "pot": {
+        "display_name": "Pot"
+    },
+    "potion": {
+        "display_name": "Potion"
+    },
+    "pouch": {
+        "display_name": "Pouch"
+    },
+    "powder": {
+        "display_name": "Powder"
+    },
+    "quill": {
+        "display_name": "Quill"
+    },
+    "quiver": {
+        "display_name": "Quiver"
+    },
+    "rapier": {
+        "display_name": "Rapier"
+    },
+    "ring": {
+        "display_name": "Ring"
+    },
+    "robes": {
+        "display_name": "Robes"
+    },
+    "rod": {
+        "display_name": "Rod"
+    },
+    "rope": {
+        "display_name": "Rope"
+    },
+    "ruby": {
+        "display_name": "Ruby"
+    },
+    "rucksack": {
+        "display_name": "Rucksack"
+    },
+    "rune": {
+        "display_name": "Rune"
+    },
+    "sack": {
+        "display_name": "Sack"
+    },
+    "saddle": {
+        "display_name": "Saddle"
+    },
+    "saddlebag": {
+        "display_name": "Saddlebag"
+    },
+    "salt": {
+        "display_name": "Salt"
+    },
+    "salve": {
+        "display_name": "Salve"
+    },
+    "sandal": {
+        "display_name": "Sandal"
+    },
+    "scepter": {
+        "display_name": "Scepter"
+    },
+    "scroll": {
+        "display_name": "Scroll"
+    },
+    "seal": {
+        "display_name": "Seal"
+    },
+    "shackles": {
+        "display_name": "Shackles"
+    },
+    "shield": {
+        "display_name": "Shield"
+    },
+    "shirt": {
+        "display_name": "Shirt"
+    },
+    "short_bow": {
+        "display_name": "Short Bow"
+    },
+    "shovel": {
+        "display_name": "Shovel"
+    },
+    "shroud": {
+        "display_name": "Shroud"
+    },
+    "sickle": {
+        "display_name": "Sickle"
+    },
+    "sleeve": {
+        "display_name": "Sleeve"
+    },
+    "sling": {
+        "display_name": "Sling"
+    },
+    "slippers": {
+        "display_name": "Slippers"
+    },
+    "soil": {
+        "display_name": "Soil"
+    },
+    "spear": {
+        "display_name": "Spear"
+    },
+    "spectacles": {
+        "display_name": "Spectacles"
+    },
+    "spur": {
+        "display_name": "Spur"
+    },
+    "staff": {
+        "display_name": "Staff"
+    },
+    "stake": {
+        "display_name": "Stake"
+    },
+    "stick": {
+        "display_name": "Stick"
+    },
+    "stone": {
+        "display_name": "Stone"
+    },
+    "sword": {
+        "display_name": "Sword"
+    },
+    "talisman": {
+        "display_name": "Talisman"
+    },
+    "tambourine": {
+        "display_name": "Tambourine"
+    },
+    "telescope": {
+        "display_name": "Telescope"
+    },
+    "thread": {
+        "display_name": "Thread"
+    },
+    "throwing_knife": {
+        "display_name": "Throwing Knife"
+    },
+    "tome": {
+        "display_name": "Tome"
+    },
+    "tool_knife": {
+        "display_name": "Tool Knife"
+    },
+    "torch": {
+        "display_name": "Torch"
+    },
+    "toy": {
+        "display_name": "Toy"
+    },
+    "trident": {
+        "display_name": "Trident"
+    },
+    "trinket": {
+        "display_name": "Trinket"
+    },
+    "trip_wire": {
+        "display_name": "Trip Wire"
+    },
+    "trumpet": {
+        "display_name": "Trumpet"
+    },
+    "two_handed_axe": {
+        "display_name": "Two Handed Axe"
+    },
+    "vase": {
+        "display_name": "Vase"
+    },
+    "vest": {
+        "display_name": "Vest"
+    },
+    "vial": {
+        "display_name": "Vial"
+    },
+    "wand": {
+        "display_name": "Wand"
+    },
+    "war_pick": {
+        "display_name": "War Pick"
+    },
+    "wet_stone": {
+        "display_name": "Wet Stone"
+    },
+    "whip": {
+        "display_name": "Whip"
+    },
+    "whistle": {
+        "display_name": "Whistle"
+    }
+}

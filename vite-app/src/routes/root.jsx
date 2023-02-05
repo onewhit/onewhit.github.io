@@ -158,7 +158,7 @@ function Sidebar () {
         // justifyContent: "center",
         alignItems: "stretch",
         textAlign: "center",
-        padding: "1rem"
+        paddingTop: "1rem"
     }
 
     if (global_context.is_mobile_view) {

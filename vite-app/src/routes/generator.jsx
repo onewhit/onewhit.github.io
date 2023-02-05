@@ -10,28 +10,45 @@ export default function Generator() {
     </>);
 }
 
+// =============================================================================
+// Die Roller Form
+// =============================================================================
+
 function DieRollerForm () {
     const [roll_result, set_roll_result] = useState("");
+    const [die_size, set_die_size] = useState(20);
 
     function handle_roll (event) {
         event.preventDefault();
-        const roll_result = get_random_int(1,20);
+        const roll_result = get_random_int(1,die_size);
         set_roll_result(roll_result);
     }
     
     const output_style = {
         width: "2em",
         textAlign: "center",
-        marginLeft: "1em",
+        // marginLeft: "1em",
     }
+
+    const die_size_options = Array.from({length:20},(_, i) => i + 1);
 
     return (
         <form>
+            <label htmlFor="die_size_selector">Die Size:</label>{" "}
+            <select id="die_size_selector" name="die_size" value={die_size} onChange={(event) => set_die_size(event.target.value)}>
+                {die_size_options.map((num) => <option key={num} value={num}>{num}</option>)}
+            </select>
+            {" "}
             <button type="submit" onClick={handle_roll}>Roll the Die</button>
+            {" "}
             <input type="text" style={output_style} value={roll_result} readOnly></input>
         </form>
     );
 }
+
+// =============================================================================
+// Card Picker Form
+// =============================================================================
 
 function CardPickerForm () {
 
@@ -43,9 +60,9 @@ function CardPickerForm () {
     }
     
     const output_style = {
-        // width: "2em",
         textAlign: "center",
         marginLeft: "1em",
+        width:  "8em"
     }
 
     return (
@@ -61,26 +78,32 @@ function pick_random_card () {
         "Spades",
         "Hearts",
         "Clubs",
-        "Diamonds"
+        "Diamonds",
     ];
 
-    const card_options = [
+    const value_options = [
         "Ace",
-        ...[...Array(10).keys()].map((key) => key + 1),
+        ...Array.from({length:9},(_, i) => i + 2),
         "Jack",
         "Queen",
         "King",
     ];
 
-    // const picked_suite = suit_options[get_random_int(0,suit_options.length)];
-    const card_index = get_random_int(0,card_options.length-1);
-    const suit_index = get_random_int(0,suit_options.length-1);
+    const all_card_options = [];
 
-    console.log(card_index);
+    suit_options.forEach((suit) => {
+        value_options.forEach((value) => {
+            all_card_options.push(value + " of " + suit)
+        });
+    });
+    
+    all_card_options.push("Black Joker");
+    all_card_options.push("Red Joker");
 
-    return card_options[card_index] + " of " + suit_options[suit_index];
+    return all_card_options[get_random_int(0,all_card_options.length-1)];
 }
 
 function get_random_int (min_value, max_value) {
-    return Math.floor(Math.random() * Math.floor(max_value)) + min_value;
+    const spread = max_value - min_value + 1;
+    return Math.floor(Math.random() * (max_value-min_value + 1)) + min_value;
 }

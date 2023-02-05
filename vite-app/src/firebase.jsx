@@ -88,23 +88,13 @@ async function get_attributes_by_tag(tag_name) {
     });
 }
 
+async function get_all_documents(collection_name) {
+    const the_query = query(collection(firebase_db, collection_name));
+    const query_snapshot = await getDocs(the_query);
+    return query_snapshot;
+}
+
 async function create_document(collection_name, document_name, new_document_data, is_merge=true) {
-    // Make sure the document doesn't already exist
-
-    // console.log(collection_name, document_name, new_document_data);
-
-    // const existing_doc = await getDoc(doc(firebase_db, collection_name, document_name))
-
-    // if (existing_doc.exists()) {
-    //     console.log("document already exists");
-    // }
-    // else {
-    //     console.log("document is new")
-    // }
-
-    // return await setDoc(doc(firebase_db, collection_name, document_name), {
-
-    // })
     const doc_ref = doc(firebase_db, collection_name, document_name);
     await setDoc(doc_ref, new_document_data, {merge: is_merge});
 }
@@ -144,4 +134,5 @@ export {
     create_document,
     clear_collection,
     get_is_collection_exists,
+    get_all_documents,
 };
