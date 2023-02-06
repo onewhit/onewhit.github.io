@@ -100,7 +100,7 @@ export default function Root() {
 function TitleBar () {
 
     const global_context = useContext(GlobalContext);
-    
+
     function handle_title_icon_click(event) {
         event.preventDefault();
         global_context.toggle_is_show_sidebar();
@@ -158,7 +158,9 @@ function Sidebar () {
         // justifyContent: "center",
         alignItems: "stretch",
         textAlign: "center",
-        paddingTop: "1rem"
+        paddingTop: "1rem",
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
     }
 
     if (global_context.is_mobile_view) {

@@ -16,6 +16,7 @@
 - [x] Set up the banner
 - [x] Make the border move to the bottom on mobile screens
 - [x] Get mobile menu to hide and re-show with button
+- [x] 2023-02-06 - Create a build script to easily build and copy the dist folder
 - [ ] Fix the Accountinfo page on login not maintaining the banner, and it should redirect to the main landing page after login
 - [ ] Maxe titles line up on mobile sidebar open
 - [ ] Add die roller option to select D setting
@@ -33,6 +34,10 @@
 - [ ] Dungeon generator and tracker
 - [ ] enemy and combat tracker
 - [ ] player character tracker
+- [ ] Ability to report a bug, logs to a firebase collection, so I can make note of bugs while I'm using the app without having to be on my computer or have the stuff up
+
+# Backlog
+- [ ] The back arrow on the mobile version sidebar takes a second to show up, so there's blank space; for a second which looks bad
 
 # Item Ideas
 - [ ] Item that grants AP if used in certain way
