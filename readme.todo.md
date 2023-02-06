@@ -17,15 +17,16 @@
 - [x] Make the border move to the bottom on mobile screens
 - [x] Get mobile menu to hide and re-show with button
 - [x] 2023-02-06 - Create a build script to easily build and copy the dist folder
-- [ ] Fix the Accountinfo page on login not maintaining the banner, and it should redirect to the main landing page after login
-- [ ] Maxe titles line up on mobile sidebar open
-- [ ] Add die roller option to select D setting
+- [x] 2023-02-06 - Maxe titles line up on mobile sidebar open - NOT GOING TO DO
+- [x] 2023-02-06 - Add die roller option to select D setting
+- [ ] Fix the Accountinfo page on login not maintaining the banner, and it should redirect to the main landing page after login?
 - [ ] Upload characteristics list
 - [ ] Add item generator to the gen page
 - [ ] Get basic character list showing
 - [ ] Add a "Logged in" message after successful login, and update to use the new banner settings
 - [ ] Add a "clear" button to the banner to get rid of it without having to change pages
 - [ ] Add a background to the banner message so it shows up more clearly
+- [ ] Add a way to add in the character descriptions for the different classes
 
 # Features
 - [ ] Item generator and tracker
