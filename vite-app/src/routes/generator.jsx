@@ -112,8 +112,23 @@ function get_random_int (min_value, max_value) {
     return Math.floor(Math.random() * (max_value-min_value + 1)) + min_value;
 }
 
+function get_random_array_element(the_array, indexes_to_exclude=[]) {
+    let picked_index = get_random_array_index(the_array);
+
+    while (indexes_to_exclude.includes(picked_index)) {
+        picked_index = get_random_array_index(the_array);
+    }
+
+    // return {picked_index: picked_index, picked_value: the_array[picked_index]};
+    return [picked_index, the_array[picked_index]];
+}
+
+function get_random_array_index(the_array) {
+    return get_random_int(0,the_array.length-1);
+}
+
 function get_array_between(start_int, stop_int) {
     return Array.from({ length: (stop_int - start_int) + 1 }, (_, i) => start_int + i * 1);
 }
 
-export { get_random_int };
+export { get_random_int, get_random_array_element };

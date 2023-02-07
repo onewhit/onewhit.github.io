@@ -26,6 +26,7 @@
 - [ ] Put the item generation behind the authentication
 - [ ] Have the randomizer limit reads and writes by using uploaded files instead of firestore
 
+- [ ] Have logging out empty the user state (so that they don't still have a proper token to submit)
 - [ ] Have clicking on the title also close the sidebar
 - [ ] Fix the Accountinfo page on login not maintaining the banner, and it should redirect to the main landing page after login?
 - [ ] Upload characteristics list
