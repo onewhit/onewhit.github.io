@@ -353,6 +353,9 @@
     "orb": {
         "display_name": "Orb"
     },
+    "paddle": {
+        "display_name": "Paddle"
+    },
     "panting": {
         "display_name": "Panting"
     },

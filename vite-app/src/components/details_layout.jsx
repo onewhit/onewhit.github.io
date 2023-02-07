@@ -22,7 +22,7 @@ export default function DetailsLayout({page_title, children}) {
 // =============================================================================
 function Banner () {
     const global_context = useContext(GlobalContext);
-    
+
     // Make the banner part of the state so it will trigger re-render of the layout banner elements
     const [banner, set_banner] = useState([]);
 
@@ -69,7 +69,27 @@ function Banner () {
         }));
     },[]);
 
+    const banner_style = {
+        backgroundColor: "lightgreen",
+        paddingLeft: ".5em",
+        paddingRight: ".5em",
+        position: "relative"
+    }
+
+    const close_style = {
+        position: "absolute",
+        padding: ".5em",
+        right: "0",
+        top: "0",
+    }
+
     return (<>
-        {banner.map((message) => <p key={message}>{message}</p>)}
+        {banner.length > 0
+            && <div style={banner_style}>
+                {banner.map((message) => <p key={message}>{message}</p>)}
+
+                <div onClick={clear_banner} className="hover-element" style={close_style}>x</div>
+            </div>
+        }
     </>)
 }

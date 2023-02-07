@@ -19,6 +19,8 @@
 - [x] 2023-02-06 - Create a build script to easily build and copy the dist folder
 - [x] 2023-02-06 - Maxe titles line up on mobile sidebar open - NOT GOING TO DO
 - [x] 2023-02-06 - Add die roller option to select D setting
+- [x] Fix width issue when the context is really long in the details - should not change the sidebar size (static sidebar size on non-mobile?)
+- [ ] Have clicking on the title also close the sidebar
 - [ ] Fix the Accountinfo page on login not maintaining the banner, and it should redirect to the main landing page after login?
 - [ ] Upload characteristics list
 - [ ] Add item generator to the gen page
@@ -27,6 +29,12 @@
 - [ ] Add a "clear" button to the banner to get rid of it without having to change pages
 - [ ] Add a background to the banner message so it shows up more clearly
 - [ ] Add a way to add in the character descriptions for the different classes
+
+# Item generator features to build
+- [ ] Add suffix and prefix tags
+- [ ] Add tags for ability, vs description
+- [ ] Allow to pick number of abilities
+- [ ] Generate the rarity (with a weighted chance or assigning that (or weighted chance of assigning more attributes, based on rarity))
 
 # Features
 - [ ] Item generator and tracker

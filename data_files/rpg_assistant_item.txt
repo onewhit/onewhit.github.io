@@ -1,0 +1,193 @@
+Alarm Bell
+Amulet
+Animal Lead
+Arrow
+Atlas
+Backpack
+Badge
+Bagpipe
+Ballista
+Band
+Bandage
+Belt
+Bit
+Bolo Gun
+Bolt
+Booby Trap
+Book
+Boots
+Bowl
+Box
+Bracelet
+Bracers
+Brand
+Breastplate
+Brick
+Brooch
+Broom
+Bucket
+Buckler
+Candle
+Cane
+Canteen
+Canvas
+Cape
+Carpet
+Chain
+Chalice
+Chalk
+Charm
+Chest
+Chimes
+Cloak
+Cloth
+Club
+Coin
+Collar
+Comb
+Compass
+Crossbow
+Crown
+Crutch
+Crystal
+Cube
+Cudgel
+Dagger
+Dart
+Diary
+Doll
+Drums
+Dulcimer
+Dust
+Dye
+Figurine
+Fishing Pole
+Flail
+Flask
+Flute
+Gauntlet
+Gauze
+Gem
+Ghost
+Glaive
+Gloves
+Goggles
+Gong
+Greatsword
+Halberg
+Hammer
+Hand Axe
+Handle
+Harness
+Harp
+Helmet
+Herbal Tea Pouch
+Hook
+Horn
+Instruments
+Jar
+Javelin
+Journal
+Key
+Lamp
+Leash
+Ledger
+Leggings
+Letter
+Lever
+Lock
+Long Bow
+Lure
+Lute
+Lyre
+Mace
+Mandolin
+Mantle
+Map
+Marble
+Mask
+Maul
+Mining Charge
+Mirror
+Monster Part
+Morning Star
+Music Box
+Necklace
+Needle
+Net
+Orb
+Paddle
+Panting
+Pearl
+Pelt
+Pendant
+Pet
+Pick
+Pike
+Pin
+Plant
+Pot
+Potion
+Pouch
+Powder
+Quill
+Quiver
+Ram
+Rapier
+Ring
+Robes
+Rod
+Rope
+Ruby
+Rucksack
+Rune
+Sack
+Saddle
+Saddlebag
+Salt
+Salve
+Sandal
+Scepter
+Scroll
+Seal
+Shackles
+Shield
+Shirt
+Short Bow
+Shovel
+Shroud
+Sickle
+Sleeve
+Sling
+Slippers
+Soil
+Spear
+Spectacles
+Spur
+Staff
+Stake
+Stick
+Stone
+Sword
+Talisman
+Tambourine
+Telescope
+Thread
+Throwing Knife
+Tome
+Tool Knife
+Torch
+Toy
+Trident
+Trinket
+Trip Wire
+Trumpet
+Two Handed Axe
+Vase
+Vest
+Vial
+Wand
+War Pick
+Wet Stone
+Whip
+Whistle

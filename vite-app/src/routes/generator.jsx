@@ -1,5 +1,6 @@
 import GlobalContext from "../global_context.jsx"
 import { useContext, useState } from "react";
+import ItemGenForm from "../components/item_gen_form.jsx";
 
 export default function Generator() {
     // const global_context = useContext(GlobalContext);
@@ -7,6 +8,8 @@ export default function Generator() {
         <DieRollerForm />
         <br />
         <CardPickerForm />
+        <br />
+        <ItemGenForm />
     </>);
 }
 
@@ -23,16 +26,16 @@ function DieRollerForm () {
         const roll_result = get_random_int(1,die_size);
         set_roll_result(roll_result);
     }
-    
+
     const output_style = {
         width: "2em",
         textAlign: "center",
         // marginLeft: "1em",
     }
 
-    const die_size_options = Array.from({length:20},(_, i) => i + 1);
+    const die_size_options = get_array_between(2, 20);
 
-    return (
+    return (<>
         <form>
             <label htmlFor="die_size_selector">Die Size:</label>{" "}
             <select id="die_size_selector" name="die_size" value={die_size} onChange={(event) => set_die_size(event.target.value)}>
@@ -42,8 +45,9 @@ function DieRollerForm () {
             <button type="submit" onClick={handle_roll}>Roll the Die</button>
             {" "}
             <input type="text" style={output_style} value={roll_result} readOnly></input>
+
         </form>
-    );
+    </>);
 }
 
 // =============================================================================
@@ -58,7 +62,7 @@ function CardPickerForm () {
         event.preventDefault();
         set_card_result(pick_random_card());
     }
-    
+
     const output_style = {
         textAlign: "center",
         marginLeft: "1em",
@@ -96,7 +100,7 @@ function pick_random_card () {
             all_card_options.push(value + " of " + suit)
         });
     });
-    
+
     all_card_options.push("Black Joker");
     all_card_options.push("Red Joker");
 
@@ -107,3 +111,9 @@ function get_random_int (min_value, max_value) {
     const spread = max_value - min_value + 1;
     return Math.floor(Math.random() * (max_value-min_value + 1)) + min_value;
 }
+
+function get_array_between(start_int, stop_int) {
+    return Array.from({ length: (stop_int - start_int) + 1 }, (_, i) => start_int + i * 1);
+}
+
+export { get_random_int };

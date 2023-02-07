@@ -161,6 +161,8 @@ function Sidebar () {
         paddingTop: "1rem",
         paddingLeft: "1rem",
         paddingRight: "1rem",
+        width: "15em",
+        flexShrink: "0",
     }
 
     if (global_context.is_mobile_view) {
@@ -195,6 +197,7 @@ function Details() {
     const detail_style = {
         padding: "1rem",
         flexGrow: "1",
+        flexShrink: "1",
         display: "flex",
         flexDirection: "column",
         alignItems: "stretch",

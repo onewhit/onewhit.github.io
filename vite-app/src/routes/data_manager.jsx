@@ -15,19 +15,24 @@ export default function DataManager() {
                 ? <><p>Log in to view this content</p><LoginForm /></>
                 : <>
                     <p>File Uploads to Merge to Lists</p>
-                    <FileReaderForm collection_name="item" />
-                    <FileReaderForm collection_name="attribute" />
+                    <br />
+                    <FileReaderForm />
 
                     <p><span style={{fontWeight: "bold"}}>NOTE: </span>Single value text file uploads will treat each line of a file as a document. The document key will be the line cast to lowercase and with spaces replaced with underscores. The document will get one attribute called "display_name" which will be each word of the line capitalized.</p>
 
-                    <p>Download collection as file</p>
+                    <p>Download collection as JSON file</p>
                     <div>
-                        <FileWriterForm collection_name="item" />{" "}
-                        <FileWriterForm collection_name="attribute" />
+                        <FileWriterForm collection_name="item" download_format="json"/>{" "}
+                        <FileWriterForm collection_name="attribute" download_format="json"/>
+                    </div>
+                    <p>Download collection as Text file</p>
+                    <div>
+                        <FileWriterForm collection_name="item" download_format="text"/>{" "}
+                        <FileWriterForm collection_name="attribute" download_format="text"/>
                     </div>
                 </>
             }
-            
+
         </>
     )
 }
