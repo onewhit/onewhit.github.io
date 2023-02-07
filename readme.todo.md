@@ -20,6 +20,12 @@
 - [x] 2023-02-06 - Maxe titles line up on mobile sidebar open - NOT GOING TO DO
 - [x] 2023-02-06 - Add die roller option to select D setting
 - [x] Fix width issue when the context is really long in the details - should not change the sidebar size (static sidebar size on non-mobile?)
+
+- [ ] Firebase error - Quota Exceeded
+- [ ] Handle the quota exceeded error
+- [ ] Put the item generation behind the authentication
+- [ ] Have the randomizer limit reads and writes by using uploaded files instead of firestore
+
 - [ ] Have clicking on the title also close the sidebar
 - [ ] Fix the Accountinfo page on login not maintaining the banner, and it should redirect to the main landing page after login?
 - [ ] Upload characteristics list
