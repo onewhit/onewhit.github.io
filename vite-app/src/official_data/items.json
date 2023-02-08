@@ -1,0 +1,778 @@
+[
+    {
+        "item_name": "Alarm Bell",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Amulet",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Animal Lead",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Arrow",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Atlas",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Backpack",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Badge",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bagpipe",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Ballista",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Band",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bandage",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Belt",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bit",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bolo Gun",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bolt",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Booby Trap",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Book",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Boots",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bowl",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Box",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bracelet",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bracers",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Brand",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Breastplate",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Brick",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Brooch",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Broom",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Bucket",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Buckler",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Candle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Cane",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Canteen",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Canvas",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Cape",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Carpet",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Chain",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Chalice",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Chalk",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Charm",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Chest",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Chimes",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Cloak",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Cloth",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Club",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Coin",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Collar",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Comb",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Compass",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Crossbow",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Crown",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Crutch",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Crystal",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Cube",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Cudgel",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Dagger",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Dart",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Diary",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Doll",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Drums",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Dulcimer",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Dust",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Dye",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Figurine",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Fishing Pole",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Flail",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Flask",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Flute",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Gauntlet",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Gauze",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Gem",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Ghost",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Glaive",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Gloves",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Goggles",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Gong",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Greatsword",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Halberg",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Hammer",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Hand Axe",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Handle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Harness",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Harp",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Helmet",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Herbal Tea Pouch",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Hook",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Horn",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Instruments",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Jar",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Javelin",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Journal",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Key",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Lamp",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Leash",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Ledger",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Leggings",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Letter",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Lever",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Lock",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Long Bow",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Lure",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Lute",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Lyre",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Mace",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Mandolin",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Mantle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Map",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Marble",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Mask",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Maul",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Mining Charge",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Mirror",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Monster Part",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Morning Star",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Music Box",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Necklace",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Needle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Net",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Orb",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Paddle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Panting",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pearl",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pelt",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pendant",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pet",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pick",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pike",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pin",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Plant",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pot",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Potion",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Pouch",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Powder",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Quill",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Quiver",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Ram",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Rapier",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Ring",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Robes",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Rod",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Rope",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Ruby",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Rucksack",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Rune",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Sack",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Saddle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Saddlebag",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Salt",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Salve",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Sandal",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Scepter",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Scroll",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Seal",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Shackles",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Shield",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Shirt",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Short Bow",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Shovel",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Shroud",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Sickle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Sleeve",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Sling",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Slippers",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Soil",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Spear",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Spectacles",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Spur",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Staff",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Stake",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Stick",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Stone",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Sword",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Talisman",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Tambourine",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Telescope",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Thread",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Throwing Knife",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Tome",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Tool Knife",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Torch",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Toy",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Trident",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Trinket",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Trip Wire",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Trumpet",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Two Handed Axe",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Vase",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Vest",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Vial",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Wand",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "War Pick",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Wet Stone",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Whip",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Whistle",
+        "item_type": "weapon"
+    },
+    {
+        "item_name": "Statue",
+        "item_type": "weapon"
+    }
+]

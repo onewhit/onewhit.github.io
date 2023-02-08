@@ -131,4 +131,4 @@ function get_array_between(start_int, stop_int) {
     return Array.from({ length: (stop_int - start_int) + 1 }, (_, i) => start_int + i * 1);
 }
 
-export { get_random_int, get_random_array_element };
+export { get_random_int, get_random_array_element, get_array_between };

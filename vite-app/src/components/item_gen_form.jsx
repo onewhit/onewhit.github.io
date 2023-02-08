@@ -1,10 +1,14 @@
 import { useState, useContext } from "react";
 import GlobalContext from "../global_context.jsx";
 import ajax_loader from "../../assets/ajax_loader.gif";
-import { get_random_int, get_random_array_element } from "../routes/generator.jsx";
+import { get_random_int, get_random_array_element, get_array_between } from "../routes/generator.jsx";
 import item_file_string from "../official_data/item.csv?raw";
 import attribute_file_string from "../official_data/attribute.csv?raw";
 import capitalize_each_word from "../utility/capitalize_each_word.js";
+import download_object_to_json_file from "../utility/download_object_to_json_file.jsx";
+import item_file from "../official_data/items.json";
+import attribute_file from "../official_data/attributes.json";
+import build_array_repeat from "../utility/build_array_repeat.jsx";
 
 const item_output_style = {
     width: "20em"
@@ -14,86 +18,238 @@ export default function ItemGenForm () {
     const global_context = useContext(GlobalContext);
     const [item_output, set_item_output] = useState("");
     const [is_loading_item, set_is_loading_item] = useState(false);
+    
+    const generate_modes = [
+        {key: "weighted", value: "Weighted Random"},
+        {key: "full_random", value: "Full Random"},
+        {key: "specific", value: "Specific Structure"},
+    ];
+
+    const weight_options = get_array_between(0,100).map((num) => ({key: num, value: num}));
+
+    const [no_attribute_weight, set_no_attribute_weight] = useState(1);
+    const [one_attribute_weight, set_one_attribute_weight] = useState(10);
+    const [two_attribute_weight, set_two_attribute_weight] = useState(2);
+    const [three_attribute_weight, set_three_attribute_weight] = useState(1);
+    
+    const [power_chance, set_power_chance] = useState(10);
+
+    const [generate_mode, set_generate_mode] = useState(generate_modes[0].key);
+    const [is_generate_suffix, set_is_generate_suffix] = useState(true);
+
+    const [is_prefix, set_is_prefix] = useState(false);
+    const [is_suffix, set_is_suffix] = useState(false);
+    const [is_suffix_prefix, set_is_suffix_prefix] = useState(false);
 
     async function handle_gen_item_click(event) {
         event.preventDefault();
         set_is_loading_item(true);
 
-        const items_array = create_array_from_file(item_file_string);
-        const attributes_array = create_array_from_file(attribute_file_string);
-
-        const name_obj = {
-            item: get_random_array_element(items_array)[1],
-            prefix: null,
-            suffix: null,
+        const item_obj = item_file;
+        const picked_item = {
+            ...get_random_array_element(item_obj)[1],
+            prefix: "",
+            suffix_prefix: "",
+            suffix: "",
+            power: "",
         };
 
-        const [picked_attribute_row_index, picked_attribute_row] = get_random_array_element(attributes_array);
-        const picked_attribute_array = clean_and_split_attribute_row(picked_attribute_row);
-        const attribute_obj = get_random_attribute_form(picked_attribute_array);
+        // =====================================================================
+        // Generate the item based on weighted values
+        // =====================================================================
+        if (generate_mode == "weighted" ) {
+            const num_attributes_weighted_array = [
+                ...build_array_repeat(no_attribute_weight, 0),
+                ...build_array_repeat(one_attribute_weight, 1),
+                ...build_array_repeat(two_attribute_weight, 2),
+                ...build_array_repeat(three_attribute_weight, 3),
+            ]
 
-        if (attribute_obj.type == "prefix") {
-            name_obj.prefix = attribute_obj.value;
-        }
-        else if (attribute_obj.type == "suffix") {
-            name_obj.suffix = attribute_obj.value;
+            const num_attributes = get_random_array_element(num_attributes_weighted_array)[1];
+
+            // console.log(num_attributes_weighted_array)
+            
+            const is_power = get_random_array_element([
+                ...Array(power_chance).fill(true),
+                ...Array(100-power_chance).fill(false)
+            ])[1];
+
+            const picked_attributes = [];
+
+            for (let i = 0; i < num_attributes; i++) {
+                // Filter to just the attribute groups that have values the item doesn't have yet
+                const filtered_attribute_file = attribute_file.filter((row) => {
+                    let is_valid_row = false;
+
+                    row.forEach((attribute_form) => {
+                        if (picked_item.prefix == "" && attribute_form.type == "prefix") {
+                            is_valid_row = true;
+                        }
+                        if (picked_item.suffix == "" && attribute_form.type == "suffix") {
+                            is_valid_row = true;
+                        }
+                        if (picked_item.suffix_prefix == "" && num_attributes > 2 && attribute_form.type == "prefix") {
+                            is_valid_row = true;
+                        }
+                    });
+
+                    return is_valid_row;
+                });
+                const [picked_attribute_index, picked_attribute_group] = get_random_array_element(filtered_attribute_file, picked_attributes.map((item) => item[0]));
+                
+                // Keep track of picked attributes so we don't repick them again
+                picked_attributes.push([picked_attribute_index, picked_attribute_group]);
+
+                // Randomly pick one of the attribute forms that's compatible with the remaining emtpy item slots
+                const filtered_attribute_group = picked_attribute_group.filter((attribute_form) => {
+                    let is_valid_attribute = false;
+
+                    if (attribute_form.type == "prefix") {
+                        if (picked_item.prefix == "") {
+                            is_valid_attribute = true;
+                        }
+                        else if (picked_item.suffix_prefix == "" && num_attributes == 3) {
+                            is_valid_attribute = true;
+                        }
+                    }
+                    else if (attribute_form.type == "suffix" && picked_item.suffix == "") {
+                        is_valid_attribute = true;
+                    }
+
+                    return is_valid_attribute;
+                });
+
+                const picked_attribute_form = get_random_array_element(filtered_attribute_group)[1];
+                
+                if (picked_attribute_form.type == "prefix") {
+                    if (picked_item.prefix == "") {
+                        picked_item.prefix = picked_attribute_form.value;
+                    }
+                    else {
+                        picked_item.suffix_prefix = picked_attribute_form.value;
+                    }
+                }
+                else if (picked_attribute_form.type == "suffix") {
+                    picked_item.suffix = picked_attribute_form.value;
+                }
+            }
+
+            // console.log(num_attributes);
+
+            set_item_output(build_name_string_from_obj(picked_item));
+
+            // picked_attributes.forEach((item) => {
+            //     console.log("One of the attributes");
+            //     console.log(item);
+            //     console.log(item[1]);
+            // });
         }
 
-        // One in 20 chance to add an extra attribute to the item name
-        const is_extra = get_weighted_is_true(20);
+        // const [picked_attribute_index, picked_attribute] = get_random_array_element(attribute_file);
+        // const [picked_attribute_form_index, picked_attribute_form] = get_random_array_element(picked_attribute);
+
+        // if (picked_attribute_form.type == "prefix") {
+        //     picked_item.prefix = picked_attribute_form.value;
+        // }
+        // else if (picked_attribute_form.type == "suffix") {
+        //     picked_item.suffix = picked_attribute_form.value;
+        // }
+
+        // // // One in 20 chance to add an extra attribute to the item name
+        // // const is_extra = get_weighted_is_true(20);
         // const is_extra = true;
-        if (is_extra) {
-            const is_exclude_prefix = (name_obj.prefix != null);
-            const is_exclude_suffix = (name_obj.suffix != null);
+        // if (is_extra) {
 
-            // Ignore attribute rows that are missing the desired fragment (prefix vs suffix)
-            const filtered_attributes_array = attributes_array.filter((row) => {
-                const attribute_obj = get_attribute_obj_from_line(row);
-                let is_valid_row = true;
+        //     const is_exclude_prefix = (picked_item.prefix != "");
+        //     const is_exclude_suffix = (picked_item.suffix != "");
 
-                if (is_exclude_prefix) {
-                    is_valid_row = attribute_obj.suffix_1 != "" || attribute_obj.suffix_2 != null
-                }
-                if (is_exclude_suffix) {
-                    is_valid_row = attribute_obj.prefix_1 != "" || attribute_obj.prefix_2 != null
-                }
 
-                return is_valid_row;
-            });
+        //     const [second_attribute_index, second_attribute] = get_random_array_element(filtered_attribute_file, [picked_attribute_index]);
 
-            // Get any of the remaining attributes that aren't the previously picked one
-            const [extra_picked_attribute_index, extra_picked_attribute_row] = get_random_array_element(filtered_attributes_array, [picked_attribute_row_index]);
-            const extra_picked_attribute_array = clean_and_split_attribute_row(extra_picked_attribute_row);
+        //     const filtered_attribute_forms = second_attribute.filter((attribute) => attribute.type == (is_exclude_prefix ? "suffix" : "prefix"))
 
-            // pick the opposite of whatever the previous attribute was, suffix vs prefix
+        //     const [second_attribute_form_index, second_attribute_form] = get_random_array_element(second_attribute.filter((attribute) => attribute.type == (is_exclude_prefix ? "suffix" : "prefix")));
 
-            const extra_attribute_obj = get_random_attribute_form(extra_picked_attribute_array, is_exclude_prefix, is_exclude_suffix);
+        //     if (second_attribute_form.type == "prefix") {
+        //         picked_item.prefix = second_attribute_form.value;
+        //     }
+        //     else if (second_attribute_form.type == "suffix") {
+        //         picked_item.suffix = second_attribute_form.value;
+        //     }
 
-            if (extra_attribute_obj.type == "prefix") {
-                name_obj.prefix = extra_attribute_obj.value;
-            }
-            else if (extra_attribute_obj.type == "suffix") {
-                name_obj.suffix = extra_attribute_obj.value;
-            }
-        }
+        // }
 
-        const prefix_string = capitalize_each_word(name_obj.prefix != null ? name_obj.prefix + " ": "");
-        const suffix_string = capitalize_each_word(name_obj.suffix != null ? " of " + name_obj.suffix: "");
+        // const prefix_string = picked_item.prefix != null ? capitalize_each_word(picked_item.prefix) + " ": "";
+        // const suffix_string = picked_item.suffix != null ? " of " + capitalize_each_word(picked_item.suffix): "";
 
-        set_item_output("The " + prefix_string + name_obj.item + suffix_string);
+        // set_item_output("The " + prefix_string + picked_item.item_name + suffix_string);
 
         set_is_loading_item(false);
     }
 
+    const form_title_style = {
+        fontWeight: "bold",
+        fontSize: "1.25em"
+    }
+
+    let percent_input_style = {
+        width: "3em"
+    }
+
+    let item_output_style = {
+        padding: ".5em",
+        backgroundColor: "lightgreen"
+    }
+
     return (
         <form>
-            <div className="gapdiv"><button type="submit" onClick={handle_gen_item_click}>Generate an item</button></div>
+            <div className="gapdiv" style={form_title_style}>Generate an Item</div>
+            <div className="gapdiv">
+                <label htmlFor="generation_mode">Generation Method:</label>{" "}
+                <select value={generate_mode} onChange={(event) => set_generate_mode(event.target.value)} id="generation_mode">
+                    {generate_modes.map((mode) => <option key={mode.key} value={mode.key}>{mode.value}</option>)}
+                </select>
+            </div>
+            {
+                generate_mode == "weighted" && <>
+                    <div className="gapdiv">Attribute Count Weights</div>
+                    <GenSelect label="---- No Attributes" id_name="no_attribute_weight" start_val={no_attribute_weight} set_val={set_no_attribute_weight} option_array={weight_options} />
+                    <GenSelect label="---- One Attribute" id_name="one_attribute_weight" start_val={one_attribute_weight} set_val={set_one_attribute_weight} option_array={weight_options} />
+                    <GenSelect label="---- Two Attributes" id_name="two_attribute_weight" start_val={two_attribute_weight} set_val={set_two_attribute_weight} option_array={weight_options} />
+                    <GenSelect label="---- Three Attributes" id_name="three_attribute_weight" start_val={three_attribute_weight} set_val={set_three_attribute_weight} option_array={weight_options} />
+                    <div className="gapdiv">Percent Chances</div>
+                    <GenSelect label="---- Power/Limitation" id_name="power_chance" start_val={power_chance} set_val={set_power_chance} option_array={weight_options} note="%"/>
+                </>
+            }
+            <div className="gapdiv"><button type="submit" onClick={handle_gen_item_click}>Generate</button></div>
             {
                 is_loading_item
                 ? <img height="25rem" width="25rem" src={ajax_loader} />
-                : <div className="gapdiv"><input style={item_output_style} type="text" value={item_output} readOnly></input></div>
+                : item_output != "" && <>
+                    {/* <div className="gapdiv">Generated Item:{" "}<input style={item_output_style} type="text" value={item_output} readOnly></input></div> */}
+                    <div className="gapdiv">Generated Item: <span style={item_output_style}>{item_output}</span></div>
+                </>
             }
         </form>
+    );
+}
+
+function build_name_string_from_obj(picked_name_obj) {
+    const prefix_string = picked_name_obj.prefix != "" ? capitalize_each_word(picked_name_obj.prefix) + " ": "";
+    const suffix_prefix_string = picked_name_obj.suffix_prefix != "" ? capitalize_each_word(picked_name_obj.suffix_prefix) + " ": "";
+    const suffix_string = picked_name_obj.suffix != "" ? " of " + suffix_prefix_string + capitalize_each_word(picked_name_obj.suffix): "";
+    const introduction = (picked_name_obj.prefix == "" && picked_name_obj.suffix == "" ? "" : "The ");
+    return introduction + prefix_string + picked_name_obj.item_name + suffix_string;
+}
+
+function GenSelect ({ label, id_name, start_val, set_val, option_array, note="" }) {
+    return (
+        <div className="gapdiv">
+            <label htmlFor={id_name}>{label}:{" "}</label>
+            <select value={start_val} onChange={(event) => set_val(event.target.value)} id={id_name}>
+                {option_array.map((option) => <option key={option.key} value={option.key}>{option.value}</option>)}
+            </select>{" "}{note}
+        </div>
     );
 }
 

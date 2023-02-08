@@ -25,7 +25,7 @@ export default function MainNavigation () {
 
 
     list_items.push(<NavLink key="/" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'/'}>Generator</NavLink>);
-    list_items.push(<NavLink key="data_manager" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'data_manager'}>Data Manager</NavLink>);
+    // list_items.push(<NavLink key="data_manager" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'data_manager'}>Data Manager</NavLink>);
     // list_items.push(<NavLink key="npc_generator" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'npc_generator'}>NPC Generator</NavLink>);
     // list_items.push(<NavLink key="character_tracker" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'character_tracker'}>Character Tracker</NavLink>);
     list_items.push(<NavLink key="account_info" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'account_info'}>Account Info</NavLink>);

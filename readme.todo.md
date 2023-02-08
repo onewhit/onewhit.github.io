@@ -38,10 +38,17 @@
 - [ ] Add a way to add in the character descriptions for the different classes
 
 # Item generator features to build
-- [ ] Add suffix and prefix tags
+- [x] Add suffix and prefix tags
+- [ ] Build out specific structure generator
 - [ ] Add tags for ability, vs description
 - [ ] Allow to pick number of abilities
 - [ ] Generate the rarity (with a weighted chance or assigning that (or weighted chance of assigning more attributes, based on rarity))
+- [ ] Figure out a rarity slider scale (like if fighting a boss, or just looting a random house)
+- [ ] Item tagged by size, circumstances found in
+- [ ] Have the powers generated separately
+- [ ] Another prefix to the suffix (low chance)
+- [ ] Checkboxes to pick if it's suffixes, prefixes, etc
+- [ ] Or uncheck all boxes just to get a regular item
 
 # Features
 - [ ] Item generator and tracker
