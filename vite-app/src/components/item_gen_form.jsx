@@ -4,6 +4,7 @@ import ajax_loader from "../../assets/ajax_loader.gif";
 import { get_random_int, get_random_array_element } from "../routes/generator.jsx";
 import item_file_string from "../official_data/item.csv?raw";
 import attribute_file_string from "../official_data/attribute.csv?raw";
+import capitalize_each_word from "../utility/capitalize_each_word.js";
 
 const item_output_style = {
     width: "20em"
@@ -29,7 +30,6 @@ export default function ItemGenForm () {
 
         const [picked_attribute_row_index, picked_attribute_row] = get_random_array_element(attributes_array);
         const picked_attribute_array = clean_and_split_attribute_row(picked_attribute_row);
-        console.log("First picked attribute is " + String(picked_attribute_array));
         const attribute_obj = get_random_attribute_form(picked_attribute_array);
 
         if (attribute_obj.type == "prefix") {
@@ -61,15 +61,9 @@ export default function ItemGenForm () {
                 return is_valid_row;
             });
 
-            // filtered_attributes_array.forEach((element) => console.log(element));
-            console.log(is_exclude_prefix);
-            console.log(is_exclude_suffix);
-
             // Get any of the remaining attributes that aren't the previously picked one
             const [extra_picked_attribute_index, extra_picked_attribute_row] = get_random_array_element(filtered_attributes_array, [picked_attribute_row_index]);
             const extra_picked_attribute_array = clean_and_split_attribute_row(extra_picked_attribute_row);
-            console.log("First picked attribute is " + String(picked_attribute_array));
-            console.log("Second picked attribute is " + String(extra_picked_attribute_array));
 
             // pick the opposite of whatever the previous attribute was, suffix vs prefix
 
@@ -83,8 +77,8 @@ export default function ItemGenForm () {
             }
         }
 
-        const prefix_string = (name_obj.prefix != null ? name_obj.prefix + " ": "");
-        const suffix_string = (name_obj.suffix != null ? " of " + name_obj.suffix: "");
+        const prefix_string = capitalize_each_word(name_obj.prefix != null ? name_obj.prefix + " ": "");
+        const suffix_string = capitalize_each_word(name_obj.suffix != null ? " of " + name_obj.suffix: "");
 
         set_item_output("The " + prefix_string + name_obj.item + suffix_string);
 
