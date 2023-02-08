@@ -36,10 +36,16 @@
 - [ ] Add a "clear" button to the banner to get rid of it without having to change pages
 - [ ] Add a background to the banner message so it shows up more clearly
 - [ ] Add a way to add in the character descriptions for the different classes
+- [ ] Use Gimp to clean up the favicon, make it transparent
 
 # Item generator features to build
 - [x] Add suffix and prefix tags
-- [ ] Build out specific structure generator
+- [x] Allow 2-attribute gens to be in second half and not always split
+- [x] Setting full weight on 1 attribute doens't always include 1 attribute
+- [x] Build out specific structure generator
+- [ ] Add power generator
+- [ ] Output name proper wrapping
+- [ ] Able to add "the" before the suffix, and have the suffix_prefix inject after the "the" instead of before
 - [ ] Add tags for ability, vs description
 - [ ] Allow to pick number of abilities
 - [ ] Generate the rarity (with a weighted chance or assigning that (or weighted chance of assigning more attributes, based on rarity))

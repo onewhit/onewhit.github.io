@@ -1,0 +1,3252 @@
+[
+    [
+        {"type": "prefix", "value": "Absent"},
+        {"type": "suffix", "value": "Absence"},
+        {"type": "suffix", "value": "Absences"}
+    ],
+    [
+        {"type": "prefix", "value": "Absolving"},
+        {"type": "prefix", "value": "Absolved"},
+        {"type": "suffix", "value": "Absolution"},
+        {"type": "suffix", "value": "Absolving"}
+    ],
+    [
+        {"type": "prefix", "value": "Absorbing"},
+        {"type": "prefix", "value": "Absorbed"},
+        {"type": "suffix", "value": "Absorption"},
+        {"type": "suffix", "value": "Absorbing"}
+    ],
+    [
+        {"type": "prefix", "value": "Abstracting"},
+        {"type": "prefix", "value": "Abstracted"},
+        {"type": "suffix", "value": "Abstraction"},
+        {"type": "suffix", "value": "Abstracting"}
+    ],
+    [
+        {"type": "prefix", "value": "Abundant"},
+        {"type": "prefix", "value": "Abundance"},
+        {"type": "suffix", "value": "Abundance"},
+        {"type": "suffix", "value": "Abounding"}
+    ],
+    [
+        {"type": "prefix", "value": "Accurate"},
+        {"type": "prefix", "value": "Accuracy"},
+        {"type": "suffix", "value": "Accuracy"}
+    ],
+    [
+        {"type": "prefix", "value": "Adapting"},
+        {"type": "prefix", "value": "Adapted"},
+        {"type": "suffix", "value": "Adaptation"},
+        {"type": "suffix", "value": "Adapting"}
+    ],
+    [
+        {"type": "prefix", "value": "Addictive"},
+        {"type": "prefix", "value": "Addicted"},
+        {"type": "suffix", "value": "Addicting"},
+        {"type": "suffix", "value": "Addiction"}
+    ],
+    [
+        {"type": "prefix", "value": "Adorned"},
+        {"type": "prefix", "value": "Adorning"},
+        {"type": "suffix", "value": "Adorning"}
+    ],
+    [
+        {"type": "prefix", "value": "Adultered"},
+        {"type": "prefix", "value": "Adulterers"},
+        {"type": "suffix", "value": "Adulteration"},
+        {"type": "suffix", "value": "Adulterers"}
+    ],
+    [
+        {"type": "prefix", "value": "Agile"},
+        {"type": "suffix", "value": "Agility"}
+    ],
+    [
+        {"type": "prefix", "value": "Aged"},
+        {"type": "prefix", "value": "Old"},
+        {"type": "suffix", "value": "Aging"}
+    ],
+    [
+        {"type": "prefix", "value": "Agonizing"},
+        {"type": "prefix", "value": "Agonized"},
+        {"type": "suffix", "value": "Agony"},
+        {"type": "suffix", "value": "Agonizing"}
+    ],
+    [
+        {"type": "prefix", "value": "Air"},
+        {"type": "prefix", "value": "Aired"},
+        {"type": "suffix", "value": "Air"},
+        {"type": "suffix", "value": "Airs"}
+    ],
+    [
+        {"type": "prefix", "value": "Alliance"},
+        {"type": "prefix", "value": "Allied"},
+        {"type": "suffix", "value": "Alliance"},
+        {"type": "suffix", "value": "Alliances"}
+    ],
+    [
+        {"type": "prefix", "value": "Altruistic"},
+        {"type": "suffix", "value": "Altruism"}
+    ],
+    [
+        {"type": "prefix", "value": "Amphibious"},
+        {"type": "prefix", "value": "Amphibian"},
+        {"type": "suffix", "value": "Amphibians"}
+    ],
+    [
+        {"type": "prefix", "value": "Ancestral"},
+        {"type": "prefix", "value": "Ancestor"},
+        {"type": "suffix", "value": "Ancestry"},
+        {"type": "suffix", "value": "Ancestors"}
+    ],
+    [
+        {"type": "prefix", "value": "Anchoring"},
+        {"type": "prefix", "value": "Anchored"},
+        {"type": "suffix", "value": "Anchoring"},
+        {"type": "suffix", "value": "Anchors"}
+    ],
+    [
+        {"type": "prefix", "value": "Ancient"},
+        {"type": "suffix", "value": "Ancients"}
+    ],
+    [
+        {"type": "prefix", "value": "Atiquated"},
+        {"type": "suffix", "value": "Antiquity"}
+    ],
+    [
+        {"type": "prefix", "value": "Annihilation"},
+        {"type": "prefix", "value": "Annihilated"},
+        {"type": "suffix", "value": "Annihilation"},
+        {"type": "suffix", "value": "Annihilations"}
+    ],
+    [
+        {"type": "prefix", "value": "Annoying"},
+        {"type": "prefix", "value": "Annoyed"},
+        {"type": "suffix", "value": "Annoyance"},
+        {"type": "suffix", "value": "Annoying"}
+    ],
+    [
+        {"type": "prefix", "value": "Anxious"},
+        {"type": "prefix", "value": "Anxiety"},
+        {"type": "suffix", "value": "Anxiety"},
+        {"type": "suffix", "value": "Anxiousness"}
+    ],
+    [
+        {"type": "prefix", "value": "Armageddon"},
+        {"type": "suffix", "value": "Armageddon"},
+        {"type": "suffix", "value": "Armageddons"}
+    ],
+    [
+        {"type": "prefix", "value": "Artistic"},
+        {"type": "prefix", "value": "Art"},
+        {"type": "suffix", "value": "Art"},
+        {"type": "suffix", "value": "Artistry"}
+    ],
+    [
+        {"type": "prefix", "value": "Ashen"},
+        {"type": "prefix", "value": "Ash"},
+        {"type": "suffix", "value": "Ash"}
+    ],
+    [
+        {"type": "prefix", "value": "Aspiring"},
+        {"type": "suffix", "value": "Aspiration"},
+        {"type": "suffix", "value": "Aspiring"}
+    ],
+    [
+        {"type": "prefix", "value": "Assasination"},
+        {"type": "prefix", "value": "Assasin"},
+        {"type": "suffix", "value": "Assassination"},
+        {"type": "suffix", "value": "Assassins"}
+    ],
+    [
+        {"type": "prefix", "value": "Atheist"},
+        {"type": "prefix", "value": "Atheists"},
+        {"type": "suffix", "value": "Atheism"},
+        {"type": "suffix", "value": "Atheists"}
+    ],
+    [
+        {"type": "prefix", "value": "Attack"},
+        {"type": "suffix", "value": "Attack"},
+        {"type": "suffix", "value": "Attacks"}
+    ],
+    [
+        {"type": "prefix", "value": "Authentic"},
+        {"type": "suffix", "value": "Authenticity"}
+    ],
+    [
+        {"type": "prefix", "value": "Bandit"},
+        {"type": "prefix", "value": "Bandits"},
+        {"type": "suffix", "value": "Banditry"},
+        {"type": "suffix", "value": "Bandits"}
+    ],
+    [
+        {"type": "prefix", "value": "Barbarous"},
+        {"type": "prefix", "value": "Barbarian"},
+        {"type": "suffix", "value": "Barbarity"},
+        {"type": "suffix", "value": "Barbarians"}
+    ],
+    [
+        {"type": "prefix", "value": "Bards"},
+        {"type": "prefix", "value": "Bard"},
+        {"type": "suffix", "value": "Bards"},
+        {"type": "suffix", "value": "Barding"}
+    ],
+    [
+        {"type": "prefix", "value": "Bare"},
+        {"type": "prefix", "value": "Baren"},
+        {"type": "suffix", "value": "Baren"},
+        {"type": "suffix", "value": "Baring"}
+    ],
+    [
+        {"type": "prefix", "value": "Bathing"},
+        {"type": "prefix", "value": "Bath"},
+        {"type": "suffix", "value": "Bathing"},
+        {"type": "suffix", "value": "Baths"}
+    ],
+    [
+        {"type": "prefix", "value": "Bestial"},
+        {"type": "prefix", "value": "Beast"},
+        {"type": "suffix", "value": "Beasts"}
+    ],
+    [
+        {"type": "prefix", "value": "Beautiful"},
+        {"type": "suffix", "value": "Beauty"},
+        {"type": "suffix", "value": "Beauties"}
+    ],
+    [
+        {"type": "prefix", "value": "Beckoning"},
+        {"type": "prefix", "value": "Beckoned"},
+        {"type": "suffix", "value": "Beckoning"},
+        {"type": "suffix", "value": "Beautification"}
+    ],
+    [
+        {"type": "prefix", "value": "Bejeweled"},
+        {"type": "prefix", "value": "Jewel"},
+        {"type": "suffix", "value": "Jewelry"},
+        {"type": "suffix", "value": "Jewels"}
+    ],
+    [
+        {"type": "prefix", "value": "Bent"},
+        {"type": "suffix", "value": "Bending"},
+        {"type": "suffix", "value": "Bends"}
+    ],
+    [
+        {"type": "prefix", "value": "Betrayed"},
+        {"type": "prefix", "value": "Betraying"},
+        {"type": "suffix", "value": "Betrayal"},
+        {"type": "suffix", "value": "Betraying"}
+    ],
+    [
+        {"type": "prefix", "value": "Binding"},
+        {"type": "prefix", "value": "Bound"},
+        {"type": "suffix", "value": "Binding"},
+        {"type": "suffix", "value": "Bindings"}
+    ],
+    [
+        {"type": "prefix", "value": "Bitter"},
+        {"type": "suffix", "value": "Bitterness"}
+    ],
+    [
+        {"type": "prefix", "value": "Blazing"},
+        {"type": "prefix", "value": "Blaze"},
+        {"type": "suffix", "value": "Blazes"},
+        {"type": "suffix", "value": "Blezing"}
+    ],
+    [
+        {"type": "prefix", "value": "Bleak"},
+        {"type": "suffix", "value": "Bleakness"}
+    ],
+    [
+        {"type": "prefix", "value": "Blending"},
+        {"type": "prefix", "value": "Blended"},
+        {"type": "suffix", "value": "Blending"},
+        {"type": "suffix", "value": "Blends"}
+    ],
+    [
+        {"type": "prefix", "value": "Blessed"},
+        {"type": "prefix", "value": "Blessing"},
+        {"type": "suffix", "value": "Blessings"},
+        {"type": "suffix", "value": "Blessing"}
+    ],
+    [
+        {"type": "prefix", "value": "Blind"},
+        {"type": "suffix", "value": "Blinding"}
+    ],
+    [
+        {"type": "prefix", "value": "Blocking"},
+        {"type": "prefix", "value": "Blocked"},
+        {"type": "suffix", "value": "Blocking"},
+        {"type": "suffix", "value": "Blocks"}
+    ],
+    [
+        {"type": "prefix", "value": "Blood"},
+        {"type": "prefix", "value": "Bloody"},
+        {"type": "suffix", "value": "Blood"},
+        {"type": "suffix", "value": "Bloods"}
+    ],
+    [
+        {"type": "prefix", "value": "Blossom"},
+        {"type": "prefix", "value": "Blossoming"},
+        {"type": "suffix", "value": "Blossoming"},
+        {"type": "suffix", "value": "Blossoms"}
+    ],
+    [
+        {"type": "prefix", "value": "Boiling"},
+        {"type": "prefix", "value": "Boiled"},
+        {"type": "suffix", "value": "Boiling"},
+        {"type": "suffix", "value": "Boils"}
+    ],
+    [
+        {"type": "prefix", "value": "Bondage"},
+        {"type": "prefix", "value": "Bonded"},
+        {"type": "suffix", "value": "Bonds"},
+        {"type": "suffix", "value": "Bondage"}
+    ],
+    [
+        {"type": "prefix", "value": "Bone"},
+        {"type": "suffix", "value": "Bones"}
+    ],
+    [
+        {"type": "prefix", "value": "Boring"},
+        {"type": "prefix", "value": "Bored"},
+        {"type": "suffix", "value": "Boredom"}
+    ],
+    [
+        {"type": "prefix", "value": "Borrowed"},
+        {"type": "suffix", "value": "Borrowing"}
+    ],
+    [
+        {"type": "prefix", "value": "Bounty"},
+        {"type": "suffix", "value": "Bounties"}
+    ],
+    [
+        {"type": "prefix", "value": "Bouyant"},
+        {"type": "suffix", "value": "Bouyancy"}
+    ],
+    [
+        {"type": "prefix", "value": "Bovine"},
+        {"type": "suffix", "value": "Bovines"}
+    ],
+    [
+        {"type": "prefix", "value": "Porcine"},
+        {"type": "suffix", "value": "Swine"},
+        {"type": "suffix", "value": "Porcines"}
+    ],
+    [
+        {"type": "prefix", "value": "Branded"},
+        {"type": "suffix", "value": "Branding"},
+        {"type": "suffix", "value": "Brands"}
+    ],
+    [
+        {"type": "prefix", "value": "Brass"},
+        {"type": "suffix", "value": "Brass"}
+    ],
+    [
+        {"type": "prefix", "value": "Brazen"}
+    ],
+    [
+        {"type": "prefix", "value": "Bold"},
+        {"type": "suffix", "value": "Boldness"}
+    ],
+    [
+        {"type": "prefix", "value": "Broken"},
+        {"type": "suffix", "value": "Breaking"}
+    ],
+    [
+        {"type": "prefix", "value": "Breath"},
+        {"type": "prefix", "value": "Breathing"},
+        {"type": "suffix", "value": "Breaths"},
+        {"type": "suffix", "value": "Breathing"}
+    ],
+    [
+        {"type": "prefix", "value": "Brief"},
+        {"type": "suffix", "value": "Brevity"}
+    ],
+    [
+        {"type": "prefix", "value": "Bridge"},
+        {"type": "prefix", "value": "Bridging"},
+        {"type": "suffix", "value": "Bridges"},
+        {"type": "suffix", "value": "Bridging"}
+    ],
+    [
+        {"type": "prefix", "value": "Brine"},
+        {"type": "suffix", "value": "Brine"},
+        {"type": "suffix", "value": "Brines"}
+    ],
+    [
+        {"type": "prefix", "value": "Brittle"}
+    ],
+    [
+        {"type": "prefix", "value": "Crumbling"},
+        {"type": "suffix", "value": "Crumbling"},
+        {"type": "suffix", "value": "Crumbles"}
+    ],
+    [
+        {"type": "prefix", "value": "Broad"}
+    ],
+    [
+        {"type": "prefix", "value": "Expansive"},
+        {"type": "prefix", "value": "Expanse"},
+        {"type": "suffix", "value": "Expanses"},
+        {"type": "suffix", "value": "Expanding"}
+    ],
+    [
+        {"type": "prefix", "value": "Brothers"},
+        {"type": "suffix", "value": "Brotherhood"},
+        {"type": "suffix", "value": "Brothers"}
+    ],
+    [
+        {"type": "prefix", "value": "Burdensome"},
+        {"type": "prefix", "value": "Burdened"},
+        {"type": "suffix", "value": "Burdens"},
+        {"type": "suffix", "value": "Burdening"}
+    ],
+    [
+        {"type": "prefix", "value": "Burglars"},
+        {"type": "prefix", "value": "Burglar"},
+        {"type": "suffix", "value": "Burglary"},
+        {"type": "suffix", "value": "Burglars"}
+    ],
+    [
+        {"type": "prefix", "value": "Burrowing"},
+        {"type": "prefix", "value": "Burrowed"},
+        {"type": "suffix", "value": "Burrowing"},
+        {"type": "suffix", "value": "Burrows"}
+    ],
+    [
+        {"type": "prefix", "value": "Bursted"},
+        {"type": "prefix", "value": "Bursting"},
+        {"type": "suffix", "value": "Bursting"},
+        {"type": "suffix", "value": "Bursts"}
+    ],
+    [
+        {"type": "prefix", "value": "Butcher"},
+        {"type": "prefix", "value": "Butchering"},
+        {"type": "suffix", "value": "Butchering"},
+        {"type": "suffix", "value": "Butchers"}
+    ],
+    [
+        {"type": "prefix", "value": "calamitous"},
+        {"type": "prefix", "value": "Calamity"},
+        {"type": "suffix", "value": "Calamity"},
+        {"type": "suffix", "value": "Calamities"}
+    ],
+    [
+        {"type": "prefix", "value": "Calculated"},
+        {"type": "suffix", "value": "Calculation"},
+        {"type": "suffix", "value": "Calculations"}
+    ],
+    [
+        {"type": "prefix", "value": "Calm"},
+        {"type": "prefix", "value": "Calmed"},
+        {"type": "suffix", "value": "Calm"},
+        {"type": "suffix", "value": "Calming"}
+    ],
+    [
+        {"type": "prefix", "value": "Camping"},
+        {"type": "prefix", "value": "Camp"},
+        {"type": "suffix", "value": "Camps"},
+        {"type": "suffix", "value": "Camping"}
+    ],
+    [
+        {"type": "prefix", "value": "Campfire"},
+        {"type": "suffix", "value": "Campfires"}
+    ],
+    [
+        {"type": "prefix", "value": "Canine"},
+        {"type": "suffix", "value": "Canines"}
+    ],
+    [
+        {"type": "prefix", "value": "Cannibalistic"},
+        {"type": "prefix", "value": "Cannibal"},
+        {"type": "suffix", "value": "Cannibalism"},
+        {"type": "suffix", "value": "Cannibals"}
+    ],
+    [
+        {"type": "prefix", "value": "Careless"},
+        {"type": "suffix", "value": "Carelessness"}
+    ],
+    [
+        {"type": "prefix", "value": "Carnivorous"},
+        {"type": "prefix", "value": "Carnivore"},
+        {"type": "suffix", "value": "Carnivores"}
+    ],
+    [
+        {"type": "prefix", "value": "Cartographers"},
+        {"type": "prefix", "value": "Cartographer"},
+        {"type": "suffix", "value": "Cartography"},
+        {"type": "suffix", "value": "Cartographers"}
+    ],
+    [
+        {"type": "prefix", "value": "Carved"},
+        {"type": "prefix", "value": "Carving"},
+        {"type": "suffix", "value": "Carving"},
+        {"type": "suffix", "value": "Carvings"}
+    ],
+    [
+        {"type": "prefix", "value": "Catasrophic"},
+        {"type": "prefix", "value": "Catastrophy"},
+        {"type": "suffix", "value": "Catastrophe"},
+        {"type": "suffix", "value": "Catastrophies"}
+    ],
+    [
+        {"type": "prefix", "value": "Cautious"},
+        {"type": "suffix", "value": "Caution"},
+        {"type": "suffix", "value": "Cautions"}
+    ],
+    [
+        {"type": "prefix", "value": "Centaur"},
+        {"type": "prefix", "value": "Centaurs"},
+        {"type": "suffix", "value": "Centaurs"},
+        {"type": "suffix", "value": "the Centair"}
+    ],
+    [
+        {"type": "prefix", "value": "Chakra"},
+        {"type": "suffix", "value": "Chakras"}
+    ],
+    [
+        {"type": "prefix", "value": "Chance"},
+        {"type": "suffix", "value": "Chance"},
+        {"type": "suffix", "value": "Chances"}
+    ],
+    [
+        {"type": "prefix", "value": "Change"},
+        {"type": "prefix", "value": "Changed"},
+        {"type": "suffix", "value": "Change"},
+        {"type": "suffix", "value": "Changes"}
+    ],
+    [
+        {"type": "prefix", "value": "Chaos"},
+        {"type": "prefix", "value": "Chaotic"},
+        {"type": "suffix", "value": "Chaos"}
+    ],
+    [
+        {"type": "prefix", "value": "Charismatic"},
+        {"type": "suffix", "value": "Charisma"}
+    ],
+    [
+        {"type": "prefix", "value": "Charity"},
+        {"type": "suffix", "value": "Charity"}
+    ],
+    [
+        {"type": "prefix", "value": "Charlatan"},
+        {"type": "prefix", "value": "Charlatans"},
+        {"type": "suffix", "value": "Charlatans"},
+        {"type": "suffix", "value": "the Charlatan"}
+    ],
+    [
+        {"type": "prefix", "value": "Charm"},
+        {"type": "prefix", "value": "Charming"},
+        {"type": "suffix", "value": "Charms"},
+        {"type": "suffix", "value": "Charming"}
+    ],
+    [
+        {"type": "prefix", "value": "Cheating"},
+        {"type": "suffix", "value": "Cheating"},
+        {"type": "suffix", "value": "Cheats"}
+    ],
+    [
+        {"type": "prefix", "value": "Cheerful"},
+        {"type": "prefix", "value": "Cheery"},
+        {"type": "suffix", "value": "Cheer"},
+        {"type": "suffix", "value": "Cheering"}
+    ],
+    [
+        {"type": "prefix", "value": "Chipped"},
+        {"type": "prefix", "value": "Chipping"},
+        {"type": "suffix", "value": "Chipping"},
+        {"type": "suffix", "value": "Chips"}
+    ],
+    [
+        {"type": "prefix", "value": "Chivalrous"},
+        {"type": "suffix", "value": "Chivalry"}
+    ],
+    [
+        {"type": "prefix", "value": "Chore"},
+        {"type": "suffix", "value": "Chores"}
+    ],
+    [
+        {"type": "prefix", "value": "Churning"},
+        {"type": "prefix", "value": "Churned"},
+        {"type": "suffix", "value": "Churn"},
+        {"type": "suffix", "value": "Churning"}
+    ],
+    [
+        {"type": "prefix", "value": "Singed"},
+        {"type": "suffix", "value": "Cinders"},
+        {"type": "suffix", "value": "Singeing"}
+    ],
+    [
+        {"type": "prefix", "value": "Clamorous"},
+        {"type": "suffix", "value": "Clamor"},
+        {"type": "suffix", "value": "Clamors"}
+    ],
+    [
+        {"type": "prefix", "value": "Clan"},
+        {"type": "suffix", "value": "Clans"}
+    ],
+    [
+        {"type": "prefix", "value": "Claw"},
+        {"type": "suffix", "value": "Claws"}
+    ],
+    [
+        {"type": "prefix", "value": "Clean"},
+        {"type": "prefix", "value": "Cleaned"},
+        {"type": "suffix", "value": "Cleaning"}
+    ],
+    [
+        {"type": "prefix", "value": "Cleansed"},
+        {"type": "suffix", "value": "Cleansing"},
+        {"type": "suffix", "value": "Cleanses"}
+    ],
+    [
+        {"type": "prefix", "value": "Cleaved"},
+        {"type": "suffix", "value": "Cleaving"}
+    ],
+    [
+        {"type": "prefix", "value": "Climbing"},
+        {"type": "suffix", "value": "Climbing"},
+        {"type": "suffix", "value": "Climbs"}
+    ],
+    [
+        {"type": "prefix", "value": "Cloning"},
+        {"type": "prefix", "value": "Clone"},
+        {"type": "suffix", "value": "Cloning"},
+        {"type": "suffix", "value": "Clones"}
+    ],
+    [
+        {"type": "prefix", "value": "Clue"},
+        {"type": "suffix", "value": "Clues"}
+    ],
+    [
+        {"type": "prefix", "value": "Cohesive"},
+        {"type": "suffix", "value": "Cohesion"}
+    ],
+    [
+        {"type": "prefix", "value": "Cold"},
+        {"type": "suffix", "value": "Cold"},
+        {"type": "suffix", "value": "Colds"}
+    ],
+    [
+        {"type": "prefix", "value": "Collection"},
+        {"type": "prefix", "value": "Collections"},
+        {"type": "suffix", "value": "Collection"},
+        {"type": "suffix", "value": "Collections"}
+    ],
+    [
+        {"type": "prefix", "value": "Comedic"},
+        {"type": "prefix", "value": "Comedy"},
+        {"type": "suffix", "value": "Comedy"},
+        {"type": "suffix", "value": "Comedies"}
+    ],
+    [
+        {"type": "prefix", "value": "Comet"},
+        {"type": "suffix", "value": "the Comet"},
+        {"type": "suffix", "value": "Comets"}
+    ],
+    [
+        {"type": "prefix", "value": "Comfort"},
+        {"type": "prefix", "value": "Comforting"},
+        {"type": "suffix", "value": "Comfort"},
+        {"type": "suffix", "value": "Comforting"}
+    ],
+    [
+        {"type": "prefix", "value": "Command"},
+        {"type": "suffix", "value": "Command"},
+        {"type": "suffix", "value": "Commanding"}
+    ],
+    [
+        {"type": "prefix", "value": "Commencement"},
+        {"type": "prefix", "value": "Commencing"},
+        {"type": "suffix", "value": "Commencement"},
+        {"type": "suffix", "value": "Commencing"}
+    ],
+    [
+        {"type": "prefix", "value": "Communication"},
+        {"type": "prefix", "value": "Communications"},
+        {"type": "suffix", "value": "Communication"},
+        {"type": "suffix", "value": "Communications"}
+    ],
+    [
+        {"type": "prefix", "value": "Compact"},
+        {"type": "prefix", "value": "Compacted"},
+        {"type": "suffix", "value": "Compacting"}
+    ],
+    [
+        {"type": "prefix", "value": "Complaining"},
+        {"type": "prefix", "value": "Complaint"},
+        {"type": "suffix", "value": "Complaint"},
+        {"type": "suffix", "value": "Complaints"}
+    ],
+    [
+        {"type": "prefix", "value": "Complicated"},
+        {"type": "prefix", "value": "Complex"},
+        {"type": "suffix", "value": "Complication"},
+        {"type": "suffix", "value": "Complications"}
+    ],
+    [
+        {"type": "prefix", "value": "Compression"},
+        {"type": "prefix", "value": "Compressed"},
+        {"type": "suffix", "value": "Compression"},
+        {"type": "suffix", "value": "Compression"}
+    ],
+    [
+        {"type": "prefix", "value": "Compulsion"},
+        {"type": "suffix", "value": "Compulsion"},
+        {"type": "suffix", "value": "Compulsions"}
+    ],
+    [
+        {"type": "prefix", "value": "Comrade"},
+        {"type": "prefix", "value": "Comrades"},
+        {"type": "suffix", "value": "Comraderie"},
+        {"type": "suffix", "value": "Comrades"}
+    ],
+    [
+        {"type": "prefix", "value": "Conceited"},
+        {"type": "prefix", "value": "Conceit"},
+        {"type": "suffix", "value": "Conceit"},
+        {"type": "suffix", "value": "Conceits"}
+    ],
+    [
+        {"type": "prefix", "value": "Concentration"},
+        {"type": "prefix", "value": "Concentrated"},
+        {"type": "suffix", "value": "Concentration"},
+        {"type": "suffix", "value": "Concentrations"}
+    ],
+    [
+        {"type": "prefix", "value": "Confidence"},
+        {"type": "prefix", "value": "Confident"},
+        {"type": "suffix", "value": "Confidence"}
+    ],
+    [
+        {"type": "prefix", "value": "Confidant"},
+        {"type": "prefix", "value": "Confidants"},
+        {"type": "suffix", "value": "Confidants"},
+        {"type": "suffix", "value": "Confiding"}
+    ],
+    [
+        {"type": "prefix", "value": "Connection"},
+        {"type": "prefix", "value": "Connected"},
+        {"type": "suffix", "value": "Connection"},
+        {"type": "suffix", "value": "Connecting"}
+    ],
+    [
+        {"type": "prefix", "value": "Conquering"},
+        {"type": "prefix", "value": "Conquest"},
+        {"type": "suffix", "value": "Conquering"},
+        {"type": "suffix", "value": "Conquest"}
+    ],
+    [
+        {"type": "prefix", "value": "Constitution"},
+        {"type": "prefix", "value": "Constituted"},
+        {"type": "suffix", "value": "Constitution"},
+        {"type": "suffix", "value": "Constitutions"}
+    ],
+    [
+        {"type": "prefix", "value": "Construction"},
+        {"type": "prefix", "value": "Constructed"},
+        {"type": "suffix", "value": "Construction"},
+        {"type": "suffix", "value": "Constructions"}
+    ],
+    [
+        {"type": "prefix", "value": "Contagion"},
+        {"type": "prefix", "value": "Contagious"},
+        {"type": "suffix", "value": "Contagion"}
+    ],
+    [
+        {"type": "prefix", "value": "Containment"},
+        {"type": "prefix", "value": "Contained"},
+        {"type": "suffix", "value": "Containment"},
+        {"type": "suffix", "value": "Containing"}
+    ],
+    [
+        {"type": "prefix", "value": "Contradiction"},
+        {"type": "prefix", "value": "Contradicted"},
+        {"type": "suffix", "value": "Contradiction"},
+        {"type": "suffix", "value": "Contradicting"}
+    ],
+    [
+        {"type": "prefix", "value": "Convenience"},
+        {"type": "prefix", "value": "Convenient"},
+        {"type": "suffix", "value": "Convenience"},
+        {"type": "suffix", "value": "Conveniences"}
+    ],
+    [
+        {"type": "prefix", "value": "Conversion"},
+        {"type": "prefix", "value": "Converted"},
+        {"type": "suffix", "value": "Conversion"},
+        {"type": "suffix", "value": "Converts"}
+    ],
+    [
+        {"type": "prefix", "value": "Costly"},
+        {"type": "suffix", "value": "Costs"}
+    ],
+    [
+        {"type": "prefix", "value": "Courage"},
+        {"type": "prefix", "value": "Courageous"},
+        {"type": "suffix", "value": "Courage"}
+    ],
+    [
+        {"type": "prefix", "value": "Crafting"},
+        {"type": "prefix", "value": "Crafted"},
+        {"type": "suffix", "value": "Crafting"},
+        {"type": "suffix", "value": "Crafts"}
+    ],
+    [
+        {"type": "suffix", "value": "Creatures"}
+    ],
+    [
+        {"type": "prefix", "value": "Creeping"},
+        {"type": "prefix", "value": "Creepy"},
+        {"type": "suffix", "value": "Creeping"},
+        {"type": "suffix", "value": "Creeps"}
+    ],
+    [
+        {"type": "prefix", "value": "Crime"},
+        {"type": "prefix", "value": "Criminal"},
+        {"type": "suffix", "value": "Crime"},
+        {"type": "suffix", "value": "Crimes"}
+    ],
+    [
+        {"type": "prefix", "value": "Crossing"},
+        {"type": "prefix", "value": "Crossed"},
+        {"type": "suffix", "value": "Crossing"},
+        {"type": "suffix", "value": "Crosses"}
+    ],
+    [
+        {"type": "prefix", "value": "Crowding"},
+        {"type": "prefix", "value": "Crowded"},
+        {"type": "suffix", "value": "Crowding"},
+        {"type": "suffix", "value": "Crowds"}
+    ],
+    [
+        {"type": "prefix", "value": "Cruelty"},
+        {"type": "suffix", "value": "Cruelty"}
+    ],
+    [
+        {"type": "prefix", "value": "Crusty"},
+        {"type": "suffix", "value": "Crusty"}
+    ],
+    [
+        {"type": "prefix", "value": "Crystals"},
+        {"type": "suffix", "value": "Crystals"}
+    ],
+    [
+        {"type": "prefix", "value": "Cumbersome"},
+        {"type": "suffix", "value": "Cumbersome"}
+    ],
+    [
+        {"type": "prefix", "value": "Cunning"},
+        {"type": "suffix", "value": "Cunning"}
+    ],
+    [
+        {"type": "prefix", "value": "Cursed"},
+        {"type": "suffix", "value": "Cursed"}
+    ],
+    [
+        {"type": "prefix", "value": "Cursing"},
+        {"type": "suffix", "value": "Cursing"}
+    ],
+    [
+        {"type": "prefix", "value": "Curved"},
+        {"type": "suffix", "value": "Curved"}
+    ],
+    [
+        {"type": "prefix", "value": "Damning"},
+        {"type": "suffix", "value": "Damning"}
+    ],
+    [
+        {"type": "prefix", "value": "Dark"},
+        {"type": "suffix", "value": "Dark"}
+    ],
+    [
+        {"type": "prefix", "value": "Death"},
+        {"type": "suffix", "value": "Death"}
+    ],
+    [
+        {"type": "prefix", "value": "Deception"},
+        {"type": "suffix", "value": "Deception"}
+    ],
+    [
+        {"type": "prefix", "value": "Decomposition"},
+        {"type": "suffix", "value": "Decomposition"}
+    ],
+    [
+        {"type": "prefix", "value": "Defence"},
+        {"type": "suffix", "value": "Defence"}
+    ],
+    [
+        {"type": "prefix", "value": "Defiance"},
+        {"type": "suffix", "value": "Defiance"}
+    ],
+    [
+        {"type": "prefix", "value": "Delay"},
+        {"type": "suffix", "value": "Delay"}
+    ],
+    [
+        {"type": "prefix", "value": "Delicate"},
+        {"type": "suffix", "value": "Delicate"}
+    ],
+    [
+        {"type": "prefix", "value": "Democratic"},
+        {"type": "suffix", "value": "Democratic"}
+    ],
+    [
+        {"type": "prefix", "value": "Demolition"},
+        {"type": "suffix", "value": "Demolition"}
+    ],
+    [
+        {"type": "prefix", "value": "Dented"},
+        {"type": "suffix", "value": "Dented"}
+    ],
+    [
+        {"type": "prefix", "value": "Depression"},
+        {"type": "suffix", "value": "Depression"}
+    ],
+    [
+        {"type": "prefix", "value": "Derangement"},
+        {"type": "suffix", "value": "Derangement"}
+    ],
+    [
+        {"type": "prefix", "value": "Desert"},
+        {"type": "suffix", "value": "Desert"}
+    ],
+    [
+        {"type": "prefix", "value": "Desire"},
+        {"type": "suffix", "value": "Desire"}
+    ],
+    [
+        {"type": "prefix", "value": "Desired"},
+        {"type": "suffix", "value": "Desired"}
+    ],
+    [
+        {"type": "prefix", "value": "Despair"},
+        {"type": "suffix", "value": "Despair"}
+    ],
+    [
+        {"type": "prefix", "value": "Desperation"},
+        {"type": "suffix", "value": "Desperation"}
+    ],
+    [
+        {"type": "prefix", "value": "Details"},
+        {"type": "suffix", "value": "Details"}
+    ],
+    [
+        {"type": "prefix", "value": "Deterioration"},
+        {"type": "suffix", "value": "Deterioration"}
+    ],
+    [
+        {"type": "prefix", "value": "Devils"},
+        {"type": "suffix", "value": "Devils"}
+    ],
+    [
+        {"type": "prefix", "value": "Diligence"},
+        {"type": "suffix", "value": "Diligence"}
+    ],
+    [
+        {"type": "prefix", "value": "Diminishing"},
+        {"type": "suffix", "value": "Diminishing"}
+    ],
+    [
+        {"type": "prefix", "value": "Direction"},
+        {"type": "suffix", "value": "Direction"}
+    ],
+    [
+        {"type": "prefix", "value": "Directions"},
+        {"type": "suffix", "value": "Directions"}
+    ],
+    [
+        {"type": "prefix", "value": "Discernment"},
+        {"type": "suffix", "value": "Discernment"}
+    ],
+    [
+        {"type": "prefix", "value": "Discresion"},
+        {"type": "suffix", "value": "Discresion"}
+    ],
+    [
+        {"type": "prefix", "value": "Disease"},
+        {"type": "suffix", "value": "Disease"}
+    ],
+    [
+        {"type": "prefix", "value": "Disection"},
+        {"type": "suffix", "value": "Disection"}
+    ],
+    [
+        {"type": "prefix", "value": "Disposal"},
+        {"type": "suffix", "value": "Disposal"}
+    ],
+    [
+        {"type": "prefix", "value": "Disruption"},
+        {"type": "suffix", "value": "Disruption"}
+    ],
+    [
+        {"type": "prefix", "value": "Dissent"},
+        {"type": "suffix", "value": "Dissent"}
+    ],
+    [
+        {"type": "prefix", "value": "Distraction"},
+        {"type": "suffix", "value": "Distraction"}
+    ],
+    [
+        {"type": "prefix", "value": "Divergence"},
+        {"type": "suffix", "value": "Divergence"}
+    ],
+    [
+        {"type": "prefix", "value": "Dividing"},
+        {"type": "suffix", "value": "Dividing"}
+    ],
+    [
+        {"type": "prefix", "value": "Divorce"},
+        {"type": "suffix", "value": "Divorce"}
+    ],
+    [
+        {"type": "prefix", "value": "Dligience"},
+        {"type": "suffix", "value": "Dligience"}
+    ],
+    [
+        {"type": "prefix", "value": "Dominance"},
+        {"type": "suffix", "value": "Dominance"}
+    ],
+    [
+        {"type": "prefix", "value": "Doppelganger"},
+        {"type": "suffix", "value": "Doppelganger"}
+    ],
+    [
+        {"type": "prefix", "value": "Doubt"},
+        {"type": "suffix", "value": "Doubt"}
+    ],
+    [
+        {"type": "prefix", "value": "Dragon"},
+        {"type": "suffix", "value": "Dragon"}
+    ],
+    [
+        {"type": "prefix", "value": "Draining"},
+        {"type": "suffix", "value": "Draining"}
+    ],
+    [
+        {"type": "prefix", "value": "Dreams"},
+        {"type": "suffix", "value": "Dreams"}
+    ],
+    [
+        {"type": "prefix", "value": "Dreary"},
+        {"type": "suffix", "value": "Dreary"}
+    ],
+    [
+        {"type": "prefix", "value": "Drunkards"},
+        {"type": "suffix", "value": "Drunkards"}
+    ],
+    [
+        {"type": "prefix", "value": "Dryness"},
+        {"type": "suffix", "value": "Dryness"}
+    ],
+    [
+        {"type": "prefix", "value": "Dueling"},
+        {"type": "suffix", "value": "Dueling"}
+    ],
+    [
+        {"type": "prefix", "value": "Dull"},
+        {"type": "suffix", "value": "Dull"}
+    ],
+    [
+        {"type": "prefix", "value": "Durable"},
+        {"type": "suffix", "value": "Durable"}
+    ],
+    [
+        {"type": "prefix", "value": "Dwarven"},
+        {"type": "suffix", "value": "Dwarven"}
+    ],
+    [
+        {"type": "prefix", "value": "Ears"},
+        {"type": "suffix", "value": "Ears"}
+    ],
+    [
+        {"type": "prefix", "value": "Earth"},
+        {"type": "suffix", "value": "Earth"}
+    ],
+    [
+        {"type": "prefix", "value": "Echos"},
+        {"type": "suffix", "value": "Echos"}
+    ],
+    [
+        {"type": "prefix", "value": "Education"},
+        {"type": "suffix", "value": "Education"}
+    ],
+    [
+        {"type": "prefix", "value": "Electric"},
+        {"type": "suffix", "value": "Electric"}
+    ],
+    [
+        {"type": "prefix", "value": "Elemental"},
+        {"type": "suffix", "value": "Elemental"}
+    ],
+    [
+        {"type": "prefix", "value": "Elevation"},
+        {"type": "suffix", "value": "Elevation"}
+    ],
+    [
+        {"type": "prefix", "value": "Elfish"},
+        {"type": "suffix", "value": "Elfish"}
+    ],
+    [
+        {"type": "prefix", "value": "Elusive"},
+        {"type": "suffix", "value": "Elusive"}
+    ],
+    [
+        {"type": "prefix", "value": "Emotions"},
+        {"type": "suffix", "value": "Emotions"}
+    ],
+    [
+        {"type": "prefix", "value": "Empowerment"},
+        {"type": "suffix", "value": "Empowerment"}
+    ],
+    [
+        {"type": "prefix", "value": "Enchanting"},
+        {"type": "suffix", "value": "Enchanting"}
+    ],
+    [
+        {"type": "prefix", "value": "Enclosure"},
+        {"type": "suffix", "value": "Enclosure"}
+    ],
+    [
+        {"type": "prefix", "value": "Endurance"},
+        {"type": "suffix", "value": "Endurance"}
+    ],
+    [
+        {"type": "prefix", "value": "Enhancement"},
+        {"type": "suffix", "value": "Enhancement"}
+    ],
+    [
+        {"type": "prefix", "value": "Enlightening"},
+        {"type": "suffix", "value": "Enlightening"}
+    ],
+    [
+        {"type": "prefix", "value": "Entanglement"},
+        {"type": "suffix", "value": "Entanglement"}
+    ],
+    [
+        {"type": "prefix", "value": "Entertainment"},
+        {"type": "suffix", "value": "Entertainment"}
+    ],
+    [
+        {"type": "prefix", "value": "Entrancing"},
+        {"type": "suffix", "value": "Entrancing"}
+    ],
+    [
+        {"type": "prefix", "value": "Erasure"},
+        {"type": "suffix", "value": "Erasure"}
+    ],
+    [
+        {"type": "prefix", "value": "Erosion"},
+        {"type": "suffix", "value": "Erosion"}
+    ],
+    [
+        {"type": "prefix", "value": "Escape"},
+        {"type": "suffix", "value": "Escape"}
+    ],
+    [
+        {"type": "prefix", "value": "Etching"},
+        {"type": "suffix", "value": "Etching"}
+    ],
+    [
+        {"type": "prefix", "value": "Ethereal"},
+        {"type": "suffix", "value": "Ethereal"}
+    ],
+    [
+        {"type": "prefix", "value": "Evaporation"},
+        {"type": "suffix", "value": "Evaporation"}
+    ],
+    [
+        {"type": "prefix", "value": "Exercise"},
+        {"type": "suffix", "value": "Exercise"}
+    ],
+    [
+        {"type": "prefix", "value": "Exhaustion"},
+        {"type": "suffix", "value": "Exhaustion"}
+    ],
+    [
+        {"type": "prefix", "value": "Exotic"},
+        {"type": "suffix", "value": "Exotic"}
+    ],
+    [
+        {"type": "prefix", "value": "Expanse"},
+        {"type": "suffix", "value": "Expanse"}
+    ],
+    [
+        {"type": "prefix", "value": "Expansive"},
+        {"type": "suffix", "value": "Expansive"}
+    ],
+    [
+        {"type": "prefix", "value": "Explosion"},
+        {"type": "suffix", "value": "Explosion"}
+    ],
+    [
+        {"type": "prefix", "value": "Expulsion"},
+        {"type": "suffix", "value": "Expulsion"}
+    ],
+    [
+        {"type": "prefix", "value": "Extraction"},
+        {"type": "suffix", "value": "Extraction"}
+    ],
+    [
+        {"type": "prefix", "value": "Eyes"},
+        {"type": "suffix", "value": "Eyes"}
+    ],
+    [
+        {"type": "prefix", "value": "Failure"},
+        {"type": "suffix", "value": "Failure"}
+    ],
+    [
+        {"type": "prefix", "value": "Faith"},
+        {"type": "suffix", "value": "Faith"}
+    ],
+    [
+        {"type": "prefix", "value": "Fake"},
+        {"type": "suffix", "value": "Fake"}
+    ],
+    [
+        {"type": "prefix", "value": "Faking"},
+        {"type": "suffix", "value": "Faking"}
+    ],
+    [
+        {"type": "prefix", "value": "Falling"},
+        {"type": "suffix", "value": "Falling"}
+    ],
+    [
+        {"type": "prefix", "value": "Fame"},
+        {"type": "suffix", "value": "Fame"}
+    ],
+    [
+        {"type": "prefix", "value": "Fangs"},
+        {"type": "suffix", "value": "Fangs"}
+    ],
+    [
+        {"type": "prefix", "value": "Fatality"},
+        {"type": "suffix", "value": "Fatality"}
+    ],
+    [
+        {"type": "prefix", "value": "Fateful"},
+        {"type": "suffix", "value": "Fateful"}
+    ],
+    [
+        {"type": "prefix", "value": "Fear"},
+        {"type": "suffix", "value": "Fear"}
+    ],
+    [
+        {"type": "prefix", "value": "Feasting"},
+        {"type": "suffix", "value": "Feasting"}
+    ],
+    [
+        {"type": "prefix", "value": "Feet"},
+        {"type": "suffix", "value": "Feet"}
+    ],
+    [
+        {"type": "prefix", "value": "Fertility"},
+        {"type": "suffix", "value": "Fertility"}
+    ],
+    [
+        {"type": "prefix", "value": "Festivities"},
+        {"type": "suffix", "value": "Festivities"}
+    ],
+    [
+        {"type": "prefix", "value": "Fickleness"},
+        {"type": "suffix", "value": "Fickleness"}
+    ],
+    [
+        {"type": "prefix", "value": "Fighters"},
+        {"type": "suffix", "value": "Fighters"}
+    ],
+    [
+        {"type": "prefix", "value": "Finding"},
+        {"type": "suffix", "value": "Finding"}
+    ],
+    [
+        {"type": "prefix", "value": "Fine"},
+        {"type": "suffix", "value": "Fine"}
+    ],
+    [
+        {"type": "prefix", "value": "Finicky"},
+        {"type": "suffix", "value": "Finicky"}
+    ],
+    [
+        {"type": "prefix", "value": "Fire"},
+        {"type": "suffix", "value": "Fire"}
+    ],
+    [
+        {"type": "prefix", "value": "Flaming"},
+        {"type": "suffix", "value": "Flaming"}
+    ],
+    [
+        {"type": "prefix", "value": "Flawed"},
+        {"type": "suffix", "value": "Flawed"}
+    ],
+    [
+        {"type": "prefix", "value": "Flaying"},
+        {"type": "suffix", "value": "Flaying"}
+    ],
+    [
+        {"type": "prefix", "value": "Fleeting"},
+        {"type": "suffix", "value": "Fleeting"}
+    ],
+    [
+        {"type": "prefix", "value": "Flicker"},
+        {"type": "suffix", "value": "Flicker"}
+    ],
+    [
+        {"type": "prefix", "value": "Flight"},
+        {"type": "suffix", "value": "Flight"}
+    ],
+    [
+        {"type": "prefix", "value": "Floating"},
+        {"type": "suffix", "value": "Floating"}
+    ],
+    [
+        {"type": "prefix", "value": "Flood"},
+        {"type": "suffix", "value": "Flood"}
+    ],
+    [
+        {"type": "prefix", "value": "Flowers"},
+        {"type": "suffix", "value": "Flowers"}
+    ],
+    [
+        {"type": "prefix", "value": "Fog"}
+    ],
+    [
+        {"type": "prefix", "value": "Force"},
+        {"type": "suffix", "value": "Force"}
+    ],
+    [
+        {"type": "prefix", "value": "Foresight"},
+        {"type": "suffix", "value": "Foresight"}
+    ],
+    [
+        {"type": "prefix", "value": "Forgery"},
+        {"type": "suffix", "value": "Forgery"}
+    ],
+    [
+        {"type": "prefix", "value": "Forgotten"},
+        {"type": "suffix", "value": "Forgotten"}
+    ],
+    [
+        {"type": "prefix", "value": "Fortification"},
+        {"type": "suffix", "value": "Fortification"}
+    ],
+    [
+        {"type": "prefix", "value": "Fortune"},
+        {"type": "suffix", "value": "Fortune"}
+    ],
+    [
+        {"type": "prefix", "value": "Found"},
+        {"type": "suffix", "value": "Found"}
+    ],
+    [
+        {"type": "prefix", "value": "Fragile"},
+        {"type": "suffix", "value": "Fragile"}
+    ],
+    [
+        {"type": "prefix", "value": "Framing"},
+        {"type": "suffix", "value": "Framing"}
+    ],
+    [
+        {"type": "prefix", "value": "Frankenstein"},
+        {"type": "suffix", "value": "Frankenstein"}
+    ],
+    [
+        {"type": "prefix", "value": "Frankness"},
+        {"type": "suffix", "value": "Frankness"}
+    ],
+    [
+        {"type": "prefix", "value": "Fraternity"},
+        {"type": "suffix", "value": "Fraternity"}
+    ],
+    [
+        {"type": "prefix", "value": "Frayed"},
+        {"type": "suffix", "value": "Frayed"}
+    ],
+    [
+        {"type": "prefix", "value": "Frivolity"},
+        {"type": "suffix", "value": "Frivolity"}
+    ],
+    [
+        {"type": "prefix", "value": "Frown"},
+        {"type": "suffix", "value": "Frown"}
+    ],
+    [
+        {"type": "prefix", "value": "Frustration"},
+        {"type": "suffix", "value": "Frustration"}
+    ],
+    [
+        {"type": "prefix", "value": "Fullness"},
+        {"type": "suffix", "value": "Fullness"}
+    ],
+    [
+        {"type": "prefix", "value": "Fungal"},
+        {"type": "suffix", "value": "Fungal"}
+    ],
+    [
+        {"type": "prefix", "value": "Gaining"},
+        {"type": "suffix", "value": "Gaining"}
+    ],
+    [
+        {"type": "prefix", "value": "Games"},
+        {"type": "suffix", "value": "Games"}
+    ],
+    [
+        {"type": "prefix", "value": "Gardens"},
+        {"type": "suffix", "value": "Gardens"}
+    ],
+    [
+        {"type": "prefix", "value": "Gas"}
+    ],
+    [
+        {"type": "prefix", "value": "Gathering"},
+        {"type": "suffix", "value": "Gathering"}
+    ],
+    [
+        {"type": "prefix", "value": "Ghostly"},
+        {"type": "suffix", "value": "Ghostly"}
+    ],
+    [
+        {"type": "prefix", "value": "Gladiator"},
+        {"type": "suffix", "value": "Gladiator"}
+    ],
+    [
+        {"type": "prefix", "value": "Glinting"},
+        {"type": "suffix", "value": "Glinting"}
+    ],
+    [
+        {"type": "prefix", "value": "Glitter"},
+        {"type": "suffix", "value": "Glitter"}
+    ],
+    [
+        {"type": "prefix", "value": "Glory"},
+        {"type": "suffix", "value": "Glory"}
+    ],
+    [
+        {"type": "prefix", "value": "Glowing"},
+        {"type": "suffix", "value": "Glowing"}
+    ],
+    [
+        {"type": "prefix", "value": "Gluttony"},
+        {"type": "suffix", "value": "Gluttony"}
+    ],
+    [
+        {"type": "prefix", "value": "Goblin"},
+        {"type": "suffix", "value": "Goblin"}
+    ],
+    [
+        {"type": "prefix", "value": "Gods"},
+        {"type": "suffix", "value": "Gods"}
+    ],
+    [
+        {"type": "prefix", "value": "Gold"},
+        {"type": "suffix", "value": "Gold"}
+    ],
+    [
+        {"type": "prefix", "value": "Grandeur"},
+        {"type": "suffix", "value": "Grandeur"}
+    ],
+    [
+        {"type": "prefix", "value": "Grappling"},
+        {"type": "suffix", "value": "Grappling"}
+    ],
+    [
+        {"type": "prefix", "value": "Greed"},
+        {"type": "suffix", "value": "Greed"}
+    ],
+    [
+        {"type": "prefix", "value": "Grim"},
+        {"type": "suffix", "value": "Grim"}
+    ],
+    [
+        {"type": "prefix", "value": "Grimy"},
+        {"type": "suffix", "value": "Grimy"}
+    ],
+    [
+        {"type": "prefix", "value": "Grins"},
+        {"type": "suffix", "value": "Grins"}
+    ],
+    [
+        {"type": "prefix", "value": "Gripes"},
+        {"type": "suffix", "value": "Gripes"}
+    ],
+    [
+        {"type": "prefix", "value": "Growth"},
+        {"type": "suffix", "value": "Growth"}
+    ],
+    [
+        {"type": "prefix", "value": "Guidance"},
+        {"type": "suffix", "value": "Guidance"}
+    ],
+    [
+        {"type": "prefix", "value": "Guided"},
+        {"type": "suffix", "value": "Guided"}
+    ],
+    [
+        {"type": "prefix", "value": "Guile"},
+        {"type": "suffix", "value": "Guile"}
+    ],
+    [
+        {"type": "prefix", "value": "Guilt"},
+        {"type": "suffix", "value": "Guilt"}
+    ],
+    [
+        {"type": "prefix", "value": "Hafling"},
+        {"type": "suffix", "value": "Hafling"}
+    ],
+    [
+        {"type": "prefix", "value": "Haggling"},
+        {"type": "suffix", "value": "Haggling"}
+    ],
+    [
+        {"type": "prefix", "value": "Hallucination"},
+        {"type": "suffix", "value": "Hallucination"}
+    ],
+    [
+        {"type": "prefix", "value": "Hands"},
+        {"type": "suffix", "value": "Hands"}
+    ],
+    [
+        {"type": "prefix", "value": "Harrowing"},
+        {"type": "suffix", "value": "Harrowing"}
+    ],
+    [
+        {"type": "prefix", "value": "Headache"},
+        {"type": "suffix", "value": "Headache"}
+    ],
+    [
+        {"type": "prefix", "value": "Healing"},
+        {"type": "suffix", "value": "Healing"}
+    ],
+    [
+        {"type": "prefix", "value": "Heartache"},
+        {"type": "suffix", "value": "Heartache"}
+    ],
+    [
+        {"type": "prefix", "value": "Heat"},
+        {"type": "suffix", "value": "Heat"}
+    ],
+    [
+        {"type": "prefix", "value": "Heaven"},
+        {"type": "suffix", "value": "Heaven"}
+    ],
+    [
+        {"type": "prefix", "value": "Hell"},
+        {"type": "suffix", "value": "Hell"}
+    ],
+    [
+        {"type": "prefix", "value": "Hiding"},
+        {"type": "suffix", "value": "Hiding"}
+    ],
+    [
+        {"type": "prefix", "value": "Hilarity"},
+        {"type": "suffix", "value": "Hilarity"}
+    ],
+    [
+        {"type": "prefix", "value": "History"},
+        {"type": "suffix", "value": "History"}
+    ],
+    [
+        {"type": "prefix", "value": "Holiday"},
+        {"type": "suffix", "value": "Holiday"}
+    ],
+    [
+        {"type": "prefix", "value": "Hollowness"},
+        {"type": "suffix", "value": "Hollowness"}
+    ],
+    [
+        {"type": "prefix", "value": "Homing"},
+        {"type": "suffix", "value": "Homing"}
+    ],
+    [
+        {"type": "prefix", "value": "Honesty"},
+        {"type": "suffix", "value": "Honesty"}
+    ],
+    [
+        {"type": "prefix", "value": "Hope"},
+        {"type": "suffix", "value": "Hope"}
+    ],
+    [
+        {"type": "prefix", "value": "Horror"},
+        {"type": "suffix", "value": "Horror"}
+    ],
+    [
+        {"type": "prefix", "value": "Humidity"},
+        {"type": "suffix", "value": "Humidity"}
+    ],
+    [
+        {"type": "prefix", "value": "Humility"},
+        {"type": "suffix", "value": "Humility"}
+    ],
+    [
+        {"type": "prefix", "value": "Hunger"},
+        {"type": "suffix", "value": "Hunger"}
+    ],
+    [
+        {"type": "prefix", "value": "Ice"}
+    ],
+    [
+        {"type": "prefix", "value": "Icicles"},
+        {"type": "suffix", "value": "Icicles"}
+    ],
+    [
+        {"type": "prefix", "value": "Ignition"},
+        {"type": "suffix", "value": "Ignition"}
+    ],
+    [
+        {"type": "prefix", "value": "Illumination"},
+        {"type": "suffix", "value": "Illumination"}
+    ],
+    [
+        {"type": "prefix", "value": "Illusion"},
+        {"type": "suffix", "value": "Illusion"}
+    ],
+    [
+        {"type": "prefix", "value": "Immolation"},
+        {"type": "suffix", "value": "Immolation"}
+    ],
+    [
+        {"type": "prefix", "value": "Impediment"},
+        {"type": "suffix", "value": "Impediment"}
+    ],
+    [
+        {"type": "prefix", "value": "Imperial"},
+        {"type": "suffix", "value": "Imperial"}
+    ],
+    [
+        {"type": "prefix", "value": "Impossibility"},
+        {"type": "suffix", "value": "Impossibility"}
+    ],
+    [
+        {"type": "prefix", "value": "Imposter"},
+        {"type": "suffix", "value": "Imposter"}
+    ],
+    [
+        {"type": "prefix", "value": "Industry"},
+        {"type": "suffix", "value": "Industry"}
+    ],
+    [
+        {"type": "prefix", "value": "Inebriation"},
+        {"type": "suffix", "value": "Inebriation"}
+    ],
+    [
+        {"type": "prefix", "value": "Infection"},
+        {"type": "suffix", "value": "Infection"}
+    ],
+    [
+        {"type": "prefix", "value": "Infinite"},
+        {"type": "suffix", "value": "Infinite"}
+    ],
+    [
+        {"type": "prefix", "value": "Innocence"},
+        {"type": "suffix", "value": "Innocence"}
+    ],
+    [
+        {"type": "prefix", "value": "Insipious"},
+        {"type": "suffix", "value": "Insipious"}
+    ],
+    [
+        {"type": "prefix", "value": "Inspection"},
+        {"type": "suffix", "value": "Inspection"}
+    ],
+    [
+        {"type": "prefix", "value": "Integrity"},
+        {"type": "suffix", "value": "Integrity"}
+    ],
+    [
+        {"type": "prefix", "value": "Intelligence"},
+        {"type": "suffix", "value": "Intelligence"}
+    ],
+    [
+        {"type": "prefix", "value": "Interesting"},
+        {"type": "suffix", "value": "Interesting"}
+    ],
+    [
+        {"type": "prefix", "value": "Intoxicating"},
+        {"type": "suffix", "value": "Intoxicating"}
+    ],
+    [
+        {"type": "prefix", "value": "Intoxication"},
+        {"type": "suffix", "value": "Intoxication"}
+    ],
+    [
+        {"type": "prefix", "value": "Intricate"},
+        {"type": "suffix", "value": "Intricate"}
+    ],
+    [
+        {"type": "prefix", "value": "Intrusion"},
+        {"type": "suffix", "value": "Intrusion"}
+    ],
+    [
+        {"type": "prefix", "value": "Invasive"},
+        {"type": "suffix", "value": "Invasive"}
+    ],
+    [
+        {"type": "prefix", "value": "Investigation"},
+        {"type": "suffix", "value": "Investigation"}
+    ],
+    [
+        {"type": "prefix", "value": "Invokers"},
+        {"type": "suffix", "value": "Invokers"}
+    ],
+    [
+        {"type": "prefix", "value": "Isolation"},
+        {"type": "suffix", "value": "Isolation"}
+    ],
+    [
+        {"type": "prefix", "value": "Jabbing"},
+        {"type": "suffix", "value": "Jabbing"}
+    ],
+    [
+        {"type": "prefix", "value": "Jagged"},
+        {"type": "suffix", "value": "Jagged"}
+    ],
+    [
+        {"type": "prefix", "value": "Jailing"},
+        {"type": "suffix", "value": "Jailing"}
+    ],
+    [
+        {"type": "prefix", "value": "Joining"},
+        {"type": "suffix", "value": "Joining"}
+    ],
+    [
+        {"type": "prefix", "value": "Judgement"},
+        {"type": "suffix", "value": "Judgement"}
+    ],
+    [
+        {"type": "prefix", "value": "Juggling"},
+        {"type": "suffix", "value": "Juggling"}
+    ],
+    [
+        {"type": "prefix", "value": "Justice"},
+        {"type": "suffix", "value": "Justice"}
+    ],
+    [
+        {"type": "prefix", "value": "Kickback"},
+        {"type": "suffix", "value": "Kickback"}
+    ],
+    [
+        {"type": "prefix", "value": "Kindness"},
+        {"type": "suffix", "value": "Kindness"}
+    ],
+    [
+        {"type": "prefix", "value": "King"},
+        {"type": "suffix", "value": "King"}
+    ],
+    [
+        {"type": "prefix", "value": "Knobby"},
+        {"type": "suffix", "value": "Knobby"}
+    ],
+    [
+        {"type": "prefix", "value": "Large"},
+        {"type": "suffix", "value": "Large"}
+    ],
+    [
+        {"type": "prefix", "value": "Lava"},
+        {"type": "suffix", "value": "Lava"}
+    ],
+    [
+        {"type": "prefix", "value": "Lavishness"},
+        {"type": "suffix", "value": "Lavishness"}
+    ],
+    [
+        {"type": "prefix", "value": "Laziness"},
+        {"type": "suffix", "value": "Laziness"}
+    ],
+    [
+        {"type": "prefix", "value": "Leadership"},
+        {"type": "suffix", "value": "Leadership"}
+    ],
+    [
+        {"type": "prefix", "value": "Learning"},
+        {"type": "suffix", "value": "Learning"}
+    ],
+    [
+        {"type": "prefix", "value": "Leeching"},
+        {"type": "suffix", "value": "Leeching"}
+    ],
+    [
+        {"type": "prefix", "value": "Legion"},
+        {"type": "suffix", "value": "Legion"}
+    ],
+    [
+        {"type": "prefix", "value": "Leverage"},
+        {"type": "suffix", "value": "Leverage"}
+    ],
+    [
+        {"type": "prefix", "value": "Liberation"},
+        {"type": "suffix", "value": "Liberation"}
+    ],
+    [
+        {"type": "prefix", "value": "Lies"},
+        {"type": "suffix", "value": "Lies"}
+    ],
+    [
+        {"type": "prefix", "value": "Life"},
+        {"type": "suffix", "value": "Life"}
+    ],
+    [
+        {"type": "prefix", "value": "Light"},
+        {"type": "suffix", "value": "Light"}
+    ],
+    [
+        {"type": "prefix", "value": "Limited Charges"}
+    ],
+    [
+        {"type": "prefix", "value": "Literature"},
+        {"type": "suffix", "value": "Literature"}
+    ],
+    [
+        {"type": "prefix", "value": "Living"},
+        {"type": "suffix", "value": "Living"}
+    ],
+    [
+        {"type": "prefix", "value": "Logic"},
+        {"type": "suffix", "value": "Logic"}
+    ],
+    [
+        {"type": "prefix", "value": "Longing"},
+        {"type": "suffix", "value": "Longing"}
+    ],
+    [
+        {"type": "prefix", "value": "Lore"},
+        {"type": "suffix", "value": "Lore"}
+    ],
+    [
+        {"type": "prefix", "value": "Losing"},
+        {"type": "suffix", "value": "Losing"}
+    ],
+    [
+        {"type": "prefix", "value": "Lost"},
+        {"type": "suffix", "value": "Lost"}
+    ],
+    [
+        {"type": "prefix", "value": "Lucidity"},
+        {"type": "suffix", "value": "Lucidity"}
+    ],
+    [
+        {"type": "prefix", "value": "Luck"},
+        {"type": "suffix", "value": "Luck"}
+    ],
+    [
+        {"type": "prefix", "value": "Luminous"},
+        {"type": "suffix", "value": "Luminous"}
+    ],
+    [
+        {"type": "prefix", "value": "Madness"},
+        {"type": "suffix", "value": "Madness"}
+    ],
+    [
+        {"type": "prefix", "value": "Magicians"},
+        {"type": "suffix", "value": "Magicians"}
+    ],
+    [
+        {"type": "prefix", "value": "Malice"},
+        {"type": "suffix", "value": "Malice"}
+    ],
+    [
+        {"type": "prefix", "value": "Mapping"},
+        {"type": "suffix", "value": "Mapping"}
+    ],
+    [
+        {"type": "prefix", "value": "Masking"},
+        {"type": "suffix", "value": "Masking"}
+    ],
+    [
+        {"type": "prefix", "value": "Massacre"},
+        {"type": "suffix", "value": "Massacre"}
+    ],
+    [
+        {"type": "prefix", "value": "Masterful"},
+        {"type": "suffix", "value": "Masterful"}
+    ],
+    [
+        {"type": "prefix", "value": "Mastery"},
+        {"type": "suffix", "value": "Mastery"}
+    ],
+    [
+        {"type": "prefix", "value": "Maternity"},
+        {"type": "suffix", "value": "Maternity"}
+    ],
+    [
+        {"type": "prefix", "value": "Mathematics"},
+        {"type": "suffix", "value": "Mathematics"}
+    ],
+    [
+        {"type": "prefix", "value": "Matrimony"},
+        {"type": "suffix", "value": "Matrimony"}
+    ],
+    [
+        {"type": "prefix", "value": "Medication"},
+        {"type": "suffix", "value": "Medication"}
+    ],
+    [
+        {"type": "prefix", "value": "Melting"},
+        {"type": "suffix", "value": "Melting"}
+    ],
+    [
+        {"type": "prefix", "value": "Memorable"},
+        {"type": "suffix", "value": "Memorable"}
+    ],
+    [
+        {"type": "prefix", "value": "Memory"},
+        {"type": "suffix", "value": "Memory"}
+    ],
+    [
+        {"type": "prefix", "value": "Mending"},
+        {"type": "suffix", "value": "Mending"}
+    ],
+    [
+        {"type": "prefix", "value": "Mercy"},
+        {"type": "suffix", "value": "Mercy"}
+    ],
+    [
+        {"type": "prefix", "value": "Metallic"},
+        {"type": "suffix", "value": "Metallic"}
+    ],
+    [
+        {"type": "prefix", "value": "Mirage"},
+        {"type": "suffix", "value": "Mirage"}
+    ],
+    [
+        {"type": "prefix", "value": "Mire"},
+        {"type": "suffix", "value": "Mire"}
+    ],
+    [
+        {"type": "prefix", "value": "Misdirection"},
+        {"type": "suffix", "value": "Misdirection"}
+    ],
+    [
+        {"type": "prefix", "value": "Misfortune"},
+        {"type": "suffix", "value": "Misfortune"}
+    ],
+    [
+        {"type": "prefix", "value": "Misguidance"},
+        {"type": "suffix", "value": "Misguidance"}
+    ],
+    [
+        {"type": "prefix", "value": "Mist"},
+        {"type": "suffix", "value": "Mist"}
+    ],
+    [
+        {"type": "prefix", "value": "Misty"},
+        {"type": "suffix", "value": "Misty"}
+    ],
+    [
+        {"type": "prefix", "value": "Moderation"},
+        {"type": "suffix", "value": "Moderation"}
+    ],
+    [
+        {"type": "prefix", "value": "Moldable"},
+        {"type": "suffix", "value": "Moldable"}
+    ],
+    [
+        {"type": "prefix", "value": "Monarchal"},
+        {"type": "suffix", "value": "Monarchal"}
+    ],
+    [
+        {"type": "prefix", "value": "Monitoring"},
+        {"type": "suffix", "value": "Monitoring"}
+    ],
+    [
+        {"type": "prefix", "value": "Monster"},
+        {"type": "suffix", "value": "Monster"}
+    ],
+    [
+        {"type": "prefix", "value": "Moonlight"},
+        {"type": "suffix", "value": "Moonlight"}
+    ],
+    [
+        {"type": "prefix", "value": "Morbidity"},
+        {"type": "suffix", "value": "Morbidity"}
+    ],
+    [
+        {"type": "prefix", "value": "Morphing"},
+        {"type": "suffix", "value": "Morphing"}
+    ],
+    [
+        {"type": "prefix", "value": "Moss"},
+        {"type": "suffix", "value": "Moss"}
+    ],
+    [
+        {"type": "prefix", "value": "Movement"},
+        {"type": "suffix", "value": "Movement"}
+    ],
+    [
+        {"type": "prefix", "value": "Mud"}
+    ],
+    [
+        {"type": "prefix", "value": "Murder"},
+        {"type": "suffix", "value": "Murder"}
+    ],
+    [
+        {"type": "prefix", "value": "Murkiness"},
+        {"type": "suffix", "value": "Murkiness"}
+    ],
+    [
+        {"type": "prefix", "value": "Musical"},
+        {"type": "suffix", "value": "Musical"}
+    ],
+    [
+        {"type": "prefix", "value": "Mutation"},
+        {"type": "suffix", "value": "Mutation"}
+    ],
+    [
+        {"type": "prefix", "value": "Mutilation"},
+        {"type": "suffix", "value": "Mutilation"}
+    ],
+    [
+        {"type": "prefix", "value": "Mutiny"},
+        {"type": "suffix", "value": "Mutiny"}
+    ],
+    [
+        {"type": "prefix", "value": "Mutual Destruction"}
+    ],
+    [
+        {"type": "prefix", "value": "Mystery"},
+        {"type": "suffix", "value": "Mystery"}
+    ],
+    [
+        {"type": "prefix", "value": "Names"},
+        {"type": "suffix", "value": "Names"}
+    ],
+    [
+        {"type": "prefix", "value": "Narration"},
+        {"type": "suffix", "value": "Narration"}
+    ],
+    [
+        {"type": "prefix", "value": "Narrow"},
+        {"type": "suffix", "value": "Narrow"}
+    ],
+    [
+        {"type": "prefix", "value": "Natural"},
+        {"type": "suffix", "value": "Natural"}
+    ],
+    [
+        {"type": "prefix", "value": "Naturalists"},
+        {"type": "suffix", "value": "Naturalists"}
+    ],
+    [
+        {"type": "prefix", "value": "Nature"},
+        {"type": "suffix", "value": "Nature"}
+    ],
+    [
+        {"type": "prefix", "value": "Nausea"},
+        {"type": "suffix", "value": "Nausea"}
+    ],
+    [
+        {"type": "prefix", "value": "Necromantic"},
+        {"type": "suffix", "value": "Necromantic"}
+    ],
+    [
+        {"type": "prefix", "value": "Neutrality"},
+        {"type": "suffix", "value": "Neutrality"}
+    ],
+    [
+        {"type": "prefix", "value": "New"}
+    ],
+    [
+        {"type": "prefix", "value": "Nightmares"},
+        {"type": "suffix", "value": "Nightmares"}
+    ],
+    [
+        {"type": "prefix", "value": "Nimble"},
+        {"type": "suffix", "value": "Nimble"}
+    ],
+    [
+        {"type": "prefix", "value": "Nobility"},
+        {"type": "suffix", "value": "Nobility"}
+    ],
+    [
+        {"type": "prefix", "value": "Nocturnal"},
+        {"type": "suffix", "value": "Nocturnal"}
+    ],
+    [
+        {"type": "prefix", "value": "Nudging"},
+        {"type": "suffix", "value": "Nudging"}
+    ],
+    [
+        {"type": "prefix", "value": "Nutrition"},
+        {"type": "suffix", "value": "Nutrition"}
+    ],
+    [
+        {"type": "prefix", "value": "Obedience"},
+        {"type": "suffix", "value": "Obedience"}
+    ],
+    [
+        {"type": "prefix", "value": "Obscuring"},
+        {"type": "suffix", "value": "Obscuring"}
+    ],
+    [
+        {"type": "prefix", "value": "Oily"},
+        {"type": "suffix", "value": "Oily"}
+    ],
+    [
+        {"type": "prefix", "value": "Omnivorious"},
+        {"type": "suffix", "value": "Omnivorious"}
+    ],
+    [
+        {"type": "prefix", "value": "United"}
+    ],
+    [
+        {"type": "prefix", "value": "Overflow"},
+        {"type": "suffix", "value": "Overflow"}
+    ],
+    [
+        {"type": "prefix", "value": "Overgrown"},
+        {"type": "suffix", "value": "Overgrown"}
+    ],
+    [
+        {"type": "prefix", "value": "Overload"},
+        {"type": "suffix", "value": "Overload"}
+    ],
+    [
+        {"type": "prefix", "value": "Pacifism"},
+        {"type": "suffix", "value": "Pacifism"}
+    ],
+    [
+        {"type": "prefix", "value": "Padding"},
+        {"type": "suffix", "value": "Padding"}
+    ],
+    [
+        {"type": "prefix", "value": "Paint"},
+        {"type": "suffix", "value": "Paint"}
+    ],
+    [
+        {"type": "prefix", "value": "Paired"},
+        {"type": "suffix", "value": "Paired"}
+    ],
+    [
+        {"type": "prefix", "value": "Pandemonium"},
+        {"type": "suffix", "value": "Pandemonium"}
+    ],
+    [
+        {"type": "prefix", "value": "Paradox"},
+        {"type": "suffix", "value": "Paradox"}
+    ],
+    [
+        {"type": "prefix", "value": "Passion"},
+        {"type": "suffix", "value": "Passion"}
+    ],
+    [
+        {"type": "prefix", "value": "Paternity"},
+        {"type": "suffix", "value": "Paternity"}
+    ],
+    [
+        {"type": "prefix", "value": "Patterns"},
+        {"type": "suffix", "value": "Patterns"}
+    ],
+    [
+        {"type": "prefix", "value": "Peace"},
+        {"type": "suffix", "value": "Peace"}
+    ],
+    [
+        {"type": "prefix", "value": "Performance"},
+        {"type": "suffix", "value": "Performance"}
+    ],
+    [
+        {"type": "prefix", "value": "Permanence"},
+        {"type": "suffix", "value": "Permanence"}
+    ],
+    [
+        {"type": "prefix", "value": "Persistence"},
+        {"type": "suffix", "value": "Persistence"}
+    ],
+    [
+        {"type": "prefix", "value": "Persuasion"},
+        {"type": "suffix", "value": "Persuasion"}
+    ],
+    [
+        {"type": "prefix", "value": "Playfulness"},
+        {"type": "suffix", "value": "Playfulness"}
+    ],
+    [
+        {"type": "prefix", "value": "Poetic"},
+        {"type": "suffix", "value": "Poetic"}
+    ],
+    [
+        {"type": "prefix", "value": "Pointed"},
+        {"type": "suffix", "value": "Pointed"}
+    ],
+    [
+        {"type": "prefix", "value": "Poison"},
+        {"type": "suffix", "value": "Poison"}
+    ],
+    [
+        {"type": "prefix", "value": "Polarizing"},
+        {"type": "suffix", "value": "Polarizing"}
+    ],
+    [
+        {"type": "prefix", "value": "Portals"},
+        {"type": "suffix", "value": "Portals"}
+    ],
+    [
+        {"type": "prefix", "value": "Portrayal"},
+        {"type": "suffix", "value": "Portrayal"}
+    ],
+    [
+        {"type": "prefix", "value": "Poverty"},
+        {"type": "suffix", "value": "Poverty"}
+    ],
+    [
+        {"type": "prefix", "value": "Prank"},
+        {"type": "suffix", "value": "Prank"}
+    ],
+    [
+        {"type": "prefix", "value": "Preparation"},
+        {"type": "suffix", "value": "Preparation"}
+    ],
+    [
+        {"type": "prefix", "value": "Presence"},
+        {"type": "suffix", "value": "Presence"}
+    ],
+    [
+        {"type": "prefix", "value": "Preservation"},
+        {"type": "suffix", "value": "Preservation"}
+    ],
+    [
+        {"type": "prefix", "value": "Prince"},
+        {"type": "suffix", "value": "Prince"}
+    ],
+    [
+        {"type": "prefix", "value": "Princess"},
+        {"type": "suffix", "value": "Princess"}
+    ],
+    [
+        {"type": "prefix", "value": "Prismatic"},
+        {"type": "suffix", "value": "Prismatic"}
+    ],
+    [
+        {"type": "prefix", "value": "Privilege"},
+        {"type": "suffix", "value": "Privilege"}
+    ],
+    [
+        {"type": "prefix", "value": "Procrastination"},
+        {"type": "suffix", "value": "Procrastination"}
+    ],
+    [
+        {"type": "prefix", "value": "Progress"},
+        {"type": "suffix", "value": "Progress"}
+    ],
+    [
+        {"type": "prefix", "value": "Propellant"},
+        {"type": "suffix", "value": "Propellant"}
+    ],
+    [
+        {"type": "prefix", "value": "Prophecy"},
+        {"type": "suffix", "value": "Prophecy"}
+    ],
+    [
+        {"type": "prefix", "value": "Pulverizing"},
+        {"type": "suffix", "value": "Pulverizing"}
+    ],
+    [
+        {"type": "prefix", "value": "Puppeteering"},
+        {"type": "suffix", "value": "Puppeteering"}
+    ],
+    [
+        {"type": "prefix", "value": "Pure"},
+        {"type": "suffix", "value": "Pure"}
+    ],
+    [
+        {"type": "prefix", "value": "Puree"},
+        {"type": "suffix", "value": "Puree"}
+    ],
+    [
+        {"type": "prefix", "value": "Putrid"},
+        {"type": "suffix", "value": "Putrid"}
+    ],
+    [
+        {"type": "prefix", "value": "Quality"},
+        {"type": "suffix", "value": "Quality"}
+    ],
+    [
+        {"type": "prefix", "value": "Quantum"},
+        {"type": "suffix", "value": "Quantum"}
+    ],
+    [
+        {"type": "prefix", "value": "Queasiness"},
+        {"type": "suffix", "value": "Queasiness"}
+    ],
+    [
+        {"type": "prefix", "value": "Queen"},
+        {"type": "suffix", "value": "Queen"}
+    ],
+    [
+        {"type": "prefix", "value": "Quenching"},
+        {"type": "suffix", "value": "Quenching"}
+    ],
+    [
+        {"type": "prefix", "value": "Questing"},
+        {"type": "suffix", "value": "Questing"}
+    ],
+    [
+        {"type": "prefix", "value": "Quick"},
+        {"type": "suffix", "value": "Quick"}
+    ],
+    [
+        {"type": "prefix", "value": "Quiet"},
+        {"type": "suffix", "value": "Quiet"}
+    ],
+    [
+        {"type": "prefix", "value": "Race"},
+        {"type": "suffix", "value": "Race"}
+    ],
+    [
+        {"type": "prefix", "value": "Radiance"},
+        {"type": "suffix", "value": "Radiance"}
+    ],
+    [
+        {"type": "prefix", "value": "Radiant"},
+        {"type": "suffix", "value": "Radiant"}
+    ],
+    [
+        {"type": "prefix", "value": "Radiation"},
+        {"type": "suffix", "value": "Radiation"}
+    ],
+    [
+        {"type": "prefix", "value": "Rage"},
+        {"type": "suffix", "value": "Rage"}
+    ],
+    [
+        {"type": "prefix", "value": "Raiment"},
+        {"type": "suffix", "value": "Raiment"}
+    ],
+    [
+        {"type": "prefix", "value": "Rallying"},
+        {"type": "suffix", "value": "Rallying"}
+    ],
+    [
+        {"type": "prefix", "value": "Randomization"},
+        {"type": "suffix", "value": "Randomization"}
+    ],
+    [
+        {"type": "prefix", "value": "Rare"},
+        {"type": "suffix", "value": "Rare"}
+    ],
+    [
+        {"type": "prefix", "value": "Rays"},
+        {"type": "suffix", "value": "Rays"}
+    ],
+    [
+        {"type": "prefix", "value": "Reaching"},
+        {"type": "suffix", "value": "Reaching"}
+    ],
+    [
+        {"type": "prefix", "value": "Readiness"},
+        {"type": "suffix", "value": "Readiness"}
+    ],
+    [
+        {"type": "prefix", "value": "Reaper"},
+        {"type": "suffix", "value": "Reaper"}
+    ],
+    [
+        {"type": "prefix", "value": "Rearguard"},
+        {"type": "suffix", "value": "Rearguard"}
+    ],
+    [
+        {"type": "prefix", "value": "Reason"},
+        {"type": "suffix", "value": "Reason"}
+    ],
+    [
+        {"type": "prefix", "value": "Rebellion"},
+        {"type": "suffix", "value": "Rebellion"}
+    ],
+    [
+        {"type": "prefix", "value": "Recharge"},
+        {"type": "suffix", "value": "Recharge"}
+    ],
+    [
+        {"type": "prefix", "value": "Reciprocity"},
+        {"type": "suffix", "value": "Reciprocity"}
+    ],
+    [
+        {"type": "prefix", "value": "Recklessness"},
+        {"type": "suffix", "value": "Recklessness"}
+    ],
+    [
+        {"type": "prefix", "value": "Reckoning"},
+        {"type": "suffix", "value": "Reckoning"}
+    ],
+    [
+        {"type": "prefix", "value": "Reclamation"},
+        {"type": "suffix", "value": "Reclamation"}
+    ],
+    [
+        {"type": "prefix", "value": "Reconciliation"},
+        {"type": "suffix", "value": "Reconciliation"}
+    ],
+    [
+        {"type": "prefix", "value": "Recording"},
+        {"type": "suffix", "value": "Recording"}
+    ],
+    [
+        {"type": "prefix", "value": "Recovery"},
+        {"type": "suffix", "value": "Recovery"}
+    ],
+    [
+        {"type": "prefix", "value": "Recruiting"},
+        {"type": "suffix", "value": "Recruiting"}
+    ],
+    [
+        {"type": "prefix", "value": "Reduction"},
+        {"type": "suffix", "value": "Reduction"}
+    ],
+    [
+        {"type": "prefix", "value": "Redo"},
+        {"type": "suffix", "value": "Redo"}
+    ],
+    [
+        {"type": "prefix", "value": "Redoing"},
+        {"type": "suffix", "value": "Redoing"}
+    ],
+    [
+        {"type": "prefix", "value": "Refill"},
+        {"type": "suffix", "value": "Refill"}
+    ],
+    [
+        {"type": "prefix", "value": "Reflection"},
+        {"type": "suffix", "value": "Reflection"}
+    ],
+    [
+        {"type": "prefix", "value": "Refrigeration"},
+        {"type": "suffix", "value": "Refrigeration"}
+    ],
+    [
+        {"type": "prefix", "value": "Regal"},
+        {"type": "suffix", "value": "Regal"}
+    ],
+    [
+        {"type": "prefix", "value": "Rehabilitation"},
+        {"type": "suffix", "value": "Rehabilitation"}
+    ],
+    [
+        {"type": "prefix", "value": "Reinforcing"},
+        {"type": "suffix", "value": "Reinforcing"}
+    ],
+    [
+        {"type": "prefix", "value": "Rejuvination"},
+        {"type": "suffix", "value": "Rejuvination"}
+    ],
+    [
+        {"type": "prefix", "value": "Relaxation"},
+        {"type": "suffix", "value": "Relaxation"}
+    ],
+    [
+        {"type": "prefix", "value": "Relief"},
+        {"type": "suffix", "value": "Relief"}
+    ],
+    [
+        {"type": "prefix", "value": "Religion"},
+        {"type": "suffix", "value": "Religion"}
+    ],
+    [
+        {"type": "prefix", "value": "Remembrance"},
+        {"type": "suffix", "value": "Remembrance"}
+    ],
+    [
+        {"type": "prefix", "value": "Remorse"},
+        {"type": "suffix", "value": "Remorse"}
+    ],
+    [
+        {"type": "prefix", "value": "Rending"},
+        {"type": "suffix", "value": "Rending"}
+    ],
+    [
+        {"type": "prefix", "value": "Repair"},
+        {"type": "suffix", "value": "Repair"}
+    ],
+    [
+        {"type": "prefix", "value": "Repentance"},
+        {"type": "suffix", "value": "Repentance"}
+    ],
+    [
+        {"type": "prefix", "value": "Replay"},
+        {"type": "suffix", "value": "Replay"}
+    ],
+    [
+        {"type": "prefix", "value": "Republic"},
+        {"type": "suffix", "value": "Republic"}
+    ],
+    [
+        {"type": "prefix", "value": "Resolve"},
+        {"type": "suffix", "value": "Resolve"}
+    ],
+    [
+        {"type": "prefix", "value": "Restitution"},
+        {"type": "suffix", "value": "Restitution"}
+    ],
+    [
+        {"type": "prefix", "value": "Restoration"},
+        {"type": "suffix", "value": "Restoration"}
+    ],
+    [
+        {"type": "prefix", "value": "Retraction"},
+        {"type": "suffix", "value": "Retraction"}
+    ],
+    [
+        {"type": "prefix", "value": "Retreat"},
+        {"type": "suffix", "value": "Retreat"}
+    ],
+    [
+        {"type": "prefix", "value": "Returning"},
+        {"type": "suffix", "value": "Returning"}
+    ],
+    [
+        {"type": "prefix", "value": "Revealing"}
+    ],
+    [
+        {"type": "prefix", "value": "Revelation"},
+        {"type": "suffix", "value": "Revelation"}
+    ],
+    [
+        {"type": "prefix", "value": "Revenge"},
+        {"type": "suffix", "value": "Revenge"}
+    ],
+    [
+        {"type": "prefix", "value": "Revision"},
+        {"type": "suffix", "value": "Revision"}
+    ],
+    [
+        {"type": "prefix", "value": "Reviving"},
+        {"type": "suffix", "value": "Reviving"}
+    ],
+    [
+        {"type": "prefix", "value": "Revolution"},
+        {"type": "suffix", "value": "Revolution"}
+    ],
+    [
+        {"type": "prefix", "value": "Risk"},
+        {"type": "suffix", "value": "Risk"}
+    ],
+    [
+        {"type": "prefix", "value": "Robustness"},
+        {"type": "suffix", "value": "Robustness"}
+    ],
+    [
+        {"type": "prefix", "value": "Romance"},
+        {"type": "suffix", "value": "Romance"}
+    ],
+    [
+        {"type": "prefix", "value": "Rough"},
+        {"type": "suffix", "value": "Rough"}
+    ],
+    [
+        {"type": "prefix", "value": "Rounded"},
+        {"type": "suffix", "value": "Rounded"}
+    ],
+    [
+        {"type": "prefix", "value": "Royal"},
+        {"type": "suffix", "value": "Royal"}
+    ],
+    [
+        {"type": "prefix", "value": "Royalty"},
+        {"type": "suffix", "value": "Royalty"}
+    ],
+    [
+        {"type": "prefix", "value": "Ruin"},
+        {"type": "suffix", "value": "Ruin"}
+    ],
+    [
+        {"type": "prefix", "value": "Rusty"},
+        {"type": "suffix", "value": "Rusty"}
+    ],
+    [
+        {"type": "prefix", "value": "Sabotage"},
+        {"type": "suffix", "value": "Sabotage"}
+    ],
+    [
+        {"type": "prefix", "value": "Sacrificial"},
+        {"type": "suffix", "value": "Sacrificial"}
+    ],
+    [
+        {"type": "prefix", "value": "Salvation"},
+        {"type": "suffix", "value": "Salvation"}
+    ],
+    [
+        {"type": "prefix", "value": "Savage"},
+        {"type": "suffix", "value": "Savage"}
+    ],
+    [
+        {"type": "prefix", "value": "Savant"},
+        {"type": "suffix", "value": "Savant"}
+    ],
+    [
+        {"type": "prefix", "value": "Scarcity"},
+        {"type": "suffix", "value": "Scarcity"}
+    ],
+    [
+        {"type": "prefix", "value": "Scars"},
+        {"type": "suffix", "value": "Scars"}
+    ],
+    [
+        {"type": "prefix", "value": "Scents"},
+        {"type": "suffix", "value": "Scents"}
+    ],
+    [
+        {"type": "prefix", "value": "Scrying"},
+        {"type": "suffix", "value": "Scrying"}
+    ],
+    [
+        {"type": "prefix", "value": "Sealed"},
+        {"type": "suffix", "value": "Sealed"}
+    ],
+    [
+        {"type": "prefix", "value": "Searing"},
+        {"type": "suffix", "value": "Searing"}
+    ],
+    [
+        {"type": "prefix", "value": "Secrecy"},
+        {"type": "suffix", "value": "Secrecy"},
+        {"type": "suffix", "value": "Secrets"}
+    ],
+    [
+        {"type": "prefix", "value": "Self Destruction"}
+    ],
+    [
+        {"type": "prefix", "value": "Selfishness"},
+        {"type": "suffix", "value": "Selfishness"}
+    ],
+    [
+        {"type": "prefix", "value": "Serenity"},
+        {"type": "suffix", "value": "Serenity"}
+    ],
+    [
+        {"type": "prefix", "value": "Serpent"},
+        {"type": "suffix", "value": "Serpent"}
+    ],
+    [
+        {"type": "prefix", "value": "Serpentine"},
+        {"type": "suffix", "value": "Serpentine"}
+    ],
+    [
+        {"type": "prefix", "value": "Service"},
+        {"type": "suffix", "value": "Service"}
+    ],
+    [
+        {"type": "prefix", "value": "Shade"},
+        {"type": "suffix", "value": "Shade"}
+    ],
+    [
+        {"type": "prefix", "value": "Shadow"},
+        {"type": "suffix", "value": "Shadow"}
+    ],
+    [
+        {"type": "prefix", "value": "Shame"},
+        {"type": "suffix", "value": "Shame"}
+    ],
+    [
+        {"type": "prefix", "value": "Sharp"},
+        {"type": "suffix", "value": "Sharp"}
+    ],
+    [
+        {"type": "prefix", "value": "Shattered"},
+        {"type": "suffix", "value": "Shattered"}
+    ],
+    [
+        {"type": "prefix", "value": "Shelter"},
+        {"type": "suffix", "value": "Shelter"}
+    ],
+    [
+        {"type": "prefix", "value": "Shield"},
+        {"type": "suffix", "value": "Shield"}
+    ],
+    [
+        {"type": "prefix", "value": "Shimmering"},
+        {"type": "suffix", "value": "Shimmering"}
+    ],
+    [
+        {"type": "prefix", "value": "Shocking"},
+        {"type": "suffix", "value": "Shocking"}
+    ],
+    [
+        {"type": "prefix", "value": "Short"},
+        {"type": "suffix", "value": "Short"}
+    ],
+    [
+        {"type": "prefix", "value": "Shrieks"},
+        {"type": "suffix", "value": "Shrieks"}
+    ],
+    [
+        {"type": "prefix", "value": "Shrinking"},
+        {"type": "suffix", "value": "Shrinking"}
+    ],
+    [
+        {"type": "prefix", "value": "Sickness"},
+        {"type": "suffix", "value": "Sickness"}
+    ],
+    [
+        {"type": "prefix", "value": "Sight"},
+        {"type": "suffix", "value": "Sight"}
+    ],
+    [
+        {"type": "prefix", "value": "Silence"},
+        {"type": "suffix", "value": "Silence"}
+    ],
+    [
+        {"type": "prefix", "value": "Silvery"},
+        {"type": "suffix", "value": "Silvery"}
+    ],
+    [
+        {"type": "prefix", "value": "Sisterhood"},
+        {"type": "suffix", "value": "Sisterhood"}
+    ],
+    [
+        {"type": "prefix", "value": "Sleek"},
+        {"type": "suffix", "value": "Sleek"}
+    ],
+    [
+        {"type": "prefix", "value": "Sleep"},
+        {"type": "suffix", "value": "Sleep"}
+    ],
+    [
+        {"type": "prefix", "value": "Slime"},
+        {"type": "suffix", "value": "Slime"}
+    ],
+    [
+        {"type": "prefix", "value": "Slimy"},
+        {"type": "suffix", "value": "Slimy"}
+    ],
+    [
+        {"type": "prefix", "value": "Sloth"},
+        {"type": "suffix", "value": "Sloth"}
+    ],
+    [
+        {"type": "prefix", "value": "Small"},
+        {"type": "suffix", "value": "Small"}
+    ],
+    [
+        {"type": "prefix", "value": "Smashing"},
+        {"type": "suffix", "value": "Smashing"}
+    ],
+    [
+        {"type": "prefix", "value": "Smoke"},
+        {"type": "suffix", "value": "Smoke"}
+    ],
+    [
+        {"type": "prefix", "value": "Smoking"},
+        {"type": "suffix", "value": "Smoking"}
+    ],
+    [
+        {"type": "prefix", "value": "Sneaking"},
+        {"type": "suffix", "value": "Sneaking"}
+    ],
+    [
+        {"type": "prefix", "value": "Soaring"},
+        {"type": "suffix", "value": "Soaring"}
+    ],
+    [
+        {"type": "prefix", "value": "Soberness"},
+        {"type": "suffix", "value": "Soberness"}
+    ],
+    [
+        {"type": "prefix", "value": "Solidarity"},
+        {"type": "suffix", "value": "Solidarity"}
+    ],
+    [
+        {"type": "prefix", "value": "Solidification"},
+        {"type": "suffix", "value": "Solidification"}
+    ],
+    [
+        {"type": "prefix", "value": "Song"},
+        {"type": "suffix", "value": "Song"}
+    ],
+    [
+        {"type": "prefix", "value": "Sorrow"},
+        {"type": "suffix", "value": "Sorrow"}
+    ],
+    [
+        {"type": "prefix", "value": "Space"},
+        {"type": "suffix", "value": "Space"}
+    ],
+    [
+        {"type": "prefix", "value": "Spanning"},
+        {"type": "suffix", "value": "Spanning"}
+    ],
+    [
+        {"type": "prefix", "value": "Sparing"},
+        {"type": "suffix", "value": "Sparing"}
+    ],
+    [
+        {"type": "prefix", "value": "Sparkles"},
+        {"type": "suffix", "value": "Sparkles"}
+    ],
+    [
+        {"type": "prefix", "value": "Speed"},
+        {"type": "suffix", "value": "Speed"}
+    ],
+    [
+        {"type": "prefix", "value": "Spiders"},
+        {"type": "suffix", "value": "Spiders"}
+    ],
+    [
+        {"type": "prefix", "value": "Spirit"},
+        {"type": "suffix", "value": "Spirit"}
+    ],
+    [
+        {"type": "prefix", "value": "Spreading"},
+        {"type": "suffix", "value": "Spreading"}
+    ],
+    [
+        {"type": "prefix", "value": "Squeazing"},
+        {"type": "suffix", "value": "Squeazing"}
+    ],
+    [
+        {"type": "prefix", "value": "Stalling"},
+        {"type": "suffix", "value": "Stalling"}
+    ],
+    [
+        {"type": "prefix", "value": "Stamina"},
+        {"type": "suffix", "value": "Stamina"}
+    ],
+    [
+        {"type": "prefix", "value": "Stasis"},
+        {"type": "suffix", "value": "Stasis"}
+    ],
+    [
+        {"type": "prefix", "value": "Stealth"},
+        {"type": "suffix", "value": "Stealth"}
+    ],
+    [
+        {"type": "prefix", "value": "Stifling"},
+        {"type": "suffix", "value": "Stifling"}
+    ],
+    [
+        {"type": "prefix", "value": "Storage"},
+        {"type": "suffix", "value": "Storage"}
+    ],
+    [
+        {"type": "prefix", "value": "Storms"},
+        {"type": "suffix", "value": "Storms"}
+    ],
+    [
+        {"type": "prefix", "value": "Strength"},
+        {"type": "suffix", "value": "Strength"}
+    ],
+    [
+        {"type": "prefix", "value": "Stress"},
+        {"type": "suffix", "value": "Stress"}
+    ],
+    [
+        {"type": "prefix", "value": "Stunning"},
+        {"type": "suffix", "value": "Stunning"}
+    ],
+    [
+        {"type": "prefix", "value": "Sublimation"},
+        {"type": "suffix", "value": "Sublimation"}
+    ],
+    [
+        {"type": "prefix", "value": "Submersion"},
+        {"type": "suffix", "value": "Submersion"}
+    ],
+    [
+        {"type": "prefix", "value": "Subservience"},
+        {"type": "suffix", "value": "Subservience"}
+    ],
+    [
+        {"type": "prefix", "value": "Subtle"},
+        {"type": "suffix", "value": "Subtle"}
+    ],
+    [
+        {"type": "prefix", "value": "Success"},
+        {"type": "suffix", "value": "Success"}
+    ],
+    [
+        {"type": "prefix", "value": "Suffocation"},
+        {"type": "suffix", "value": "Suffocation"}
+    ],
+    [
+        {"type": "prefix", "value": "Summoning"},
+        {"type": "suffix", "value": "Summoning"}
+    ],
+    [
+        {"type": "prefix", "value": "Sundering"},
+        {"type": "suffix", "value": "Sundering"}
+    ],
+    [
+        {"type": "prefix", "value": "Sunlight"},
+        {"type": "suffix", "value": "Sunlight"}
+    ],
+    [
+        {"type": "prefix", "value": "Surgery"},
+        {"type": "suffix", "value": "Surgery"}
+    ],
+    [
+        {"type": "prefix", "value": "Surprise"},
+        {"type": "suffix", "value": "Surprise"}
+    ],
+    [
+        {"type": "prefix", "value": "Survival"},
+        {"type": "suffix", "value": "Survival"}
+    ],
+    [
+        {"type": "prefix", "value": "Suspicion"},
+        {"type": "suffix", "value": "Suspicion"}
+    ],
+    [
+        {"type": "prefix", "value": "Sustenance"},
+        {"type": "suffix", "value": "Sustenance"}
+    ],
+    [
+        {"type": "prefix", "value": "Swamps"},
+        {"type": "suffix", "value": "Swamps"}
+    ],
+    [
+        {"type": "prefix", "value": "Sweetness"},
+        {"type": "suffix", "value": "Sweetness"}
+    ],
+    [
+        {"type": "prefix", "value": "Swimming"},
+        {"type": "suffix", "value": "Swimming"}
+    ],
+    [
+        {"type": "prefix", "value": "Synchronization"},
+        {"type": "suffix", "value": "Synchronization"}
+    ],
+    [
+        {"type": "prefix", "value": "Tall"},
+        {"type": "suffix", "value": "Tall"}
+    ],
+    [
+        {"type": "prefix", "value": "Taming"},
+        {"type": "suffix", "value": "Taming"}
+    ],
+    [
+        {"type": "prefix", "value": "Targeted"},
+        {"type": "suffix", "value": "Targeted"}
+    ],
+    [
+        {"type": "prefix", "value": "Tarnished"},
+        {"type": "suffix", "value": "Tarnished"}
+    ],
+    [
+        {"type": "prefix", "value": "Tears"},
+        {"type": "suffix", "value": "Tears"}
+    ],
+    [
+        {"type": "prefix", "value": "Tedium"},
+        {"type": "suffix", "value": "Tedium"}
+    ],
+    [
+        {"type": "prefix", "value": "Teleportation"},
+        {"type": "suffix", "value": "Teleportation"}
+    ],
+    [
+        {"type": "prefix", "value": "Temptation"},
+        {"type": "suffix", "value": "Temptation"}
+    ],
+    [
+        {"type": "prefix", "value": "Tending"},
+        {"type": "suffix", "value": "Tending"}
+    ],
+    [
+        {"type": "prefix", "value": "Testing"},
+        {"type": "suffix", "value": "Testing"}
+    ],
+    [
+        {"type": "prefix", "value": "Thirst"},
+        {"type": "suffix", "value": "Thirst"}
+    ],
+    [
+        {"type": "prefix", "value": "Thrift"},
+        {"type": "suffix", "value": "Thrift"}
+    ],
+    [
+        {"type": "prefix", "value": "Timing"},
+        {"type": "suffix", "value": "Timing"}
+    ],
+    [
+        {"type": "prefix", "value": "Torture"},
+        {"type": "suffix", "value": "Torture"}
+    ],
+    [
+        {"type": "prefix", "value": "Toxic"},
+        {"type": "suffix", "value": "Toxic"}
+    ],
+    [
+        {"type": "prefix", "value": "Toying"},
+        {"type": "suffix", "value": "Toying"}
+    ],
+    [
+        {"type": "prefix", "value": "Tragedy"},
+        {"type": "suffix", "value": "Tragedy"}
+    ],
+    [
+        {"type": "prefix", "value": "Tranquillity"},
+        {"type": "suffix", "value": "Tranquillity"}
+    ],
+    [
+        {"type": "prefix", "value": "Transfiguration"},
+        {"type": "suffix", "value": "Transfiguration"}
+    ],
+    [
+        {"type": "prefix", "value": "Transmutation"},
+        {"type": "suffix", "value": "Transmutation"}
+    ],
+    [
+        {"type": "prefix", "value": "Transportation"},
+        {"type": "suffix", "value": "Transportation"}
+    ],
+    [
+        {"type": "prefix", "value": "Trapping"},
+        {"type": "suffix", "value": "Trapping"}
+    ],
+    [
+        {"type": "prefix", "value": "Travel"},
+        {"type": "suffix", "value": "Travel"}
+    ],
+    [
+        {"type": "prefix", "value": "Treason"},
+        {"type": "suffix", "value": "Treason"}
+    ],
+    [
+        {"type": "prefix", "value": "Tremors"},
+        {"type": "suffix", "value": "Tremors"}
+    ],
+    [
+        {"type": "prefix", "value": "Trials"},
+        {"type": "suffix", "value": "Trials"}
+    ],
+    [
+        {"type": "prefix", "value": "Trickery"},
+        {"type": "suffix", "value": "Trickery"}
+    ],
+    [
+        {"type": "prefix", "value": "Triumph"},
+        {"type": "suffix", "value": "Triumph"}
+    ],
+    [
+        {"type": "prefix", "value": "Trust"},
+        {"type": "suffix", "value": "Trust"}
+    ],
+    [
+        {"type": "prefix", "value": "Truth"},
+        {"type": "suffix", "value": "Truth"}
+    ],
+    [
+        {"type": "prefix", "value": "Tunneling"},
+        {"type": "suffix", "value": "Tunneling"}
+    ],
+    [
+        {"type": "prefix", "value": "Twins"},
+        {"type": "suffix", "value": "Twins"}
+    ],
+    [
+        {"type": "prefix", "value": "Twisted"},
+        {"type": "suffix", "value": "Twisted"}
+    ],
+    [
+        {"type": "prefix", "value": "Tying"},
+        {"type": "suffix", "value": "Tying"}
+    ],
+    [
+        {"type": "prefix", "value": "Understanding"},
+        {"type": "suffix", "value": "Understanding"}
+    ],
+    [
+        {"type": "prefix", "value": "Undoing"},
+        {"type": "suffix", "value": "Undoing"}
+    ],
+    [
+        {"type": "prefix", "value": "Unexpected"},
+        {"type": "suffix", "value": "Unexpected"}
+    ],
+    [
+        {"type": "prefix", "value": "Vagabond"},
+        {"type": "suffix", "value": "Vagabond"}
+    ],
+    [
+        {"type": "prefix", "value": "Vagabonds"},
+        {"type": "suffix", "value": "Vagabonds"}
+    ],
+    [
+        {"type": "prefix", "value": "Validation"},
+        {"type": "suffix", "value": "Validation"}
+    ],
+    [
+        {"type": "prefix", "value": "Valuable"},
+        {"type": "suffix", "value": "Valuable"}
+    ],
+    [
+        {"type": "prefix", "value": "Vampiric"},
+        {"type": "suffix", "value": "Vampiric"}
+    ],
+    [
+        {"type": "prefix", "value": "Vanguard"},
+        {"type": "suffix", "value": "Vanguard"}
+    ],
+    [
+        {"type": "prefix", "value": "Vanity"},
+        {"type": "suffix", "value": "Vanity"}
+    ],
+    [
+        {"type": "prefix", "value": "Vapor"},
+        {"type": "suffix", "value": "Vapor"}
+    ],
+    [
+        {"type": "prefix", "value": "Veils"},
+        {"type": "suffix", "value": "Veils"}
+    ],
+    [
+        {"type": "prefix", "value": "Veracity"},
+        {"type": "suffix", "value": "Veracity"}
+    ],
+    [
+        {"type": "prefix", "value": "Vestiture"},
+        {"type": "suffix", "value": "Vestiture"}
+    ],
+    [
+        {"type": "prefix", "value": "Victimization"},
+        {"type": "suffix", "value": "Victimization"}
+    ],
+    [
+        {"type": "prefix", "value": "Vile"},
+        {"type": "suffix", "value": "Vile"}
+    ],
+    [
+        {"type": "prefix", "value": "Vines"},
+        {"type": "suffix", "value": "Vines"}
+    ],
+    [
+        {"type": "prefix", "value": "Violence"},
+        {"type": "suffix", "value": "Violence"}
+    ],
+    [
+        {"type": "prefix", "value": "Vision"},
+        {"type": "suffix", "value": "Vision"}
+    ],
+    [
+        {"type": "prefix", "value": "Vitality"},
+        {"type": "suffix", "value": "Vitality"}
+    ],
+    [
+        {"type": "prefix", "value": "Voyage"},
+        {"type": "suffix", "value": "Voyage"}
+    ],
+    [
+        {"type": "prefix", "value": "Wading"},
+        {"type": "suffix", "value": "Wading"}
+    ],
+    [
+        {"type": "prefix", "value": "Wails"},
+        {"type": "suffix", "value": "Wails"}
+    ],
+    [
+        {"type": "prefix", "value": "Wakening"},
+        {"type": "suffix", "value": "Wakening"}
+    ],
+    [
+        {"type": "prefix", "value": "Wandering"},
+        {"type": "suffix", "value": "Wandering"}
+    ],
+    [
+        {"type": "prefix", "value": "Warmth"},
+        {"type": "suffix", "value": "Warmth"}
+    ],
+    [
+        {"type": "prefix", "value": "Warped"},
+        {"type": "suffix", "value": "Warped"}
+    ],
+    [
+        {"type": "prefix", "value": "Waste"},
+        {"type": "suffix", "value": "Waste"}
+    ],
+    [
+        {"type": "prefix", "value": "Water"},
+        {"type": "suffix", "value": "Water"}
+    ],
+    [
+        {"type": "prefix", "value": "Weather"},
+        {"type": "suffix", "value": "Weather"}
+    ],
+    [
+        {"type": "prefix", "value": "Weeds"},
+        {"type": "suffix", "value": "Weeds"}
+    ],
+    [
+        {"type": "prefix", "value": "Weighty"},
+        {"type": "suffix", "value": "Weighty"}
+    ],
+    [
+        {"type": "prefix", "value": "Welding"},
+        {"type": "suffix", "value": "Welding"}
+    ],
+    [
+        {"type": "prefix", "value": "Wellness"},
+        {"type": "suffix", "value": "Wellness"}
+    ],
+    [
+        {"type": "prefix", "value": "Werebeast"},
+        {"type": "suffix", "value": "Werebeast"}
+    ],
+    [
+        {"type": "prefix", "value": "Werewolf"},
+        {"type": "suffix", "value": "Werewolf"}
+    ],
+    [
+        {"type": "prefix", "value": "Whimsy"},
+        {"type": "suffix", "value": "Whimsy"}
+    ],
+    [
+        {"type": "prefix", "value": "Wide"},
+        {"type": "suffix", "value": "Wide"}
+    ],
+    [
+        {"type": "prefix", "value": "Wild"},
+        {"type": "suffix", "value": "Wild"}
+    ],
+    [
+        {"type": "prefix", "value": "Wilderness"},
+        {"type": "suffix", "value": "Wilderness"}
+    ],
+    [
+        {"type": "prefix", "value": "Wind"},
+        {"type": "suffix", "value": "Wind"}
+    ],
+    [
+        {"type": "prefix", "value": "Wisdom"},
+        {"type": "suffix", "value": "Wisdom"}
+    ],
+    [
+        {"type": "prefix", "value": "Undefined"},
+        {"type": "suffix", "value": "Undefined"}
+    ],
+    [
+        {"type": "prefix", "value": "Wishes"},
+        {"type": "suffix", "value": "Wishes"}
+    ],
+    [
+        {"type": "prefix", "value": "Withering"},
+        {"type": "suffix", "value": "Withering"}
+    ],
+    [
+        {"type": "prefix", "value": "Wizards"},
+        {"type": "suffix", "value": "Wizards"}
+    ],
+    [
+        {"type": "prefix", "value": "Worship"},
+        {"type": "suffix", "value": "Worship"}
+    ],
+    [
+        {"type": "prefix", "value": "Wrestling"},
+        {"type": "suffix", "value": "Wrestling"}
+    ],
+    [
+        {"type": "prefix", "value": "Xenophobia"},
+        {"type": "suffix", "value": "Xenophobia"}
+    ],
+    [
+        {"type": "prefix", "value": "Youth"},
+        {"type": "suffix", "value": "Youth"}
+    ],
+    [
+        {"type": "prefix", "value": "Adoring"},
+        {"type": "suffix", "value": "Adoring"}
+    ],
+    [
+        {"type": "prefix", "value": "Holy"},
+        {"type": "suffix", "value": "Holies"}
+    ],
+    [
+        {"type": "prefix", "value": "Sacred"},
+        {"type": "suffix", "value": "Sanctity"}
+    ]
+]

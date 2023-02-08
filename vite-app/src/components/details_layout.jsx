@@ -1,6 +1,7 @@
 
 import GlobalContext from "../global_context";
 import { useContext, useState, useEffect } from "react";
+import colors from "../utility/colors.jsx";
 
 export default function DetailsLayout({page_title, children}) {
 
@@ -25,6 +26,7 @@ function Banner () {
 
     // Make the banner part of the state so it will trigger re-render of the layout banner elements
     const [banner, set_banner] = useState([]);
+    const [banner_style, set_banner_style] = useState("neutral");
 
     // Clear out the banner array and start it over with a new message
     function replace_banner(message) {
@@ -66,11 +68,26 @@ function Banner () {
             clear_banner: clear_banner,
             append_indent_banner: append_indent_banner,
             append_inline_banner: append_inline_banner,
+            set_banner_style: set_banner_style,
         }));
     },[]);
 
-    const banner_style = {
-        backgroundColor: "lightgreen",
+    let banner_color = colors.banner_grey;
+
+    if (banner_style == "success") {
+        banner_color = colors.banner_green;
+    }
+
+    if (banner_style == "failure") {
+        banner_color = colors.banner_red;
+    }
+
+    if (banner_style == "warning") {
+        banner_color = colors.banner_yellow;
+    }
+
+    const calculated_banner_style = {
+        backgroundColor: banner_color,
         paddingLeft: ".5em",
         paddingRight: ".5em",
         position: "relative"
@@ -85,11 +102,12 @@ function Banner () {
 
     return (<>
         {banner.length > 0
-            && <div style={banner_style}>
+            && <><div style={calculated_banner_style}>
                 {banner.map((message) => <p key={message}>{message}</p>)}
-
                 <div onClick={clear_banner} className="hover-element" style={close_style}>x</div>
             </div>
+            <br />
+            </>
         }
     </>)
 }
