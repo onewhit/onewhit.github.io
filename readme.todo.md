@@ -43,8 +43,9 @@
 - [x] Allow 2-attribute gens to be in second half and not always split
 - [x] Setting full weight on 1 attribute doens't always include 1 attribute
 - [x] Build out specific structure generator
-- [ ] Add power generator
-- [ ] Output name proper wrapping
+- [x] Add power generator
+- [ ] Output name proper wrapping with "A" vs "An"
+- [ ] How to add "Set of" when "A" is picked, but item is plural (A brazen leggings, vs the leggings of malice, etc)
 - [ ] Able to add "the" before the suffix, and have the suffix_prefix inject after the "the" instead of before
 - [ ] Add tags for ability, vs description
 - [ ] Allow to pick number of abilities
