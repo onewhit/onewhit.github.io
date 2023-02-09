@@ -44,6 +44,7 @@
 - [x] Setting full weight on 1 attribute doens't always include 1 attribute
 - [x] Build out specific structure generator
 - [x] Add power generator
+- [ ] Make sure the "the" check is looking for a space after the "the" word so it doesn't match words that begin with T H E
 - [ ] Output name proper wrapping with "A" vs "An"
 - [ ] How to add "Set of" when "A" is picked, but item is plural (A brazen leggings, vs the leggings of malice, etc)
 - [ ] Able to add "the" before the suffix, and have the suffix_prefix inject after the "the" instead of before
