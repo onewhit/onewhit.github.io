@@ -26,6 +26,11 @@ export default function ItemGenForm () {
         {key: "specific", value: "Specific Structure"},
     ];
 
+    const introduction_options = [
+        {key: "The", value: "The"},
+        {key: "A", value: "A/An"}
+    ];
+
     const weight_options = get_array_between(0,100).map((num) => ({key: num, value: num}));
 
     const [generate_mode, set_generate_mode] = useState(generate_modes[0].key);
@@ -35,6 +40,7 @@ export default function ItemGenForm () {
     const [two_attribute_weight, set_two_attribute_weight] = useState(2);
     const [three_attribute_weight, set_three_attribute_weight] = useState(1);
 
+    const [introduction, set_introduction] = useState(introduction_options[0].key);
     const [is_force_prefix, set_is_force_prefix] = useState(false);
     const [is_force_suffix, set_is_force_suffix] = useState(false);
     const [is_force_suffix_prefix, set_is_force_suffix_prefix] = useState(false);
@@ -115,8 +121,21 @@ export default function ItemGenForm () {
                 ...Array(power_chance).fill(true),
                 ...Array(100-power_chance).fill(false)
             ])[1];
+
+            picked_item.introduction = "The";
+
+            if (num_attributes == 0) {
+                picked_item.introduction = "A";
+            }
+
+            // 50/50 chance of a single attribute item of having "the" or "a"
+            if (num_attributes == 1 && get_weighted_is_true(1) == true) {
+                picked_item.introduction = "A";
+            }
         }
         else if (generate_mode == "specific") {
+
+            picked_item.introduction = introduction;
 
             num_attributes = 3;
 
@@ -132,9 +151,9 @@ export default function ItemGenForm () {
                 picked_item.suffix_prefix = undefined;
                 num_attributes = num_attributes - 1;
             }
-            if (!is_force_power) {
-                picked_item.power = undefined;
-                is_power = false;
+            if (is_force_power) {
+                // picked_item.power = undefined;
+                is_power = true;
             }
         }
         else {
@@ -143,25 +162,6 @@ export default function ItemGenForm () {
         }
 
         const picked_attributes = [];
-
-        // Restructure the attribute_file so it is easier to work with the randomization pickers
-        // download_object_to_json_file(attribute_file.map((group) => {
-        //     const  return_obj = {
-        //         prefixes: [],
-        //         suffixes: []
-        //     }
-
-        //     group.forEach((attribute) => {
-        //         if (attribute.type == "prefix") {
-        //             return_obj.prefixes.push(attribute.value);
-        //         }
-        //         if (attribute.type == "suffix") {
-        //             return_obj.suffixes.push(attribute.value);
-        //         }
-        //     });
-
-        //     return return_obj;
-        // }),"downloaded_attributes.json");
 
         const restructured_attribute_file = attribute_file.map((group) => {
             const return_array = [];
@@ -208,7 +208,7 @@ export default function ItemGenForm () {
                         is_valid_attribute = true;
                     }
                 }
-                else if (picked_item.prefix != undefined && attribute_form.type == "suffix" && picked_item.suffix == "") {
+                else if (picked_item.suffix != undefined && attribute_form.type == "suffix" && picked_item.suffix == "") {
                     is_valid_attribute = true;
                 }
 
@@ -238,16 +238,6 @@ export default function ItemGenForm () {
             else if (picked_attribute_form.type == "suffix") {
                 picked_item.suffix = picked_attribute_form.value;
             }
-        }
-
-        picked_item.introduction = "The";
-
-        if (num_attributes == 0) {
-            picked_item.introduction = "A";
-        }
-
-        if (num_attributes == 1 && get_weighted_is_true(1) == true) {
-            picked_item.introduction = "A";
         }
 
         set_item_output(build_name_string_from_obj(picked_item));
@@ -301,14 +291,16 @@ export default function ItemGenForm () {
             {
                 generate_mode == "specific" && <>
                     <div className="gapdiv">Pick Item Name Structure</div>
-                    <div className="gapdiv">[The/A/An] &lt;prefix&gt; &lt;item&gt; of &lt;suffix_prefix&gt; &lt;suffix&gt;</div>
-                    <div className="gapdiv"><label>Prefix:{" "}</label><input type="checkbox" checked={is_force_prefix} onChange={(event) => set_is_force_prefix(event.target.value)} /></div>
+                    <div className="gapdiv">&lt;introduction&gt; &lt;prefix&gt; &lt;item&gt; of &lt;suffix_prefix&gt; &lt;suffix&gt;</div>
+                    {/* <div className="gapdiv"><label>Introduction:{" "}</label><input type="checkbox" checked={is_force_prefix} onChange={(event) => set_is_force_prefix(event.target.value)} /></div> */}
+                    <GenSelect label="Introduction" id_name="item_introduction" start_val={introduction} set_val={set_introduction} option_array={introduction_options} />
+                    <div className="gapdiv"><label>Prefix:{" "}</label><input type="checkbox" checked={is_force_prefix} onChange={(event) => set_is_force_prefix(event.target.checked)} /></div>
                     <div className="gapdiv"><label>Suffix Prefix:{" "}</label><input type="checkbox" checked={is_force_suffix_prefix} onChange={handle_force_suffix_prefix_change} /></div>
                     <div className="gapdiv">
                         <label>Suffix:{" "}</label>
                         <input type="checkbox" checked={is_force_suffix} onChange={handle_force_suffix_change} />
                     </div>
-                    <div className="gapdiv"><label>Power:{" "}</label><input type="checkbox" checked={is_force_power} onChange={(event) => set_is_force_power(event.target.value)} /></div>
+                    <div className="gapdiv"><label>Power:{" "}</label><input type="checkbox" checked={is_force_power} onChange={(event) => set_is_force_power(event.target.checked)} /></div>
                 </>
             }
             <div className="gapdiv"><button type="submit" onClick={handle_gen_item_click}>Generate</button></div>
@@ -329,19 +321,30 @@ export default function ItemGenForm () {
     );
 }
 
-function build_name_string_from_obj(picked_name_obj) {
-    const is_prefix = (picked_name_obj.prefix != undefined && picked_name_obj.prefix != "" ? true : false);
-    const is_suffix_prefix = (picked_name_obj.suffix_prefix != undefined && picked_name_obj.suffix_prefix != "" ? true : false);
-    const is_suffix = (picked_name_obj.suffix != undefined && picked_name_obj.suffix != "" ? true : false);
-    const is_suffix_has_the = (is_suffix && picked_name_obj.suffix.slice(0,4).toLowerCase() == "the ");
+function build_name_string_from_obj(picked_item_obj) {
 
-    let item_string = picked_name_obj.introduction;
+    const is_prefix = (picked_item_obj.prefix != undefined && picked_item_obj.prefix != "" ? true : false);
+    const is_suffix_prefix = (picked_item_obj.suffix_prefix != undefined && picked_item_obj.suffix_prefix != "" ? true : false);
+    const is_suffix = (picked_item_obj.suffix != undefined && picked_item_obj.suffix != "" ? true : false);
+    const is_suffix_has_the = (is_suffix && picked_item_obj.suffix.slice(0,4).toLowerCase() == "the ");
+    // const is_item_an = (["a","e","i","o","u"].includes(picked_item_obj.item_name[0].toLowerCase()));
 
-    if (is_prefix) {
-        item_string += " " + capitalize_each_word(picked_name_obj.prefix)
+    // Injext the plurality_adapter value that makes the item work better with a singular prefix
+    if (picked_item_obj.plurality_adapter != undefined && picked_item_obj.introduction == "A") {
+        picked_item_obj.introduction = get_a_an(picked_item_obj.plurality_adapter) + " " + picked_item_obj.plurality_adapter;
     }
 
-    item_string += " " + picked_name_obj.item_name;
+    if (picked_item_obj.introduction == "A") {
+        picked_item_obj.introduction = get_a_an((is_prefix ? picked_item_obj.prefix : picked_item_obj.item_name));
+    }
+
+    let item_string = picked_item_obj.introduction;
+
+    if (is_prefix) {
+        item_string += " " + picked_item_obj.prefix
+    }
+
+    item_string += " " + picked_item_obj.item_name;
 
     if (is_suffix) {
 
@@ -352,20 +355,30 @@ function build_name_string_from_obj(picked_name_obj) {
         }
 
         if (is_suffix_prefix) {
-            item_string += " " + picked_name_obj.suffix_prefix;
+            item_string += " " + picked_item_obj.suffix_prefix;
         }
 
-        item_string += " " + (is_suffix_has_the ? picked_name_obj.suffix.slice(4,picked_name_obj.suffix.length) : picked_name_obj.suffix);
+        item_string += " " + (is_suffix_has_the ? picked_item_obj.suffix.slice(4,picked_item_obj.suffix.length) : picked_item_obj.suffix);
 
     }
 
-    // const prefix_string = picked_name_obj.prefix != undefined && picked_name_obj.prefix != "" ? capitalize_each_word(picked_name_obj.prefix) + " ": "";
-    // const suffix_prefix_string = picked_name_obj.suffix_prefix != undefined && picked_name_obj.suffix_prefix != "" ? capitalize_each_word(picked_name_obj.suffix_prefix) + " ": "";
-    // const suffix_string = picked_name_obj.suffix != undefined && picked_name_obj.suffix != "" ? " of " + suffix_prefix_string + capitalize_each_word(picked_name_obj.suffix): "";
-    // const introduction = (picked_name_obj.prefix == "" && picked_name_obj.suffix == "" ? "" : "The ");
+    // const prefix_string = picked_item_obj.prefix != undefined && picked_item_obj.prefix != "" ? capitalize_each_word(picked_item_obj.prefix) + " ": "";
+    // const suffix_prefix_string = picked_item_obj.suffix_prefix != undefined && picked_item_obj.suffix_prefix != "" ? capitalize_each_word(picked_item_obj.suffix_prefix) + " ": "";
+    // const suffix_string = picked_item_obj.suffix != undefined && picked_item_obj.suffix != "" ? " of " + suffix_prefix_string + capitalize_each_word(picked_item_obj.suffix): "";
+    // const introduction = (picked_item_obj.prefix == "" && picked_item_obj.suffix == "" ? "" : "The ");
 
-    return item_string;
+    return capitalize_each_word(item_string);
 }
+
+function get_a_an(following_word) {
+    if (["a","e","i","o","u"].includes(following_word[0].toLowerCase())) {
+        return "An";
+    }
+    else {
+        return "A"
+    }
+}
+
 
 function GenSelect ({ label, id_name, start_val, set_val, option_array, note="" }) {
     return (

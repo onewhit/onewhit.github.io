@@ -44,12 +44,13 @@
 - [x] Setting full weight on 1 attribute doens't always include 1 attribute
 - [x] Build out specific structure generator
 - [x] Add power generator
-- [ ] Make sure the "the" check is looking for a space after the "the" word so it doesn't match words that begin with T H E
-- [ ] Output name proper wrapping with "A" vs "An"
-- [ ] How to add "Set of" when "A" is picked, but item is plural (A brazen leggings, vs the leggings of malice, etc)
-- [ ] Able to add "the" before the suffix, and have the suffix_prefix inject after the "the" instead of before
+- [x] Make sure the "the" check is looking for a space after the "the" word so it doesn't match words that begin with T H E
+- [x] Output name proper wrapping with "A" vs "An"
+- [x] How to add "Set of" when "A" is picked, but item is plural (A brazen leggings, vs the leggings of malice, etc)
+- [x] Able to add "the" before the suffix, and have the suffix_prefix inject after the "the" instead of before
+- [x] Add a "The/a/an" picker on the specific structure page
 - [ ] Add tags for ability, vs description
-- [ ] Allow to pick number of abilities
+- [x] Allow to pick number of abilities
 - [ ] Generate the rarity (with a weighted chance or assigning that (or weighted chance of assigning more attributes, based on rarity))
 - [ ] Figure out a rarity slider scale (like if fighting a boss, or just looting a random house)
 - [ ] Item tagged by size, circumstances found in
