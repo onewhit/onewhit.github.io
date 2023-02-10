@@ -623,7 +623,7 @@
     {"prefixes": ["Sparkling"],"suffixes": ["Sparkles","Sparkling"]},
     {"prefixes": ["Speed","Speedy"],"suffixes": ["Speed"]},
     {"prefixes": ["Spider's","Spidery"],"suffixes": ["Spiders","the Spider"]},
-    {"prefixes": ["Spirit","Spirit's"],"suffixes": ["Spirit","the Spirit","Spirits"]},
+    {"prefixes": ["Spirit","Spirit's","Spiritual"],"suffixes": ["Spirit","the Spirit","Spirits","the Spiritual"]},
     {"prefixes": ["Spreading"],"suffixes": ["Spreading"]},
     {"prefixes": ["Squeazing","Squeazed"],"suffixes": ["Squeazing"]},
     {"prefixes": ["Stalling","Stalled"],"suffixes": ["Stalling"]},
@@ -851,8 +851,9 @@
     {"prefixes": ["Love","Loved","Lovely","Lover's"],"suffixes":["Love","Loves","Lovers","the Lover"]},
     {"prefixes": ["Grateful","Gratitude"],"suffixes":["Gratitude"]},
     {"prefixes": ["Exciting","Excited"],"suffixes":["Exciting","Excitement"]},
-    {"prefixes": ["Aquamarine"],"suffixes":["Aquamarine"]},
     {"prefixes": ["Nostalgic","Nolstagia"],"suffixes":["Nostalgia"]},
     {"prefixes": ["Content","Contentment"],"suffixes":["Contentment"]},
+    {"prefixes": ["Levitation","Levitating","Levitated"],"suffixes":["Levitation","Levitating"]},
+    {"prefixes": ["Aquamarine"],"suffixes":["Aquamarine"]},
     {"prefixes": ["Blacksmith's","Blacksmithing"],"suffixes": ["the Blacksmith","Blacksmiths","Blacksmithing"]}
 ]

@@ -43,11 +43,12 @@
     {"type": "limitation", "value": "This Item can only be used by Mothers"},
     {"type": "limitation", "value": "This Item can only be used in the Morning"},
     {"type": "limitation", "value": "This Item can only be used in the Evening"},
-    {"type": "limitation", "value": "This Item can only be used in the Before Noon"},
-    {"type": "limitation", "value": "This Item can only be used in the After Noon"},
-    {"type": "limitation", "value": "This Item can only be used in during a full moon"},
+    {"type": "limitation", "value": "This Item can only be used Before Noon"},
+    {"type": "limitation", "value": "This Item can only be used After Noon"},
+    {"type": "limitation", "value": "This Item can only be used during a full moon"},
     {"type": "limitation", "value": "This Item is can behave unexpectedly"},
     {"type": "limitation", "value": "This Item takes up two inventory slots"},
+    {"type": "limitation", "value": "This item will randomly either be overpowered or underpowered"},
     {"type": "power", "value": "This Item takes up no inventory slots"}
 
 ]

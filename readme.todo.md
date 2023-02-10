@@ -49,15 +49,17 @@
 - [x] How to add "Set of" when "A" is picked, but item is plural (A brazen leggings, vs the leggings of malice, etc)
 - [x] Able to add "the" before the suffix, and have the suffix_prefix inject after the "the" instead of before
 - [x] Add a "The/a/an" picker on the specific structure page
-- [ ] Add tags for ability, vs description
 - [x] Allow to pick number of abilities
+- [x] Have the powers generated separately
+- [x] Another prefix to the suffix (low chance)
+- [x] Checkboxes to pick if it's suffixes, prefixes, etc
+- [x] Or uncheck all boxes just to get a regular item
+- [ ] Add "advanced" dropdown to hide the item generation settings by default
+- [ ] Add ability to re-generate each of the pieces individually
+- [ ] Add tags for ability, vs description
 - [ ] Generate the rarity (with a weighted chance or assigning that (or weighted chance of assigning more attributes, based on rarity))
 - [ ] Figure out a rarity slider scale (like if fighting a boss, or just looting a random house)
 - [ ] Item tagged by size, circumstances found in
-- [ ] Have the powers generated separately
-- [ ] Another prefix to the suffix (low chance)
-- [ ] Checkboxes to pick if it's suffixes, prefixes, etc
-- [ ] Or uncheck all boxes just to get a regular item
 
 # Features
 - [ ] Item generator and tracker
