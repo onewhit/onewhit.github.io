@@ -75,7 +75,7 @@
     {"item_name": "Gloves", "item_type": "weapon", "plurality_adapter": "pair of"},
     {"item_name": "Goggles", "item_type": "weapon", "plurality_adapter": "pair of"},
     {"item_name": "Gong", "item_type": "weapon"},
-    {"item_name": "`Gr`eatsword", "item_type": "weapon"},
+    {"item_name": "Greatsword", "item_type": "weapon"},
     {"item_name": "Halberg", "item_type": "weapon"},
     {"item_name": "Hammer", "item_type": "weapon"},
     {"item_name": "Hand Axe", "item_type": "weapon"},
@@ -282,10 +282,18 @@
     {"item_name": "Grinder", "item_type": "weapon"},
     {"item_name": "Plank", "item_type": "weapon"},
     {"item_name": "Rag", "item_type": "weapon"},
+    {"item_name": "Beatle", "item_type": "weapon"},
+    {"item_name": "Firefly", "item_type": "weapon"},
+    {"item_name": "Gnats", "item_type": "weapon", "plurality_adapter": "swarm of"},
+    {"item_name": "Cat", "item_type": "weapon"},
+    {"item_name": "Leech", "item_type": "weapon"},
+    {"item_name": "Flint and Steel", "item_type": "weapon"},
+    {"item_name": "Razor", "item_type": "weapon"},
+    {"item_name": "Hatchet", "item_type": "weapon"},
     {"item_name": "Arrowhead", "item_type": "weapon"},
     {"item_name": "Bark", "item_type": "weapon", "plurality_adapter": "chunk of"},
     {"item_name": "Straw", "item_type": "weapon", "plurality_adapter": "bundle of"},
     {"item_name": "Wool", "item_type": "weapon", "plurality_adapter": "tuft of"},
     {"item_name": "Leather", "item_type": "weapon", "plurality_adapter": "patch of"},
-    {"item_name": "Scales", "item_type": "weapon"}
+    {"item_name": "Scales", "item_type": "weapon", "plurality_adapter": "set of"
 ]
