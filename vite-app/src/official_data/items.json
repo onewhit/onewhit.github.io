@@ -300,5 +300,5 @@
     {"item_name": "Wool", "item_type": "weapon", "plurality_adapter": "tuft of"},
     {"item_name": "Leather", "item_type": "weapon", "plurality_adapter": "patch of"},
     {"item_name": "Arrowhead", "item_type": "weapon"},
-    {"item_name": "Scales", "item_type": "weapon", "plurality_adapter": "set of"
+    {"item_name": "Scales", "item_type": "weapon", "plurality_adapter": "set of"}
 ]
