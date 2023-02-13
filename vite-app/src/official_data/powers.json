@@ -87,7 +87,7 @@
     {"type": "power", "value": "This item makes a loud noise when used"},
     {"type": "power", "value": "This item is completely silent"},
     {"type": "power", "value": "This item has a delayed effect"},
-    {"type": "power", "value": "This item is coveted by everyoone who knows about it"},
+    {"type": "power", "value": "This item is coveted by everyone who knows about it"},
     {"type": "power", "value": "This item deteriorates irreparably over time"},
     {"type": "power", "value": "This item can only be used once per wielder"},
     {"type": "power", "value": "After using this item the wielder blacks out for a time, and can't remember what they did."},
