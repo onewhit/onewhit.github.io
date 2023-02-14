@@ -847,7 +847,7 @@
     {"prefixes":["Anger","Angry"],"suffixes":["Anger","the Angry"]},
     {"prefixes":["Disgusted","Disgusting"],"suffixes":["Disgusting"]},
     {"prefixes":["Jealous"],"suffixes":["Jealousy","the Jealous"]},
-    {"prefixes":["Envy","Envied"],"suffixes":["Envious","the Envied"]},
+    {"prefixes":["Envy","Envied"],"suffixes":["the Envious","the Envied","Envy"]},
     {"prefixes":["Love","Loved","Lovely","Lover's"],"suffixes":["Love","Loves","Lovers","the Lover"]},
     {"prefixes":["Grateful","Gratitude"],"suffixes":["Gratitude"]},
     {"prefixes":["Exciting","Excited"],"suffixes":["Exciting","Excitement"]},
