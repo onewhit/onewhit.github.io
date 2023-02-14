@@ -27,7 +27,7 @@
     {"type": "power", "value": "This Item is Very Reliable"},
     {"type": "limitation", "value": "This Item is not Reliable"},
     {"type": "limitation", "value": "Using this Item consumes Health"},
-    {"type": "power", "value": "Using this Item consumes Restores"},
+    {"type": "power", "value": "Using this Item Restores Health"},
     {"type": "power", "value": "This Item always has top Initiative, even in Ambushes"},
     {"type": "power", "value": "This Item always has bottom initiative, even in Ambushes"},
     {"type": "power", "value": "This Item grants counterattacks"},
