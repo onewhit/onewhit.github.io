@@ -88,16 +88,6 @@ async function get_attributes_by_tag(tag_name) {
     });
 }
 
-async function get_all_documents(collection_name) {
-    const the_query = query(collection(firebase_db, collection_name));
-    const query_snapshot = await getDocs(the_query);
-    return query_snapshot;
-}
-
-async function create_document(collection_name, document_name, new_document_data, is_merge=true) {
-    const doc_ref = doc(firebase_db, collection_name, document_name);
-    await setDoc(doc_ref, new_document_data, {merge: is_merge});
-}
 
 async function clear_collection (collection_name, append_indent_banner) {
     const query_snapshot = await getDocs(collection(firebase_db, collection_name));
@@ -121,6 +111,32 @@ async function get_is_collection_exists(collection_name) {
 
 }
 
+const HelperFirebase = {
+    get_all_documents: async (collection_name) => {
+        const the_query = query(collection(firebase_db, collection_name));
+        const query_snapshot = await getDocs(the_query);
+        return query_snapshot;
+    },
+    create_document: async (collection_name, document_name, new_document_data, is_merge=true) => {
+        const doc_ref = doc(firebase_db, collection_name, document_name);
+        await setDoc(doc_ref, new_document_data, {merge: is_merge});
+        return true;
+    },
+    do_docs_exist: async (collection_name,attribute_name,attribute_value) => {
+        const the_query = query(collection(firebase_db, collection_name), where(attribute_name, "==", attribute_value));
+        const query_snapshot = await getDocs(the_query);
+
+        if (query_snapshot.docs.length > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+export default HelperFirebase;
+
 export {
     firebase_app,
     firebase_auth,
@@ -131,8 +147,6 @@ export {
     logout_firebase_user,
     get_attribute,
     get_attributes_by_tag,
-    create_document,
     clear_collection,
     get_is_collection_exists,
-    get_all_documents,
 };

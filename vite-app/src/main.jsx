@@ -10,12 +10,11 @@ import {
 import "./index.css";
 import Root from "./routes/root";
 import ErrorPage from "./error_page";
-import DataManager from "./routes/data_manager";
-import NpcGenerator from "./routes/npc_generator";
-import CharacterTracker from "./routes/character_tracker";
+import Characters from "./routes/characters";
 import AccountInfo from "./routes/account_info";
 import Generator from "./routes/generator.jsx";
-import GlobalContext from "./global_context.jsx";
+import CreateCharacter from "./routes/create_character.jsx";
+import ListCharacters from "./routes/list_characters.jsx";
 
 const router = createBrowserRouter([
     {
@@ -28,16 +27,18 @@ const router = createBrowserRouter([
                 element: <DetailsLayout page_title="Generator" children={<Generator />} />
             },
             {
-                path: "data_manager",
-                element: <DetailsLayout page_title="Data Manager" children={<DataManager />} />
-            },
-            {
-                path: "npc_generator",
-                element: <DetailsLayout page_title="NPC Generator" children={<NpcGenerator />} />
-            },
-            {
-                path: "character_tracker",
-                element: <DetailsLayout page_title="Character Tracker" children={<CharacterTracker />} />
+                path: "characters",
+                element: <DetailsLayout page_title="Characters" children={<Characters />} />,
+                children: [
+                    {
+                        path: "",
+                        element: <ListCharacters />,
+                    },
+                    {
+                        path: "create",
+                        element: <CreateCharacter />,
+                    }
+                ]
             },
             {
                 path: "account_info",

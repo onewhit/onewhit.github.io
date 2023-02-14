@@ -159,8 +159,8 @@ function Sidebar () {
         alignItems: "stretch",
         textAlign: "center",
         paddingTop: "1rem",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
+        // paddingLeft: "1rem",
+        // paddingRight: "1rem",
         width: "15em",
         flexShrink: "0",
     }
