@@ -112,10 +112,20 @@ async function get_is_collection_exists(collection_name) {
 }
 
 const HelperFirebase = {
+    get_document: async (collection_name, doc_key) => {
+        const doc_ref = doc(firebase_db, collection_name, doc_key);
+        const doc_snapshot = await getDoc(doc_ref);
+        return {...doc_snapshot.data(), id: doc_snapshot.id};
+    },
     get_all_documents: async (collection_name) => {
         const the_query = query(collection(firebase_db, collection_name));
         const query_snapshot = await getDocs(the_query);
-        return query_snapshot;
+
+        const return_object_list = [];
+
+        query_snapshot.forEach((doc) => (return_object_list.push({...doc.data(), id: doc.id})));
+
+        return return_object_list;
     },
     create_document: async (collection_name, document_name, new_document_data, is_merge=true) => {
         const doc_ref = doc(firebase_db, collection_name, document_name);

@@ -11,8 +11,9 @@ import ham_menu_black from "../../assets/ham_menu_black.svg";
 import back_arrow from "../../assets/back_arrow.svg";
 import MainNavigation from "../components/main_navigation.jsx";
 import AccountInfo from "./account_info";
+import ErrorPage from "./error_page";
 
-export default function Root() {
+export default function Root({ is_error=false }) {
 
     // Top Level State Values
     const [global_context, set_global_context] = useState(useContext(GlobalContext));
@@ -87,7 +88,7 @@ export default function Root() {
         <GlobalContext.Provider value={global_context}>
             <div style={root_style}>
                 {(global_context.is_show_sidebar || !global_context.is_mobile_view) && <Sidebar />}
-                { global_context.is_auth_checked ? <Details /> : <LoadingScreen />}
+                {global_context.is_auth_checked ? <Details is_error={is_error} /> : <LoadingScreen />}
             </div>
         </GlobalContext.Provider>
     );
@@ -191,7 +192,7 @@ function LoadingScreen() {
     );
 }
 
-function Details() {
+function Details({ is_error = false }) {
     const global_context = useContext(GlobalContext);
 
     const detail_style = {
@@ -205,9 +206,16 @@ function Details() {
 
     return (
         <div id="detail" style={detail_style}>
-            {global_context.is_mobile_view && <TitleBar /> }
-            {/* {global_context.user == null ? <DetailsLayout page_title="Log in to Access Tool" children={<AccountInfo />} /> : <Outlet />} */}
-            <Outlet />
+            {
+                is_error
+                ? <ErrorPage />
+                : <>
+                    {global_context.is_mobile_view && <TitleBar /> }
+                    {/* {global_context.user == null ? <DetailsLayout page_title="Log in to Access Tool" children={<AccountInfo />} /> : <Outlet />} */}
+                    <Outlet />
+                </>
+            }
         </div>
+
     );
 }

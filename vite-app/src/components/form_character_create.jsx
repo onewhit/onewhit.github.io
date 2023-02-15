@@ -7,7 +7,7 @@ import { useState } from "react";
 import HelperFirebase from "../firebase.jsx";
 import capitalize_each_word from "../utility/capitalize_each_word.js";
 
-export default function FormCreateCharacter () {
+export default function FormCharacterCreate () {
 
     // =========================================================================
     // Fields
@@ -72,10 +72,10 @@ export default function FormCreateCharacter () {
         <>
             <form onSubmit={handle_submit}>
                 <FormTitle text="Create New Character" />
-                <TextInput id="short_name" label="Short Name" onChange={set_short_name}/>
-                <TextInput id="full_name" label="Full Name" onChange={set_full_name}/>
-                <TextInput id="story_role" label="Story Role" onChange={set_story_role}/>
-                <SubmitButton text="Create" />
+                <TextInput id="short_name" label="Short Name" value={short_name} on_change={set_short_name}/>
+                <TextInput id="full_name" label="Full Name" value={full_name} on_change={set_full_name}/>
+                <TextInput id="story_role" label="Story Role" value={story_role} on_change={set_story_role}/>
+                <SubmitButton>Create</SubmitButton>
             </form>
             {is_loading ? <Loading /> : banner.get_html()}
         </>

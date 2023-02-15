@@ -1,4 +1,4 @@
-export default function SubmitButton({text}) {
+export default function SubmitButton({children}) {
 
     // function handle_click (event) {
     //     event.preventDefault();
@@ -8,6 +8,6 @@ export default function SubmitButton({text}) {
     // }
 
     return (
-        <button type="submit" value="submit">{text}</button>
+        <button type="submit" value="submit">{children}</button>
     );
 };

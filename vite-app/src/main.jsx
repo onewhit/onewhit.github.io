@@ -9,18 +9,18 @@ import {
 
 import "./index.css";
 import Root from "./routes/root";
-import ErrorPage from "./error_page";
 import Characters from "./routes/characters";
 import AccountInfo from "./routes/account_info";
 import Generator from "./routes/generator.jsx";
-import CreateCharacter from "./routes/create_character.jsx";
-import ListCharacters from "./routes/list_characters.jsx";
+import CharacterCreate from "./routes/character_create.jsx";
+import CharacterList from "./routes/character_list.jsx";
+import CharacterEdit from "./routes/character_edit.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
-        errorElement: <ErrorPage />,
+        errorElement: <Root is_error={true} />,
         children: [
             {
                 path: "/",
@@ -32,11 +32,15 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: "",
-                        element: <ListCharacters />,
+                        element: <CharacterList is_show={true} />
                     },
                     {
                         path: "create",
-                        element: <CreateCharacter />,
+                        element: <CharacterList is_show={false}><CharacterCreate /></CharacterList>,
+                    },
+                    {
+                        path: "edit/:id",
+                        element: <CharacterList is_show={false}><CharacterEdit /></CharacterList>,
                     }
                 ]
             },
