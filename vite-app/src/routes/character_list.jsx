@@ -17,6 +17,11 @@ export default function CharacterList ({ is_show=true, children }) {
         set_is_loading(true);
         const all_characters = await HelperFirebase.get_all_documents("character");
         set_characters(all_characters);
+
+        // all_characters.forEach((character) => {
+        //     const unsubscribe = HelperFirebase.setup_listener_and_get_unsubscribe_function("character", character.id);
+        // })
+
         set_is_loading(false);
     }
 
@@ -68,6 +73,8 @@ function CharacterRow({character_data, row_num}) {
     return (
         <div style={character_row_style} key={character_data.full_name}>
             <div>{row_num}. {character_data.full_name} ({character_data.story_role})</div>
+            <div>HP: </div>
+            <div>AP: </div>
             {/* <div><ButtonLink to={"edit/" + character_data.id}>Edit</ButtonLink></div> */}
         </div>
     )

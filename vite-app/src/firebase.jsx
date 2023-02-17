@@ -4,7 +4,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 
 const firebase_config = {
     apiKey: "AIzaSyB7KcGLNztLk0KmjJ7CCyIQmwvchLaRbCw",
@@ -126,6 +126,11 @@ const HelperFirebase = {
         query_snapshot.forEach((doc) => (return_object_list.push({...doc.data(), id: doc.id})));
 
         return return_object_list;
+    },
+    setup_listener_and_get_unsubscribe_function: (collection_name, document_key, callback) => {
+        const unsubscribe = onSnapshot(doc(firebase_db, collection_name, document_key), (doc) => {
+            console.log("Document was updated: ", doc.data());
+        });
     },
     create_document: async (collection_name, document_name, new_document_data, is_merge=true) => {
         const doc_ref = doc(firebase_db, collection_name, document_name);
