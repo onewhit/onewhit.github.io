@@ -36,6 +36,10 @@ export default function FormCharacterCreate () {
             short_name: capitalize_each_word(short_name),
             full_name: capitalize_each_word(full_name),
             story_role: capitalize_each_word(story_role),
+            health_points: 10,
+            action_points: 10,
+            items: [],
+            abilities: []
         }
 
         const is_valid_form = await check_is_valid_form();

@@ -68,7 +68,7 @@ function CharacterRow({character_data, row_num}) {
     return (
         <div style={character_row_style} key={character_data.full_name}>
             <div>{row_num}. {character_data.full_name} ({character_data.story_role})</div>
-            <div><ButtonLink to={"edit/" + character_data.id}>Edit</ButtonLink></div>
+            {/* <div><ButtonLink to={"edit/" + character_data.id}>Edit</ButtonLink></div> */}
         </div>
     )
 }
