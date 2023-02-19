@@ -36,11 +36,13 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "create",
-                        element: <CharacterList is_show={false}><CharacterCreate /></CharacterList>,
+                        // element: <CharacterList is_show={false}><CharacterCreate /></CharacterList>,
+                        element: <CharacterCreate />,
                     },
                     {
                         path: "edit/:id",
-                        element: <CharacterList is_show={false}><CharacterEdit /></CharacterList>,
+                        // element: <CharacterList is_show={false}><CharacterEdit /></CharacterList>,
+                        element: <CharacterEdit />,
                     }
                 ]
             },

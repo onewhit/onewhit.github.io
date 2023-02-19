@@ -8,26 +8,13 @@ import GlobalContext from "../global_context.jsx";
 
 export default function CharacterList ({ is_show=true, children }) {
 
-    const [characters, set_characters] = useState([]);
-    const [is_loading, set_is_loading] = useState(true);
 
-    useEffect(() => {load_characters()}, []);
 
-    async function load_characters() {
-        set_is_loading(true);
-        const all_characters = await HelperFirebase.get_all_documents("character");
-        set_characters(all_characters);
 
-        // all_characters.forEach((character) => {
-        //     const unsubscribe = HelperFirebase.setup_listener_and_get_unsubscribe_function("character", character.id);
-        // })
-
-        set_is_loading(false);
-    }
 
     const character_list_style = {
         // visibility: is_show ? "visible" : "hidden"
-        display: is_show ? "block" : "none"
+        // display: is_show ? "block" : "none"
     }
 
     return (
