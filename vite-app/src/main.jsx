@@ -15,6 +15,7 @@ import Generator from "./routes/generator.jsx";
 import CharacterCreate from "./routes/character_create.jsx";
 import CharacterList from "./routes/character_list.jsx";
 import CharacterEdit from "./routes/character_edit.jsx";
+import LoginProtected from "./components/login_protected.jsx";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "characters",
-                element: <DetailsLayout page_title="Characters" children={<Characters />} />,
+                element: <DetailsLayout page_title="Characters" children={<LoginProtected><Characters /></LoginProtected>} />,
                 children: [
                     {
                         path: "",

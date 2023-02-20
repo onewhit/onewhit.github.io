@@ -1,6 +1,14 @@
 import { createContext } from 'react';
 
-const context_obj = {}
+function noop() {
+    return
+}
+
+const context_obj = {
+    is_loading: false,
+    characters: {},
+    adjust_character_hp: noop
+}
 
 const CharacterContext = createContext(context_obj);
 
