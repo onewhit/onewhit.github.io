@@ -1,15 +1,15 @@
 
 import { Outlet } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import CharacterContext from "../utility/character_context.jsx";
 import HelperFirebase from "../firebase.jsx";
+import Colors from "../utility/colors.jsx";
 
 export default function Characters() {
 
     // const [characters, set_characters] = useState({});
     // const [is_loading, set_is_loading] = useState(false);
     const [character_context, set_character_context] = useState(useContext(CharacterContext));
-    // const [is_loading_characters, set_is_loading_characters] = useState(true);
 
     function update_character_context(new_context_obj) {
         set_character_context((previous_context) => {
@@ -39,13 +39,43 @@ export default function Characters() {
         });
     }
 
-    function adjust_character_hp(character_id, new_amount) {
-        HelperFirebase.create_document("character", character_id, {current_hp: new_amount})
+    function increase_character_hp(character_id) {
+        const new_hp = character_context.characters[character_id].current_hp + 1;
+        HelperFirebase.create_document("character", character_id, {current_hp: new_hp, flash_color: Colors.banner_green});
+        setTimeout(function() {
+            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
     }
 
-    function adjust_character_ap(character_id, new_amount) {
-        HelperFirebase.create_document("character", character_id, {current_ap: new_amount})
+    function decrease_character_hp(character_id) {
+        const new_hp = character_context.characters[character_id].current_hp - 1;
+        HelperFirebase.create_document("character", character_id, {current_hp: new_hp, flash_color: Colors.banner_red});
+        setTimeout(function() {
+            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
     }
+
+    function increase_character_ap(character_id) {
+        const new_ap = character_context.characters[character_id].current_ap + 1;
+        HelperFirebase.create_document("character", character_id, {current_ap: new_ap, flash_color: Colors.banner_dark_purple});
+        setTimeout(function() {
+            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
+    }
+
+
+    function decrease_character_ap(character_id) {
+        const new_ap = character_context.characters[character_id].current_ap - 1;
+        HelperFirebase.create_document("character", character_id, {current_ap: new_ap, flash_color: Colors.banner_light_purple});
+        setTimeout(function() {
+            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
+    }
+
+    character_context.increase_character_hp = increase_character_hp;
+    character_context.decrease_character_hp = decrease_character_hp;
+    character_context.increase_character_ap = increase_character_ap;
+    character_context.decrease_character_ap = decrease_character_ap;
 
     async function load_characters() {
         set_is_loading(true);
@@ -55,8 +85,6 @@ export default function Characters() {
         //     new_context.adjust_character_hp = adjust_character_hp;
         //     return new_context;
         // });
-
-        update_character_context({adjust_character_hp: adjust_character_hp, adjust_character_ap: adjust_character_ap})
 
         const all_characters = await HelperFirebase.get_all_documents("character");
         // set_characters(all_characters);
@@ -95,7 +123,9 @@ export default function Characters() {
         set_is_loading(false);
     }
 
-    useEffect(() => {load_characters()}, []);
+    useEffect(() => {
+        load_characters();
+    }, []);
 
     return (
         <CharacterContext.Provider value={character_context}>

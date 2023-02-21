@@ -7,6 +7,8 @@ const colors = {
     white: "white",
     // disabled_grey: "#a39f9e",
     disabled_grey: "#e6e6e6",
+    banner_dark_purple: '#ccccff',
+    banner_light_purple: '#e6e6ff',
 }
 
 export default colors;
