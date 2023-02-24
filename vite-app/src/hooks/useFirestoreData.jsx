@@ -3,18 +3,17 @@
 */
 
 import DataContext from "../contexts/data_context.jsx";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import HelperFirebase from "../utility/firebase.jsx";
 
 const ITEM_COLLECTION_NAME = "item";
 
-export default function useFirestoreItems() {
+export default function useFirestoreData() {
 
-    console.log("hook")
-
-    const [data_context, set_data_context] = useContext(DataContext)
+    const [data_context, set_data_context] = useState(useContext(DataContext))
 
     function set_items (new_items_dict) {
+        console.log('setting')
         set_data_context((old_context) => {
             const new_context = {
                 ...old_context,
@@ -26,16 +25,14 @@ export default function useFirestoreItems() {
     }
 
     async function load_all_rpg_items () {
-        const items = await HelperFirebase.get_all_documents(ITEM_COLLECTION_NAME);
-        console.log("setting");
-        console.log(items);
+        // const items = await HelperFirebase.get_all_documents(ITEM_COLLECTION_NAME);
+        const items = [{"test": "item"}]
         set_items(items);
     }
 
     useEffect(() => {
-        console.log("effect called");
         load_all_rpg_items();
-    })
+    },[])
 
     return (data_context);
 }

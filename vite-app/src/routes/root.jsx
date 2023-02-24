@@ -12,8 +12,14 @@ import back_arrow from "../../assets/back_arrow.svg";
 import MainNavigation from "../components/main_navigation.jsx";
 import AccountInfo from "./account_info";
 import ErrorPage from "./error_page";
+import useFirestoreData from "../hooks/useFirestoreData.jsx";
+import useSpoofData from "../hooks/useSpoofData.jsx";
+import DataContext from "../contexts/data_context.jsx";
 
 export default function Root({ is_error=false }) {
+
+    // const data_context = useFirestoreData();
+    const data_context = useSpoofData();
 
     // Top Level State Values
     const [global_context, set_global_context] = useState(useContext(GlobalContext));
@@ -86,10 +92,12 @@ export default function Root({ is_error=false }) {
 
     return (
         <GlobalContext.Provider value={global_context}>
-            <div style={root_style}>
-                {(global_context.is_show_sidebar || !global_context.is_mobile_view) && <Sidebar />}
-                {global_context.is_auth_checked ? <Details is_error={is_error} /> : <LoadingScreen />}
-            </div>
+            <DataContext.Provider value={data_context}>
+                <div style={root_style}>
+                    {(global_context.is_show_sidebar || !global_context.is_mobile_view) && <Sidebar />}
+                    {global_context.is_auth_checked ? <Details is_error={is_error} /> : <LoadingScreen />}
+                </div>
+            </DataContext.Provider>
         </GlobalContext.Provider>
     );
 }
