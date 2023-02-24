@@ -1294,6 +1294,14 @@
     {"prefixes":["Artifical"],"suffixes":["the Artificial"]},
     {"prefixes":["Critical"],"suffixes":["Criticality"]},
     {"prefixes":["Critter's"],"suffixes":["Critters","the Critter"]},
+    {"prefixes":["Jittering"],"suffixes":["Jitters"]},
+    {"prefixes":["Pursuer's","Pursued","Pursuing"],"suffixes":["Pursuit","the Pursuit","Pursuits","the Pursuer","Pursuers"]},
+    {"prefixes":["Army","Armed"],"suffixes":["Armies"]},
+    {"prefixes":["Happy"],"suffixes":["Happiness"]},
+    {"prefixes":["Appetized"],"suffixes":["Appetite"]},
+    {"prefixes":["Listening","Listener's"],"suffixes":["Listening"]},
+    {"prefixes":["Aggresive","Aggressor's"],"suffixes":["Aggression"]},
+    {"prefixes":["Offensive","Offender's","Offended"],"suffixes":["Offence","the Offended"]},
     {"prefixes":["Tin"],"suffixes":["Tin"]},
     {"prefixes":["Beating","Beaten"],"suffixes":["Beating","the Beaten","Beatings"]}
 ]

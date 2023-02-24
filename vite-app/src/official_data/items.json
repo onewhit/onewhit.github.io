@@ -299,6 +299,8 @@
     {"item_name": "Straw", "item_type": "weapon", "plurality_adapter": "bundle of"},
     {"item_name": "Wool", "item_type": "weapon", "plurality_adapter": "tuft of"},
     {"item_name": "Leather", "item_type": "weapon", "plurality_adapter": "patch of"},
+    {"item_name": "Scissors", "item_type": "weapon", "plurality_adapter": "pair of"},
+    {"item_name": "Sash", "item_type": "weapon"},
     {"item_name": "Egg", "item_type": "weapon"},
     {"item_name": "Arrowhead", "item_type": "weapon"},
     {"item_name": "Scales", "item_type": "weapon", "plurality_adapter": "set of"}

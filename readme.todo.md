@@ -74,6 +74,20 @@
 - [ ] enemy and combat tracker
 - [ ] player character tracker
 - [ ] Ability to report a bug, logs to a firebase collection, so I can make note of bugs while I'm using the app without having to be on my computer or have the stuff up
+- [ ] Make new character update the local list, when you go back, without having to fetch all
+- [ ] make each row check state tonsee if it needs rk send the flash effect, or just prolong current
+- [ ] make the charactder list ordered, with any "owned" character at the bottom
+- [ ] links to maps
+- [ ] Website roll functionality with output meaning
+- [ ] Add or remove potential item slots
+- [ ] item slots link to item description page 
+- [ ] Make text area max width of details area
+
+# Item Generator Ideas
+- [ ] add ability to regenerate any part pf phrase after generation
+- [ ] Not properly excluding past attribute groups in the suffix prefix
+- [ ] Add display to show counts of each item, attribute, power, etc
+- [ ] Make three attributes less common
 
 # Backlog
 - [ ] The back arrow on the mobile version sidebar takes a second to show up, so there's blank space; for a second which looks bad
