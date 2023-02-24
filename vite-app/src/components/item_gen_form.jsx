@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import GlobalContext from "../global_context.jsx";
+import GlobalContext from "../contexts/global_context.jsx";
 import ajax_loader from "../../assets/ajax_loader.gif";
 import { get_random_int, get_random_array_element, get_array_between } from "../routes/generator.jsx";
 import capitalize_each_word from "../utility/capitalize_each_word.js";

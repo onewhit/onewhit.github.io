@@ -4,7 +4,7 @@ import HelperBanner from "./helper_banner.jsx";
 import Loading from "./loading.jsx";
 import FormTitle from "./form_title.jsx"
 import { useState } from "react";
-import HelperFirebase from "../firebase.jsx";
+import HelperFirebase from "../utility/firebase.jsx";
 import capitalize_each_word from "../utility/capitalize_each_word.js";
 
 export default function FormCharacterCreate () {

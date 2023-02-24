@@ -1,4 +1,4 @@
-import GlobalContext from "../global_context.jsx";
+import GlobalContext from "../contexts/global_context.jsx";
 import { LoginForm } from "../routes/account_info.jsx";
 import { useContext } from "react"
 

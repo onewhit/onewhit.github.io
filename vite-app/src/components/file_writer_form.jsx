@@ -1,5 +1,5 @@
 import capitalize_each_word from "../utility/capitalize_each_word";
-import { get_all_documents } from "../firebase.jsx";
+import { get_all_documents } from "../utility/firebase.jsx";
 
 export default function FileWriterForm ({ collection_name, download_format="json" }) {
 

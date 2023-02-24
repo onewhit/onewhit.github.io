@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { create_document } from "../firebase.jsx";
-import GlobalContext from "../global_context.jsx";
+import { create_document } from "../utility/firebase.jsx";
+import GlobalContext from "../contexts/global_context.jsx";
 import { LoginForm } from "./account_info.jsx";
 
 export default function CharacterTracker() {

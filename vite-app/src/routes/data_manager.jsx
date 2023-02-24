@@ -1,7 +1,7 @@
-import { get_attribute, get_attributes_by_tag } from "../firebase.jsx";
+import { get_attribute, get_attributes_by_tag } from "../utility/firebase.jsx";
 import { useState, useContext } from "react";
 import FileReaderForm from "../components/file_reader_form.jsx";
-import GlobalContext from "../global_context.jsx";
+import GlobalContext from "../contexts/global_context.jsx";
 import { LoginForm } from "./account_info.jsx";
 import FileWriterForm from "../components/file_writer_form.jsx";
 

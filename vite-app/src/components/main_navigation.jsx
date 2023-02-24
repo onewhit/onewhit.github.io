@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import GlobalContext from "../global_context.jsx";
+import GlobalContext from "../contexts/global_context.jsx";
 import { NavLink } from "react-router-dom";
 
 export default function MainNavigation () {
@@ -29,6 +29,7 @@ export default function MainNavigation () {
     // list_items.push(<NavLink key="npc_generator" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'npc_generator'}>NPC Generator</NavLink>);
     // list_items.push(<NavLink key="character_tracker" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'character_tracker'}>Character Tracker</NavLink>);
     list_items.push(<NavLink key="characters" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'characters'}>Characters</NavLink>);
+    list_items.push(<NavLink key="items" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'items'}>Items</NavLink>);
     list_items.push(<NavLink key="account_info" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'account_info'}>Account Info</NavLink>);
 
     return (

@@ -1,4 +1,4 @@
-import GlobalContext from "../global_context.jsx"
+import GlobalContext from "../contexts/global_context.jsx";
 import { useContext, useState } from "react";
 import ItemGenForm from "../components/item_gen_form.jsx";
 

@@ -2,7 +2,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import TextInput from "../components/text_input.jsx";
 import SubmitButton from "../components/submit_button.jsx";
-import HelperFirebase from "../firebase.jsx";
+import HelperFirebase from "../utility/firebase.jsx";
 import LoadingProtected from "../components/loading_protected.jsx";
 
 export default function CharacterEdit () {

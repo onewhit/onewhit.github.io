@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
-import GlobalContext from "../global_context";
-import { create_new_firebase_user, login_firebase_user, logout_firebase_user } from "../firebase";
+import GlobalContext from "../contexts/global_context.jsx";
+import { create_new_firebase_user, login_firebase_user, logout_firebase_user } from "../utility/firebase.jsx";
 // import { Form } from "react-router-dom";
 
 export default function AccountInfo() {

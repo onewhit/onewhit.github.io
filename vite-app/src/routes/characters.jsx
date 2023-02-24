@@ -1,8 +1,8 @@
 
 import { Outlet } from "react-router-dom";
 import { useState, useContext, useEffect, useCallback } from "react";
-import CharacterContext from "../utility/character_context.jsx";
-import HelperFirebase from "../firebase.jsx";
+import CharacterContext from "../contexts/character_context.jsx";
+import HelperFirebase from "../utility/firebase.jsx";
 import Colors from "../utility/colors.jsx";
 
 export default function Characters() {

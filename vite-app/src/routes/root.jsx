@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext, useEffect, useCallback } from "react";
 import { Outlet, Link, useLocation, Form, NavLink, useNavigate } from "react-router-dom";
-import GlobalContext from "../global_context";
+import GlobalContext from "../contexts/global_context.jsx";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import ajax_loader from "../../assets/ajax_loader.gif";
 import DetailsLayout from "../components/details_layout.jsx";

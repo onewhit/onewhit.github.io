@@ -1,5 +1,5 @@
 
-import GlobalContext from "../global_context";
+import GlobalContext from "../contexts/global_context.jsx";
 import { useContext, useState, useEffect } from "react";
 import colors from "../utility/colors.jsx";
 

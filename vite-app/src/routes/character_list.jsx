@@ -1,11 +1,11 @@
 import ButtonLink from "../components/button_link.jsx";
 import { Link, Outlet } from "react-router-dom";
-import HelperFirebase from "../firebase.jsx";
+import HelperFirebase from "../utility/firebase.jsx";
 import { useEffect, useState, useContext } from "react";
 import LoadingProtected from "../components/loading_protected.jsx";
 import Colors from "../utility/colors.jsx";
-import GlobalContext from "../global_context.jsx";
-import CharacterContext from "../utility/character_context.jsx";
+import GlobalContext from "../contexts/global_context.jsx";
+import CharacterContext from "../contexts/character_context.jsx";
 
 export default function CharacterList () {
 
