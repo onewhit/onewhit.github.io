@@ -4,10 +4,8 @@
 
 import DataContext from "../contexts/data_context.jsx";
 import { useContext, useEffect, useState } from "react";
-// import HelperFirebase from "../utility/firebase.jsx";
 import items from "../spoof_data/items.jsx";
-
-const ITEM_COLLECTION_NAME = "item";
+import characters from "../spoof_data/characters.jsx";
 
 export default function useFirestoreData() {
 
@@ -18,11 +16,22 @@ export default function useFirestoreData() {
             const new_context = {
                 ...old_context,
                 items: new_items_dict
-            }
+            };
 
             return new_context;
-        })
-    }
+        });
+    };
+
+    function set_characters (new_characters_dict) {
+        set_data_context((old_context) => {
+            const new_context = {
+                ...old_context,
+                characters: new_characters_dict
+            };
+
+            return new_context;
+        });
+    };
 
     function create_or_edit_item(item_data) {
        set_data_context((old_context) => {
@@ -61,14 +70,13 @@ export default function useFirestoreData() {
     data_context.get_sorted_item_list = get_sorted_item_list;
     data_context.delete_item = delete_item;
 
-    async function load_all_rpg_items () {
-        // const items = await HelperFirebase.get_all_documents(ITEM_COLLECTION_NAME);
-        // const items = [{"test": "item"}]
+    async function load_all_rpg_data () {
         set_items(items);
+        set_characters(characters);
     }
 
     useEffect(() => {
-        load_all_rpg_items();
+        load_all_rpg_data();
     },[])
 
     return (data_context);
