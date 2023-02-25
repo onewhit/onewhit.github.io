@@ -4,19 +4,21 @@ import useControlledField from "../hooks/use_controlled_field.jsx"
 import TextInput from "../components/text_input.jsx";
 import TextAreaInput from "../components/text_area_input.jsx";
 
-export default function FormItemEdit({item_id_to_edit, set_item_id_to_edit, set_flash_message}) {
+export default function FormItemEdit({form_mode, set_form_mode, item_id_to_edit, set_item_id_to_edit, set_flash_message}) {
 
     const data_context = useContext(DataContext);
 
     let default_display_name = "";
     let default_description = "";
-    let default_form_title = "Create New Item";
-    let default_submit_text = "Create";
+    // let default_form_title = "Create New Item";
+    // let default_submit_text = "Create";
+
+    // const [form_mode, set_form_mode] = useState(default_form_mode)
 
     const [display_name, set_display_name] = useState(default_display_name);
     const [description, set_description] = useState(default_description);
-    const [form_title, set_form_title] = useState(default_form_title);
-    const [submit_text, set_submit_text] = useState(default_submit_text);
+    // const [form_title, set_form_title] = useState(default_form_title);
+    // const [submit_text, set_submit_text] = useState(default_submit_text);
 
     useEffect(() => {
         const item_to_edit = data_context.items[item_id_to_edit]
@@ -24,14 +26,10 @@ export default function FormItemEdit({item_id_to_edit, set_item_id_to_edit, set_
         if (item_to_edit != undefined){
             set_display_name(item_to_edit.display_name);
             set_description(item_to_edit.description);
-            set_form_title("Edit Existing Item");
-            set_submit_text("Save");
         }
         else {
             set_display_name(default_display_name);
             set_description(default_description);
-            set_form_title(default_form_title);
-            set_submit_text(default_submit_text);
         }
 
     },[item_id_to_edit])
@@ -61,10 +59,13 @@ export default function FormItemEdit({item_id_to_edit, set_item_id_to_edit, set_
             set_flash_message("Item Created!");
             set_item_id_to_edit(submitted_item_id);
         }
+
+        set_form_mode("view");
     }
 
-    function clear_form (event) {
+    function back_to_create (event) {
         event.preventDefault();
+        set_form_mode("create");
         set_flash_message(undefined);
         set_item_id_to_edit(undefined);
     }
@@ -76,14 +77,21 @@ export default function FormItemEdit({item_id_to_edit, set_item_id_to_edit, set_
         set_item_id_to_edit(undefined);
     }
 
+    function enter_edit (event) {
+        event.preventDefault();
+        set_item_id_to_edit(event.target.value);
+        set_flash_message(undefined);
+        set_form_mode("edit");
+    }
+
     return (
         <form onSubmit={handle_submit}>
-            <h3>{form_title}</h3>
-            <TextInput id="item_display_name" label="Display Name" value={display_name} on_change={set_display_name} />
-            <TextAreaInput id="item_display_name" label="Description" value={description} on_change={set_description} />
-            <button type='submit'>{submit_text}</button>
-            {item_id_to_edit != undefined && <>{" "}<button value={item_id_to_edit} onClick={delete_item}>Delete</button></>}
-            {item_id_to_edit != undefined && <>{" "}<button onClick={clear_form}>Back to Create New</button></>}
+            <h3>{form_mode == "create" ? "Create Item" : (form_mode == "edit" ? "Edit Item" : "Item Details")}</h3>
+            <TextInput id="item_display_name" label="Display Name" value={display_name} on_change={set_display_name} read_only={form_mode == "view" ? "readonly" : ""} />
+            <TextAreaInput id="item_display_name" label="Description" value={description} on_change={set_description} read_only={form_mode == "view" ? "readonly" : ""} />
+            {form_mode != "view" ? <button type='submit'>{(form_mode == "create" ? "Create" : "Save")}</button> : <button value={item_id_to_edit} onClick={enter_edit}>Edit</button>}
+            {form_mode == "edit" && <>{" "}<button value={item_id_to_edit} onClick={delete_item}>Delete</button></>}
+            {(form_mode == "edit" || form_mode == "view") && <>{" "}<button onClick={back_to_create}>Back to Create New</button></>}
         </form>
     );
 }
