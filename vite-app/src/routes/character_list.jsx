@@ -5,44 +5,23 @@ import { useEffect, useState, useContext } from "react";
 import LoadingProtected from "../components/loading_protected.jsx";
 import Colors from "../utility/colors.jsx";
 import GlobalContext from "../contexts/global_context.jsx";
-import CharacterContext from "../contexts/character_context.jsx";
+import DataContext from "../contexts/data_context.jsx";
 
 export default function CharacterList () {
 
-    const character_list_style = {
-        // visibility: is_show ? "visible" : "hidden"
-        // display: is_show ? "block" : "none"
-    }
+    const data_context = useContext(DataContext);
 
-    const character_context = useContext(CharacterContext);
-
-    // console.log(characters.tarron_lane);
-    // console.log(character_context.is_loading);
-
-    // console.log(Object.entries(character_context.characters))
-
-    const character_iterable = Object.entries(character_context.characters);
-
-    // console.log(character_iterable);
+    const character_iterable = Object.entries(data_context.characters);
 
     return (
         <>
-            <div style={character_list_style}>
+            <div>
                 <div>
-                    {/* <ButtonLink text="Create New Character" /> */}
                     <ButtonLink to="create">Create New Character</ButtonLink>
-                    {/* <ButtonLink to="create">Create a New Character</ButtonLink>{" "} */}
-                    {/* <button onClick={load_characters}>Refresh</button> */}
                 </div>
-                <LoadingProtected is_loading={character_context.is_loading}>
+                <LoadingProtected is_loading={data_context.is_loading}>
                     <br />
                     <div>
-                        {/* {
-                            character_iterable.map((character_row, index) => {
-                                const character_data = character_row[1];
-                                return <CharacterRow key={character_data.full_name} character_data={character_data} row_num={index+1}/>
-                            })
-                        } */}
                         <CharacterTable character_iterable={character_iterable} />
                     </div>
                 </LoadingProtected>
@@ -99,26 +78,26 @@ function CharacterTable({character_iterable}) {
 
 function CharacterRow({character_data, row_num}) {
 
-    const character_context = useContext(CharacterContext);
+    const data_context = useContext(DataContext);
 
     // function increase_hp(character_id) {
-        // const new_hp = character_context.characters[character_id].current_hp;
-        // character_context.adjust_character_hp(character_id, new_hp + 1);
+        // const new_hp = data_context.characters[character_id].current_hp;
+        // data_context.adjust_character_hp(character_id, new_hp + 1);
     // }
 
     function decrease_hp(character_id) {
-        const new_hp = character_context.characters[character_id].current_hp;
-        character_context.adjust_character_hp(character_id, new_hp - 1);
+        const new_hp = data_context.characters[character_id].current_hp;
+        data_context.adjust_character_hp(character_id, new_hp - 1);
     }
 
     function increase_ap(character_id) {
-        const new_ap = character_context.characters[character_id].current_ap;
-        character_context.adjust_character_ap(character_id, new_ap + 1);
+        const new_ap = data_context.characters[character_id].current_ap;
+        data_context.adjust_character_ap(character_id, new_ap + 1);
     }
 
     function decrease_ap(character_id) {
-        const new_ap = character_context.characters[character_id].current_ap;
-        character_context.adjust_character_ap(character_id, new_ap - 1);
+        const new_ap = data_context.characters[character_id].current_ap;
+        data_context.adjust_character_ap(character_id, new_ap - 1);
     }
 
     const character_id = character_data.id;
@@ -145,14 +124,14 @@ function CharacterRow({character_data, row_num}) {
         <tr style={row_style} key={character_id}>
             <td>{character_data.full_name}</td>
             <td>
-                <div style={cell_style}><button onClick={(event) => character_context.increase_character_hp(character_id)}>+</button></div>
+                <div style={cell_style}><button onClick={(event) => data_context.increase_character_hp(character_id)}>+</button></div>
                 <div style={cell_style}>{character_data.current_hp}</div>
-                <div style={cell_style}><button onClick={(event) => character_context.decrease_character_hp(character_id)}>-</button></div>
+                <div style={cell_style}><button onClick={(event) => data_context.decrease_character_hp(character_id)}>-</button></div>
             </td>
             <td>
-                <div style={cell_style}><button onClick={(event) => character_context.increase_character_ap(character_id)}>+</button></div>
+                <div style={cell_style}><button onClick={(event) => data_context.increase_character_ap(character_id)}>+</button></div>
                 <div style={cell_style}>{character_data.current_ap}</div>
-                <div style={cell_style}><button onClick={(event) => character_context.decrease_character_ap(character_id)}>-</button></div>
+                <div style={cell_style}><button onClick={(event) => data_context.decrease_character_ap(character_id)}>-</button></div>
             </td>
         </tr>
     );

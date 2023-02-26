@@ -9,7 +9,11 @@ import characters from "../spoof_data/characters.jsx";
 
 export default function useFirestoreData() {
 
-    const [data_context, set_data_context] = useState(useContext(DataContext))
+    const [data_context, set_data_context] = useState(useContext(DataContext));
+
+    function deep_object_copy(original_object) {
+        return JSON.parse(JSON.stringify(original_object));
+    }
 
     function set_items (new_items_dict) {
         set_data_context((old_context) => {
@@ -35,7 +39,6 @@ export default function useFirestoreData() {
 
     function create_or_edit_item(item_data) {
        set_data_context((old_context) => {
-            // const new_items = {...old_context.items}
             const new_context = {
                 ...old_context,
                 items: {...old_context.items, ...item_data}
@@ -44,6 +47,57 @@ export default function useFirestoreData() {
             return new_context;
         });
     };
+
+    function create_or_edit_character(new_character_data) {
+        set_data_context((old_context) => {
+
+            const copy_old_character_data = deep_object_copy(data_context.characters[character_data.id])
+            const copy_new_character_data = deep_object_copy(new_character_data);
+            const merged_character_data = {...copy_old_character_data, ...copy_new_character_data}
+
+            const new_context = {
+                ...old_context,
+                characters: {...old_context.characters, ...merged_character_data}
+            }
+ 
+            return new_context;
+        });
+    }
+
+    function increase_character_hp(character_id) {
+        const new_hp = data_context.characters[character_id].current_hp + 1;
+        // HelperFirebase.create_document("character", character_id, {current_hp: new_hp, flash_color: Colors.banner_green});
+        create_or_edit_character({
+
+        })
+        setTimeout(function() {
+            // HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
+    }
+
+    function decrease_character_hp(character_id) {
+        const new_hp = data_context.characters[character_id].current_hp - 1;
+        HelperFirebase.create_document("character", character_id, {current_hp: new_hp, flash_color: Colors.banner_red});
+        setTimeout(function() {
+            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
+    }
+
+    function increase_character_ap(character_id) {
+        const new_ap = data_context.characters[character_id].current_ap + 1;
+        HelperFirebase.create_document("character", character_id, {current_ap: new_ap, flash_color: Colors.banner_dark_purple});
+        setTimeout(function() {
+            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
+    }
+
+    function decrease_character_ap(character_id) {
+        const new_ap = data_context.characters[character_id].current_ap - 1;
+        HelperFirebase.create_document("character", character_id, {current_ap: new_ap, flash_color: Colors.banner_light_purple});
+        setTimeout(function() {
+            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        }, 500)
+    }
 
     function delete_item(item_id) {
        set_data_context((old_context) => {
@@ -69,6 +123,16 @@ export default function useFirestoreData() {
     data_context.create_or_edit_item = create_or_edit_item;
     data_context.get_sorted_item_list = get_sorted_item_list;
     data_context.delete_item = delete_item;
+
+    data_context.create_or_edit_character = create_or_edit_character;
+    data_context.increase_character_hp = increase_character_hp;
+    data_context.decrease_character_hp = decrease_character_hp;
+    data_context.increase_character_ap = increase_character_ap;
+    data_context.decrease_character_ap = decrease_character_ap;
+
+    // =========================================================================
+    // Load the data on the initial load
+    // =========================================================================
 
     async function load_all_rpg_data () {
         set_items(items);
