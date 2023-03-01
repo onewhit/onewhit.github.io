@@ -66,7 +66,7 @@ function CharacterTable({character_iterable}) {
                 {
                     character_iterable.map((character_row, index) => {
                         const character_id = character_row[0];
-                        const character_data = character_row[1];
+                        const character_data = {...character_row[1], id: character_id};
 
                         return (<CharacterRow key={character_id} row_num={index + 1} character_data={character_data} />);
                     })

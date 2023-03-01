@@ -6,6 +6,7 @@ import DataContext from "../contexts/data_context.jsx";
 import { useContext, useEffect, useState } from "react";
 import items from "../spoof_data/items.jsx";
 import characters from "../spoof_data/characters.jsx";
+import Colors from "../utility/colors.jsx";
 
 export default function useFirestoreData() {
 
@@ -48,55 +49,60 @@ export default function useFirestoreData() {
         });
     };
 
-    function create_or_edit_character(new_character_data) {
+    function create_or_edit_character(new_character_data, flash_color="none") {
         set_data_context((old_context) => {
 
-            const copy_old_character_data = deep_object_copy(data_context.characters[character_data.id])
+            const copy_old_character_data = deep_object_copy(old_context.characters[new_character_data.id])
             const copy_new_character_data = deep_object_copy(new_character_data);
-            const merged_character_data = {...copy_old_character_data, ...copy_new_character_data}
+
+            const merged_character_data = {...copy_old_character_data, ...copy_new_character_data, flash_color: flash_color}
 
             const new_context = {
                 ...old_context,
-                characters: {...old_context.characters, ...merged_character_data}
+                characters: {...old_context.characters, [new_character_data.id]: merged_character_data}
             }
  
             return new_context;
         });
+
+        if (flash_color != "none") {
+            setTimeout(function() {
+                // HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+                create_or_edit_character({id: new_character_data.id, flash_color: "none"})
+            }, 500)
+        }
     }
 
     function increase_character_hp(character_id) {
         const new_hp = data_context.characters[character_id].current_hp + 1;
-        // HelperFirebase.create_document("character", character_id, {current_hp: new_hp, flash_color: Colors.banner_green});
         create_or_edit_character({
-
-        })
-        setTimeout(function() {
-            // HelperFirebase.create_document("character", character_id, {flash_color: "none"});
-        }, 500)
+            id: character_id,
+            current_hp: new_hp,
+        }, Colors.banner_green);
     }
 
     function decrease_character_hp(character_id) {
         const new_hp = data_context.characters[character_id].current_hp - 1;
-        HelperFirebase.create_document("character", character_id, {current_hp: new_hp, flash_color: Colors.banner_red});
-        setTimeout(function() {
-            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
-        }, 500)
+        create_or_edit_character({
+            id: character_id,
+            current_hp: new_hp,
+        }, Colors.banner_red);
     }
 
     function increase_character_ap(character_id) {
         const new_ap = data_context.characters[character_id].current_ap + 1;
-        HelperFirebase.create_document("character", character_id, {current_ap: new_ap, flash_color: Colors.banner_dark_purple});
-        setTimeout(function() {
-            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
-        }, 500)
+        create_or_edit_character({
+            id: character_id,
+            current_ap: new_ap,
+        }, Colors.banner_dark_purple);
     }
 
     function decrease_character_ap(character_id) {
         const new_ap = data_context.characters[character_id].current_ap - 1;
-        HelperFirebase.create_document("character", character_id, {current_ap: new_ap, flash_color: Colors.banner_light_purple});
-        setTimeout(function() {
-            HelperFirebase.create_document("character", character_id, {flash_color: "none"});
-        }, 500)
+        create_or_edit_character({
+            id: character_id,
+            current_ap: new_ap,
+        }, Colors.banner_light_purple);
     }
 
     function delete_item(item_id) {
@@ -119,6 +125,10 @@ export default function useFirestoreData() {
         })
         return sorted_items;
     }
+
+    // =========================================================================
+    // Make data actions available as attributes on the data context, so elements can alter the data
+    // =========================================================================
 
     data_context.create_or_edit_item = create_or_edit_item;
     data_context.get_sorted_item_list = get_sorted_item_list;
