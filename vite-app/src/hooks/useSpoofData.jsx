@@ -11,9 +11,54 @@ import Colors from "../utility/colors.jsx";
 export default function useFirestoreData() {
 
     const [data_context, set_data_context] = useState(useContext(DataContext));
+    const FLASH_TIMEOUT_MS = 1000;
+    const [flash_revert_queue, set_flash_revert_queue] = useState({})
+    const [is_flash_listening, set_is_flash_listening] = useState(false)
 
     function deep_object_copy(original_object) {
         return JSON.parse(JSON.stringify(original_object));
+    }
+
+    useEffect(() => {
+        if (!(is_flash_listening)) {
+            set_is_flash_listening(true);
+            setTimeout(function() {
+                const queue_iterable = Object.entries(flash_revert_queue);
+                console.log(queue_iterable[0],queue_iterable[1]);
+                if (queue_iterable.length > 0) {
+                    // Set a listener to decrement the queue durations every second
+                    queue_iterable.forEach((element) => {
+                        if (element[1] >= 0) {
+                            modify_flash_revert_duration(element[0], (FLASH_TIMEOUT_MS * -1))
+                        };
+                        if (element[1] - FLASH_TIMEOUT_MS <= 0) {
+                            create_or_edit_character({id: element[0], flash_color: "none"})
+                        }
+                    })
+                }
+                else {
+                }
+                set_is_flash_listening(false);
+            },FLASH_TIMEOUT_MS);
+        }
+    },[flash_revert_queue]);
+
+    function modify_flash_revert_duration(character_id, duration_change) {
+        set_flash_revert_queue((old_queue) => {
+            const old_queue_duration = old_queue[character_id];
+            let new_queue_duration = FLASH_TIMEOUT_MS;
+            if (old_queue_duration != undefined) {
+                new_queue_duration = old_queue_duration + duration_change;
+            }
+
+            const return_queue = {...old_queue, [character_id]: new_queue_duration}
+
+            if (new_queue_duration < 0) {
+                delete return_queue[character_id]
+            }
+
+            return return_queue
+        });
     }
 
     function set_items (new_items_dict) {
@@ -49,13 +94,14 @@ export default function useFirestoreData() {
         });
     };
 
-    function create_or_edit_character(new_character_data, flash_color="none") {
-        set_data_context((old_context) => {
+    function create_or_edit_character(new_character_data) {
+        // const character_data_before_edit = data_context.characters[new_character_data.id];
 
+        set_data_context((old_context) => {
             const copy_old_character_data = deep_object_copy(old_context.characters[new_character_data.id])
             const copy_new_character_data = deep_object_copy(new_character_data);
 
-            const merged_character_data = {...copy_old_character_data, ...copy_new_character_data, flash_color: flash_color}
+            const merged_character_data = {...copy_old_character_data, ...copy_new_character_data}
 
             const new_context = {
                 ...old_context,
@@ -65,12 +111,30 @@ export default function useFirestoreData() {
             return new_context;
         });
 
-        if (flash_color != "none") {
-            setTimeout(function() {
-                // HelperFirebase.create_document("character", character_id, {flash_color: "none"});
-                create_or_edit_character({id: new_character_data.id, flash_color: "none"})
-            }, 500)
+        // Only send the flash disable if this character doesn't already have a flash in progress
+        // This prevents some jarring results where quickly pushing buttons causes the fade to skip
+        // Logic isn't perfect yet, ideally each additional click would change the color and reset the timeout
+        // but since the color is stored in the remote firestore database, the lag to check if there's already a color set
+        // takes up all the color would be set anyways, so it would likely not be reliable or improve the feature, only
+        // take up more firestore bandwidth
+        // if (flash_color != "none" && [undefined, "none"].includes(character_data_before_edit.flash_color)) {
+        //     console.log("setting flash");
+        //     setTimeout(function() {
+        //         // HelperFirebase.create_document("character", character_id, {flash_color: "none"});
+        //         create_or_edit_character({id: new_character_data.id, flash_color: "none"})
+        //     }, FLASH_TIMEOUT_MS)
+        // }
+        if (![undefined,"none"].includes(new_character_data.flash_color)) {
+            modify_flash_revert_duration(new_character_data.id, FLASH_TIMEOUT_MS);
         }
+        // set_flash_revert_queue((old_queue) => {
+        //     const old_queue_element = old_queue[new_character_data.id];
+        //     let new_queue_duration = FLASH_TIMEOUT_MS;
+        //     if (old_queue_element != undefined) {
+        //         new_queue_duration = new_queue_duration += FLASH_TIMEOUT_MS
+        //     }
+        //     return {...old_queue, ...{character_id: new_character_data.id, remaining_duration: new_queue_duration}}
+        // });
     }
 
     function increase_character_hp(character_id) {
@@ -78,7 +142,8 @@ export default function useFirestoreData() {
         create_or_edit_character({
             id: character_id,
             current_hp: new_hp,
-        }, Colors.banner_green);
+            flash_color: Colors.banner_green,
+        });
     }
 
     function decrease_character_hp(character_id) {
@@ -86,7 +151,8 @@ export default function useFirestoreData() {
         create_or_edit_character({
             id: character_id,
             current_hp: new_hp,
-        }, Colors.banner_red);
+            flash_color: Colors.banner_red,
+        });
     }
 
     function increase_character_ap(character_id) {
@@ -94,7 +160,8 @@ export default function useFirestoreData() {
         create_or_edit_character({
             id: character_id,
             current_ap: new_ap,
-        }, Colors.banner_dark_purple);
+            flash_color: Colors.banner_dark_purple,
+        });
     }
 
     function decrease_character_ap(character_id) {
@@ -102,7 +169,8 @@ export default function useFirestoreData() {
         create_or_edit_character({
             id: character_id,
             current_ap: new_ap,
-        }, Colors.banner_light_purple);
+            flash_color: Colors.banner_light_purple,
+        });
     }
 
     function delete_item(item_id) {
