@@ -7,59 +7,63 @@ import { useContext, useEffect, useState } from "react";
 import items from "../spoof_data/items.jsx";
 import characters from "../spoof_data/characters.jsx";
 import Colors from "../utility/colors.jsx";
+import useTimer from "../hooks/use_timer.jsx";
 
 export default function useFirestoreData() {
 
     const [data_context, set_data_context] = useState(useContext(DataContext));
-    const FLASH_TIMEOUT_MS = 1000;
-    const [flash_revert_queue, set_flash_revert_queue] = useState({})
-    const [is_flash_listening, set_is_flash_listening] = useState(false)
+    // const FLASH_TIMEOUT_MS = 1000;
+    // const [flash_revert_queue, set_flash_revert_queue] = useState({})
+    // const [is_flash_listening, set_is_flash_listening] = useState(false)
 
     function deep_object_copy(original_object) {
         return JSON.parse(JSON.stringify(original_object));
     }
 
-    useEffect(() => {
-        if (!(is_flash_listening)) {
-            set_is_flash_listening(true);
-            setTimeout(function() {
-                const queue_iterable = Object.entries(flash_revert_queue);
-                console.log(queue_iterable[0],queue_iterable[1]);
-                if (queue_iterable.length > 0) {
-                    // Set a listener to decrement the queue durations every second
-                    queue_iterable.forEach((element) => {
-                        if (element[1] >= 0) {
-                            modify_flash_revert_duration(element[0], (FLASH_TIMEOUT_MS * -1))
-                        };
-                        if (element[1] - FLASH_TIMEOUT_MS <= 0) {
-                            create_or_edit_character({id: element[0], flash_color: "none"})
-                        }
-                    })
-                }
-                else {
-                }
-                set_is_flash_listening(false);
-            },FLASH_TIMEOUT_MS);
-        }
-    },[flash_revert_queue]);
+    useTimer();
 
-    function modify_flash_revert_duration(character_id, duration_change) {
-        set_flash_revert_queue((old_queue) => {
-            const old_queue_duration = old_queue[character_id];
-            let new_queue_duration = FLASH_TIMEOUT_MS;
-            if (old_queue_duration != undefined) {
-                new_queue_duration = old_queue_duration + duration_change;
-            }
+    // useEffect(() => {
+    //     console.log(flash_revert_queue);
+    //     if (!(is_flash_listening)) {
+    //         set_is_flash_listening(true);
+    //         setTimeout(function() {
+    //             const queue_iterable = Object.entries(flash_revert_queue);
+    //             if (queue_iterable.length > 0) {
+    //                 // Set a listener to decrement the queue durations every second
+    //                 queue_iterable.forEach((element) => {
+    //                     if (element[1] >= 0) {
+    //                         modify_flash_revert_duration(element[0], (FLASH_TIMEOUT_MS * -1))
+    //                     };
+    //                     // if (element[1] - FLASH_TIMEOUT_MS <= 0) {
+    //                     //     create_or_edit_character({id: element[0], flash_color: "none"})
+    //                     // }
+    //                 })
+    //             }
+    //             else {
+    //             }
+    //             set_is_flash_listening(false);
+    //         },FLASH_TIMEOUT_MS);
+    //     }
+    // },[flash_revert_queue]);
 
-            const return_queue = {...old_queue, [character_id]: new_queue_duration}
+    // function modify_flash_revert_duration(character_id, duration_change) {
+    //     set_flash_revert_queue((old_queue) => {
+    //         const old_queue_duration = old_queue[character_id];
+    //         let new_queue_duration = FLASH_TIMEOUT_MS;
+            
+    //         if (old_queue_duration != undefined) {
+    //             new_queue_duration = old_queue_duration + duration_change;
+    //         }
 
-            if (new_queue_duration < 0) {
-                delete return_queue[character_id]
-            }
+    //         const return_queue = {...old_queue, [character_id]: new_queue_duration}
 
-            return return_queue
-        });
-    }
+    //         if (new_queue_duration < 0) {
+    //             delete return_queue[character_id]
+    //         }
+            
+    //         return return_queue
+    //     });
+    // }
 
     function set_items (new_items_dict) {
         set_data_context((old_context) => {
@@ -118,15 +122,14 @@ export default function useFirestoreData() {
         // takes up all the color would be set anyways, so it would likely not be reliable or improve the feature, only
         // take up more firestore bandwidth
         // if (flash_color != "none" && [undefined, "none"].includes(character_data_before_edit.flash_color)) {
-        //     console.log("setting flash");
         //     setTimeout(function() {
         //         // HelperFirebase.create_document("character", character_id, {flash_color: "none"});
         //         create_or_edit_character({id: new_character_data.id, flash_color: "none"})
         //     }, FLASH_TIMEOUT_MS)
         // }
-        if (![undefined,"none"].includes(new_character_data.flash_color)) {
-            modify_flash_revert_duration(new_character_data.id, FLASH_TIMEOUT_MS);
-        }
+        // if (![undefined,"none"].includes(new_character_data.flash_color)) {
+        //     modify_flash_revert_duration(new_character_data.id, FLASH_TIMEOUT_MS);
+        // }
         // set_flash_revert_queue((old_queue) => {
         //     const old_queue_element = old_queue[new_character_data.id];
         //     let new_queue_duration = FLASH_TIMEOUT_MS;
