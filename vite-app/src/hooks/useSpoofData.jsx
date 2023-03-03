@@ -3,24 +3,20 @@
 */
 
 import DataContext from "../contexts/data_context.jsx";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import items from "../spoof_data/items.jsx";
 import characters from "../spoof_data/characters.jsx";
 import Colors from "../utility/colors.jsx";
-import useTimer from "../hooks/use_timer.jsx";
+import useTimers from "../hooks/use_timers.jsx";
 
 export default function useFirestoreData() {
 
     const [data_context, set_data_context] = useState(useContext(DataContext));
-    // const FLASH_TIMEOUT_MS = 1000;
-    // const [flash_revert_queue, set_flash_revert_queue] = useState({})
-    // const [is_flash_listening, set_is_flash_listening] = useState(false)
+    const timers = useTimers();
 
     function deep_object_copy(original_object) {
         return JSON.parse(JSON.stringify(original_object));
     }
-
-    useTimer();
 
     // useEffect(() => {
     //     console.log(flash_revert_queue);
@@ -115,29 +111,9 @@ export default function useFirestoreData() {
             return new_context;
         });
 
-        // Only send the flash disable if this character doesn't already have a flash in progress
-        // This prevents some jarring results where quickly pushing buttons causes the fade to skip
-        // Logic isn't perfect yet, ideally each additional click would change the color and reset the timeout
-        // but since the color is stored in the remote firestore database, the lag to check if there's already a color set
-        // takes up all the color would be set anyways, so it would likely not be reliable or improve the feature, only
-        // take up more firestore bandwidth
-        // if (flash_color != "none" && [undefined, "none"].includes(character_data_before_edit.flash_color)) {
-        //     setTimeout(function() {
-        //         // HelperFirebase.create_document("character", character_id, {flash_color: "none"});
-        //         create_or_edit_character({id: new_character_data.id, flash_color: "none"})
-        //     }, FLASH_TIMEOUT_MS)
-        // }
-        // if (![undefined,"none"].includes(new_character_data.flash_color)) {
-        //     modify_flash_revert_duration(new_character_data.id, FLASH_TIMEOUT_MS);
-        // }
-        // set_flash_revert_queue((old_queue) => {
-        //     const old_queue_element = old_queue[new_character_data.id];
-        //     let new_queue_duration = FLASH_TIMEOUT_MS;
-        //     if (old_queue_element != undefined) {
-        //         new_queue_duration = new_queue_duration += FLASH_TIMEOUT_MS
-        //     }
-        //     return {...old_queue, ...{character_id: new_character_data.id, remaining_duration: new_queue_duration}}
-        // });
+        if (![undefined,"none"].includes(new_character_data.flash_color)) {
+            timers.start_new_timer(new_character_data.id, 1, () => create_or_edit_character({id: new_character_data.id, flash_color: "none"}));
+        }
     }
 
     function increase_character_hp(character_id) {
