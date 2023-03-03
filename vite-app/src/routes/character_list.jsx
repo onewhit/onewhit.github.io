@@ -6,6 +6,7 @@ import LoadingProtected from "../components/loading_protected.jsx";
 import Colors from "../utility/colors.jsx";
 import GlobalContext from "../contexts/global_context.jsx";
 import DataContext from "../contexts/data_context.jsx";
+import FormCharacterEdit from "../forms/form_character_edit.jsx";
 
 export default function CharacterList () {
 
@@ -43,12 +44,6 @@ function CharacterTable({character_iterable}) {
         textAlign: "left"
     }
 
-    const headers = [
-        {column_name: "Name", column_width: "100%"},
-        {column_name: "HP", column_width: "0%"},
-        {column_name: "AP", column_width: "0%"},
-    ]
-
     const row_style = {
         borderStyle: "solid",
         borderWidth: "10px 0",
@@ -59,7 +54,9 @@ function CharacterTable({character_iterable}) {
         <table style={table_style}>
             <thead>
                 <tr>
-                    {headers.map((header) => (<th key={header.column_name} style={{...header_style, width: header.column_width}}>{header.column_name}</th>))}
+                    <th style={{textAlign: "left", width: "100%"}}>Name</th>
+                    <th style={{textAlign: "center", width: "0%"}}>HP</th>
+                    <th style={{textAlign: "center", width: "0%"}}>AP</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,24 +77,10 @@ function CharacterRow({character_data, row_num}) {
 
     const data_context = useContext(DataContext);
 
-    // function increase_hp(character_id) {
-        // const new_hp = data_context.characters[character_id].current_hp;
-        // data_context.adjust_character_hp(character_id, new_hp + 1);
-    // }
+    const [is_show_details, set_is_show_details] = useState(false);
 
-    function decrease_hp(character_id) {
-        const new_hp = data_context.characters[character_id].current_hp;
-        data_context.adjust_character_hp(character_id, new_hp - 1);
-    }
-
-    function increase_ap(character_id) {
-        const new_ap = data_context.characters[character_id].current_ap;
-        data_context.adjust_character_ap(character_id, new_ap + 1);
-    }
-
-    function decrease_ap(character_id) {
-        const new_ap = data_context.characters[character_id].current_ap;
-        data_context.adjust_character_ap(character_id, new_ap - 1);
+    function toggle_details() {
+        set_is_show_details((previous_state) => !previous_state);
     }
 
     const character_id = character_data.id;
@@ -113,26 +96,57 @@ function CharacterRow({character_data, row_num}) {
     }
 
     const row_style = {
-        borderStyle: "solid",
-        borderWidth: "10px 0",
-        borderColor: "white",
+        // borderStyle: "solid",
+        // borderWidth: "10px 0",
+        // borderColor: "white",
         backgroundColor: row_color,
-        transition: "background-color 0.5s ease"
+        transition: "background-color 0.5s ease",
+    }
+
+    // const padding_style = {
+        // paddingLeft: ".5em",
+        // paddingRight: ".5em",
+    // }
+
+    const row_padding_style = {
+        paddingTop: ".25em",
+        paddingBottom: ".25em",
     }
 
     return (
-        <tr style={row_style} key={character_id}>
-            <td>{character_data.full_name}</td>
-            <td>
-                <div style={cell_style}><button onClick={(event) => data_context.increase_character_hp(character_id)}>+</button></div>
-                <div style={cell_style}>{character_data.current_hp}</div>
-                <div style={cell_style}><button onClick={(event) => data_context.decrease_character_hp(character_id)}>-</button></div>
-            </td>
-            <td>
-                <div style={cell_style}><button onClick={(event) => data_context.increase_character_ap(character_id)}>+</button></div>
-                <div style={cell_style}>{character_data.current_ap}</div>
-                <div style={cell_style}><button onClick={(event) => data_context.decrease_character_ap(character_id)}>-</button></div>
-            </td>
-        </tr>
+        <>
+            <tr style={row_style} key={character_id}>
+                <td style={row_padding_style}><div style={{paddingLeft: ".5em"}}>{character_data.full_name}</div></td>
+                <td style={row_padding_style}>
+                    <div>
+                        <div style={cell_style}><button onClick={(event) => data_context.increase_character_hp(character_id)}>+</button></div>
+                        <div style={cell_style}>{character_data.current_hp}</div>
+                        <div style={cell_style}><button onClick={(event) => data_context.decrease_character_hp(character_id)}>-</button></div>
+                    </div>
+                </td>
+                <td style={row_padding_style}>
+                    <div style={cell_style}><button onClick={(event) => data_context.increase_character_ap(character_id)}>+</button></div>
+                    <div style={cell_style}>{character_data.current_ap}</div>
+                    <div style={cell_style}><button onClick={(event) => data_context.decrease_character_ap(character_id)}>-</button></div>
+                </td>
+                <td style={row_padding_style}>
+                    <div style={{paddingRight: ".5em"}}>
+                        <button onClick={(event) => toggle_details()}>{is_show_details ? <span>&#9650;</span> : <span>&#9660;</span>}</button>
+                    </div>
+                </td>
+            </tr>
+            {
+                is_show_details
+                ?
+                    <tr style={row_style} key={character_id + "_details"} >
+                        <td colSpan="4" style={row_padding_style}>
+                            <div style={{paddingLeft: ".5em"}}>
+                                <FormCharacterEdit character_id={character_id} />
+                            </div>
+                        </td>
+                    </tr>
+                : ""
+            }
+        </>
     );
 }

@@ -8,59 +8,12 @@ import items from "../spoof_data/items.jsx";
 import characters from "../spoof_data/characters.jsx";
 import Colors from "../utility/colors.jsx";
 import useTimers from "../hooks/use_timers.jsx";
+import deep_object_copy from "../utility/deep_object_copy.jsx";
 
 export default function useFirestoreData() {
 
     const [data_context, set_data_context] = useState(useContext(DataContext));
     const timers = useTimers();
-
-    function deep_object_copy(original_object) {
-        return JSON.parse(JSON.stringify(original_object));
-    }
-
-    // useEffect(() => {
-    //     console.log(flash_revert_queue);
-    //     if (!(is_flash_listening)) {
-    //         set_is_flash_listening(true);
-    //         setTimeout(function() {
-    //             const queue_iterable = Object.entries(flash_revert_queue);
-    //             if (queue_iterable.length > 0) {
-    //                 // Set a listener to decrement the queue durations every second
-    //                 queue_iterable.forEach((element) => {
-    //                     if (element[1] >= 0) {
-    //                         modify_flash_revert_duration(element[0], (FLASH_TIMEOUT_MS * -1))
-    //                     };
-    //                     // if (element[1] - FLASH_TIMEOUT_MS <= 0) {
-    //                     //     create_or_edit_character({id: element[0], flash_color: "none"})
-    //                     // }
-    //                 })
-    //             }
-    //             else {
-    //             }
-    //             set_is_flash_listening(false);
-    //         },FLASH_TIMEOUT_MS);
-    //     }
-    // },[flash_revert_queue]);
-
-    // function modify_flash_revert_duration(character_id, duration_change) {
-    //     set_flash_revert_queue((old_queue) => {
-    //         const old_queue_duration = old_queue[character_id];
-    //         let new_queue_duration = FLASH_TIMEOUT_MS;
-            
-    //         if (old_queue_duration != undefined) {
-    //             new_queue_duration = old_queue_duration + duration_change;
-    //         }
-
-    //         const return_queue = {...old_queue, [character_id]: new_queue_duration}
-
-    //         if (new_queue_duration < 0) {
-    //             delete return_queue[character_id]
-    //         }
-            
-    //         return return_queue
-    //     });
-    // }
-
     function set_items (new_items_dict) {
         set_data_context((old_context) => {
             const new_context = {
@@ -95,8 +48,6 @@ export default function useFirestoreData() {
     };
 
     function create_or_edit_character(new_character_data) {
-        // const character_data_before_edit = data_context.characters[new_character_data.id];
-
         set_data_context((old_context) => {
             const copy_old_character_data = deep_object_copy(old_context.characters[new_character_data.id])
             const copy_new_character_data = deep_object_copy(new_character_data);
@@ -107,13 +58,27 @@ export default function useFirestoreData() {
                 ...old_context,
                 characters: {...old_context.characters, [new_character_data.id]: merged_character_data}
             }
- 
+
             return new_context;
         });
 
         if (![undefined,"none"].includes(new_character_data.flash_color)) {
             timers.start_new_timer(new_character_data.id, 1, () => create_or_edit_character({id: new_character_data.id, flash_color: "none"}));
         }
+    }
+
+    function delete_character(character_id) {
+        set_data_context((old_context) => {
+            const copy_character_list = deep_object_copy(old_context.characters);
+            delete copy_character_list[character_id];
+
+            const new_context = {
+                ...old_context,
+                characters: {...copy_character_list}
+            }
+
+            return new_context;
+        });
     }
 
     function increase_character_hp(character_id) {
@@ -182,6 +147,7 @@ export default function useFirestoreData() {
     data_context.delete_item = delete_item;
 
     data_context.create_or_edit_character = create_or_edit_character;
+    data_context.delete_character = delete_character;
     data_context.increase_character_hp = increase_character_hp;
     data_context.decrease_character_hp = decrease_character_hp;
     data_context.increase_character_ap = increase_character_ap;

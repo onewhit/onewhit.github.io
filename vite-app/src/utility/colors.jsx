@@ -5,10 +5,11 @@ const colors = {
     banner_red: "#FFCCCB",
     banner_yellow: "#F7C600",
     white: "white",
-    // disabled_grey: "#a39f9e",
+    black: "black",
     disabled_grey: "#e6e6e6",
     banner_dark_purple: '#ccccff',
     banner_light_purple: '#e6e6ff',
+    tab_inactive_grey: '#8a8a8a',
 }
 
 export default colors;

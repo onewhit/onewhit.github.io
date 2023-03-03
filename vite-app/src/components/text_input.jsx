@@ -3,7 +3,7 @@ import Colors from "../utility/colors.jsx";
 
 function noop() {}
 
-export default function TextInput({id,label,value="", on_change=noop, required=true, read_only=false}) {
+export default function TextInput({id, label, value="", on_change=noop, required=true, read_only=false}) {
 
     function handle_change(event) {
         event.preventDefault();
@@ -20,9 +20,15 @@ export default function TextInput({id,label,value="", on_change=noop, required=t
 
     return (
         <>
-            <div>
-                <label htmlFor={id}>{label}:</label>{" "}
-            </div>
+            {
+                label != undefined
+                ?
+                    <div>
+                        <label htmlFor={id}>{label}:</label>{" "}
+                    </div>
+                :
+                    ""
+            }
             <div>
                 <input style={input_style} type="text" id={id} onChange={handle_change} value={value} required={required} readOnly={read_only ? "readOnly" : ""}></input>
             </div>
