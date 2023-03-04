@@ -10,9 +10,15 @@ export default function FormCharacterEdit({character_id}) {
 
     const data_context = useContext(DataContext);
 
-    const [form_data, set_form_data] = useState(data_context.characters[character_id]);
-    const [form_mode, set_form_mode] = useState("view"); // "edit" or "view"
-    const [tab, set_tab] = useState("description"); // "description" or "items" or "abilities"
+    const empty_character_data = {
+        full_name: "",
+        short_name: "",
+        story_role: "",
+    }
+
+    const [form_data, set_form_data] = useState(character_id != undefined ? data_context.characters[character_id] : empty_character_data);
+    const [form_mode, set_form_mode] = useState(character_id == undefined ? "new" : "view"); // "edit" or "view" or "new"
+    const [tab, set_tab] = useState("items"); // "description" or "items" or "abilities" or "notes"
 
     function change_simple_field(field_name, field_value) {
         set_form_data((old_data) => {
@@ -27,39 +33,20 @@ export default function FormCharacterEdit({character_id}) {
 
     function handle_submit (event) {
         event.preventDefault();
-
-    //     const submitted_character_id = character_id_to_edit || display_name.toLowerCase().replaceAll(" ", "_");
-    //     const existing_character = (data_context.characters[submitted_character_id]);
-
-    //     if (character_id_to_edit == undefined && existing_character != undefined) {
-    //         set_flash_message("character already exists, under the name \"" + existing_character.display_name + "\" with key \"" + submitted_character_id + "\". Delete that one in order to free up the display name (which is used to generate the database key");
-    //         return;
-    //     }
-
-    //     data_context.create_or_edit_character({
-    //         [submitted_character_id] : {
-    //             "display_name": display_name,
-    //             "description": description
-    //         }
-    //     });
-
-    //     if (character_id_to_edit != undefined) {
-    //         set_flash_message("character Edited!");
-    //     }
-    //     else {
-    //         set_flash_message("character Created!");
-    //         set_character_id_to_edit(submitted_character_id);
-    //     }
-
         set_form_mode("view");
     }
 
-    // function delete_character (event) {
-    //     event.preventDefault();
-    //     data_context.delete_character(event.target.value);
-    //     set_flash_message("character Deleted");
-    //     set_character_id_to_edit(undefined);
-    // }
+    function handle_delete_character (event) {
+        event.preventDefault();
+        const character_id = event.target.value;
+        console.log(character_id)
+        const character_data = data_context.characters[character_id];
+        const character_name = character_data.full_name;
+        const is_confirmed = confirm("Are you sure you want to delete the character named \"" + character_name + "\"?")
+        if (is_confirmed) {
+            data_context.delete_character(character_id);
+        }
+    }
 
     function enter_edit (event) {
         event.preventDefault();
@@ -160,8 +147,14 @@ export default function FormCharacterEdit({character_id}) {
                 }
             </table>
             {
-                form_mode == "edit"
-                ? <button type='submit'>{("Save")}</button>
+                ["edit","new"].includes(form_mode)
+                ? <>
+                    <button type='submit'>{("Save")}</button>
+                    {
+                        ["edit"].includes(form_mode)
+                        && <>{" "}<button onClick={handle_delete_character} value={character_id}>delete</button></>
+                    }
+                </>
                 : <button value={character_id} onClick={enter_edit}>Edit</button>
             }
 

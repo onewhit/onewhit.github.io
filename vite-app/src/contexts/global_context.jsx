@@ -10,6 +10,8 @@ const context_obj = {
     set_global_context: null,
     site_title: "RPG Assistant",
     is_show_sidebar: false,
+    is_show_rightbar: false,
+    rightbar_content: "test"
 }
 
 const GlobalContext = createContext(context_obj);

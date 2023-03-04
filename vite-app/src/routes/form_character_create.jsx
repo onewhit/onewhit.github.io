@@ -1,4 +1,4 @@
-import FormCharacterCreate from "../components/form_character_create.jsx";
+import FormCharacterCreate from "../forms/form_character_create.jsx";
 import { Link } from "react-router-dom"
 
 

@@ -11,14 +11,20 @@ import FormCharacterEdit from "../forms/form_character_edit.jsx";
 export default function CharacterList () {
 
     const data_context = useContext(DataContext);
+    const global_context = useContext(GlobalContext);
 
     const character_iterable = Object.entries(data_context.characters);
+
+    function handle_click_create_character(event) {
+        global_context.set_rightbar_content(<FormCharacterEdit />)
+        global_context.toggle_is_show_rightbar();
+    }
 
     return (
         <>
             <div>
                 <div>
-                    <ButtonLink to="create">Create New Character</ButtonLink>
+                    <button onClick={handle_click_create_character}>Create New Character</button>
                 </div>
                 <LoadingProtected is_loading={data_context.is_loading}>
                     <br />

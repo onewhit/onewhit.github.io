@@ -15,6 +15,7 @@ import ErrorPage from "./error_page";
 import useFirestoreData from "../hooks/useFirestoreData.jsx";
 import useSpoofData from "../hooks/useSpoofData.jsx";
 import DataContext from "../contexts/data_context.jsx";
+import Rightbar from "../components/rightbar.jsx";
 
 export default function Root({ is_error=false }) {
 
@@ -38,6 +39,20 @@ export default function Root({ is_error=false }) {
         }));
     }
 
+    function toggle_is_show_rightbar() {
+        return set_global_context((old_context) => ({
+            ...old_context,
+            is_show_rightbar: !old_context.is_show_rightbar
+        }));
+    }
+
+    function set_rightbar_content (new_content) {
+        return set_global_context((old_context) => ({
+            ...old_context,
+            rightbar_content: new_content
+        }));
+    }
+
     function update_window_dimensions() {
         const new_is_mobile_view = (window.innerWidth < configs.mobile_collapse_point ? true : false)
         set_window_width(window.innerWidth);
@@ -58,6 +73,8 @@ export default function Root({ is_error=false }) {
             ...old_context,
             set_global_context: set_global_context,
             toggle_is_show_sidebar: toggle_is_show_sidebar,
+            toggle_is_show_rightbar: toggle_is_show_rightbar,
+            set_rightbar_content: set_rightbar_content,
         }));
     },[]);
 
@@ -84,6 +101,7 @@ export default function Root({ is_error=false }) {
         display: "flex",
         flexGrow: "1",
         fontFamily: "sans-serif",
+        position: "relative",
     }
 
     if (global_context.is_mobile_view) {
@@ -96,6 +114,7 @@ export default function Root({ is_error=false }) {
                 <div style={root_style}>
                     {(global_context.is_show_sidebar || !global_context.is_mobile_view) && <Sidebar />}
                     {global_context.is_auth_checked ? <Details is_error={is_error} /> : <LoadingScreen />}
+                    {global_context.is_show_rightbar ? <Rightbar /> : ""}
                 </div>
             </DataContext.Provider>
         </GlobalContext.Provider>
@@ -110,6 +129,8 @@ function TitleBar () {
 
     const global_context = useContext(GlobalContext);
 
+    const navigate = useNavigate();
+
     function handle_title_icon_click(event) {
         event.preventDefault();
         global_context.toggle_is_show_sidebar();
@@ -119,15 +140,15 @@ function TitleBar () {
         display: "flex",
         justifyContent: "center",
         position: "relative",
-        marginBottom: "1em"
+        marginBottom: "1em",
     }
 
     const title_link_style = {
         textDecoration: 'none',
         color: '#121212',
         display: "inline",
-        paddingLeft: "1.5em",
-        paddingRight: "1.5em",
+        paddingLeft: "2em",
+        paddingRight: "2em",
         fontSize: "1.5em",
         fontWeight: "bold",
         // flexGrow: "1",
@@ -137,16 +158,22 @@ function TitleBar () {
         height: "1em",
         width: "auto",
         marginRight: "1em",
+        marginLeft: "1em",
         position: "absolute",
         left: "0"
     }
 
     const title_icon = (global_context.is_show_sidebar ? back_arrow : ham_menu_black)
 
+    function handle_title_click() {
+        navigate("/");
+        global_context.toggle_is_show_sidebar();
+    }
+
     return (
         <div style={title_bar_style}>
             {global_context.is_mobile_view && <img className="hover-element" src={title_icon} style={title_icon_style} onClick={handle_title_icon_click}/>}
-            <Link style={title_link_style} to={"/"}>{global_context.site_title}</Link>
+            <div className="hover-element" style={title_link_style} onClick={handle_title_click}>{global_context.site_title}</div>
         </div>
     );
 }
@@ -157,6 +184,11 @@ function TitleBar () {
 
 function Sidebar () {
     const global_context = useContext(GlobalContext);
+
+    function handle_off_click(event) {
+        event.preventDefault();
+        global_context.toggle_is_show_sidebar();
+    }
 
     let sidebar_style = {
         backgroundColor: colors.sidebar_grey,
@@ -170,26 +202,40 @@ function Sidebar () {
         paddingTop: "1rem",
         // paddingLeft: "1rem",
         // paddingRight: "1rem",
-        width: "15em",
+        // width: "15em",
         flexShrink: "0",
     }
 
     if (global_context.is_mobile_view) {
         sidebar_style = {
             ...sidebar_style,
-            position: "fixed",
-            top: "0",
-            left: "0",
-            bottom: "0",
-            right: "15%",
-            zIndex: "10",
+            flexShrink: "1",
         }
     }
 
+    const overlay_style = {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        bottom: "0",
+        right: "0",
+        zIndex: "10",
+        display: "flex",
+        alignItems: "stretch",
+    }
+
+    const off_click_area_style = {
+        flexShrink: 0,
+        flexGrow: 1
+    }
+
     return (
-        <div style={sidebar_style}>
-            <TitleBar />
-            { global_context.is_auth_checked ? <MainNavigation /> : <LoadingScreen />}
+        <div style={overlay_style}>
+            <div style={sidebar_style}>
+                <TitleBar />
+                { global_context.is_auth_checked ? <MainNavigation /> : <LoadingScreen />}
+            </div>
+            <div style={off_click_area_style} onClick={handle_off_click} className="hover-element"></div>
         </div>
     );
 }
