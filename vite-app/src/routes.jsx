@@ -5,9 +5,7 @@ import DetailsLayout from "./components/details_layout.jsx";
 import Characters from "./routes/characters";
 import AccountInfo from "./routes/account_info";
 import Generator from "./routes/generator.jsx";
-// import CharacterCreate from "./routes/character_create.jsx";
 import CharacterList from "./routes/character_list.jsx";
-import CharacterEdit from "./routes/character_edit.jsx";
 import LoginProtected from "./components/login_protected.jsx";
 import Items from "./routes/items.jsx";
 
@@ -34,11 +32,11 @@ const router = createBrowserRouter([
                     //     // element: <CharacterList is_show={false}><CharacterCreate /></CharacterList>,
                     //     element: <CharacterCreate />,
                     // },
-                    {
-                        path: "edit/:id",
-                        // element: <CharacterList is_show={false}><CharacterEdit /></CharacterList>,
-                        element: <CharacterEdit />,
-                    }
+                    // {
+                    //     path: "edit/:id",
+                    //     // element: <CharacterList is_show={false}><CharacterEdit /></CharacterList>,
+                    //     element: <CharacterEdit />,
+                    // }
                 ]
             },
             {

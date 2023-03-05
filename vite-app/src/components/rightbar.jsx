@@ -25,6 +25,7 @@ export default function Rightbar() {
         flexShrink: "0",
         paddingRight: "1em",
         paddingLeft: "1em",
+        width: "18em",
     }
 
     if (global_context.is_mobile_view) {
@@ -47,7 +48,9 @@ export default function Rightbar() {
 
     const off_click_area_style = {
         flexShrink: 0,
-        flexGrow: 1
+        flexGrow: 1,
+        backgroundColor: Colors.sidebar_grey,
+        opacity: ".75",
     }
 
     return (

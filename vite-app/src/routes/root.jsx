@@ -5,7 +5,7 @@ import GlobalContext from "../contexts/global_context.jsx";
 import { onAuthStateChanged, getAuth } from "firebase/auth";
 import ajax_loader from "../../assets/ajax_loader.gif";
 import DetailsLayout from "../components/details_layout.jsx";
-import colors from "../utility/colors.jsx";
+import Colors from "../utility/colors.jsx";
 import configs from "../utility/configs.jsx";
 import ham_menu_black from "../../assets/ham_menu_black.svg";
 import back_arrow from "../../assets/back_arrow.svg";
@@ -191,7 +191,7 @@ function Sidebar () {
     }
 
     let sidebar_style = {
-        backgroundColor: colors.sidebar_grey,
+        backgroundColor: Colors.sidebar_grey,
         // padding: "1rem",
         borderRight: "solid 1px #e3e3e3",
         display: "flex",
@@ -226,17 +226,27 @@ function Sidebar () {
 
     const off_click_area_style = {
         flexShrink: 0,
-        flexGrow: 1
+        flexGrow: 1,
+        backgroundColor: Colors.sidebar_grey,
+        opacity: ".75",
     }
 
     return (
-        <div style={overlay_style}>
+        global_context.is_mobile_view
+        ?
+            <div style={overlay_style}>
+                <div style={sidebar_style}>
+                    <TitleBar />
+                    { global_context.is_auth_checked ? <MainNavigation /> : <LoadingScreen />}
+                </div>
+                <div style={off_click_area_style} onClick={handle_off_click} className="hover-element"></div>
+            </div>
+
+        :
             <div style={sidebar_style}>
                 <TitleBar />
                 { global_context.is_auth_checked ? <MainNavigation /> : <LoadingScreen />}
             </div>
-            <div style={off_click_area_style} onClick={handle_off_click} className="hover-element"></div>
-        </div>
     );
 }
 
