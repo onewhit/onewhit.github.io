@@ -19,11 +19,14 @@ export default function FormCharacterEdit({character_id}) {
         current_hp: 10,
         current_ap: 10,
         max_hp: 10,
+        notes: "",
         items: [],
         abilities: [],
     };
 
-    const [form_data, set_form_data] = useState(character_id != undefined ? data_context.characters[character_id] : empty_character_data);
+    // Make sure all fields are present on the character by merging first with the empty character array
+    const [form_data, set_form_data] = useState(character_id != undefined ? {...empty_character_data, ...data_context.characters[character_id]} : empty_character_data);
+    
     const [form_mode, set_form_mode] = useState(character_id == undefined ? "new" : "view"); // "edit" or "view" or "new"
     const [flash_message, set_flash_message] = useState("");
     const [tab, set_tab] = useState(form_mode != "new" ? "items" : "description"); // "description" or "items" or "abilities" or "notes"
@@ -40,6 +43,7 @@ export default function FormCharacterEdit({character_id}) {
     function change_short_name(new_short_name) {change_simple_field("short_name", new_short_name);};
     function change_full_name(new_full_name) {change_simple_field("full_name", new_full_name);};
     function change_story_role(new_story_role) {change_simple_field("story_role", new_story_role);};
+    function change_notes(new_notes) {change_simple_field("notes", new_notes);};
 
     function handle_submit (event) {
         event.preventDefault();
@@ -105,10 +109,11 @@ export default function FormCharacterEdit({character_id}) {
     function set_description_tab() {set_tab("description");}
     function set_items_tab() {set_tab("items");}
     function set_abilities_tab() {set_tab("abilities");}
+    function set_notes_tab() {set_tab("notes");}
 
     return (
-        <div style={{display: "inline-block"}}>
-            <form onSubmit={handle_submit}>
+        <div style={{display: "inline-block", width: "100%", position: "relative"}}>
+            <form onSubmit={handle_submit} style={{width: "100%", position: "relative"}}>
                 <div style={{display: "flex"}}>
                     {
                         form_mode != "new" 
@@ -118,80 +123,78 @@ export default function FormCharacterEdit({character_id}) {
                             <div style={tab == "abilities" ? active_tab_style : inactive_tab_style} className="hover-element" onClick={set_abilities_tab}>Abilities</div>
                             <div>|</div>
                             <div style={tab == "description" ? active_tab_style : inactive_tab_style} className="hover-element" onClick={set_description_tab}>Description</div>
+                            <div>|</div>
+                            <div style={tab == "notes" ? active_tab_style : inactive_tab_style} className="hover-element" onClick={set_notes_tab}>Notes</div>
                         </>
                     }
                 </div>
                 <hr />
-                <table>
                     {
                         tab == "description"
                         ?
-                            <tbody>
-                                <tr>
-                                    <td style={label_style}>Short Name:</td>
-                                    <td><TextInput id={calculated_character_id + "_short_name"} value={form_data.short_name} on_change={change_short_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr>
-                                <tr>
-                                    <td style={label_style}>Full Name:</td>
-                                    <td><TextInput id={calculated_character_id + "_full_name"} value={form_data.full_name} on_change={change_full_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr>
-                                <tr>
-                                    <td style={label_style}>Story Role:</td>
-                                    <td><TextInput id={calculated_character_id + "_story_role"} value={form_data.story_role} on_change={change_story_role} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr>
-                            </tbody>
+                            <>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td style={label_style}>Short Name:</td>
+                                            <td><TextInput id={calculated_character_id + "_short_name"} value={form_data.short_name} on_change={change_short_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
+                                        </tr>
+                                        <tr>
+                                            <td style={label_style}>Full Name:</td>
+                                            <td><TextInput id={calculated_character_id + "_full_name"} value={form_data.full_name} on_change={change_full_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
+                                        </tr>
+                                        <tr>
+                                            <td style={label_style}>Story Role:</td>
+                                            <td><TextInput id={calculated_character_id + "_story_role"} value={form_data.story_role} on_change={change_story_role} read_only={form_mode == "view" ? "readonly" : ""} /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                {
+                                    ["edit","new"].includes(form_mode)
+                                    ? 
+                                        <>
+                                            <button type='submit'>{("Save")}</button>
+                                            {
+                                                ["edit"].includes(form_mode)
+                                                && <>{" "}<button onClick={handle_delete_character} value={calculated_character_id}>delete</button></>
+                                            }
+                                        </>
+                                    : <button value={calculated_character_id} onClick={enter_edit}>Edit</button>
+                                }
+                            </>
                         : ""
                     }
                     {
                         tab == "items"
                         ?
-                            <tbody>
-                                {/* <tr>
-                                    <td style={label_style}>Short Name:</td>
-                                    <td><TextInput id={calculated_character_id + "_short_name"} value={form_data.short_name} on_change={change_short_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr>
-                                <tr>
-                                    <td style={label_style}>Full Name:</td>
-                                    <td><TextInput id={calculated_character_id + "_full_name"} value={form_data.full_name} on_change={change_full_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr>
-                                <tr>
-                                    <td style={label_style}>Story Role:</td>
-                                    <td><TextInput id={calculated_character_id + "_story_role"} value={form_data.story_role} on_change={change_story_role} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr> */}
-                            </tbody>
+                            <>
+                                {
+                                    data_context.characters[character_id].items.map((item) => (
+                                        <div key={item}>{item}</div>
+                                    ))
+                                }
+                                <button>Add Item</button>
+                            </>
                         : ""
                     }
                     {
                         tab == "abilities"
-                        ?
-                            <tbody>
-                                {/* <tr>
-                                    <td style={label_style}>Short Name:</td>
-                                    <td><TextInput id={calculated_character_id + "_short_name"} value={form_data.short_name} on_change={change_short_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr>
-                                <tr>
-                                    <td style={label_style}>Full Name:</td>
-                                    <td><TextInput id={calculated_character_id + "_full_name"} value={form_data.full_name} on_change={change_full_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr>
-                                <tr>
-                                    <td style={label_style}>Story Role:</td>
-                                    <td><TextInput id={calculated_character_id + "_story_role"} value={form_data.story_role} on_change={change_story_role} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                </tr> */}
-                            </tbody>
+                        ? ""
                         : ""
                     }
-                </table>
-                {
-                    ["edit","new"].includes(form_mode)
-                    ? <>
-                        <button type='submit'>{("Save")}</button>
-                        {
-                            ["edit"].includes(form_mode)
-                            && <>{" "}<button onClick={handle_delete_character} value={calculated_character_id}>delete</button></>
-                        }
-                    </>
-                    : <button value={calculated_character_id} onClick={enter_edit}>Edit</button>
-                }
+                    {
+                        tab == "notes"
+                        ? 
+                            <>
+                                <TextAreaInput id="character_notes" value={form_data.notes} on_change={change_notes} read_only={form_mode == "view" ? "readonly" : ""} />
+                                {
+                                    ["edit","new"].includes(form_mode)
+                                    ? <button type='submit'>{("Save")}</button>
+                                    : <button value={calculated_character_id} onClick={enter_edit}>Edit</button>
+                                }
+                            </>
+                        : ""
+                    }
             </form>
             {
                 flash_message != "" && <div style={{maxWidth: "fit-content"}}>{flash_message}</div>

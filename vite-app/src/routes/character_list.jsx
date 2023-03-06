@@ -16,7 +16,12 @@ export default function CharacterList () {
     const character_iterable = Object.entries(data_context.characters);
 
     function handle_click_create_character(event) {
-        global_context.set_rightbar_content(<FormCharacterEdit />)
+        global_context.set_rightbar_content(
+            <>
+                <h3>Create New Character</h3>
+                <FormCharacterEdit />
+            </>
+        )
         global_context.toggle_is_show_rightbar();
     }
 
@@ -146,7 +151,7 @@ function CharacterRow({character_data, row_num}) {
                 ?
                     <tr style={row_style} key={character_id + "_details"} >
                         <td colSpan="4" style={row_padding_style}>
-                            <div style={{paddingLeft: ".5em"}}>
+                            <div style={{paddingLeft: ".5em", paddingRight: ".5em"}}>
                                 <FormCharacterEdit character_id={character_id} />
                             </div>
                         </td>

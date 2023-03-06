@@ -5,7 +5,11 @@ const characters = {
         story_role: "Inner City Guard Captain",
         max_hp: 10,
         current_hp: 10,
-        current_ap: 10
+        current_ap: 10,
+        items: [
+            "mace_of_winding",
+            "spoon_of_feeding",
+        ]
     },
     havori_casserit: {
         short_name: "Havori",

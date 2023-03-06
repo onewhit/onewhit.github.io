@@ -3,7 +3,7 @@ import Colors from "../utility/colors.jsx";
 
 function noop() {}
 
-export default function TextAreaInput({id,label,value="", on_change=noop, required=false, read_only=false}) {
+export default function TextAreaInput({id, label, value="", on_change=noop, required=false, read_only=false}) {
 
     function handle_change(event) {
         event.preventDefault();
@@ -20,10 +20,11 @@ export default function TextAreaInput({id,label,value="", on_change=noop, requir
     const textarea_style = {
         backgroundColor: read_only ? Colors.disabled_grey : Colors.white,
         borderWidth: read_only ? "1px" : "1px",
-        maxWidth: "20rem",
+        // maxWidth: "30rem",
         width: "100%",
         height: "6rem",
-        resize: "none"
+        resize: "none",
+        boxSizing: "border-box",
     }
 
     return (
