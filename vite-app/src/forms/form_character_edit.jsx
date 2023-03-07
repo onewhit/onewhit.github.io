@@ -26,7 +26,8 @@ export default function FormCharacterEdit({character_id}) {
 
     // Make sure all fields are present on the character by merging first with the empty character array
     const [form_data, set_form_data] = useState(character_id != undefined ? {...empty_character_data, ...data_context.characters[character_id]} : empty_character_data);
-    
+    const [field_generic_item_to_add, set_field_generic_item_to_add] = useState("");
+
     const [form_mode, set_form_mode] = useState(character_id == undefined ? "new" : "view"); // "edit" or "view" or "new"
     const [flash_message, set_flash_message] = useState("");
     const [tab, set_tab] = useState(form_mode != "new" ? "items" : "description"); // "description" or "items" or "abilities" or "notes"
@@ -44,6 +45,7 @@ export default function FormCharacterEdit({character_id}) {
     function change_full_name(new_full_name) {change_simple_field("full_name", new_full_name);};
     function change_story_role(new_story_role) {change_simple_field("story_role", new_story_role);};
     function change_notes(new_notes) {change_simple_field("notes", new_notes);};
+    function change_field_generic_item_to_add(new_name) {set_field_generic_item_to_add(new_name)};
 
     function handle_submit (event) {
         event.preventDefault();
@@ -70,6 +72,21 @@ export default function FormCharacterEdit({character_id}) {
         };
     };
 
+    function handle_add_item(event) {
+        event.preventDefault();
+        if (field_generic_item_to_add != "") {
+            const current_date = new Date();
+            const new_character_data = deep_object_copy(form_data);
+            const items_array = deep_object_copy(new_character_data.items);
+            console.log(items_array);
+            items_array.push({
+                item_name: field_generic_item_to_add,
+                date_added: current_date.toLocaleString()
+            });
+            change_simple_field("items", items_array);
+        }
+    }
+
     function handle_delete_character (event) {
         event.preventDefault();
         const calculated_character_id = event.target.value;
@@ -80,6 +97,11 @@ export default function FormCharacterEdit({character_id}) {
             data_context.delete_character(calculated_character_id);
         };
     };
+
+    function handle_drop_item(event) {
+        event.preventDefault();
+        const item = event.target.value;
+    }
 
     function enter_edit (event) {
         event.preventDefault();
@@ -169,11 +191,25 @@ export default function FormCharacterEdit({character_id}) {
                         ?
                             <>
                                 {
-                                    data_context.characters[character_id].items.map((item) => (
-                                        <div key={item}>{item}</div>
-                                    ))
+                                    form_data.items.map((item, index) => {
+                                        const row_style = {
+                                            display: "flex",
+                                            justifyContent: "space-between",
+                                            backgroundColor: Colors.banner_grey,
+                                        }
+
+                                        if (index % 2 == 1) {
+                                            row_style.backgroundColor = Colors.lighter_grey;
+                                        }
+                                        
+                                        return <div key={item.date_added || item.item_name} style={row_style}>
+                                            <div style={{flexGrow: 1, flexShrink: 1}}>{item.item_name}</div>
+                                            <div><button onClick={handle_drop_item}>Drop</button></div>
+                                        </div>
+                                    })
                                 }
-                                <button>Add Item</button>
+                                <TextInput id={calculated_character_id + "_add_generic_item"} value={field_generic_item_to_add} on_change={change_field_generic_item_to_add} />
+                                <button onClick={handle_add_item}>Add Item</button>
                             </>
                         : ""
                     }

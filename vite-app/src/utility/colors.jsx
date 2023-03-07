@@ -10,6 +10,8 @@ const colors = {
     banner_dark_purple: '#ccccff',
     banner_light_purple: '#e6e6ff',
     tab_inactive_grey: '#8a8a8a',
+    // lighter_grey: '#FAFAFA',
+    lighter_grey: '#F0F0F0',
 }
 
 export default colors;

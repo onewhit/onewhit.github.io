@@ -7,8 +7,8 @@ const characters = {
         current_hp: 10,
         current_ap: 10,
         items: [
-            "mace_of_winding",
-            "spoon_of_feeding",
+            {item_name: "mace_of_winding"},
+            {item_name: "spoon_of_feeding"},
         ]
     },
     havori_casserit: {
