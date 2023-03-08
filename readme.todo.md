@@ -67,6 +67,9 @@
 - [ ] Item tagged by size, circumstances found in
 
 # Features
+- [ ] Common notes section, relevant to campaign
+- [ ] Place for links, like to maps, boards, etc
+- [ ] Dice roller on the character page
 - [ ] Item generator and tracker
 - [ ] NPC generator and tracker
 - [ ] Realtime combat updates, HP, items, AP
