@@ -6,6 +6,7 @@ import TextAreaInput from "../components/text_area_input.jsx";
 import deep_object_copy from "../utility/deep_object_copy.jsx";
 import Colors from "../utility/colors.jsx";
 import GlobalContext from "../contexts/global_context.jsx";
+import get_current_datetime_string from "../utility/get_current_datetime_string.jsx";
 
 export default function FormCharacterEdit({character_id}) {
 
@@ -78,7 +79,6 @@ export default function FormCharacterEdit({character_id}) {
             const current_date = new Date();
             const new_character_data = deep_object_copy(form_data);
             const items_array = deep_object_copy(new_character_data.items);
-            console.log(items_array);
             items_array.push({
                 item_name: field_generic_item_to_add,
                 date_added: current_date.toLocaleString()
@@ -97,11 +97,6 @@ export default function FormCharacterEdit({character_id}) {
             data_context.delete_character(calculated_character_id);
         };
     };
-
-    function handle_drop_item(event) {
-        event.preventDefault();
-        const item = event.target.value;
-    }
 
     function enter_edit (event) {
         event.preventDefault();
@@ -192,6 +187,22 @@ export default function FormCharacterEdit({character_id}) {
                             <>
                                 {
                                     form_data.items.map((item, index) => {
+
+                                        function handle_drop_item(event) {
+                                            event.preventDefault();
+                                            // const item = event.target.value;
+                                            // console.log(item.item_name);
+                                            const item_name_to_drop = item.item_name;
+                                            const item_datetime_to_drop = item.date_added;
+
+                                            get_current_datetime_string();
+
+                                            // form_data.items.forEach(({item_name, date_added}) => {
+                                                // console.log(item_name);
+                                                // console.log(date_added);
+                                            // });
+                                        }
+                                        
                                         const row_style = {
                                             display: "flex",
                                             justifyContent: "space-between",
