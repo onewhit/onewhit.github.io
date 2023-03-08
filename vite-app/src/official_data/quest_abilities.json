@@ -1078,5 +1078,709 @@
         "Name": "The Bitter Gift",
         "Description": "9 You touch a creature without selfawareness and bestow them with the bitter gift of selfhood. You must recite a statement at the table about what it means to be alive. It can be a passage from a book, a poem, or something else that expresses ideas about the meaning of life. The target of the spell falls unconscious for the next minute as their body rapidly experiences 1 million years of evolution toward self-awareness. The evolutionary process alters the animal's physical features and capabilities in ways you may not expect. The new creature is thrown into the world with competency in one language, a sense of self-identity, and a vague awareness of its past life, including a few specific memories of significant moments. Another way of putting it: they are now a person like you. The creature knows you gave it life.",
         "AP": "9"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Charisma",
+        "Level": "1",
+        "Name": "Cosmopolitan",
+        "Description": "0 AP. You are an expert in the study of cosmopolitan cultures, particularly in cities and nations. If you are falsely presenting as a citizen or official of a city or nation and your authenticity is challenged, you may use a local mannerism to fool common people. You must come up with the mannerism and describe it to the table. It can be a gesture, like a special handshake, a common saying, or some other idiosyncrasy from the people you are pretending to belong to.",
+        "AP": "0"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Charisma",
+        "Level": "2",
+        "Name": "Silver Tongue",
+        "Description": "1 AP. If you are caught doing something prohibited or mischevious, you can use clever thinking to evade suspicion. You must appeal to something that your adversaries find agreeable. The Guide will choose one of these as the right answer, and secretly write it down: Secret answer A: Orders. Someone with authority commanded you to do it. Secret answer B: Ignorance. You didn’t know better. It was a genuine mixup! Secret answer C: Graft. You offer something of value from your inventory to make this go away. You must guess the right approach, and describe how you make the appeal. For an additional 1 AP, the Guide eliminates one of the incorrect choices. After you give your story, the Guide will reveal the choice they wrote. If you guess correctly, your adversaries will leave you alone.",
+        "AP": "1"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Charisma",
+        "Level": "3",
+        "Name": "Don't you know who I am?",
+        "Description": "1 AP. You impress common folk and minions by pretending to be someone notable. You initiate the ruse by giving a special wink to a party member. Then, each of your nearby party members must proclaim an incredible fact that creates your identity. For example, a party member might begin by calling attention to you as a fabled writer, a storied warrior, or a sports hero. The other members of the party should build on this fake identity until everyone has contributed. Each claim should be more fantastical than the previous one. When everyone is finished, you draw a captive audience of nearby creatures who crowd around you.",
+        "AP": "1"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Termination",
+        "Level": "1",
+        "Name": "Sneak Attack",
+        "Description": "Once per round, when a nearby foe attacks a creature other than you, you may exploit their focus. You may immediately move behind them to perform one of the following actions: Option A: 1 AP. You make a basic attack on them. Option B: 1 AP. You incapacitate a commoner or minion by touching one of their pressure points. They fall to the ground unconscious for the next 10 minutes, or until they are harmed. Option C: 3 AP. You kill a commoner or minion instantly. Describe how you take them out.",
+        "AP": "1,1,3"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Termination",
+        "Level": "2",
+        "Name": "Poison",
+        "Description": "You combine basic goods from any well-stocked general store to create poison. You create enough poison for one use. You can apply it to weapons, put it in drinks or meals, or serve it to a creature directly. Regardless of delivery method, each use of the poison can only affect one creature. Choose any combination of effects: Option A: 1 AP. Blue poison. The victim falls asleep for 1 hour. Option B: 2 AP. White poison. The victim writhes in extreme pain for 1 hour and is unable to speak. Option C: 3 AP. Purple poison. The victim collapses and is paralyzed for the next day. Option D: 4 AP. Black poison. Commoners and minions are instantly killed. Bosses are hit for 10 HP. Option E: 6 AP. Clear poison. The victim experiences no symptoms and dies 1 week later. (This does not work on bosses.)",
+        "AP": "1,2,3,4,6"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Termination",
+        "Level": "3",
+        "Name": "Death Hand",
+        "Description": "Magic item. A single-shot hand cannon that uses a silent magic charge to propel a slug. The Death Hand can sense your target and guide your hand to make a perfect shot on any target you can see in your scene, including those that are far away. The shot hits for 6 HP. It instantly kills commoners and minions. 3 AP. You must spend 3 AP and one turn each time you recharge the weapon.",
+        "AP": "3"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Termination",
+        "Level": "4",
+        "Name": "Bounty",
+        "Description": "Roll the die. 5 AP. You place a bounty on a commoner or minion’s head for their capture or death. You must offer an item of value as a reward in addition to the AP cost of this ability that is at least rare in quality. Bounty hunters will compete for the prize. If for capture, you may specify where they are to be taken. If you mark them for death, you may require any manner of proof that the deed was done. • If you roll a 20, the deed will be done by the end of your play session. • On 11 to 19, the deed will be done by the end of your next play session. • On 1 to 10, the target learns of the bounty and places one on your head. You are not sure who bounty hunters will reach first.",
+        "AP": "5"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Concealment",
+        "Level": "1",
+        "Name": "Strap",
+        "Description": "0 AP. Unless you are actively searched by another creature, you can conceal up to two weapons in your clothing without being noticed, provided you’re wearing enough to reasonably conceal them.",
+        "AP": "0"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Concealment",
+        "Level": "2",
+        "Name": "Disguise",
+        "Description": "1 AP. Any time you are in a room like a bedroom, armory, or office, you may find objects to use to put together a convincing disguise. Depending on where you are, the disguise will offer at least one signature element of your deception, like a uniform, a membership insignia, or a style of dress. The disguise automatically fools commoners, but minions and bosses may question you.",
+        "AP": "1"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Concealment",
+        "Level": "3",
+        "Name": "Blink Pack",
+        "Description": "Magic item. A magical messenger pack with a hidden switch in the clasp. When activated, the switch turns the bag’s mouth into a portal to a shadow plane where secret objects may be stored. When the switch is deactivated, the bag functions normally. Spy items stored in the pack do not count against your inventory limit. (This allows you to carry more than 12 items.) The pack is paired with a magic amulet that has a button on it. 3 AP. You press the button on the amulet. The Blink Pack is teleported to your hands from wherever it is in the omniverse.",
+        "AP": "3"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Concealment",
+        "Level": "4",
+        "Name": "Needful Hilt",
+        "Description": "Magic item. A hilt to a basic weapon, like a sword or dagger. 0 AP. If you imagine a common weapon while holding it, the hilt instantly morphs into that weapon. It hits for 2 HP in any form. When you no longer need the weapon, it reverts to its form as a simple hilt.",
+        "AP": "0"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Concealment",
+        "Level": "5",
+        "Name": "Shadow",
+        "Description": "Magic item. A magic cape that makes everything but your shadow invisible. 2 AP. When you activate the cape’s ability, it shimmers and sparkles briefly before you and everything you are carrying vanishes. You are invisible for the next minute, but you still cast a shadow when you move. The shadow disappears when you are still. While invisible, common folk and minions won’t notice you passing by unless you make a lot of noise. If you attack while invisible, the cape deactivates and you become visible again.",
+        "AP": "2"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Surveillance",
+        "Level": "1",
+        "Name": "Tracker",
+        "Description": "Magic item. A pair of devices that allows you to track something. The kit includes a magical tag the size of a tiny bead that is sticky and can be applied to most surfaces. The tracker is linked to a magic compass that shows the direction the tag is in. The arrow on the compass is black. It turns gold when the tag is in your scene, and begins to vibrate softly",
+        "AP": "NA"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Surveillance",
+        "Level": "2",
+        "Name": "Spyglasses",
+        "Description": "Magic item. Eyeglasses that let you see in natural darkness as if it were daylight. The glasses can be permanently upgraded with these capabilities: Upgrade A: 3 AP. Add the ability to magnify the details of small nearby objects, or zoom to see faraway things clearly. Upgrade B: 4 AP. Add infrared vision that lets you see an outline of things that are generating heat nearby. This ability works through walls. Upgrade C: 6 AP. Add the ability to detect whether something is an illusion. Illusions you detect appear to flicker and distort. Upgrade D: 0 AP. Each of these modes can be toggled while wearing the Spyglasses by turning a dial on the side of the device.",
+        "AP": "3,4,6,0"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Surveillance",
+        "Level": "3",
+        "Name": "Cloner",
+        "Description": "Magic item. A magic amulet that allows you to eavesdrop on a communications device. 0 AP. When holding the Cloner next to a spell or object that transmits communications, you may clone its signal. You share a telepathic link with the Cloner, and you automatically hear any messages being transmitted through the cloned device in your mind. You may only clone one device at a time; pairing the Cloner with a new device will break the link with the previous one.",
+        "AP": "0"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Surveillance",
+        "Level": "4",
+        "Name": "Seeker",
+        "Description": "Magic item. The Seeker is a levitating orb as large as the palm of your hand that responds to your commands telepathically. It shimmers and is almost invisible, but it makes a low humming noise as it moves. Option A: 0 AP. You can make the Seeker travel just out of your sight or to an adjacent room. It can tell you how many creatures are in a space, but not what kinds. Option B: 1 AP. The Seeker gives you a rudimentary mental map of an adjacent room. The Guide will draw an outline of the room, highlight any major features (like columns or crevasses), and mark the exact location of any creatures.",
+        "AP": "0,1"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Stenography",
+        "Level": "1",
+        "Name": "Dossier",
+        "Description": "Magic item. A magic book that copies things. You can make a Dossier of any size — from a pocket-sized folio to a coffee table book. 0 AP. You can use the book to copy any kind of writing or drawing that is pressed against its pages. For instance, if you press a handwritten letter against one of the Dossier’s pages, a legible but imperfect copy will appear inside.",
+        "AP": "0"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Stenography",
+        "Level": "2",
+        "Name": "Mimic",
+        "Description": "Magic item. A magical pen that guides your hand to copy any writer’s personal style. On the end opposite the pen tip is a magical stamp that can create forgeries of official seals.By bringing the Mimic within reach of a handwritten document, it automatically learns how to reproduce the document’s handwriting styles, signatures, and seals. 2 AP. You use Mimic to create a single document forged in any style the pen has previously learned, including the reproduction of any official stamps or seals.",
+        "AP": "2"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Stenography",
+        "Level": "3",
+        "Name": "Listener",
+        "Description": "Magic item. A small magic gem that can be activated to record sounds nearby for up to 1 hour. If you have the Cloner, you can insert the Listener into a socket on the amulet. When they are paired, you can have the Listener record sounds that the Cloner intercepts. The device can record up to 1 hour of sound, and you can squeeze it softly to have it audibly play back the sound. Using the device to record makes it completely forget the previous recording. 1 AP. You activate the Listener. It records anything it hears, paying particular attention to spoken words.",
+        "AP": "1"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Stenography",
+        "Level": "4",
+        "Name": "Crypto",
+        "Description": "Magic item. Crypto is a ring of opaque glass that glows when brought near glyphs, like writing on a piece of paper or stone etchings. 3 AP. You activate Crypto to translate languages or decode secret messages. The ring reads any object you bring within reach. A translation of the source material emerges, scrolling around the band as you read it. When it is finished translating something, the ring deactivates.",
+        "AP": "3"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Infiltration",
+        "Level": "1",
+        "Name": "Feather Hook",
+        "Description": "Magic item. A magical grappling hook that gently glides itself upward, like a balloon, until it reaches and attaches to a ledge. You can tie any length of rope to the hook. 0 AP. Activate the Feather Hook.",
+        "AP": "0"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Infiltration",
+        "Level": "2",
+        "Name": "Bricolage",
+        "Description": "1 AP. Your skills of improvisation are unparalleled. When you are in a room with everyday objects at your disposal, you may hastily craft one of the following items in less than 1 minute: Option A: tripwire. You create a wire attached to an auditory trigger that makes a loud noise when someone crosses it. Option B: poison trap. If you have poison, you may create a small floor trap that poisons the first creature to step on it. Option C: simple weapon. You fashion a makeshift weapon that hits for 2 HP. Option D: periscope. You can make a small periscope that allows you to look over objects and around doors that have a bit of clearance.",
+        "AP": "1"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Infiltration",
+        "Level": "3",
+        "Name": "Needful Key",
+        "Description": "Magic item. A key that magically senses the mechanism of a physical lock and morphs itself to fit it perfectly. In its default form, the device is a simple key with no teeth. By twisting the key’s handle, you can make it revert to its default form. 2 AP. The key morphs to fit a new lock. You must spend 2 AP each time you make the key morph to fit a new lock. The key remembers locks it has previously defeated and can morph to fit them for no AP cost.",
+        "AP": "2"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Infiltration",
+        "Level": "4",
+        "Name": "Blueprint",
+        "Description": "Magic item. A magical folio that reveals the floorplan of a building. 2 AP. You press the Blueprint against an interior wall of a building. Magic ink appears, revealing the building’s layout for the entire floor you are currently on. The Guide will draw you a basic map of the building, including an outline showing the shape of rooms and hallways and marks showing where doors and windows are. The Blueprint only works on artificial structures. (It does not reveal the layout of caves or other natural systems.) If you also have the Seeker, the Blueprint can show its location in real time, as well as the location of any nearby creatures that the Seeker detects.",
+        "AP": "2"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Impersonation",
+        "Level": "1",
+        "Name": "Persona",
+        "Description": "You carefully prepare a convincing alternate identity. You cannot create a persona of an existing person or the identity of someone who holds an exclusive position, like the ruler of an existing nation. Each persona consists of a wardrobe, credentials, and a backstory. You may create and describe each element of the persona. When you use your alternate identity, you must outwardly present yourself as that person by wearing their costume. Option A: 2 AP. You create the persona of a common person of average means, like a farmer, artisan, traveling salesperson, priest, soldier, or teacher. When using a commoner’s identity, you can effortlessly blend into crowds and travel unnoticed in public spaces. Option B: 4 AP. You create the persona of an officer (someone in a position of formal authority), like a politician, judge, military officer, guild leader, or ship captain. When using an officer’s identity, you may: • Enter restricted areas that your rank and affiliation gives you access to. • Give mundane orders to people you outrank, like running errands or keeping watch. Option C: 6 AP. You create the persona of an aristocrat, like a prominent socialite, wealthy business owner, ambassador, or governor. When using an aristocrat’s identity, you may: • Enter exclusive spaces for the rich and famous, like private clubs or balls. • Seek audience with local rulers. • Spend 1 AP for a get out of jail free card that pardons you for minor crimes.",
+        "AP": "2,4"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Shadow Cutter",
+        "Description": "Magic item. The Shadow Cutter is a wearable bracelet that you can stretch to form a hoop large enough to crawl through. 3 AP. When you press the device against a solid surface, it can be activated to create a hole of an equal circumference, up to 1 meter deep. When you’re done using it, it collapses to its original size. When activated, a low buzzing sound can be heard by all creatures nearby. The material behind the device is instantly teleported to a random shadow plane.",
+        "AP": "3"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "The Artifice",
+        "Description": "Magic item. A small mask that projects an illusion, transforming your image and voice. The mask records the appearance and voice of every nearby creature you encounter and remembers them forever. 2 AP. You activate the mask, projecting a convincing illusion that gives you the appearance of any creature it remembers. Additionally, it changes your voice to sound like the creature you’re impersonating. It is capable of fooling everyone but the impersonated creature’s closest friends and family.",
+        "AP": "2"
+    },
+    {
+        "Class": "Spy",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Nightcrawler",
+        "Description": "You are a legendary charmer and intelligence gatherer, capable of quickly extracting sensitive information. 4 AP. When you infiltrate a person’s office, encampment, or home, you discover sensitive information about them. The Guide chooses two things from this list to reveal to you: • The identity of an important associate. • A location they will travel to, with the time and date. • A secret that would embarrass them if revealed. • Their financial situation, including who they owe their largest debt to or who owes them the largest debt. • Their true feelings about you or your party. • Their strongest allegiance, whether to a government, guild, or other organization. The Guide will imagine the specifics of the information you receive. They will also choose the document that reveals it, like a receipt, a diary, or a letter.",
+        "AP": "4"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Misdirection",
+        "Level": "1",
+        "Name": "Magic Tricks",
+        "Description": "0 AP. You produce a tiny magical effect to surprise, delight, or confuse those around you. Choose any combination of these effects each time you use this ability: Option A: light. You create a harmless display of light, like a flickering flame or a pattern of sparks. You can also snuff out or ignite small light sources like torches. Option B: sound. You create a small, brief sound effect, like a wind chime, an audience clapping, or someone whispering. Option C: smell. You conjure a smell of any kind, like a freshly baked pie or a cesspool. Option D: touch. You give one or more nearby creatures a gentle physical sensation, like someone tapping them on the shoulder, a chill breeze, or the feeling of goosebumps.",
+        "AP": "0"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Misdirection",
+        "Level": "2",
+        "Name": "Mesmerize",
+        "Description": "1 AP. You dazzle a nearby commoner or minion with an optical illusion. (The creature must be able to see.) Until you leave the area, the creature cannot move, take actions, or respond to conversation. The spell ends if the creature is harmed.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Misdirection",
+        "Level": "3",
+        "Name": "Overthere",
+        "Description": "1 AP. You make a suggestive gesture, redirecting a nearby creature that is currently hostile toward you. The target redirects its anger toward a different adversary. (The spell does not work if the target has no other enemies nearby.) This effect is canceled if you harm the creature.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Misdirection",
+        "Level": "4",
+        "Name": "Mirage",
+        "Description": "3 AP. You conjure a major illusion no larger than 100 meters in any dimension. The illusion can be of anything that fits within the space, and you can program it with looping mechanics. For instance, you can create the illusion of an oasis, a pile of treasure, or a lumbering giant guarding their territory. If a creature touches or passes through the illusion, they will no longer see it. Creatures with the ability to detect magic may discover the deception.",
+        "AP": "3"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Misdirection",
+        "Level": "5",
+        "Name": "Invisibility",
+        "Description": "Option A: 3 AP. You make a nearby creature or object invisible for the next minute. If it is a creature, everything they are wearing and carrying also becomes invisible. If a creature attacks while invisible, they reappear. Option B: X AP. Add 1 AP for each creature or object you target with the spell beyond the first.",
+        "AP": "3,X"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mannequins",
+        "Level": "1",
+        "Name": "Splitting Image",
+        "Description": "1 AP. You vanish momentarily, reappearing with two illusory duplicates at your side. Your duplicates travel alongside you and perfectly mimic all of your movements. If a creature attempts to target you, the Guide must flip a coin. If it turns up “heads,” you are targeted; on “tails” one of your duplicates is targeted. If one of your duplicates takes damage, it disappears.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mannequins",
+        "Level": "2",
+        "Name": "Phantom Menace",
+        "Description": "2 AP. You read the mind of a nearby NPC and produce an illusion of a creature they find extremely irritating. Only you and the target of the spell can see and hear the illusion. For the next 10 minutes, the illusion relentlessly mocks and taunts your target, provoking their full attention. You may control the illusion directly and have it manipulate small objects. For example, you can have it steal an item from the target and lead them on a chase. Or you may let the illusion go wild, allowing the Guide to narrate its behavior.",
+        "AP": "2"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mannequins",
+        "Level": "3",
+        "Name": "Illusory Creature",
+        "Description": "3 AP. Imagine a creature. You create a convincing illusion of it that appears nearby. It looks, moves, and sounds like the creature you imagined. It even feels real to the touch. The illusion has 6 HP and vanishes at 0 HP. The illusion can behave independently and travel away from you. You can program the illusion’s routines. For example, you may have it clean a house, patrol an area, pretend to be busy, or give it a combination of tasks and behaviors. You can also set rules for it, like “Don’t harm anyone for any reason” or “Don’t let anyone pass through this door.” You share a telepathic bond with the illusion when it is nearby, and you can control it directly during your turn. You can make it move, act, and speak your lines. It can hold and use weapons to make basic attacks. After 1 day, the illusion will automatically travel out of sight of other creatures and then vanish. 4 AP. This spell costs 4 AP instead if you use it to create an illusion of a creature that already exists. You create a perfect double of the creature that looks and sounds like them. It can fool everyone but the creature’s closest friends and family",
+        "AP": "3"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Clairvoyance",
+        "Level": "1",
+        "Name": "Magic Eye",
+        "Description": "1 AP. You briefly gain the ability to see beyond physical reality. For the next hour, you are able to see the following: Magic. A faint aura surrounds any person or object currently affected by magic. Illusion. Any illusory creature or object slightly flickers, but you do not see its true form.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Clairvoyance",
+        "Level": "2",
+        "Name": "Whisper",
+        "Description": "Option A: 0 AP. You telepathically send a message to a nearby creature. They know you are speaking from within their mind, but they hear you as if you were speaking out loud. Option B: 1 AP. You create a link with the creature that allows them to respond to your whisper. If they respond, you may have a telepathic conversation with them for the next minute",
+        "AP": "0,1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Clairvoyance",
+        "Level": "3",
+        "Name": "Message",
+        "Description": "Option A: 1 AP. Choose a creature you have met before. You must know the general area where they are presently located. You may communicate with each other telepathically for up to 1 minute. Option B: 4 AP. You can create the telepathic link, even if you do not know where the creature is located. They can be anywhere.",
+        "AP": "1,4"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Clairvoyance",
+        "Level": "4",
+        "Name": "Interpret",
+        "Description": "1 AP. You enter the mind of a nearby creature and temporarily learn their language for the next 10 minutes. When you cast this spell, you may also attempt to permanently learn the creature’s language by playing a game of charades. (This happens at the table out of character.) The Guide will write down a word or phrase on a piece of paper and then secretly give it to you. Start a timer. You have 1 minute to silently act out the word or phrase. If another player correctly guesses the word or phrase, the spell is successful.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Clairvoyance",
+        "Level": "5",
+        "Name": "Insight",
+        "Description": "3 AP. You gaze into the mind of a nearby creature, discovering a prominent intention. Choose one effect each time you cast this spell: • You learn something the creature intends to do in the next 10 minutes. • You learn something the creature intends to accomplish over a long period of time. • You learn something they intend to do to a specific creature of your choice.",
+        "AP": "3"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Conjuration",
+        "Level": "1",
+        "Name": "Little Bird",
+        "Description": "1 AP. You summon an illusory bird somewhere nearby that keeps watch over an area that it can see. It remains there until you dismiss it. You may only have one Little Bird at a time. You share a telepathic link with the bird. It will message you when it witnesses something you specify, like a specific creature entering a room or a door opening. The bird will wake you up to tell you what it sees if you are sleeping.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Conjuration",
+        "Level": "2",
+        "Name": "Helen's Fantastic Feast",
+        "Description": "4 AP. Imagine an elaborate feast of any culinary style. You summon food and drink, your choice of furniture (if necessary), and your choice of dinnerware and table decorations. You may summon enough to feed a party of up to 20 people. Consuming the meal restores 4 hit points.",
+        "AP": "4"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Conjuration",
+        "Level": "3",
+        "Name": "Monitor",
+        "Description": "2 AP. You summon a small illusory servant that hovers over your shoulder and follows you around for the remainder of your play session. The Monitor looks like a blooming flower with an eye in the center, and it’s invisible except to creatures you designate. You can deploy the Monitor to places just beyond your sight. For instance, you can send it searching around a corner into another room. The Monitor can tell you how many creatures are in a space, but not what kinds. It also gives you a rudimentary mental map of spaces it travels through. For instance, if you send it into an adjacent room, you will know the rough size and shape of the room and any major features, like pillars or open pits.",
+        "AP": "2"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Conjuration",
+        "Level": "4",
+        "Name": "Shadow Have",
+        "Description": "5 AP. Place your hand on a dwelling in the worldly plane. You instantly duplicate its interior inside of a shadow plane. The duplication looks and feels real to the touch, but it is an illusion; you cannot take its illusory parts out of the shadow plane. The dwelling can be as small as a shed or as large as a mansion or castle. The physical entrance to the dwelling in the worldly plane doubles as a secret portal to the shadow haven. You can grant or revoke access to anyone at any time. A creature that is aware of the haven and has permission to enter may choose to open the door to the portal by wishing it. Otherwise, the door functions normally as the entrance to the dwelling in the worldly plane. The shadow haven lasts permanently until it is dispelled, you dismiss it, or the spell is cast again. Any creatures inside when the spell ends are instantly expelled through the portal into the worldly plane.",
+        "AP": "5"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mind Control",
+        "Level": "1",
+        "Name": "Bamboozle",
+        "Description": "1 AP. You make a nearby creature mildly confused about a specific subject until you leave the area. For example, you could make a merchant confused about the value of their goods, a guard confused about who is authorized to pass, or a dog confused about whether he is a good boy.The confusion is lifted if you push the deception too far, like trying to trade a rock for a priceless item.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mind Control",
+        "Level": "2",
+        "Name": "Wren's Delightful Dream",
+        "Description": "1 AP. You whisper and wave your hand at a nearby creature. The next time the creature falls asleep, they experience a deeply comforting dream. They wake up feeling beloved and forget all of their grudges for the next week.",
+        "AP": "1"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mind Control",
+        "Level": "3",
+        "Name": "Perky Profanation",
+        "Description": "Option A: 1 AP. You curse a nearby creature for the next 10 minutes. The curse is lifted if the creature is harmed. Choose one: laughter. They double over in sustained laughter and can’t move. Everything they hear sounds hilarious to them. dance. They hear their favorite tune and start dancing like their life depends on it. mimicry. They begin to mimic a creature of your choice. For example, you can make them behave like housecats. Option B: 4 AP. You curse any number of commoners nearby.",
+        "AP": "1,4"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mind Control",
+        "Level": "4",
+        "Name": "Fear",
+        "Description": "Roll the die. 4 AP. You breach the mind of a nearby creature to seek their worst fear. • If you roll a 20, you learn the creature’s worst fear. They become permanently haunted by it in every waking moment. Over time, their personality is destroyed, and they become unresponsive to others. • On 11 to 19, you learn the creature’s worst fear. You may then conjure the image of this fear in their mind’s eye, paralyzing them with dread for the next 10 minutes. They cannot act, except to flee danger. • On 6 to 10, you learn the creature’s worst fear, but they reject you from their mind before you can conjure the fear. • On 2 to 5, you learn the creature’s worst fear, but it paralyzes you with dread for the next 10 minutes. During this time, you are unable to use abilities. • On a 1, when confronting the creature’s fear, you become permanently haunted by it. You must choose an additional character flaw. You can only lift the fear by having the Liberate spell cast on you.",
+        "AP": "4"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mayhem",
+        "Level": "1",
+        "Name": "Scintillate",
+        "Description": "0 AP. You extend your fingers outward, and a streaking bolt of sparks shoots toward a target you can see. Roll the die to see if it hits the target successfully. You may make the bolt explode on contact with crackling energy, hitting the target for 2 HP. Or you can make the bolt a harmless firework that explodes in the air, creating a pattern of any shape and color.",
+        "AP": "0"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mayhem",
+        "Level": "2",
+        "Name": "Bedazzle",
+        "Description": "4 AP. You summon four prismatic bolts that sparkle brilliantly. You may direct each bolt toward any target you can see. The bolts each hit for 2 HP. If all four hit a single creature, the creature is affected by your Mesmerize ability.",
+        "AP": "4"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mayhem",
+        "Level": "3",
+        "Name": "Loosen",
+        "Description": "2 AP. You twirl your finger as if you are unwinding a spool of yarn. Starting with a single creature nearby that you can see, you create a cascading wave of magic mischief that loosens anything fastened or tightened around nearby creatures. For example: • Bags become unclasped and spill out their contents. • Shoelaces become untied, belts unbuckled, and shirts unbuttoned. • Pets become unleashed.",
+        "AP": "2"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Mayhem",
+        "Level": "4",
+        "Name": "Chaos Ball",
+        "Description": "3 AP. You summon a cherry-sized elastic ball in your hand. When you throw the ball, it bounces off everything it touches, avoiding creatures. Each time the ball bounces, it accelerates slightly, traveling faster and faster until it escapes into the atmosphere after 1 minute. The ball’s brief reign of terror shatters pottery, glass, light furniture, and most other fragile things in your scene. What a shame.",
+        "AP": "3"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Control",
+        "Description": "8 AP. You dominate the mind of a nearby creature for the next hour. The creature will do anything you verbally command them to do without exception or hesitation. When the spell ends, they remember everything that happened. This spell is cursed. If you use Control to harm another creature, you permanently forfeit your character and they become an NPC boss. The Guide will now play your character as a villain in the story. The Guide will inform you if your use of the spell will cause your character to become an NPC before you cast it; you must agree to forfeit your character, otherwise you may not cast Control to harm another creature.",
+        "AP": "8"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Peerless Pilot",
+        "Description": "5 AP. You conjure a fantastic hot air balloon from another dimension that can fit you and your party. You must be outdoors and standing in a clearing with room for the balloon to form. The balloon is 30 meters tall and can look like anything you want. It’s piloted by a small, illusory creature that can talk to you and your crew and take instructions. (The standard creature is a red panda wearing goggles, but you may choose any similarly sized creature you want.) The pilot remembers you and where you’ve been if you cast the spell again. The balloon is powered by a flaming sphere above the carriage that adjusts its intensity based on your commands. The balloon can soar as high as the tallest mountain peaks and move at up to 30 kilometers an hour. The carriage has 40 hit points, and the balloon has 10 hit points. You may dismiss the balloon at any time; it vanishes with its pilot and returns home.",
+        "AP": "5"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Perfect Gift",
+        "Description": "4 AP. You glimpse the mind of a nearby creature, discovering what stirs their heart. Then, you conjure an emotionally priceless gift for them. You choose how the gift makes the creature feel once it is received. Choose one: • They come to terms with the loss of a loved one, finding peace. • They decide to repair a broken relationship in their life. • They become exuberantly happy for the next month. • They become obsessed with the gift, refusing to part with it for any reason. • They love you as an intimate friend and seek a closer relationship. The Guide chooses the form of the gift to match the effect with the creature.",
+        "AP": "4"
+    },
+    {
+        "Class": "Magician",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Invasion",
+        "Description": "5 AP. You touch a sleeping NPC (the host) and enter its dream. You may take any willing party members who are nearby with you. Those invading the dream enter a trance. They cannot sense anything outside of the dream, even if they are harmed. You choose how you and your companions appear in the dream. You may impersonate others while in the dream world. Once you enter, you create a new dream in the host’s mind. The dream has two scenes. Scene A: the suggestion. In the first scene, you meet the host and speak with them. You choose the setting. Here, you may try to convince the host to do something. For example, you might ask them to abandon a serious pursuit, to cut their family ties, or to give away their wealth. Scene B: the trial. In the second dream sequence, the host’s greatest fear manifests as a monster that seeks to kill them. The Guide will choose a monster that is proportionate to the severity of your suggestion. If you are trying to dramatically alter the host’s life, the Guide may choose a monster of terrifying power. The rules for this fight are the same as outside of the dream, but you cannot die here. All players entering the dream have full health and 10 AP to use. You exit the dream immediately if you reach 0 HP. If you defeat the monster, the target will later wake up believing the dream was a revelation. They will set out to do what you suggested. If the monster kills the host in the dream, the spell ends. Everyone, including the host, wakes up. You may use your abilities within the dream the same way you use them in the outside world, but the effects are fictional and cannot leave the dream world. Any AP that you spend inside of the dream is recovered when you exit.",
+        "AP": "5"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Evocation",
+        "Level": "1",
+        "Name": "Magic Strike",
+        "Description": "Roll the die. Option A: 0 AP. You must be holding a pointed object like a wand, staff, or sword to use this spell. You use it to shoot a shimmering missile of force in a straight line at a target you can see, dealing 2 damage. Option B: 2 AP. You overload the missile, increasing its damage to 4 and hitting the target automatically. You do not need to roll the die if you overload the spell.",
+        "AP": "0,2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Evocation",
+        "Level": "2",
+        "Name": "Kindle",
+        "Description": "0 AP. You rub your hands together, causing a flammable object you can see nearby to ignite in flame. The spell can ignite textiles, wood, paper, and other combustible material. This spell cannot be used directly on creatures, but it can be used to ignite flammable things they are wearing or carrying. Igniting something on a creature deals 1 damage to them.",
+        "AP": "0"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Evocation",
+        "Level": "3",
+        "Name": "Clap",
+        "Description": "2 AP. You clap your hands, creating a thunderous wave of force in the direction you are facing. The wave hits up to 3 nearby creatures for 2 HP. If affected creatures are the size of a horse or smaller, they are also knocked to the ground.",
+        "AP": "2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Evocation",
+        "Level": "4",
+        "Name": "Telekinesis",
+        "Description": "You move a nearby creature or object using only your mind. 1 AP. You may move an object or creature no larger than an elephant. If you move it gently, you can control it for up to 10 seconds. Or you may forcefully throw it up to 5 meters away and hit it for 2 HP. X AP. You may increase the power of this ability by spending additional AP. For each AP you spend, you may increase the distance you can throw the creature by 5 meters, and the damage they take by 2 HP. (For example, if you spend 5 AP, you can throw a target 25 meters and deal 10 damage.)",
+        "AP": "1"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Evocation",
+        "Level": "5",
+        "Name": "Last Light",
+        "Description": "You must be holding a pointed object like a wand, staff, or sword to use this spell. Option A: 3 AP. You momentarily channel a blinding beam of focused light in a straight line at a target you can see, dealing 6 damage. The light ignites anything flammable that it touches, melts a hole in steel objects, and sears organic matter. Option B: 5 AP. You overload the beam. It instantly kills commoners and minions and deals 12 damage to bosses. If Last Light kills the target, it disintegrates into ash. The beam created by Last Light can be deflected by mirrors.",
+        "AP": "3,5"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Conjuration",
+        "Level": "1",
+        "Name": "Familiar",
+        "Description": "2 AP. You summon a tiny spectral creature, like a bird, a lizard, a butterfly, or anything else of a comparable size. The familiar is the avatar of a random spirit creature from your world. It becomes your ally and will follow your instructions. The Guide chooses the creature’s background and personality, and speaks for them. The familiar may choose to leave you if they are mistreated. The familiar cannot move out of your sight. It can pick up and move objects no larger than a coin purse and no heavier than 10 pounds. It can’t attack. Your familiar has 4 HP. It is invulnerable to non-magical harm. If it is reduced to 0 HP, it vanishes, and your bond is broken. You may only have one familiar at a time.",
+        "AP": "2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Conjuration",
+        "Level": "2",
+        "Name": "Pegasus Cloak",
+        "Description": "3 AP. You bestow any number of nearby creatures with illusory feather cloaks for the next hour. Affected creatures hover 1 meter above the ground and can move by gliding in the direction they want to travel. They will also fall gently until they are hovering 1 meter above ground.",
+        "AP": "3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Conjuration",
+        "Level": "3",
+        "Name": "Force Field",
+        "Description": "3 AP. You create a paper-thin wall of force capable of preventing nonmagical creatures and objects from passing through. You may choose whether the field blocks passage on one or both sides. The field can be in any shape you want, but it must fit inside of a cube that’s 10 meters on all sides. The force field has 20 hit points and dissolves at 0 HP. You can make the field stationary or move it telepathically. (For example, you might create an invisible platform that glides beneath you as you walk.)",
+        "AP": "3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Conjuration",
+        "Level": "4",
+        "Name": "Conjure",
+        "Description": "3 AP. You imagine an object, causing it to appear somewhere nearby. You can summon any object that meets these guidelines: • It can’t be larger than an elephant. • It can’t have magical effects. You must tell the Guide which object you want to summon. Then, the Guide thinks of a related object and gives you its name in secret. (For example, if you want to summon a lockpick, the Guide may tell you to draw a door.) Set a timer. You have 1 minute to draw the secret object. When time is up, show it to your party. Your friends can discuss what they see, but they can only submit one guess. Don’t give the party clues. If they guess correctly, the item appears. If they guess closely but not exactly, the item appears, but it has a defect. If they’re totally wrong, a random misshapen item appears.",
+        "AP": "3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Planeshifting",
+        "Level": "1",
+        "Name": "Blink",
+        "Description": "1 AP. You teleport to a location of your choice nearby. You vanish, leaving behind a gentle gust of wind and then instantaneously reappear nearby.",
+        "AP": "1"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Planeshifting",
+        "Level": "2",
+        "Name": "Gate",
+        "Description": "Option A: 1 AP. Bind. You bind yourself to the room you are currently in. It must belong to you or a member of the party. This is your Circle. You may only bind yourself to one at a time. Option B: 3 AP. Gate. Snap your fingers. Any willing party members nearby are instantly teleported to your Circle.",
+        "AP": "1,3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Planeshifting",
+        "Level": "3",
+        "Name": "Portal",
+        "Description": "3 AP. You conjure a portal of any shape and orientation that is no larger than a door. It appears at a location of your choice nearby. The portal looks like a window to whatever is on the other side, and its edges crackle and spark with energy. When you cast the spell again, the new portal automatically connects to the previous one. The portals remain open until you choose to close them. Anyone that can fit may pass through them.",
+        "AP": "3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Planeshifting",
+        "Level": "4",
+        "Name": "Dark Door",
+        "Description": "2 AP. You knock on a door, making it a temporary portal to a specific shadow plane. You must be aware of the shadow plane’s existence to create a door to it. (For example, if you see a creature with a Cosmic Purse, you can open a door to the purse’s shadow plane.) When you open the door, you can see inside the plane, and you and your allies may enter it. If the door is closed, the portal vanishes. (If the door closes behind you, you become trapped in the shadow plane and must escape with other means, like with Gate.)",
+        "AP": "2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Planeshifting",
+        "Level": "5",
+        "Name": "Teleport",
+        "Description": "Roll the die. 5 AP. Snap your fingers. You and any willing creatures nearby vanish instantly, leaving behind a small shockwave of air in your wake, and are teleported to any place you choose. • If you roll a 20, everyone arrives safely. You recover the spell’s full AP cost. • On 11 to 19, you all arrive safely. Good for you. • On 6 to 10, you all arrive. Choose one: you take 7 damage from turbulence, or a magic item you are carrying is destroyed. • On 2 to 5, the party arrives safely, but nobody else does. You don’t know where they went. You lose an item you are carrying. • On a 1, the spell fails. Party members are lacerated by an arcane explosion and are each hit for 5 HP. All other travelers are torn apart in a gruesome spectacle. (They die.)",
+        "AP": "5"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Magecraft",
+        "Level": "1",
+        "Name": "No",
+        "Description": "Roll the die. 2 AP. By uttering the word “no,” you attempt to neutralize a spell that you see an NPC casting nearby. You must declare you are using this ability before the Guide describes the consequences of the spell. • If you roll a 20, the spell is violently canceled and its caster is hit for 1 AP. • On 11 to 19, the spell is stopped before it is cast. • On 6 to 10, the spell misses and hits another nearby creature or target. • On 2 to 5, the spell takes effect normally. • On a 1, you accidentally amplify the spell. If it is a harmful spell, the damage is doubled.",
+        "AP": "2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Magecraft",
+        "Level": "2",
+        "Name": "Reflect",
+        "Description": "Roll the die. 3 AP. You produce a counterspell, reflecting a spell that targets you. You must declare that you are reflecting the spell as soon as the Guide says that you are being targeted by a spell. • If you roll 11 to 20, the caster is hit by their own spell, instead of you. • On 6 to 10, the spell reflects off of you but misses its caster. • On 1 to 5, the spell reflects off of you but hits a nearby party member instead.",
+        "AP": "3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Magecraft",
+        "Level": "3",
+        "Name": "Enscroll",
+        "Description": "2 AP. You create a Spell Scroll that can be used to produce a spell that you know. You must add the AP cost of the spell you are inscribing to the cost of Enscroll. For example, if you create a magic scroll that can produce your Teleport spell, you must spend 7 AP. You must spend a short time in a safe and quiet place to prepare the scroll. You decide what is written on it. The user of the scroll must read the words aloud to activate the spell it contains.",
+        "AP": "2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Magecraft",
+        "Level": "4",
+        "Name": "Spellsteal",
+        "Description": "3 AP. After you observe a creature nearby casting a spell, you may briefly enter their mind to glimpse its nature. You learn the spell and can produce it once. Your theft gives you the minimum know-how to produce the spell, but you have not mastered it. The Guide may not fully reveal the effects or potential consequences of some stolen spells. Once you cast or Enscroll the stolen spell, you forget the spell and cannot use it again.",
+        "AP": "3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Projection",
+        "Level": "1",
+        "Name": "Sense Magic",
+        "Description": "Option A: 0 AP. You get a gentle tingling feeling in your bones whenever you are near a powerful source of magic. You’re aware that magic is in the area, but not its location or nature. Option B: 1 AP. You discern the location of nearby magic and its general nature. For instance, the Guide may reveal that you sense a magic sword, a cursed door, or an illusion. Option C: 2 AP. You study the precise nature of nearby magic, learning its specific effects. If you use this ability to study a mysterious magic item, its name and effects are revealed.",
+        "AP": "0,1,2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Projection",
+        "Level": "2",
+        "Name": "Aura's Silvery Broadcast",
+        "Description": "2 AP. You broadcast a message up to 20 words in length. Each creature within 1 kilometer hears the message clearly in a voice that sounds pleasant to them. The sound seems to originate from every direction and background noises are muted for the duration.",
+        "AP": "2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Projection",
+        "Level": "3",
+        "Name": "Scry",
+        "Description": "1 AP. Once per game session, you may flash forward in time to glimpse your actions in the near future. For the next hour, you can avert failure by redoing a roll of the die. You must take the result of the new roll. Or you may ask the Guide to reveal a situation you are likely to encounter based on the current trajectory of your choices. You may ask the Guide questions about what you sense from this glimpse of the future, but the answers may be vague, as if you are trying to find detail in a watercolor painting.",
+        "AP": "1"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Projection",
+        "Level": "4",
+        "Name": "See",
+        "Description": "4 AP. For the next hour, you can see through all magical deceptions. See reveals the world to you in several ways: • You see anything that’s invisible. • You know if something is an illusion. • You may see the true form of anything that has been altered by magic.",
+        "AP": "4"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Projection",
+        "Level": "5",
+        "Name": "Find",
+        "Description": "Option A: 3 AP. Find. You close your eyes and attempt to locate any object you have held before, as long as it is in your current universe. You discover its exact location. Option B: 3 AP. Recall. Immediately after you have used Find to locate an item, you may recall it for an additional 3 AP. The item instantly vanishes from its present location and appears in your hands.",
+        "AP": "3"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Trickery",
+        "Level": "1",
+        "Name": "Speak",
+        "Description": "1 AP. For the next minute, you may speak silently into the mind of a nearby creature. Your lips move normally as if you were speaking aloud, but no sound comes out. Instead, the target of the spell hears your voice inside their head. The creature can tell that your voice is inside their mind.",
+        "AP": "1"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Trickery",
+        "Level": "2",
+        "Name": "Pinch",
+        "Description": "2 AP. You imbue your fingers with supernatural strength. For the next minute, you can effortlessly pick up and move objects of any weight, as long as you can reasonably handle their size and shape. For instance, you might pinch the shirt of a bully and raise them up in the air or casually move a giant anvil.",
+        "AP": "2"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Trickery",
+        "Level": "3",
+        "Name": "Strech",
+        "Description": "Option A: 2 AP. Choose a nearby creature or object that is no smaller than an ant and no larger than a horse. You cause it to instantly enlarge or shrink. It can grow up to twice its size or shrink up to half of its size. The target’s weight increases or decreases proportionally, but its hit points do not change. You cannot enlarge something beyond the confines of the space it’s in. Option B: 4 AP. You may stretch an object no smaller than an ant and no larger than an elephant.",
+        "AP": "2,4"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Trickery",
+        "Level": "4",
+        "Name": "Undo",
+        "Description": "You speak a word of power, reversing the fate of a nearby object. The spell cannot be used to affect living things. The thing you are undoing must be the discrete result of another creature’s effort. For example, you might undo a creature’s shoelaces, unthread a garment, cause a piece of furniture to fall apart, or revert a sculpture to a block of marble. Choose how much effort to undo each time you use this spell: Option A: 1 AP. Up to 1 minute of effort. Option B: 2 AP. Up to 1 day of effort. Option C: 3 AP. Up to 1 week of effort. Option D: 4 AP. Any amount of effort.",
+        "AP": "1,2,3,4"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Rift",
+        "Description": "5 AP. You summon a magnificent gateway that contains a portal to your current universe’s nexus in The Rift. Each universe’s gateway is unique; it might be a stone archway, an iron gate, a humble wooden door, or something else. The Guide imagines what this gateway looks like. This is an extraordinarily difficult portal to maintain, and it only remains open for 1 minute. Once opened, any creatures or objects that can fit through the portal may pass through it. While you may summon access to the gateway anywhere, the exit point remains in the same location in The Rift.",
+        "AP": "5"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Transcendence",
+        "Description": "5 AP. You embark on an incredible quest for knowledge within living things. For the next minute, you enter a trance as your consciousness expands, touching all sentient beings within 1,000 kilometers of you. The ordeal is staggering. You immediately sense time and personal identity at a scale beyond your normal understanding. You absorb the simultaneous experiences of others — possibly from billions of beings. Your knowledge quest must be limited to a subject that you could reasonably come to understand by seeing through the eyes of others. For instance, you may set out to learn the true history of a species, identify who and where the most powerful being is, discover the location of a secret object, or become generally accustomed to the beliefs and practices of a culture. You cannot use the spell for things that one mind could not reasonably possess (for instance, by asking for “all the world’s knowledge”). The Guide will decide if your request is reasonable. Beware. Entering the minds of others is risky. You may experience unforeseen consequences...",
+        "AP": "5"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Planecraft",
+        "Description": "You conjure a shadow plane. Its contents are completely illusory and cannot leave the plane. You can fill it with anything you can imagine, except sentient beings. The things inside may look and feel real, but they are ultimately mirages. Creatures cannot be harmed by things you put in this plane. Option A: 2 AP. You conjure a tiny plane no larger than a mansion or castle. Option B: 4 AP. You conjure a plane no larger than the size of a village. Option C: 6 AP. You conjure a plane with no size limit. Option D: 8 AP. You conjure a plane with no size limit and no safeguards. Creatures can now be harmed by the things you put in the plane. (That includes you.)",
+        "AP": "2,4,6,8"
+    },
+    {
+        "Class": "Wizard",
+        "Tree": "Legendary",
+        "Level": "1",
+        "Name": "Create",
+        "Description": "5 AP. You tap raw magic, converting its energy into a single, nonmagical, inanimate object that fits inside a cube no larger than 5 meters in any dimension. You create the object perfectly and it is real in every sense. You may create anything that fits in the space, including precious gems, flawless weapons, or exact replicas of other objects. This spell requires perfection and is extremely taxing on your ability as a Wizard. Keep track of how many times you have cast the spell on your inventory sheet. The spell’s cost increases by 1 AP each time you use it.",
+        "AP": "5"
     }
 ]
