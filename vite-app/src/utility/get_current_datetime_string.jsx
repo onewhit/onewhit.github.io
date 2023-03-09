@@ -9,7 +9,8 @@ export default function get_current_datetime_string() {
         make_two_digits(current_date.getSeconds()),
         make_three_digits(current_date.getMilliseconds()),
     ];
-    console.log(date_parts.join("_"));
+    
+    return date_parts.join("_");
 }
 
 function make_two_digits(value) {

@@ -31,9 +31,14 @@ export default function TextAreaInput({id, label, value="", on_change=noop, requ
         <>
             {/* <div style={container_style}> */}
             {/* </div> */}
-            <div>
-                <label htmlFor={id}>{label}:</label>{" "}
-            </div>
+            {
+                label != undefined
+                ?
+                    <div>
+                        <label htmlFor={id}>{label}:</label>{" "}
+                    </div>
+                : ""
+            }
             <div>
                 <textarea style={textarea_style} value={value} onChange={handle_change} required={required} readOnly={read_only ? "readOnly" : ""} />
             </div>

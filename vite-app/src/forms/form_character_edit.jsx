@@ -21,8 +21,8 @@ export default function FormCharacterEdit({character_id}) {
         current_ap: 10,
         max_hp: 10,
         notes: "",
-        items: [],
-        abilities: [],
+        // items: [],
+        // abilities: [],
     };
 
     // Make sure all fields are present on the character by merging first with the empty character array
@@ -76,14 +76,17 @@ export default function FormCharacterEdit({character_id}) {
     function handle_add_item(event) {
         event.preventDefault();
         if (field_generic_item_to_add != "") {
-            const current_date = new Date();
-            const new_character_data = deep_object_copy(form_data);
+            const new_character_data = deep_object_copy(data_context.characters[character_id]);
             const items_array = deep_object_copy(new_character_data.items);
             items_array.push({
                 item_name: field_generic_item_to_add,
-                date_added: current_date.toLocaleString()
+                date_added: get_current_datetime_string()
             });
-            change_simple_field("items", items_array);
+
+            // change_simple_field("items", items_array);
+            
+            const override_character_data = {id: character_id, items: items_array};
+            data_context.create_or_edit_character(override_character_data)
         }
     }
 
@@ -186,21 +189,21 @@ export default function FormCharacterEdit({character_id}) {
                         ?
                             <>
                                 {
-                                    form_data.items.map((item, index) => {
+                                    data_context.characters[character_id].items.map((item, index) => {
 
                                         function handle_drop_item(event) {
                                             event.preventDefault();
-                                            // const item = event.target.value;
-                                            // console.log(item.item_name);
                                             const item_name_to_drop = item.item_name;
                                             const item_datetime_to_drop = item.date_added;
 
-                                            get_current_datetime_string();
+                                            const item_list_copy = deep_object_copy(data_context.characters[character_id].items);
 
-                                            // form_data.items.forEach(({item_name, date_added}) => {
-                                                // console.log(item_name);
-                                                // console.log(date_added);
-                                            // });
+                                            const filtered_item_list = item_list_copy.filter(({item_name, date_added}, index) => {
+                                                const is_item_to_delete = (item_name == item_name_to_drop && date_added == item_datetime_to_drop);
+                                                return !is_item_to_delete;
+                                            })
+
+                                            data_context.create_or_edit_character({id: character_id, items: filtered_item_list});
                                         }
                                         
                                         const row_style = {
