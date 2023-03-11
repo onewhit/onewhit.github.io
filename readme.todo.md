@@ -85,6 +85,7 @@
 - [ ] Add or remove potential item slots
 - [ ] item slots link to item description page 
 - [ ] Make text area max width of details area
+- [ ] Add general description, flaw, ideal, race to character fields
 
 # Item Generator Ideas
 - [ ] add ability to regenerate any part pf phrase after generation

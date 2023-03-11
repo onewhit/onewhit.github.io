@@ -20,7 +20,7 @@ export default function MainNavigation () {
 
     function handle_main_nav_click(event) {
         global_context.clear_banner();
-        global_context.toggle_is_show_sidebar();
+        global_context.update_global_context({is_show_sidebar: false});
     }
 
 

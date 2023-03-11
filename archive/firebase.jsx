@@ -83,14 +83,6 @@ const HelperFirebase = {
 
         return return_object_list;
     },
-    setup_listener_and_get_unsubscribe_function: (collection_name, document_key, callback) => {
-        const unsubscribe = onSnapshot(doc(firebase_db, collection_name, document_key), (doc) => {
-            // console.log("Document was updated: ", doc.data());
-            const new_doc_data = JSON.parse(JSON.stringify(doc.data()));
-            new_doc_data.id = doc.id;
-            callback(doc.id, new_doc_data);
-        });
-    },
     create_document: async (collection_name, document_name, new_document_data, is_merge=true) => {
         const doc_ref = doc(firebase_db, collection_name, document_name);
         await setDoc(doc_ref, new_document_data, {merge: is_merge});

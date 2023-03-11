@@ -13,20 +13,20 @@ export default function FormCharacterEdit({character_id}) {
     const data_context = useContext(DataContext);
     const global_context = useContext(GlobalContext);
 
-    const empty_character_data = {
-        full_name: "",
-        short_name: "",
-        story_role: "",
-        current_hp: 10,
-        current_ap: 10,
-        max_hp: 10,
-        notes: "",
-        // items: [],
-        // abilities: [],
-    };
+    // const empty_character_data = {
+    //     full_name: "",
+    //     short_name: "",
+    //     story_role: "",
+    //     current_hp: 10,
+    //     current_ap: 10,
+    //     max_hp: 10,
+    //     notes: "",
+    //     // items: [],
+    //     // abilities: [],
+    // };
 
     // Make sure all fields are present on the character by merging first with the empty character array
-    const [form_data, set_form_data] = useState(character_id != undefined ? {...empty_character_data, ...data_context.characters[character_id]} : empty_character_data);
+    const [form_data, set_form_data] = useState(character_id != undefined ? {...data_context.characters[character_id]} : empty_character_data);
     const [field_generic_item_to_add, set_field_generic_item_to_add] = useState("");
 
     const [form_mode, set_form_mode] = useState(character_id == undefined ? "new" : "view"); // "edit" or "view" or "new"

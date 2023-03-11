@@ -31,13 +31,11 @@ function LoginForm() {
 
     function handle_login(event) {
         event.preventDefault();
-        global_context.replace_banner("Logging in...");
         return global_context.firebase_auth.login_firebase_user(field_username, field_password);
     }
 
     function handle_logout(e) {
         e.preventDefault();
-        global_context.replace_banner("Logging out...");
         return global_context.firebase_auth.logout_firebase_user();
     }
 
