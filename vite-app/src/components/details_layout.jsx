@@ -2,6 +2,7 @@
 import GlobalContext from "../contexts/global_context.jsx";
 import { useContext, useState, useEffect } from "react";
 import colors from "../utility/colors.jsx";
+import configs from "../utility/configs.jsx";
 
 export default function DetailsLayout({page_title, children}) {
 
@@ -13,7 +14,9 @@ export default function DetailsLayout({page_title, children}) {
     return (<>
         <div style={detail_title_style}>{page_title}</div>
         <Banner />
-        {children}
+        <div style={{maxWidth: configs.details_width}}>
+            {children}
+        </div>
     </>)
 }
 
@@ -102,11 +105,12 @@ function Banner () {
 
     return (<>
         {banner.length > 0
-            && <><div style={calculated_banner_style}>
-                {banner.map((message) => <p key={message}>{message}</p>)}
-                <div onClick={clear_banner} className="hover-element" style={close_style}>x</div>
-            </div>
-            <br />
+            && <>
+                <div style={calculated_banner_style}>
+                    {banner.map((message) => <p key={message}>{message}</p>)}
+                    <div onClick={clear_banner} className="hover-element" style={close_style}>x</div>
+                </div>
+                <br />
             </>
         }
     </>)

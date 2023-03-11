@@ -7,6 +7,7 @@ import Colors from "../utility/colors.jsx";
 import GlobalContext from "../contexts/global_context.jsx";
 import DataContext from "../contexts/data_context.jsx";
 import FormCharacterEdit from "../forms/form_character_edit.jsx";
+import configs from "../utility/configs.jsx";
 
 export default function CharacterList () {
 
@@ -47,7 +48,7 @@ function CharacterTable({character_iterable}) {
 
     const table_style = {
         width: "100%",
-        maxWidth: "40em",
+        // maxWidth: configs.details_width,
         borderCollapse: "collapse",
     }
 

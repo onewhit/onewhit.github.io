@@ -12,15 +12,16 @@ import back_arrow from "../../assets/back_arrow.svg";
 import MainNavigation from "../components/main_navigation.jsx";
 import AccountInfo from "./account_info";
 import ErrorPage from "./error_page";
-import useFirestoreData from "../hooks/useFirestoreData.jsx";
-import useSpoofData from "../hooks/useSpoofData.jsx";
+import useFirestoreData from "../hooks/use_firestore_data.jsx";
+import useFirebaseAuth from "../hooks/use_firebase_auth.jsx";
 import DataContext from "../contexts/data_context.jsx";
 import Rightbar from "../components/rightbar.jsx";
 
 export default function Root({ is_error=false }) {
 
-    // const data_context = useFirestoreData();
-    const data_context = useSpoofData();
+    const is_spoof = false;
+    const data_context = useFirestoreData(is_spoof);
+    const firebase_auth = useFirebaseAuth();
 
     // Top Level State Values
     const [global_context, set_global_context] = useState(useContext(GlobalContext));

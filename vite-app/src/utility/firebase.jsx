@@ -19,49 +19,6 @@ const firebase_app = initializeApp(firebase_config);
 const firebase_auth = getAuth(firebase_app);
 const firebase_db = getFirestore(firebase_app);
 
-
-function create_new_firebase_user() {
-
-    createUserWithEmailAndPassword(firebase_auth, 'tarronlane@gmail.com', 'cannonballs2')
-    .then((user_credential) => {
-        const user = user_credential.user;
-        console.log("user created successfully")
-    })
-    .catch((error) => {
-        const error_code = error.code;
-        const error_message = error.message;
-        console.log(error_code);
-        console.log(error_message)
-    })
-}
-
-function delete_firebase_user(append_banner) {
-    return append_banner("No code written yet to delete a user");
-}
-
-function login_firebase_user(username, password, set_action_message) {
-    return (
-        signInWithEmailAndPassword(firebase_auth, username, password)
-            .then(
-                (value) => {
-                    return set_action_message(" Login Successful!")
-
-                }
-            )
-            .catch(
-                (error) => {
-                    return set_action_message(" Failed. Error Code [" + error.code + "]. Error Message [" + error.message + "]")
-                }
-            )
-    );
-}
-
-async function logout_firebase_user(append_banner) {
-    return signOut(firebase_auth).then(
-        (value) => append_banner("Success!")
-    );
-}
-
 async function get_attribute(attribute_key) {
     console.log("fetching attribute");
     const doc_ref = doc(firebase_db, "attribute", attribute_key);
@@ -87,7 +44,6 @@ async function get_attributes_by_tag(tag_name) {
         console.log(doc.id, " => ", doc.data());
     });
 }
-
 
 async function clear_collection (collection_name, append_indent_banner) {
     const query_snapshot = await getDocs(collection(firebase_db, collection_name));

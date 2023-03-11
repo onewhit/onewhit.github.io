@@ -9,10 +9,18 @@ import characters from "../spoof_data/characters.jsx";
 import Colors from "../utility/colors.jsx";
 import useTimers from "../hooks/use_timers.jsx";
 import deep_object_copy from "../utility/deep_object_copy.jsx";
+import useFirebaseProject from "../hooks/use_firebase_project.jsx";
 
-export default function useFirestoreData() {
+import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
+
+export default function useFirestoreData(is_spoof = true) {
+
+    if (!is_spoof) {
+        const firestore_db = getFirestore(useFirebaseProject());
+    }
 
     const [data_context, set_data_context] = useState(useContext(DataContext));
+
     const timers = useTimers();
     function set_items (new_items_dict) {
         set_data_context((old_context) => {
@@ -158,8 +166,13 @@ export default function useFirestoreData() {
     // =========================================================================
 
     async function load_all_rpg_data () {
-        set_items(items);
-        set_characters(characters);
+        if (is_spoof) {
+            set_items(items);
+            set_characters(characters);
+        }
+        else {
+
+        }
     }
 
     useEffect(() => {
@@ -167,4 +180,22 @@ export default function useFirestoreData() {
     },[])
 
     return (data_context);
+}
+
+// Return the three client objects used to interact with firebase
+function get_firebase_clients() {
+    const firebase_config = {
+        apiKey: "AIzaSyB7KcGLNztLk0KmjJ7CCyIQmwvchLaRbCw",
+        authDomain: "rpg-gen.firebaseapp.com",
+        projectId: "rpg-gen",
+        storageBucket: "rpg-gen.appspot.com",
+        messagingSenderId: "167071727845",
+        appId: "1:167071727845:web:59a5ff82df16db1c0b940c"
+    };
+    
+    const firebase_app = initializeApp(firebase_config);
+    const firebase_auth = getAuth(firebase_app);
+    const firebase_db = getFirestore(firebase_app);
+
+    return {firebase_app, firebase_auth, firebase_db}
 }
