@@ -1,19 +1,15 @@
-import React from "react";
-import { useState, useContext, useEffect, useCallback } from "react";
-import { Outlet, Link, useLocation, Form, NavLink, useNavigate } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import GlobalContext from "../contexts/global_context.jsx";
-import { onAuthStateChanged, getAuth } from "firebase/auth";
 import ajax_loader from "../../assets/ajax_loader.gif";
-import DetailsLayout from "../components/details_layout.jsx";
 import Colors from "../utility/colors.jsx";
 import configs from "../utility/configs.jsx";
 import ham_menu_black from "../../assets/ham_menu_black.svg";
 import back_arrow from "../../assets/back_arrow.svg";
 import MainNavigation from "../components/main_navigation.jsx";
-import AccountInfo from "./account_info";
 import ErrorPage from "./error_page";
 import useFirestoreData from "../hooks/use_firestore_data.jsx";
-import useFirebaseAuth from "../hooks/use_firebase_auth.jsx";
+import useGlobalContext from "../hooks/use_global_context.jsx";
 import DataContext from "../contexts/data_context.jsx";
 import Rightbar from "../components/rightbar.jsx";
 
@@ -21,82 +17,8 @@ export default function Root({ is_error=false }) {
 
     const is_spoof = false;
     const data_context = useFirestoreData(is_spoof);
-    const firebase_auth = useFirebaseAuth();
+    const global_context = useGlobalContext();
 
-    // Top Level State Values
-    const [global_context, set_global_context] = useState(useContext(GlobalContext));
-
-    // const [modified_global_context, set_modified_global_context] = useState(global_context);
-    const [user, set_user] = useState(null);
-    const [window_width, set_window_width] = useState(window.innerWidth);
-    const [window_height, set_window_height] = useState(window.innerHeight);
-    const [is_mobile_view, set_is_mobile_view] = useState(window.innerWidth < configs.mobile_collapse_point ? true : false);
-    // const [is_show_sidebar, toggle_is_show_sidebar] = useState(global_context.is_show_sidebar);
-
-    function toggle_is_show_sidebar() {
-        return set_global_context((old_context) => ({
-            ...old_context,
-            is_show_sidebar: !old_context.is_show_sidebar
-        }));
-    }
-
-    function toggle_is_show_rightbar() {
-        return set_global_context((old_context) => ({
-            ...old_context,
-            is_show_rightbar: !old_context.is_show_rightbar
-        }));
-    }
-
-    function set_rightbar_content (new_content) {
-        return set_global_context((old_context) => ({
-            ...old_context,
-            rightbar_content: new_content
-        }));
-    }
-
-    function update_window_dimensions() {
-        const new_is_mobile_view = (window.innerWidth < configs.mobile_collapse_point ? true : false)
-        set_window_width(window.innerWidth);
-        set_window_height(window.innerHeight);
-        set_is_mobile_view(new_is_mobile_view)
-        set_global_context((old_context) => ({
-            ...old_context,
-            window_width: window.innerWidth,
-            window_height: window.innerHeight,
-            is_mobile_view: new_is_mobile_view,
-        }));
-    }
-
-    // Allow anything with access to the context to also edit the context
-    useEffect(() => {
-        // // Add the banner state and function
-        set_global_context((old_context) => ({
-            ...old_context,
-            set_global_context: set_global_context,
-            toggle_is_show_sidebar: toggle_is_show_sidebar,
-            toggle_is_show_rightbar: toggle_is_show_rightbar,
-            set_rightbar_content: set_rightbar_content,
-        }));
-    },[]);
-
-    // Set up window sizing listeners
-    useEffect(() => {
-        update_window_dimensions();
-        window.addEventListener("resize", update_window_dimensions);
-        // The returned value executes on unmount
-        return (() => window.removeEventListener("resize", update_window_dimensions))
-    }, []);
-
-    useEffect(() => {
-        // Queue up the auth state changes
-        onAuthStateChanged(getAuth(), (user) => {
-            set_global_context((old_context) => ({
-                ...old_context,
-                user: user,
-                is_auth_checked: true
-            }));
-        });
-    },[]);
 
     const root_style = {
         display: "flex",

@@ -1,15 +1,9 @@
 import React from "react";
 import { useState, useContext } from "react";
 import GlobalContext from "../contexts/global_context.jsx";
-import { create_new_firebase_user, login_firebase_user, logout_firebase_user } from "../utility/firebase.jsx";
-// import { Form } from "react-router-dom";
+import useFirebaseAuth from "../hooks/use_firebase_auth.jsx";
 
 export default function AccountInfo() {
-
-    function doAction(e) {
-        e.preventDefault();
-        create_new_firebase_user();
-    }
 
     const global_context = useContext(GlobalContext);
 
@@ -26,6 +20,7 @@ export default function AccountInfo() {
 
 // Form to handle logging in and logging out
 function LoginForm() {
+
     const global_context = useContext(GlobalContext);
     const user = global_context.user;
     const is_auth_checked = global_context.is_auth_checked;
@@ -37,13 +32,13 @@ function LoginForm() {
     function handle_login(event) {
         event.preventDefault();
         global_context.replace_banner("Logging in...");
-        return login_firebase_user(field_username, field_password, global_context.append_inline_banner);
+        return global_context.firebase_auth.login_firebase_user(field_username, field_password);
     }
 
     function handle_logout(e) {
         e.preventDefault();
         global_context.replace_banner("Logging out...");
-        return logout_firebase_user(global_context.append_banner);
+        return global_context.firebase_auth.logout_firebase_user();
     }
 
     return (

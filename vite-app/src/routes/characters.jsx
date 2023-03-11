@@ -2,7 +2,6 @@
 import { Outlet } from "react-router-dom";
 import { useState, useContext, useEffect, useCallback } from "react";
 import CharacterContext from "../contexts/data_context.jsx";
-import HelperFirebase from "../utility/firebase.jsx";
 import Colors from "../utility/colors.jsx";
 import DataContext from "../contexts/data_context.jsx";
 

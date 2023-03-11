@@ -1,6 +1,5 @@
 import ButtonLink from "../components/button_link.jsx";
 import { Link, Outlet } from "react-router-dom";
-import HelperFirebase from "../utility/firebase.jsx";
 import { useEffect, useState, useContext } from "react";
 import LoadingProtected from "../components/loading_protected.jsx";
 import Colors from "../utility/colors.jsx";

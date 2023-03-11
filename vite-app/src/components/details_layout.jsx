@@ -64,15 +64,14 @@ function Banner () {
 
     // Add the banner functions to the global context so that all the elements can change the banner
     useEffect(() => {
-        global_context.set_global_context((old_context) => ({
-            ...old_context,
+        global_context.update_global_context({
             replace_banner: replace_banner,
             append_banner: append_banner,
             clear_banner: clear_banner,
             append_indent_banner: append_indent_banner,
             append_inline_banner: append_inline_banner,
             set_banner_style: set_banner_style,
-        }));
+        });
     },[]);
 
     let banner_color = colors.banner_grey;
