@@ -46,23 +46,42 @@ export default function useFirestoreData(is_spoof = true) {
         });
     };
 
-    function create_or_edit_item(item_data) {
-       set_data_context((old_context) => {
-            const new_context = {
-                ...old_context,
-                items: {...old_context.items, ...item_data}
-            }
+    async function save_character_data(data_dict) {
+        // TODO see if this character already exists
+        // IF not, we will have to set up a listener for it
+        if (is_spoof) {
+            update_local_character(data_dict);
+        }
+        else {
+            const doc_ref = doc(firestore_db, "character", data_dict.id);
+            await setDoc(doc_ref, data_dict, {merge: true});
+            return true;
+        }
 
-            return new_context;
-        });
-    };
+    }
 
-    function save_character_data(data_dict) {
-        // First make sure the local character data is fully updated
-        update_local_character(data_dict);
+    async function save_item_data(item_data) {
+        // TODO see if this character already exists
+        // IF not, we will have to set up a listener for it
+        if (is_spoof) {
+            update_local_item(data_dict);
+        }
+        else {
+            const doc_ref = doc(firestore_db, "item", item_data.id);
+            await setDoc(doc_ref, item_data, {merge: true});
+            return true;
+        }
+    }
 
-        // Then save to remote (this only happens if we are using firestore instead of spoofing)
-
+    function update_local_item(item_data) {
+        set_data_context((old_context) => {
+             const new_context = {
+                 ...old_context,
+                 items: {...old_context.items, ...{[item_data.id]: item_data}}
+             }
+ 
+             return new_context;
+         });
     }
 
     // Handles interacting with the local character5 list state values to merge / update new data and reflect locally
@@ -187,11 +206,11 @@ export default function useFirestoreData(is_spoof = true) {
     // Make data actions available as attributes on the data context, so elements can alter the data
     // =========================================================================
 
-    data_context.create_or_edit_item = create_or_edit_item;
+    data_context.save_item_data = save_item_data;
     data_context.get_sorted_item_list = get_sorted_item_list;
     data_context.delete_item = delete_item;
 
-    data_context.update_local_character = update_local_character;
+    data_context.save_character_data = save_character_data;
     data_context.delete_character = delete_character;
     data_context.increase_character_hp = increase_character_hp;
     data_context.decrease_character_hp = decrease_character_hp;
@@ -219,7 +238,7 @@ export default function useFirestoreData(is_spoof = true) {
             const item_query_snapshot = await getDocs(collection(firestore_db, "item"));
             item_query_snapshot.forEach((doc) => {
                 setup_listener("item", doc.id, (id, data) => {
-                    create_or_edit_item(data);
+                    update_local_item(data);
                 });
             });
         }

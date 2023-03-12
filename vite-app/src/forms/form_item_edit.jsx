@@ -45,11 +45,10 @@ export default function FormItemEdit({form_mode, set_form_mode, item_id_to_edit,
             return;
         }
 
-        data_context.create_or_edit_item({
-            [submitted_item_id] : {
-                "display_name": display_name,
-                "description": description
-            }
+        data_context.save_item_data({
+            id: submitted_item_id,
+            "display_name": display_name,
+            "description": description
         });
 
         if (item_id_to_edit != undefined) {

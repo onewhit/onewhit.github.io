@@ -16,6 +16,8 @@ export default function Items() {
 
     const sorted_items = data_context.get_sorted_item_list();
 
+    // console.log(sorted_items)
+
     const form_props = {
         form_mode: form_mode,
         set_form_mode: set_form_mode,

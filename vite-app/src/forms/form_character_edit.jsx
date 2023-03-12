@@ -60,7 +60,7 @@ export default function FormCharacterEdit({character_id}) {
             }
         }
 
-        data_context.create_or_edit_character({
+        data_context.save_character_data({
             ...form_data,
             id: calculated_character_id
         });
@@ -86,7 +86,7 @@ export default function FormCharacterEdit({character_id}) {
             // change_simple_field("items", items_array);
             
             const override_character_data = {id: character_id, items: items_array};
-            data_context.create_or_edit_character(override_character_data)
+            data_context.save_character_data(override_character_data)
         }
     }
 
@@ -203,7 +203,7 @@ export default function FormCharacterEdit({character_id}) {
                                                 return !is_item_to_delete;
                                             })
 
-                                            data_context.create_or_edit_character({id: character_id, items: filtered_item_list});
+                                            data_context.save_character_data({id: character_id, items: filtered_item_list});
                                         }
                                         
                                         const row_style = {
