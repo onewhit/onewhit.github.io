@@ -2,13 +2,15 @@ export default function get_current_datetime_string() {
     const current_date = new Date();
     const date_parts = [
         current_date.getFullYear(),
-        make_two_digits(current_date.getMonth()),
-        make_two_digits(current_date.getDay()),
+        make_two_digits(current_date.getMonth() + 1),
+        make_two_digits(current_date.getDate()),
         make_two_digits(current_date.getHours()),
         make_two_digits(current_date.getMinutes()),
         make_two_digits(current_date.getSeconds()),
         make_three_digits(current_date.getMilliseconds()),
     ];
+
+    console.log(date_parts)
     
     return date_parts.join("_");
 }

@@ -10,6 +10,7 @@ import Colors from "../utility/colors.jsx";
 import useTimers from "../hooks/use_timers.jsx";
 import deep_object_copy from "../utility/deep_object_copy.jsx";
 import useFirebaseProject from "../hooks/use_firebase_project.jsx";
+import default_character_data from "../official_data/schema_character.jsx";
 
 import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 
@@ -91,20 +92,7 @@ export default function useFirestoreData(is_spoof = true) {
             const copy_old_character_data = deep_object_copy(old_context.characters[new_character_data.id])
             const copy_new_character_data = deep_object_copy(new_character_data);
 
-            // Default values for any incoming character data
-            const empty_character_data = {
-                full_name: "",
-                short_name: "",
-                story_role: "",
-                current_hp: 10,
-                current_ap: 10,
-                max_hp: 10,
-                notes: "",
-                items: [],
-                abilities: [],
-            };
-
-            const merged_character_data = {...empty_character_data, ...copy_old_character_data, ...copy_new_character_data}
+            const merged_character_data = {...default_character_data, ...copy_old_character_data, ...copy_new_character_data}
 
             const new_context = {
                 ...old_context,
@@ -171,16 +159,18 @@ export default function useFirestoreData(is_spoof = true) {
     }
 
     function delete_item(item_id) {
-       set_data_context((old_context) => {
-            // const new_items = {...old_context.items}
-            const new_context = {
-                ...old_context,
-                items: {...old_context.items}
-            }
-            delete new_context.items[item_id]
-
-            return new_context;
-        });
+        if (is_spoof) {
+            set_data_context((old_context) => {
+                // const new_items = {...old_context.items}
+                const new_context = {
+                    ...old_context,
+                    items: {...old_context.items}
+                }
+                delete new_context.items[item_id]
+    
+                return new_context;
+            });
+        }
     }
 
     function get_sorted_item_list() {
