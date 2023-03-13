@@ -6,11 +6,12 @@ import DataContext from "../contexts/data_context.jsx";
 import { useContext, useEffect, useState, useRef } from "react";
 import items from "../spoof_data/items.jsx";
 import characters from "../spoof_data/characters.jsx";
-import Colors from "../utility/colors.jsx";
+import colors from "../utility/colors.jsx";
 import useTimers from "../hooks/use_timers.jsx";
 import deep_object_copy from "../utility/deep_object_copy.jsx";
 import useFirebaseProject from "../hooks/use_firebase_project.jsx";
-import default_character_data from "../official_data/schema_character.jsx";
+import default_character_data from "../official_data/default_character_data.jsx";
+import configs from "../utility/configs.jsx";
 
 import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 
@@ -25,97 +26,95 @@ export default function useFirestoreData(is_spoof = true) {
     const [data_context, set_data_context] = useState(useContext(DataContext));
 
     const timers = useTimers();
-    function set_items (new_items_dict) {
+
+    function set_is_loading(is_loading) {
+        set_data_context((old_context) => ({
+            ...old_context,
+            is_loading: is_loading
+        }));
+    }
+
+    function set_local_collection(collection_name, collection_dict, override = false) {
         set_data_context((old_context) => {
             const new_context = {
                 ...old_context,
-                items: new_items_dict
+                [collection_name]: override ? collection_dict : {...old_context[collection_name], ...collection_dict}
             };
 
             return new_context;
         });
-    };
+    }
 
-    function set_characters (new_characters_dict) {
-        set_data_context((old_context) => {
-            const new_context = {
-                ...old_context,
-                characters: new_characters_dict
-            };
+    async function save_document_data(collection_name, document_key, document_data) {
 
-            return new_context;
-        });
-    };
+        let is_doc_already_exists = false;
 
-    async function save_character_data(data_dict) {
-        // TODO see if this character already exists
-        // IF not, we will have to set up a listener for it
+        if (data_context[collection_name][document_key] != undefined) {
+            is_doc_already_exists = true;
+        }
+
         if (is_spoof) {
-            update_local_character(data_dict);
+            update_local_document_data(collection_name, document_key, document_data);
         }
         else {
-            const doc_ref = doc(firestore_db, "character", data_dict.id);
-            await setDoc(doc_ref, data_dict, {merge: true});
-            return true;
-        }
-
-    }
-
-    async function save_item_data(item_data) {
-        // TODO see if this character already exists
-        // IF not, we will have to set up a listener for it
-        if (is_spoof) {
-            update_local_item(data_dict);
-        }
-        else {
-            const doc_ref = doc(firestore_db, "item", item_data.id);
-            await setDoc(doc_ref, item_data, {merge: true});
-            return true;
-        }
-    }
-
-    function update_local_item(item_data) {
-        set_data_context((old_context) => {
-             const new_context = {
-                 ...old_context,
-                 items: {...old_context.items, ...{[item_data.id]: item_data}}
-             }
- 
-             return new_context;
-         });
-    }
-
-    // Handles interacting with the local character5 list state values to merge / update new data and reflect locally
-    // Also ensures all local version of the data have expected fields
-    function update_local_character(new_character_data) {
-        set_data_context((old_context) => {
-            const copy_old_character_data = deep_object_copy(old_context.characters[new_character_data.id])
-            const copy_new_character_data = deep_object_copy(new_character_data);
-
-            const merged_character_data = {...default_character_data, ...copy_old_character_data, ...copy_new_character_data}
-
-            const new_context = {
-                ...old_context,
-                characters: {...old_context.characters, [new_character_data.id]: merged_character_data}
+            if (!is_doc_already_exists) {
+                flash_loading();
             }
 
-            return new_context;
-        });
+            const doc_ref = doc(firestore_db, collection_name, document_key);
+            await setDoc(doc_ref, document_data, {merge: true});
+            
+            if (!is_doc_already_exists) {
+                setup_listener(collection_name, document_key);
+            }
+        }
 
-        // This is here instead of in the "save_data" function so that incoming listener changes will also cause flashes
-        if (![undefined,"none"].includes(new_character_data.flash_color)) {
-            timers.start_new_timer(new_character_data.id, 1, () => update_local_character({id: new_character_data.id, flash_color: "none"}));
+
+        // Handle the flash resetting if applicable
+        if (collection_name == configs.character_collection_name && ![undefined, "none"].includes(document_data.flash_color)) {
+            timers.start_new_timer(document_key, 1, () => save_document_data(collection_name, document_key, {flash_color: "none"}));
         }
     }
 
-    function delete_character(character_id) {
+    function update_local_document_data(collection_name, document_key, document_data) {
         set_data_context((old_context) => {
-            const copy_character_list = deep_object_copy(old_context.characters);
-            delete copy_character_list[character_id];
+            const old_document = old_context[collection_name][document_key];
+            return {...old_context, [collection_name]: {...old_context[collection_name], [document_key]: {...old_document, ...document_data}}};
+        })
+
+        // if (document_data.unsubscribe_function != undefined) {
+        //     console.log(document_data);
+        // }
+
+        // set_local_collection(collection_name, {
+        //     [document_key]: {...data_context[collection_name][document_key], ...document_data}
+        // });
+    }
+
+    function delete_document(collection_name, document_key) {
+        if (is_spoof) {
+            delete_local_document(collection_name, document_key);
+        }
+        else {
+            // If this is a deletion
+            deleteDoc(doc(firestore_db, collection_name, document_key)).then(() => {
+                // Handle local changes to account for character deletion
+                data_context[collection_name][document_key].unsubscribe_function();
+                delete_local_document(collection_name, document_key);
+            });
+        }
+    }
+
+    function delete_local_document(collection_name, document_key) {
+        flash_loading();
+        
+        set_data_context((old_context) => {
+            const copy_local_collection = {...old_context[collection_name]};
+            delete copy_local_collection[document_key];
 
             const new_context = {
                 ...old_context,
-                characters: {...copy_character_list}
+                [collection_name]: {...copy_local_collection}
             }
 
             return new_context;
@@ -124,53 +123,38 @@ export default function useFirestoreData(is_spoof = true) {
 
     function increase_character_hp(character_id) {
         const new_hp = data_context.characters[character_id].current_hp + 1;
-        update_local_character({
-            id: character_id,
+        const new_data = {
             current_hp: new_hp,
-            flash_color: Colors.banner_green,
-        });
+            flash_color: colors.banner_green,
+        }
+        save_document_data(configs.character_collection_name, character_id, new_data);
     }
 
     function decrease_character_hp(character_id) {
         const new_hp = data_context.characters[character_id].current_hp - 1;
-        update_local_character({
-            id: character_id,
+        const new_data = {
             current_hp: new_hp,
-            flash_color: Colors.banner_red,
-        });
+            flash_color: colors.banner_red,
+        }
+        save_document_data(configs.character_collection_name, character_id, new_data);
     }
 
     function increase_character_ap(character_id) {
         const new_ap = data_context.characters[character_id].current_ap + 1;
-        update_local_character({
-            id: character_id,
+        const new_data = {
             current_ap: new_ap,
-            flash_color: Colors.banner_dark_purple,
-        });
+            flash_color: colors.banner_dark_purple,
+        }
+        save_document_data(configs.character_collection_name, character_id, new_data);
     }
 
     function decrease_character_ap(character_id) {
         const new_ap = data_context.characters[character_id].current_ap - 1;
-        update_local_character({
-            id: character_id,
+        const new_data = {
             current_ap: new_ap,
-            flash_color: Colors.banner_light_purple,
-        });
-    }
-
-    function delete_item(item_id) {
-        if (is_spoof) {
-            set_data_context((old_context) => {
-                // const new_items = {...old_context.items}
-                const new_context = {
-                    ...old_context,
-                    items: {...old_context.items}
-                }
-                delete new_context.items[item_id]
-    
-                return new_context;
-            });
+            flash_color: colors.banner_light_purple,
         }
+        save_document_data(configs.character_collection_name, character_id, new_data);
     }
 
     function get_sorted_item_list() {
@@ -181,27 +165,14 @@ export default function useFirestoreData(is_spoof = true) {
         return sorted_items;
     }
 
-    async function setup_listener (collection_name, document_key, callback) {
-        const unsubscribe = onSnapshot(doc(firestore_db, collection_name, document_key), (doc) => {
-            const new_doc_data = JSON.parse(JSON.stringify(doc.data()));
-            new_doc_data.id = doc.id;
-
-            if (callback != undefined) {
-                callback(doc.id, new_doc_data);
-            }
-        });
-    }
-
     // =========================================================================
     // Make data actions available as attributes on the data context, so elements can alter the data
     // =========================================================================
 
-    data_context.save_item_data = save_item_data;
     data_context.get_sorted_item_list = get_sorted_item_list;
-    data_context.delete_item = delete_item;
+    data_context.delete_document = delete_document;
+    data_context.save_document_data = save_document_data;
 
-    data_context.save_character_data = save_character_data;
-    data_context.delete_character = delete_character;
     data_context.increase_character_hp = increase_character_hp;
     data_context.decrease_character_hp = decrease_character_hp;
     data_context.increase_character_ap = increase_character_ap;
@@ -211,26 +182,46 @@ export default function useFirestoreData(is_spoof = true) {
     // Load the data on the initial load
     // =========================================================================
 
+    function flash_loading() {
+        set_is_loading(true);
+        timers.start_new_timer("data_context_loading", .5, () => set_is_loading(false));
+    }
+
+    async function setup_listener(collection_name, document_key) {
+
+        const unsubscribe_function = onSnapshot(doc(firestore_db, collection_name, document_key), (doc) => {
+            // If "undefined" is returned from listener, it means the document was deleted
+            let new_doc_data = undefined;
+            
+            if (doc.data() != undefined) {
+                new_doc_data = JSON.parse(JSON.stringify(doc.data()));
+            }
+            
+            // If this is NOT a deletion, just update the local data to match incoming from the listener
+            if (new_doc_data != undefined) {
+                update_local_document_data(collection_name, doc.id, new_doc_data);
+            }
+        });
+
+        update_local_document_data(collection_name, document_key, {"unsubscribe_function": unsubscribe_function});
+    }
+
     async function load_all_rpg_data () {
+        flash_loading();
+
         if (is_spoof) {
-            set_items(items);
-            set_characters(characters);
+            const is_override = true;
+            set_local_collection(configs.item_collection_name, items, is_override);
+            set_local_collection(configs.character_collection_name, characters, is_override);
         }
         else {
             // Setup listeners for each character that exists in the firestore database
-            const character_query_snapshot = await getDocs(collection(firestore_db, "character"));
-            character_query_snapshot.forEach((doc) => {
-                setup_listener("character", doc.id, (id, data) => {
-                    update_local_character(data);
+            [configs.character_collection_name, configs.item_collection_name].forEach(async (collection_name) => {
+                const query_snapshot = await getDocs(collection(firestore_db, collection_name));
+                query_snapshot.forEach((doc) => {
+                    const unsubscribe_function = setup_listener(collection_name, doc.id);
                 });
-            });
-
-            const item_query_snapshot = await getDocs(collection(firestore_db, "item"));
-            item_query_snapshot.forEach((doc) => {
-                setup_listener("item", doc.id, (id, data) => {
-                    update_local_item(data);
-                });
-            });
+            })
         }
     }
 

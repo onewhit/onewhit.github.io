@@ -7,7 +7,7 @@ export default function Rightbar() {
 
     function handle_off_click(event) {
         event.preventDefault();
-        global_context.toggle_is_show_rightbar();
+        global_context.update_global_context({is_show_rightbar: false});
     }
 
     let sidebar_style = {

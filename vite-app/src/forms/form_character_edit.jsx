@@ -7,26 +7,16 @@ import deep_object_copy from "../utility/deep_object_copy.jsx";
 import Colors from "../utility/colors.jsx";
 import GlobalContext from "../contexts/global_context.jsx";
 import get_current_datetime_string from "../utility/get_current_datetime_string.jsx";
+import default_character_data from "../official_data/default_character_data.jsx";
+import configs from "../utility/configs.jsx";
 
 export default function FormCharacterEdit({character_id}) {
 
     const data_context = useContext(DataContext);
     const global_context = useContext(GlobalContext);
 
-    // const empty_character_data = {
-    //     full_name: "",
-    //     short_name: "",
-    //     story_role: "",
-    //     current_hp: 10,
-    //     current_ap: 10,
-    //     max_hp: 10,
-    //     notes: "",
-    //     // items: [],
-    //     // abilities: [],
-    // };
-
     // Make sure all fields are present on the character by merging first with the empty character array
-    const [form_data, set_form_data] = useState(character_id != undefined ? {...data_context.characters[character_id]} : empty_character_data);
+    const [form_data, set_form_data] = useState(character_id != undefined ? {...data_context.characters[character_id]} : default_character_data);
     const [field_generic_item_to_add, set_field_generic_item_to_add] = useState("");
 
     const [form_mode, set_form_mode] = useState(character_id == undefined ? "new" : "view"); // "edit" or "view" or "new"
@@ -60,13 +50,10 @@ export default function FormCharacterEdit({character_id}) {
             }
         }
 
-        data_context.save_character_data({
-            ...form_data,
-            id: calculated_character_id
-        });
+        data_context.save_document_data(configs.character_collection_name, calculated_character_id, {...form_data})
 
         if (form_mode == "new") {
-            global_context.toggle_is_show_rightbar();
+            global_context.update_global_context({is_show_rightbar: false});
         }
         else {
             set_form_mode("view");
@@ -86,7 +73,7 @@ export default function FormCharacterEdit({character_id}) {
             // change_simple_field("items", items_array);
             
             const override_character_data = {id: character_id, items: items_array};
-            data_context.save_character_data(override_character_data)
+            data_context.save_document_data(configs.character_collection_name, character_id, {...override_character_data})
         }
     }
 
@@ -97,7 +84,7 @@ export default function FormCharacterEdit({character_id}) {
         const character_name = character_data.full_name;
         const is_confirmed = confirm("Are you sure you want to delete the character named \"" + character_name + "\"?");
         if (is_confirmed) {
-            data_context.delete_character(calculated_character_id);
+            data_context.delete_document(configs.character_collection_name, calculated_character_id)
         };
     };
 
@@ -156,12 +143,12 @@ export default function FormCharacterEdit({character_id}) {
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td style={label_style}>Short Name:</td>
-                                            <td><TextInput id={calculated_character_id + "_short_name"} value={form_data.short_name} on_change={change_short_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
-                                        </tr>
-                                        <tr>
                                             <td style={label_style}>Full Name:</td>
                                             <td><TextInput id={calculated_character_id + "_full_name"} value={form_data.full_name} on_change={change_full_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
+                                        </tr>
+                                        <tr>
+                                            <td style={label_style}>Short Name:</td>
+                                            <td><TextInput id={calculated_character_id + "_short_name"} value={form_data.short_name} on_change={change_short_name} read_only={form_mode == "view" ? "readonly" : ""} /></td>
                                         </tr>
                                         <tr>
                                             <td style={label_style}>Story Role:</td>
@@ -203,7 +190,7 @@ export default function FormCharacterEdit({character_id}) {
                                                 return !is_item_to_delete;
                                             })
 
-                                            data_context.save_character_data({id: character_id, items: filtered_item_list});
+                                            data_context.save_document_data(configs.character_collection_name, character_id, {items: filtered_item_list} )
                                         }
                                         
                                         const row_style = {

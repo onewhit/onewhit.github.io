@@ -1,3 +1,7 @@
+2023-03-12
+
+- [ ] When a character is deleted, fix error that shows up when trying to edit character on a non-refreshed other browser window
+
 2023-02-23 - Added
 - [ ] Pull the character the first time the characters page is clicked on, but don't lose if you move to another page and then come back
 - [ ] Make the character listener listen to a query, to pick up deletes and new charaters without having to set up new listeners. Will need to test to make sure it can work this way

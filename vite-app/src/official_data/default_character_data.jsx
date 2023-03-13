@@ -8,6 +8,9 @@ const default_character_data = {
     notes: "",
     items: [],
     abilities: [],
+    unsubscribe_function: default_unsubscribe_function,
 };
+
+function default_unsubscribe_function() {};
 
 export default default_character_data;

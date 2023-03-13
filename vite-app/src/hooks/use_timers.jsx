@@ -9,6 +9,7 @@ export default function useTimers() {
     function start_new_timer(timer_id, initial_timer_seconds, callback) {
         
         const initial_timer_milliseconds = initial_timer_seconds * seconds_to_milliseconds_conversion;
+
         const existing_timer = active_timers.current[timer_id];
         
         if (existing_timer != undefined) {
@@ -25,7 +26,7 @@ export default function useTimers() {
                     clearInterval(this_timer.interval_ref);
                     this_timer.callback();
                 }
-            }, interval_milliseconds)
+            }, initial_timer_milliseconds)
         }
     }
 

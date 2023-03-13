@@ -3,6 +3,7 @@ import DataContext from "../contexts/data_context.jsx";
 import useControlledField from "../hooks/use_controlled_field.jsx"
 import TextInput from "../components/text_input.jsx";
 import TextAreaInput from "../components/text_area_input.jsx";
+import configs from "../utility/configs.jsx";
 
 export default function FormItemEdit({form_mode, set_form_mode, item_id_to_edit, set_item_id_to_edit, set_flash_message}) {
 
@@ -45,11 +46,14 @@ export default function FormItemEdit({form_mode, set_form_mode, item_id_to_edit,
             return;
         }
 
-        data_context.save_item_data({
-            id: submitted_item_id,
-            "display_name": display_name,
-            "description": description
-        });
+        data_context.save_document_data(
+            configs.item_collection_name, 
+            submitted_item_id, 
+            {
+                "display_name": display_name,
+                "description": description
+            }
+        );
 
         if (item_id_to_edit != undefined) {
             set_flash_message("Item Edited!");
@@ -71,7 +75,7 @@ export default function FormItemEdit({form_mode, set_form_mode, item_id_to_edit,
 
     function delete_item (event) {
         event.preventDefault();
-        data_context.delete_item(event.target.value);
+        data_context.delete_document(configs.item_collection_name, event_target_value);
         set_flash_message("Item Deleted");
         set_item_id_to_edit(undefined);
     }
