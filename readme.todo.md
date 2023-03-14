@@ -1,5 +1,6 @@
 2023-03-14
 
+- [ ] Change item generator to instead just be attributes (without trying to conjugate). Separate feature, attributes could be tied to place, or person, or event, etc.
 - [x] Fix issues with calling global context (like for sidebar) that don't exist anymore
 - [ ] Change character list styling. No banded color alternating. Instead have each character single color, with white between. Same for 
 
