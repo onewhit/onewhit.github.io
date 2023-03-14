@@ -14,6 +14,7 @@ import default_character_data from "../official_data/default_character_data.jsx"
 import configs from "../utility/configs.jsx";
 
 import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
+import get_current_datetime_string from "../utility/get_current_datetime_string.jsx";
 
 export default function useFirestoreData(is_spoof = true) {
 
@@ -65,7 +66,9 @@ export default function useFirestoreData(is_spoof = true) {
             await setDoc(doc_ref, document_data, {merge: true});
             
             if (!is_doc_already_exists) {
-                setup_listener(collection_name, document_key);
+                const notify_need_to_refresh_collection_name = collection_name;
+                save_document_data(configs.ping_collection_name, notify_need_to_refresh_collection_name, {need_to_refresh: get_current_datetime_string()});
+                // setup_listener(collection_name, document_key);
             }
         }
 
@@ -78,17 +81,14 @@ export default function useFirestoreData(is_spoof = true) {
 
     function update_local_document_data(collection_name, document_key, document_data) {
         set_data_context((old_context) => {
-            const old_document = old_context[collection_name][document_key];
+            let old_document = {};
+
+            if (old_context[collection_name] != undefined) {
+                old_document = old_context[collection_name][document_key];
+            }
+
             return {...old_context, [collection_name]: {...old_context[collection_name], [document_key]: {...old_document, ...document_data}}};
         })
-
-        // if (document_data.unsubscribe_function != undefined) {
-        //     console.log(document_data);
-        // }
-
-        // set_local_collection(collection_name, {
-        //     [document_key]: {...data_context[collection_name][document_key], ...document_data}
-        // });
     }
 
     function delete_document(collection_name, document_key) {
@@ -101,6 +101,8 @@ export default function useFirestoreData(is_spoof = true) {
                 // Handle local changes to account for character deletion
                 data_context[collection_name][document_key].unsubscribe_function();
                 delete_local_document(collection_name, document_key);
+                const notify_need_to_refresh_collection_name = collection_name;
+                save_document_data(configs.ping_collection_name, notify_need_to_refresh_collection_name, {need_to_refresh: get_current_datetime_string()});
             });
         }
     }
@@ -201,6 +203,13 @@ export default function useFirestoreData(is_spoof = true) {
             if (new_doc_data != undefined) {
                 update_local_document_data(collection_name, doc.id, new_doc_data);
             }
+
+            if (collection_name == configs.ping_collection_name) {
+                // If we received any pings that one of the collections has changed, trigger a reload of the whole collection
+                // this allows us to avoid having to listen to the whole collection to pick up new docs and deleted docs
+                const notified_collection_to_reload = doc.id;
+                reload_collection_data(notified_collection_to_reload);
+            }
         });
 
         update_local_document_data(collection_name, document_key, {"unsubscribe_function": unsubscribe_function});
@@ -216,13 +225,28 @@ export default function useFirestoreData(is_spoof = true) {
         }
         else {
             // Setup listeners for each character that exists in the firestore database
-            [configs.character_collection_name, configs.item_collection_name].forEach(async (collection_name) => {
-                const query_snapshot = await getDocs(collection(firestore_db, collection_name));
-                query_snapshot.forEach((doc) => {
-                    const unsubscribe_function = setup_listener(collection_name, doc.id);
-                });
+
+            const collections_to_load = [
+                configs.character_collection_name,
+                configs.item_collection_name,
+                configs.ping_collection_name,
+            ]
+
+            collections_to_load.forEach(async (collection_name) => {
+                reload_collection_data(collection_name);
             })
         }
+    }
+
+    async function reload_collection_data(collection_name) {
+        // Empty out the local collection so we can reload via listeners
+        set_local_collection(collection_name, {}, true)
+
+        const query_snapshot = await getDocs(collection(firestore_db, collection_name));
+        
+        query_snapshot.forEach((doc) => {
+            const unsubscribe_function = setup_listener(collection_name, doc.id);
+        });
     }
 
     useEffect(() => {

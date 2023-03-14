@@ -10,8 +10,6 @@ export default function get_current_datetime_string() {
         make_three_digits(current_date.getMilliseconds()),
     ];
 
-    console.log(date_parts)
-    
     return date_parts.join("_");
 }
 

@@ -1,10 +1,24 @@
+2023-03-13
+
+- [x] Add collection with single tracking document that indicates when it's time to reload characters
+- [ ] Make "enter" create new item, not drop item. And clear out item field
+- [ ] Add ability to edit an item in the character list
+- [ ] Add ability to specify which item is "held" and have it show up in the main bar
+- [ ] Make short name appear on bar instead of full name
+- [x] Add confirmation on item drop
+- [ ] Add numbers to items so you can track
+- [ ] Make clicking on character row open the dropdown, instead of just the dropdown arrow (but leave that also)
+- [ ] Break out character creation to it's own page, so you can have descriptions from the guide book, more of a wizard style
+- [x] Add race, flaw, ideal fields to character description
+- [ ] Ability to change order of items in a character list
+
 2023-03-12
 
-- [ ] When a character is deleted, fix error that shows up when trying to edit character on a non-refreshed other browser window
+- [x] When a character is deleted, fix error that shows up when trying to edit character on a non-refreshed other browser window
 
 2023-02-23 - Added
-- [ ] Pull the character the first time the characters page is clicked on, but don't lose if you move to another page and then come back
-- [ ] Make the character listener listen to a query, to pick up deletes and new charaters without having to set up new listeners. Will need to test to make sure it can work this way
+- [x] Pull the character the first time the characters page is clicked on, but don't lose if you move to another page and then come back
+- [x] Make the character listener listen to a query, to pick up deletes and new charaters without having to set up new listeners. Will need to test to make sure it can work this way
 
 
 - [x] 2023-01-30 Make sure the page goes to the right page on reload, preserves state
@@ -26,7 +40,7 @@
 - [x] Make the border move to the bottom on mobile screens
 - [x] Get mobile menu to hide and re-show with button
 - [x] 2023-02-06 - Create a build script to easily build and copy the dist folder
-- [x] 2023-02-06 - Maxe titles line up on mobile sidebar open - NOT GOING TO DO
+- [x] 2023-02-06 - Make titles line up on mobile sidebar open - NOT GOING TO DO
 - [x] 2023-02-06 - Add die roller option to select D setting
 - [x] Fix width issue when the context is really long in the details - should not change the sidebar size (static sidebar size on non-mobile?)
 
@@ -50,7 +64,7 @@
 # Item generator features to build
 - [x] Add suffix and prefix tags
 - [x] Allow 2-attribute gens to be in second half and not always split
-- [x] Setting full weight on 1 attribute doens't always include 1 attribute
+- [x] Setting full weight on 1 attribute doesn't always include 1 attribute
 - [x] Build out specific structure generator
 - [x] Add power generator
 - [x] Make sure the "the" check is looking for a space after the "the" word so it doesn't match words that begin with T H E

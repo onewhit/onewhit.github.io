@@ -13,7 +13,11 @@ export default function CharacterList () {
     const data_context = useContext(DataContext);
     const global_context = useContext(GlobalContext);
 
-    const character_iterable = Object.entries(data_context.characters);
+    let character_iterable = []
+    
+    if (data_context[configs.character_collection_name] != undefined) {
+        character_iterable = Object.entries(data_context.characters);
+    }
 
     function handle_click_create_character(event) {
         global_context.update_global_context({

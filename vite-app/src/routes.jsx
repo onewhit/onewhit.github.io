@@ -8,6 +8,7 @@ import Generator from "./routes/generator.jsx";
 import CharacterList from "./routes/character_list.jsx";
 import LoginProtected from "./components/login_protected.jsx";
 import Items from "./routes/items.jsx";
+import DataManager from "./routes/data_manager";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: "account_info",
                 element: <DetailsLayout page_title="Account Info" children={<AccountInfo />} />
+            },
+            {
+                path: "data_manager",
+                element: <DetailsLayout page_title="Data Manager" children={<LoginProtected><DataManager /></LoginProtected>} />
             },
         ],
     },

@@ -16,7 +16,12 @@ export default function FormCharacterEdit({character_id}) {
     const global_context = useContext(GlobalContext);
 
     // Make sure all fields are present on the character by merging first with the empty character array
-    const [form_data, set_form_data] = useState(character_id != undefined ? {...data_context.characters[character_id]} : default_character_data);
+
+    const character_form_fields_data = {...data_context.characters[character_id]};
+    delete character_form_fields_data.unsubscribe_function;
+
+    const [form_data, set_form_data] = useState(character_id != undefined ? {...character_form_fields_data} : default_character_data);
+
     const [field_generic_item_to_add, set_field_generic_item_to_add] = useState("");
 
     const [form_mode, set_form_mode] = useState(character_id == undefined ? "new" : "view"); // "edit" or "view" or "new"
@@ -27,7 +32,7 @@ export default function FormCharacterEdit({character_id}) {
     
     function change_simple_field(field_name, field_value) {
         set_form_data((old_data) => {
-            const data_copy = {...deep_object_copy(old_data), [field_name]: field_value};
+            const data_copy = {...old_data, [field_name]: field_value};
             return data_copy;
         });
     };
@@ -63,15 +68,14 @@ export default function FormCharacterEdit({character_id}) {
     function handle_add_item(event) {
         event.preventDefault();
         if (field_generic_item_to_add != "") {
-            const new_character_data = deep_object_copy(data_context.characters[character_id]);
-            const items_array = deep_object_copy(new_character_data.items);
+            const new_character_data = {...data_context.characters[character_id]};
+            const items_array = [...new_character_data.items];
+            
             items_array.push({
                 item_name: field_generic_item_to_add,
                 date_added: get_current_datetime_string()
             });
 
-            // change_simple_field("items", items_array);
-            
             const override_character_data = {id: character_id, items: items_array};
             data_context.save_document_data(configs.character_collection_name, character_id, {...override_character_data})
         }
@@ -154,6 +158,18 @@ export default function FormCharacterEdit({character_id}) {
                                             <td style={label_style}>Story Role:</td>
                                             <td><TextInput id={calculated_character_id + "_story_role"} value={form_data.story_role} on_change={change_story_role} read_only={form_mode == "view" ? "readonly" : ""} /></td>
                                         </tr>
+                                        <tr>
+                                            <td style={label_style}>Race:</td>
+                                            <td><TextInput id={calculated_character_id + "_race"} value={form_data.race} on_change={(value) => {change_simple_field("race", value)}} read_only={form_mode == "view" ? "readonly" : ""} /></td>
+                                        </tr>
+                                        <tr>
+                                            <td style={label_style}>Ideal:</td>
+                                            <td><TextInput id={calculated_character_id + "_ideal"} value={form_data.ideal} on_change={(value) => {change_simple_field("ideal", value)}} read_only={form_mode == "view" ? "readonly" : ""} /></td>
+                                        </tr>
+                                        <tr>
+                                            <td style={label_style}>Flaw:</td>
+                                            <td><TextInput id={calculated_character_id + "_flaw"} value={form_data.flaw} on_change={(value) => {change_simple_field("flaw", value)}} read_only={form_mode == "view" ? "readonly" : ""} /></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 {
@@ -180,10 +196,17 @@ export default function FormCharacterEdit({character_id}) {
 
                                         function handle_drop_item(event) {
                                             event.preventDefault();
+
+                                            const is_confirmed = confirm("Drop the item \"" + item.item_name + "\"");
+
+                                            if (!is_confirmed) {
+                                                return;
+                                            }
+
                                             const item_name_to_drop = item.item_name;
                                             const item_datetime_to_drop = item.date_added;
 
-                                            const item_list_copy = deep_object_copy(data_context.characters[character_id].items);
+                                            const item_list_copy = [...data_context.characters[character_id].items];
 
                                             const filtered_item_list = item_list_copy.filter(({item_name, date_added}, index) => {
                                                 const is_item_to_delete = (item_name == item_name_to_drop && date_added == item_datetime_to_drop);
@@ -204,7 +227,7 @@ export default function FormCharacterEdit({character_id}) {
                                         }
                                         
                                         return <div key={item.date_added || item.item_name} style={row_style}>
-                                            <div style={{flexGrow: 1, flexShrink: 1}}>{item.item_name}</div>
+                                            <div style={{flexGrow: 1, flexShrink: 1}}>{index + 1}. {item.item_name}</div>
                                             <div><button onClick={handle_drop_item}>Drop</button></div>
                                         </div>
                                     })
