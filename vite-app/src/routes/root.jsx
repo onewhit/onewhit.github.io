@@ -56,7 +56,8 @@ function TitleBar () {
 
     function handle_title_icon_click(event) {
         event.preventDefault();
-        global_context.toggle_is_show_sidebar();
+        const is_show_sidebar_toggled = !global_context.is_show_sidebar;
+        global_context.update_global_context({is_show_sidebar: is_show_sidebar_toggled})
     }
 
     const title_bar_style = {
@@ -90,7 +91,7 @@ function TitleBar () {
 
     function handle_title_click() {
         navigate("/");
-        global_context.toggle_is_show_sidebar();
+        global_context.update_global_context({is_show_sidebar: false})
     }
 
     return (
@@ -110,7 +111,7 @@ function Sidebar () {
 
     function handle_off_click(event) {
         event.preventDefault();
-        global_context.toggle_is_show_sidebar();
+        global_context.update_global_context({is_show_sidebar: false})
     }
 
     let sidebar_style = {
