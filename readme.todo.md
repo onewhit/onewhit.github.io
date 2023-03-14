@@ -11,6 +11,7 @@
 - [ ] Break out character creation to it's own page, so you can have descriptions from the guide book, more of a wizard style
 - [x] Add race, flaw, ideal fields to character description
 - [ ] Ability to change order of items in a character list
+- [ ] BUG when logging in the characters don't reload right away, you have to reload. Need to fix this
 
 2023-03-12
 
