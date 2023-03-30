@@ -26,7 +26,7 @@ export default function useGlobalContext() {
     useEffect(() => {
         update_window_dimensions();
         window.addEventListener("resize", update_window_dimensions);
-        
+
         firebase_auth.set_user_listener((user) => {
             update_global_context({
                 user: user,

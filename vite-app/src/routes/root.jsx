@@ -15,10 +15,12 @@ import Rightbar from "../components/rightbar.jsx";
 
 export default function Root({ is_error=false }) {
 
-    const is_spoof = false;
-    const data_context = useFirestoreData(is_spoof);
+    const is_spoof = true;
     const global_context = useGlobalContext();
 
+    // Add the global context user variable to the state, since when the user changes we want to re-render things
+
+    const data_context = useFirestoreData(is_spoof, (global_context.user != undefined ? true : false));
 
     const root_style = {
         display: "flex",

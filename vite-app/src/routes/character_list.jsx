@@ -14,7 +14,7 @@ export default function CharacterList () {
     const global_context = useContext(GlobalContext);
 
     let character_iterable = []
-    
+
     if (data_context[configs.character_collection_name] != undefined) {
         character_iterable = Object.entries(data_context.characters);
     }

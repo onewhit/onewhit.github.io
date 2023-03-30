@@ -16,11 +16,15 @@ import configs from "../utility/configs.jsx";
 import { getFirestore, doc, getDoc, collection, query, where, getDocs, setDoc, deleteDoc, onSnapshot } from "firebase/firestore";
 import get_current_datetime_string from "../utility/get_current_datetime_string.jsx";
 
-export default function useFirestoreData(is_spoof = true) {
+export default function useFirestoreData(is_spoof = true, is_logged_in = false) {
+
+    // If we're not logged in, we want to avoid trying to make a bunch of firebase calls. So we'll just substitute with spoof data anyways
+    // Even though this may not show, since the login page will still override the actual page's contents
+    const is_use_firestore_data = (! is_spoof && is_logged_in);
 
     let firestore_db = undefined;
 
-    if (!is_spoof) {
+    if (is_use_firestore_data) {
         firestore_db = getFirestore(useFirebaseProject());
     }
 
@@ -36,6 +40,15 @@ export default function useFirestoreData(is_spoof = true) {
     }
 
     function set_local_collection(collection_name, collection_dict, override = false) {
+
+        // Make sure each character has the default fields required
+        if (collection_name == configs.character_collection_name) {
+            const collection_entries = Object.entries(collection_dict)
+            collection_entries.forEach(([key, value]) => {
+                collection_dict[key] = {...default_character_data, ...value}
+            })
+        }
+
         set_data_context((old_context) => {
             const new_context = {
                 ...old_context,
@@ -54,7 +67,7 @@ export default function useFirestoreData(is_spoof = true) {
             is_doc_already_exists = true;
         }
 
-        if (is_spoof) {
+        if (!is_use_firestore_data) {
             update_local_document_data(collection_name, document_key, document_data);
         }
         else {
@@ -64,7 +77,7 @@ export default function useFirestoreData(is_spoof = true) {
 
             const doc_ref = doc(firestore_db, collection_name, document_key);
             await setDoc(doc_ref, document_data, {merge: true});
-            
+
             if (!is_doc_already_exists) {
                 const notify_need_to_refresh_collection_name = collection_name;
                 save_document_data(configs.ping_collection_name, notify_need_to_refresh_collection_name, {need_to_refresh: get_current_datetime_string()});
@@ -92,7 +105,7 @@ export default function useFirestoreData(is_spoof = true) {
     }
 
     function delete_document(collection_name, document_key) {
-        if (is_spoof) {
+        if (!is_use_firestore_data) {
             delete_local_document(collection_name, document_key);
         }
         else {
@@ -109,7 +122,7 @@ export default function useFirestoreData(is_spoof = true) {
 
     function delete_local_document(collection_name, document_key) {
         flash_loading();
-        
+
         set_data_context((old_context) => {
             const copy_local_collection = {...old_context[collection_name]};
             delete copy_local_collection[document_key];
@@ -194,11 +207,11 @@ export default function useFirestoreData(is_spoof = true) {
         const unsubscribe_function = onSnapshot(doc(firestore_db, collection_name, document_key), (doc) => {
             // If "undefined" is returned from listener, it means the document was deleted
             let new_doc_data = undefined;
-            
+
             if (doc.data() != undefined) {
                 new_doc_data = JSON.parse(JSON.stringify(doc.data()));
             }
-            
+
             // If this is NOT a deletion, just update the local data to match incoming from the listener
             if (new_doc_data != undefined) {
                 update_local_document_data(collection_name, doc.id, new_doc_data);
@@ -218,7 +231,7 @@ export default function useFirestoreData(is_spoof = true) {
     async function load_all_rpg_data () {
         flash_loading();
 
-        if (is_spoof) {
+        if (!is_use_firestore_data) {
             const is_override = true;
             set_local_collection(configs.item_collection_name, items, is_override);
             set_local_collection(configs.character_collection_name, characters, is_override);
@@ -243,7 +256,7 @@ export default function useFirestoreData(is_spoof = true) {
         set_local_collection(collection_name, {}, true)
 
         const query_snapshot = await getDocs(collection(firestore_db, collection_name));
-        
+
         query_snapshot.forEach((doc) => {
             const unsubscribe_function = setup_listener(collection_name, doc.id);
         });
@@ -251,7 +264,7 @@ export default function useFirestoreData(is_spoof = true) {
 
     useEffect(() => {
         load_all_rpg_data();
-    },[])
+    },[is_logged_in])
 
     return (data_context);
 }
