@@ -4,8 +4,11 @@
 
 import DataContext from "../contexts/data_context.jsx";
 import { useContext, useEffect, useState, useRef } from "react";
+
 import items from "../spoof_data/items.jsx";
 import characters from "../spoof_data/characters.jsx";
+import abilities from "../official_data/quest_abilities.json";
+
 import colors from "../utility/colors.jsx";
 import useTimers from "../hooks/use_timers.jsx";
 import deep_object_copy from "../utility/deep_object_copy.jsx";
@@ -180,11 +183,35 @@ export default function useFirestoreData(is_spoof = true, is_logged_in = false) 
         return sorted_items;
     }
 
+    function keyify_value (string) {
+        return string.toLowerCase().replaceAll(" ", "_");
+    }
+
+    function keyify_values (string_array) {
+        return string_array.reduce((accumulator, current_value) => accumulator + "_" + current_value, "")
+    }
+
+    function get_sorted_abilities() {
+        const sorted_abilities = Object.entries(data_context.quest_abilities).map((entry) => ({"id": entry[0], ...entry[1]}));
+        sorted_abilities.sort((a,b) => {
+            let is_move_down = false;
+
+            const a_sort_key = keyify_values([a.class, a.tree, a.tree_level]);
+            const b_sort_key = keyify_values([b.class, b.tree, b.tree_level]);
+
+            if (a_sort_key > b_sort_key) {is_move_down = true}
+
+            return (is_move_down ? 1 : -1)
+        })
+        return sorted_abilities;
+    }
+
     // =========================================================================
     // Make data actions available as attributes on the data context, so elements can alter the data
     // =========================================================================
 
     data_context.get_sorted_item_list = get_sorted_item_list;
+    data_context.get_sorted_abilities = get_sorted_abilities;
     data_context.delete_document = delete_document;
     data_context.save_document_data = save_document_data;
 
@@ -228,8 +255,26 @@ export default function useFirestoreData(is_spoof = true, is_logged_in = false) 
         update_local_document_data(collection_name, document_key, {"unsubscribe_function": unsubscribe_function});
     }
 
+    async function load_quest_abilities () {
+        const is_override = true;
+
+        const enriched_abilities = abilities.map((ability) => {
+            const ability_key_name = ability.ability_name.toLowerCase().replaceAll(" ", "_");
+            const ability_key_class = ability.class.toLowerCase().replaceAll(" ", "_");
+            
+            return {
+                ability_key: ability_key_class + "_" + ability_key_name,
+                ...ability
+            }
+        })
+
+        set_local_collection(configs.abilities_collection_name, enriched_abilities, is_override);
+    }
+
     async function load_all_rpg_data () {
         flash_loading();
+        
+        load_quest_abilities();
 
         if (!is_use_firestore_data) {
             const is_override = true;

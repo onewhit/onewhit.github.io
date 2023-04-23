@@ -9,6 +9,7 @@ import CharacterList from "./routes/character_list.jsx";
 import LoginProtected from "./components/login_protected.jsx";
 import Items from "./routes/items.jsx";
 import DataManager from "./routes/data_manager";
+import Abilities from "./routes/abilities";
 
 const router = createBrowserRouter([
     {
@@ -45,12 +46,16 @@ const router = createBrowserRouter([
                 element: <DetailsLayout page_title="Items"><LoginProtected><Items /></LoginProtected></DetailsLayout>
             },
             {
-                path: "account_info",
-                element: <DetailsLayout page_title="Account Info" children={<AccountInfo />} />
+                path: "abilities",
+                element: <DetailsLayout page_title="Abilities"><LoginProtected><Abilities /></LoginProtected></DetailsLayout>
             },
             {
                 path: "data_manager",
                 element: <DetailsLayout page_title="Data Manager" children={<LoginProtected><DataManager /></LoginProtected>} />
+            },
+            {
+                path: "account_info",
+                element: <DetailsLayout page_title="Account Info" children={<AccountInfo />} />
             },
         ],
     },

@@ -29,8 +29,9 @@ export default function MainNavigation () {
     // list_items.push(<NavLink key="character_tracker" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'character_tracker'}>Character Tracker</NavLink>);
     list_items.push(<NavLink key="characters" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'characters'}>Characters</NavLink>);
     list_items.push(<NavLink key="items" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'items'}>Items</NavLink>);
-    list_items.push(<NavLink key="account_info" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'account_info'}>Account Info</NavLink>);
+    list_items.push(<NavLink key="abilities" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'abilities'}>Abilities</NavLink>);
     list_items.push(<NavLink key="data_manager" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'data_manager'}>Data Manager</NavLink>);
+    list_items.push(<NavLink key="account_info" className="main_nav_link" style={link_style} onClick={handle_main_nav_click} to={'account_info'}>Account Info</NavLink>);
 
     return (
         <>{list_items}</>
