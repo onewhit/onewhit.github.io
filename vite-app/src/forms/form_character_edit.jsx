@@ -27,9 +27,9 @@ export default function FormCharacterEdit({character_id}) {
     const [form_mode, set_form_mode] = useState(character_id == undefined ? "new" : "view"); // "edit" or "view" or "new"
     const [flash_message, set_flash_message] = useState("");
     const [tab, set_tab] = useState(form_mode != "new" ? "items" : "description"); // "description" or "items" or "abilities" or "notes"
-    
+
     const calculated_character_id = character_id || form_data.full_name.toLowerCase().replaceAll(" ", "_");
-    
+
     function change_simple_field(field_name, field_value) {
         set_form_data((old_data) => {
             const data_copy = {...old_data, [field_name]: field_value};
@@ -70,7 +70,7 @@ export default function FormCharacterEdit({character_id}) {
         if (field_generic_item_to_add != "") {
             const new_character_data = {...data_context.characters[character_id]};
             const items_array = [...new_character_data.items];
-            
+
             items_array.push({
                 item_name: field_generic_item_to_add,
                 date_added: get_current_datetime_string()
@@ -79,6 +79,7 @@ export default function FormCharacterEdit({character_id}) {
             const override_character_data = {id: character_id, items: items_array};
             data_context.save_document_data(configs.character_collection_name, character_id, {...override_character_data})
         }
+        set_field_generic_item_to_add("");
     }
 
     function handle_delete_character (event) {
@@ -127,7 +128,7 @@ export default function FormCharacterEdit({character_id}) {
             <form onSubmit={handle_submit} style={{width: "100%", position: "relative"}}>
                 <div style={{display: "flex"}}>
                     {
-                        form_mode != "new" 
+                        form_mode != "new"
                         && <>
                             <div style={tab == "items" ? active_tab_style : inactive_tab_style} className="hover-element" onClick={set_items_tab}>Items</div>
                             <div>|</div>
@@ -174,7 +175,7 @@ export default function FormCharacterEdit({character_id}) {
                                 </table>
                                 {
                                     ["edit","new"].includes(form_mode)
-                                    ? 
+                                    ?
                                         <>
                                             <button type='submit'>{("Save")}</button>
                                             {
@@ -215,7 +216,7 @@ export default function FormCharacterEdit({character_id}) {
 
                                             data_context.save_document_data(configs.character_collection_name, character_id, {items: filtered_item_list} )
                                         }
-                                        
+
                                         const row_style = {
                                             display: "flex",
                                             justifyContent: "space-between",
@@ -225,26 +226,26 @@ export default function FormCharacterEdit({character_id}) {
                                         if (index % 2 == 1) {
                                             row_style.backgroundColor = Colors.lighter_grey;
                                         }
-                                        
+
                                         return <div key={item.date_added || item.item_name} style={row_style}>
                                             <div style={{flexGrow: 1, flexShrink: 1}}>{index + 1}. {item.item_name}</div>
-                                            <div><button onClick={handle_drop_item}>Drop</button></div>
+                                            <div><button type="button" onClick={handle_drop_item}>Drop</button></div>
                                         </div>
                                     })
                                 }
                                 <TextInput id={calculated_character_id + "_add_generic_item"} value={field_generic_item_to_add} on_change={change_field_generic_item_to_add} />
-                                <button onClick={handle_add_item}>Add Item</button>
+                                <button type="submit" onClick={handle_add_item}>Add Item</button>
                             </>
                         : ""
                     }
                     {
                         tab == "abilities"
-                        ? ""
+                        ? <CharacterAbilitiesForm character_id={calculated_character_id} />
                         : ""
                     }
                     {
                         tab == "notes"
-                        ? 
+                        ?
                             <>
                                 <TextAreaInput id="character_notes" value={form_data.notes} on_change={change_notes} read_only={form_mode == "view" ? "readonly" : ""} />
                                 {
@@ -261,4 +262,8 @@ export default function FormCharacterEdit({character_id}) {
             }
         </div>
     );
+}
+
+function CharacterAbilitiesForm ({character_id}) {
+    return <p>test values for character: {character_id}</p>
 }

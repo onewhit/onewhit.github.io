@@ -5,7 +5,8 @@ import LoadingProtected from "../components/loading_protected.jsx";
 import Colors from "../utility/colors.jsx";
 import GlobalContext from "../contexts/global_context.jsx";
 import DataContext from "../contexts/data_context.jsx";
-import FormCharacterEdit from "../forms/form_character_edit.jsx";
+// import FormCharacterEdit from "../forms/form_character_edit.jsx";
+import CharacterDropdownDetails from "../components/character_dropdown_details.jsx"
 import configs from "../utility/configs.jsx";
 
 export default function CharacterList () {
@@ -131,7 +132,7 @@ function CharacterRow({character_data, row_num}) {
     return (
         <>
             <tr style={row_style} key={character_id}>
-                <td style={row_padding_style}><div style={{paddingLeft: ".5em"}}>{character_data.full_name}</div></td>
+                <td className="hover-element" onClick={event=>toggle_details()} style={row_padding_style}><div style={{paddingLeft: ".5em"}}>{character_data.full_name}</div></td>
                 <td style={row_padding_style}>
                     <div>
                         <div style={cell_style}><button onClick={(event) => data_context.increase_character_hp(character_id)}>+</button></div>
@@ -156,7 +157,8 @@ function CharacterRow({character_data, row_num}) {
                     <tr style={row_style} key={character_id + "_details"} >
                         <td colSpan="4" style={row_padding_style}>
                             <div style={{paddingLeft: ".5em", paddingRight: ".5em"}}>
-                                <FormCharacterEdit character_id={character_id} />
+                                {/* <FormCharacterEdit character_id={character_id} /> */}
+                                <CharacterDropdownDetails character_id={character_id} />
                             </div>
                         </td>
                     </tr>
